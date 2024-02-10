@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-container>
-            <v-form @submit.prevent="singUp">
+            <v-form @submit.prevent="signUp">
                 <v-row>
                     <v-col cols="" lg="6" sm="6">
                         <v-label>First Name</v-label>
