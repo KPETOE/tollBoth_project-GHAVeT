@@ -19,9 +19,9 @@
                                 is simple: to make your journey smoother, faster, and hassle-free. By harnessing the power
                                 of cutting-edge technology, we're transforming toll collection into a seamless process that
                                 enhances mobility and connectivity on the road.</h4>
-                            <p class="text-justify">
+                            
                             <h4 class="underline text-">What Sets Us Apart</h4>
-
+                            <p class="text-justify">
                             At SmartToll, innovation is at the heart of everything we do. We've combined advanced RFID
                             and wireless communication technologies to create a next-generation toll collection system
                             that's not only efficient but also incredibly convenient. No more fumbling for loose change
