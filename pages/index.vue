@@ -4,12 +4,12 @@
 
             <div class="homeImg">
                 <br>
-                <ul class="d-flex justify-content-end">
+                <!-- <ul class="d-flex justify-content-end">
                     <li class="nav-item">
-                        <avatar />
+                        
 
                     </li>
-                </ul>
+                </ul> -->
 
                 <div class="mx-auto ">
                     <v-container class="justify-content-center" style="width: 50%;">
@@ -97,14 +97,18 @@
                                 <v-img height="4em" aspect-ratio="1"
                                     :src="'https://admin.gathstudents.com' + logo.attributes.img.data.attributes.url"></v-img>
                             </v-col> -->
-                            <v-col
-                                v-for="(partner, index) in [{ id: 'STC' }, { id: 'D' }, { id: 'TROTRO' }, { id: 'LOG' }, { id: 'TANKER' }, { id: 'LOG2' }, { id: 'Police' }, { id: 'road safety' }, { id: 'GPRTU' }]"
-                                :key="index" cols="4" sm="4">
-                                <v-img height="70" aspect-ratio="1" :src="`/img/${partner.id}.png`"></v-img>
-                            </v-col>
+
 
                         </v-row>
+
                     </v-container>
+                </v-col>
+            </v-row>
+            <v-row>
+                <v-col
+                    v-for="(partner, index) in [{ id: 'STC' }, { id: 'D' }, { id: 'TROTRO' }, { id: 'LOG' }, { id: 'TANKER' }, { id: 'LOG2' }, { id: 'Police' }, { id: 'road safety' }, { id: 'GPRTU' }]"
+                    :key="index" cols="" lg="2" sm="4">
+                    <v-img height="70" aspect-ratio="1" :src="`/img/${partner.id}.png`"></v-img>
                 </v-col>
             </v-row>
         </v-container>
@@ -249,23 +253,23 @@
 
 
 
-        <v-container>
-            <!-- <h3 class="text-left mt-5">{{ home.data.attributes.PartnerSection }}</h3> -->
-            <!-- <v-row>
+        <!-- <v-container> -->
+        <!-- <h3 class="text-left mt-5">{{ home.data.attributes.PartnerSection }}</h3> -->
+        <!-- <v-row>
                 <v-col cols="" sm="" v-for="partner in partners.data" :key="partner.id">
                     <v-img aspect-ratio="1" height="200"
                         :src="'https://admin.gathstudents.com' + partner.attributes.Logo.data.attributes.url"></v-img>
                 </v-col>
             </v-row> -->
-            <v-row>
+        <!-- <v-row>
                 <v-col cols="" sm=""
                     v-for="(partner, index) in [{ id: 'M' }, { id: 'D' }, { id: 'highway' }, { id: 'Police' }, { id: 'road safety' },]"
                     :key="index">
                     <v-img aspect-ratio="1" height="200" :src="`/img/${partner.id}.png`"></v-img>
                 </v-col>
-            </v-row>
+            </v-row> -->
 
-        </v-container>
+        <!-- </v-container> -->
     </div>
 </template>
 <script setup>

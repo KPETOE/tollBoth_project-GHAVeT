@@ -53,18 +53,20 @@
               <li class="nav-item">
                 <NuxtLink class="nav-link text-white" to="/contact">Contact Us</NuxtLink>
               </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" @click="toggleSearch">
+                  <v-icon>mdi-magnify</v-icon>
+                </a>
+                <input v-show="isSearchVisible" type="text" class="form-control" placeholder="Search"
+                  @blur="toggleSearch" />
+              </li>
             </ul>
 
 
             <!-- Search icon and input -->
-            <li class="nav-item">
-              <a class="nav-link text-white" @click="toggleSearch">
-                <v-icon>mdi-magnify</v-icon>
-              </a>
-              <input v-show="isSearchVisible" type="text" class="form-control" placeholder="Search"
-                @blur="toggleSearch" />
-            </li>
 
+            <v-spacer></v-spacer>
+            <avatar />
           </div>
         </div>
       </div>
