@@ -16,4 +16,10 @@
 definePageMeta({
     layout: 'custom'
 });
+
+const logInForm = ref({
+    userName: '',
+    password: ''
+});
+const loginForm = logInForm.value;
 </script>
