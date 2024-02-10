@@ -87,6 +87,7 @@
 <script setup>
 import logo from "/img/A-transformed.png";
 import { ref } from "vue";
+const { auth } = useSupabaseClient()
 
 const isSearchVisible = ref(false);
 
@@ -104,6 +105,9 @@ const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
 };
 
+const logout = async () => {
+  await auth.signOut();
+}
 // Close the dropdown menu when clicking outside of it
 onMounted(() => {
   window.addEventListener('click', (event) => {
