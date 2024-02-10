@@ -5,35 +5,35 @@
                 <v-row>
                     <v-col cols="" lg="6" sm="6">
                         <v-label>First Name</v-label>
-                        <v-text-field v-model="signupForm.fName" type="name"></v-text-field>
+                        <v-text-field class="text-field" v-model="signupForm.fName" type="name"></v-text-field>
                     </v-col>
                     <v-col cols="" lg="6" sm="6">
                         <v-label>Other Names / Last Name</v-label>
-                        <v-text-field v-model="signupForm.lName" type="name"></v-text-field>
+                        <v-text-field class="text-field" v-model="signupForm.lName" type="name"></v-text-field>
                     </v-col>
                     <v-col cols="" lg="6" sm="12">
                         <v-label>User Name</v-label>
-                        <v-text-field v-model="signupForm.uName" type=""></v-text-field>
+                        <v-text-field class="text-field" v-model="signupForm.uName" type=""></v-text-field>
                     </v-col>
                     <v-col cols="" lg="6" sm="12">
                         <v-label>Gh Card No.</v-label>
-                        <v-text-field v-model="signupForm.ghCardNo" type=""></v-text-field>
+                        <v-text-field class="text-field" v-model="signupForm.ghCardNo" type=""></v-text-field>
                     </v-col>
                     <v-col cols="" lg="6" sm="12">
                         <v-label>Mobile Number</v-label>
-                        <v-text-field v-model="signupForm.mobileNo" type="number"></v-text-field>
+                        <v-text-field class="text-field" v-model="signupForm.mobileNo" type="number"></v-text-field>
                     </v-col>
                     <v-col cols="" lg="6" sm="12">
                         <v-label>Email</v-label>
-                        <v-text-field v-model="signupForm.email" type="email"></v-text-field>
+                        <v-text-field class="text-field" v-model="signupForm.email" type="email"></v-text-field>
                     </v-col>
                     <v-col cols="" lg="6" sm="12">
                         <v-label>Password</v-label>
-                        <v-text-field v-model="signupForm.pwd1" type="password"></v-text-field>
+                        <v-text-field class="text-field" v-model="signupForm.pwd1" type="password"></v-text-field>
                     </v-col>
                     <v-col cols="" lg="6" sm="12">
                         <v-label>Confirm Password</v-label>
-                        <v-text-field v-model="signupForm.pwd2" type="password"></v-text-field>
+                        <v-text-field class="text-field" v-model="signupForm.pwd2" type="password"></v-text-field>
                     </v-col>
                 </v-row>
                 <span v-if="pwdErr == true">
