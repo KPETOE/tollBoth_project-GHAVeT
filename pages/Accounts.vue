@@ -6,7 +6,7 @@
 
                 <ul class="d-flex justify-content-end">
                     <li class="nav-item">
-                      
+                        <avatar />
                     </li>
                 </ul>
 
