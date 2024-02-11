@@ -69,7 +69,7 @@
                 <span v-if="pwdErr == true">
                     <p>{{ pwdErr }}</p>
                 </span>
-                <v-btn :disabled="signupForm.pwd1 !== signupForm.pwd2" type="submit">Sign Up</v-btn>
+                <v-btn type="submit">Sign Up</v-btn>
             </v-form>
             <v-divider>Or Sign up with social media</v-divider>
             <v-row>
@@ -121,10 +121,14 @@ const signUp = async () => {
     }
 
     try {
-        const { data, error } = await auth.signUp(signupForm.email, signupForm.pwd1);
+        const { data, error } = await auth.signUp(email = signupForm.email, password = signupForm.pwd1);
         signupForm.fName = '';
+        signupForm.lName = '';
+        signupForm.uName = '';
+        signupForm.ghCardNo = '';
+        signupForm.mobileNo = '';
     } catch (error) {
-
+        console.log(error)
     }
 };
 </script>
