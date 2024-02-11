@@ -123,7 +123,7 @@ const signUp = async () => {
             email: signupForm.email,
             password: signupForm.pwd1,
         });
-        navigateTo('/')
+        navigateTo('/confirmation')
     } catch (error) {
         console.log(error)
     }
