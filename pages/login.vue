@@ -74,11 +74,11 @@ const signIn = async () => {
     }
 };
 
-// watchEffect(() => {
-//     if (!user.value) {
-//         return navigateTo('/')
-//     }
-// });
+watchEffect(() => {
+    if (!user.value) {
+        return navigateTo('/login')
+    }
+});
 </script>
 
 
@@ -99,7 +99,6 @@ const signIn = async () => {
 
 
 .body {
-
     background: linear-gradient(to right, #182831, rgba(72, 113, 129, 0.813), #18252c) !important;
 }
 </style>

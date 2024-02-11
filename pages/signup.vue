@@ -129,11 +129,11 @@ const signUp = async () => {
     }
 };
 
-// watchEffect(() => {
-//     if (!user.value) {
-//         return navigateTo('/');
-//     }
-// });
+watchEffect(() => {
+    if (!user.value) {
+        return navigateTo('/signup');
+    }
+});
 </script>
 
 <style scoped>
