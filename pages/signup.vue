@@ -1,9 +1,25 @@
 <template>
     <div class="body">
 
-        <p class="text-center justify-text text-white">Join the fast lane to convenience! Sign up now for effortless <br>
+       
+    <p class="text-center justify-text text-white ">Join the fast lane to convenience! Sign up now for effortless <br>
             electronic toll collection on your journeys.</p>
         <br>
+
+        <!-- <v-row align="center" justify="center">
+            <v-col cols="auto">
+                <img  alt="Left Logo" class="logo">
+            </v-col>
+            <v-col cols="auto">
+                <p class="text-center justify-text text-white">
+                    Join the fast lane to convenience! Sign up now for effortless electronic toll collection on your
+                    journeys.
+                </p>
+            </v-col>
+            <v-col cols="auto"  >
+                <img  src="/img/SignupLog.png" alt="Right Logo" class="logo"  >
+            </v-col>
+        </v-row> -->
 
         <v-parallax style="background-color: aliceblue;">
             <v-img src="/img/ETC2.jpg" height="30em"></v-img>
@@ -13,7 +29,7 @@
             <v-form @submit.prevent="signUp">
                 <v-row>
                     <v-col cols="" lg="6" sm="6">
-                        <v-label class="font-weight-bold" >First Name</v-label>
+                        <v-label class="font-weight-bold">First Name</v-label>
                         <v-text-field class="text-field  modify" v-model="signupForm.fName" type="name"></v-text-field>
                     </v-col>
                     <v-col cols="" lg="6" sm="6">
@@ -21,31 +37,31 @@
                         <v-text-field class="text-field modify" v-model="signupForm.lName" type="name"></v-text-field>
                     </v-col>
                     <v-col cols="" lg="6" sm="12">
-                        <v-label   class="font-weight-bold">User Name</v-label>
+                        <v-label class="font-weight-bold">User Name</v-label>
                         <v-text-field class="text-field  modify" v-model="signupForm.uName" type=""></v-text-field>
                     </v-col>
                     <v-col cols="" lg="6" sm="12">
-                        <v-label  class="font-weight-bold">Gh Card No.</v-label>
+                        <v-label class="font-weight-bold">Gh Card No.</v-label>
                         <v-text-field class="text-field  modify" v-model="signupForm.ghCardNo" type=""></v-text-field>
                     </v-col>
                     <v-col cols="" lg="6" sm="12">
-                        <v-label  class="font-weight-bold">Mobile Number</v-label>
+                        <v-label class="font-weight-bold">Mobile Number</v-label>
                         <v-text-field class="text-field  modify" v-model="signupForm.mobileNo" type="number"></v-text-field>
                     </v-col>
                     <v-col cols="" lg="6" sm="12">
-                        <v-label  class="font-weight-bold">Email</v-label>
+                        <v-label class="font-weight-bold">Email</v-label>
                         <v-text-field class="text-field modify" v-model="signupForm.email" type="email"></v-text-field>
                     </v-col>
                     <v-col cols="" lg="6" sm="12">
-                        <v-label   class="font-weight-bold">Password</v-label>
+                        <v-label class="font-weight-bold">Password</v-label>
                         <v-text-field class="text-field modify " v-model="signupForm.pwd1" type="password"></v-text-field>
                     </v-col>
                     <v-col cols="" lg="6" sm="12">
-                        <v-label  class="font-weight-bold">Confirm Password</v-label>
-                        <v-text-field class="text-field  modify" v-model="signupForm.pwd2" type="password"  ></v-text-field>
+                        <v-label class="font-weight-bold">Confirm Password</v-label>
+                        <v-text-field class="text-field  modify" v-model="signupForm.pwd2" type="password"></v-text-field>
                     </v-col>
                 </v-row>
-                <br>  <br>
+                <br> <br>
                 <!-- <span v-if="pwdErr == true">
                     <p>{{ pwdErr }}</p>
                 </span>
@@ -55,7 +71,7 @@
                 </span>
                 <v-btn :disabled="signupForm.pwd1 !== signupForm.pwd2" type="submit">Sign Up</v-btn>
             </v-form>
-            <v-divider  >Or Sign up with social media</v-divider>
+            <v-divider>Or Sign up with social media</v-divider>
             <v-row>
                 <v-col>
                     <v-btn icon="mdi-google"></v-btn>
@@ -66,7 +82,7 @@
             </v-row>
         </v-container>
         <br>
-        <v-divider class="social-divider" >Or Sign up with social media</v-divider>
+        <v-divider class="social-divider">Or Sign up with social media</v-divider>
 
         <br>
     </div>
@@ -114,15 +130,15 @@ const signUp = async () => {
 </script>
 
 <style scoped>
+.body {
 
-.body{
-
-    background-color: #2E424D  !important; 
+    background-color: #2E424D !important;
 }
+
 .modify {
-    background: linear-gradient(to right, rgba(252, 252, 252, 0.331), rgba(135, 207, 235, 0.486),#31759ab4, #153445b4) !important;
-    
-    
+    background: linear-gradient(to right, rgba(252, 252, 252, 0.331), rgba(135, 207, 235, 0.486), #31759ab4, #153445b4) !important;
+
+
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -132,6 +148,6 @@ const signUp = async () => {
 
 .social-divider {
     color: rgb(243, 242, 242);
-  
+
 }
 </style>
