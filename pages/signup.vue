@@ -38,11 +38,11 @@
                     </v-col>
                     <v-col cols="" lg="6" sm="12">
                         <v-label class="font-weight-bold">User Name</v-label>
-                        <v-text-field class="text-field  modify" v-model="signupForm.uName" type=""></v-text-field>
+                        <v-text-field class="text-field  modify" v-model="signupForm.uName" type="name"></v-text-field>
                     </v-col>
                     <v-col cols="" lg="6" sm="12">
                         <v-label class="font-weight-bold">Gh Card No.</v-label>
-                        <v-text-field class="text-field  modify" v-model="signupForm.ghCardNo" type=""></v-text-field>
+                        <v-text-field class="text-field  modify" v-model="signupForm.ghCardNo" type="name"></v-text-field>
                     </v-col>
                     <v-col cols="" lg="6" sm="12">
                         <v-label class="font-weight-bold">Mobile Number</v-label>
@@ -90,7 +90,7 @@
 <script setup>
 const { auth } = useSupabaseClient()
 const user = useSupabaseUser()
-
+const router = useRouter()
 
 definePageMeta({
     layout: 'custom'
@@ -115,18 +115,17 @@ const signUp = async () => {
         signupForm.pwd1 = '';
         signupForm.pwd2 = '';
         setTimeout(() => {
-            pwdErr = '';
+            pwdErr;
         }, 3000);
         return;
     }
 
     try {
-        const { data, error } = await auth.signUp(email = signupForm.email, password = signupForm.pwd1);
-        signupForm.fName = '';
-        signupForm.lName = '';
-        signupForm.uName = '';
-        signupForm.ghCardNo = '';
-        signupForm.mobileNo = '';
+        const { data, error } = await auth.signUp(
+            email = signupForm.email,
+            password = signupForm.pwd1,
+        );
+        
     } catch (error) {
         console.log(error)
     }

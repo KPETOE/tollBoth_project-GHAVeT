@@ -17,6 +17,8 @@
 definePageMeta({
     layout: 'custom'
 });
+const { auth } = useSupabaseClient();
+const user = useSupabaseUser();
 
 const logInForm = ref({
     userName: '',
