@@ -1,5 +1,14 @@
 <template>
     <div>
+
+        <p class="text-center justify-text text-white">Join the fast lane to convenience! Sign up now for effortless <br>
+            electronic toll collection on your journeys.</p>
+        <br>
+
+        <v-parallax style="background-color: aliceblue;">
+            <v-img src="/img/ETC2.jpg" height="30em"></v-img>
+
+        </v-parallax>
         <v-container>
             <v-form @submit.prevent="signUp">
                 <v-row>
@@ -36,10 +45,14 @@
                         <v-text-field class="text-field" v-model="signupForm.pwd2" type="password"></v-text-field>
                     </v-col>
                 </v-row>
+                <!-- <span v-if="pwdErr == true">
+                    <p>{{ pwdErr }}</p>
+                </span>
+                <v-btn type="submit">Sign Up</v-btn> -->
                 <span v-if="pwdErr == true">
                     <p>{{ pwdErr }}</p>
                 </span>
-                <v-btn type="submit">Sign Up</v-btn>
+                <v-btn :disabled="signupForm.pwd1 !== signupForm.pwd2" type="submit">Sign Up</v-btn>
             </v-form>
             <v-divider>Or Sign up with social media</v-divider>
             <v-row>
