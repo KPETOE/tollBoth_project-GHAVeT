@@ -1,8 +1,8 @@
 <template>
     <div class="body">
 
-       
-    <p class="text-center justify-text text-white ">Join the fast lane to convenience! Sign up now for effortless <br>
+
+        <p class="text-center justify-text text-white ">Join the fast lane to convenience! Sign up now for effortless <br>
             electronic toll collection on your journeys.</p>
         <br>
 
@@ -48,6 +48,7 @@
                         <v-label class="font-weight-bold">Mobile Number</v-label>
                         <v-text-field class="text-field  modify" v-model="signupForm.mobileNo" type="number"></v-text-field>
                     </v-col> -->
+                    
                     <v-col cols="" lg="6" sm="12">
                         <v-label class="font-weight-bold">Email</v-label>
                         <v-text-field class="text-field modify" v-model="signupForm.email" type="email"></v-text-field>
@@ -118,11 +119,11 @@ const signUp = async () => {
     }
 
     try {
-        const { data, error } = await auth.signUp(
-            email = signupForm.email,
-            password = signupForm.pwd1,
-        );
-        
+        const { data, error } = await auth.signUp({
+            email: signupForm.email,
+            password: signupForm.pwd1,
+        });
+
     } catch (error) {
         console.log(error)
     }
@@ -145,10 +146,9 @@ const signUp = async () => {
     border-bottom-right-radius: 15px;
 
 }
-.modifyl{
 
-    
-}
+.modifyl {}
+
 .social-divider {
     color: rgb(243, 242, 242);
 
