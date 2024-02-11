@@ -18,7 +18,7 @@
 
 
                         <v-row class="d-flex justify-center align-center">
-                            <v-col cols="12" lg="6" md="6" class="d-flex align-center">
+                            <v-col cols="12" lg="12" md="6" class="d-flex align-center">
                                 <label class="mr-2  font-weight-bold ">GHAVeTTag #</label>
                                 <div style="background-color: azure; width: 30em;" class=" BckCol">
                                     <v-text-field v-model="input1" label="GHAVeTTag  #" outlined color="white"
@@ -27,10 +27,10 @@
                                 </div>
 
                             </v-col>
-                        </v-row>
+                      
 
-                        <v-row class="d-flex justify-center align-center">
-                            <v-col cols="12" lg="6" md="6" class="d-flex align-center">
+                      
+                            <v-col cols="12" lg="12" md="6" class="d-flex align-center">
                                 <label class="mr-2  font-weight-bold">Previous VeH Reg #</label>
                                 <div style="background-color: azure; width: 30em;" class=" BckCol">
 
@@ -42,10 +42,10 @@
                                 </div>
 
                             </v-col>
-                        </v-row>
+                      
 
-                        <v-row class="d-flex justify-center align-center">
-                            <v-col cols="12" lg="6" md="6" class="d-flex align-center">
+                    
+                            <v-col cols="12" lg="12" md="6" class="d-flex align-center">
                                 <label class="mr-2  font-weight-bold ">New VeH Reg #</label>
                                 <div style="background-color: azure; width: 30em;" class=" BckCol">
                                     <v-text-field v-model="input3" label="New VeH Reg #" outlined color="white"
@@ -56,11 +56,11 @@
                                 </div>
 
                             </v-col>
-                        </v-row>
+                    
 
 
-                        <v-row class="d-flex justify-center align-center">
-                            <v-col cols="12" lg="6" md="6" class="d-flex align-center">
+                   
+                            <v-col cols="12" lg="12" md="6" class="d-flex align-center">
                                 <label class="mr-2  font-weight-bold ">New VeH Road Worthy #</label>
                                 <div style="background-color: azure; width: 30em;" class=" BckCol">
                                     <v-text-field v-model="input4" label="New VeH Road Worthy #" outlined color="white"
@@ -69,10 +69,10 @@
                                 </div>
 
                             </v-col>
-                        </v-row>
+                
 
-                        <v-row class="d-flex justify-center align-center">
-                            <v-col cols="12" lg="6" md="6" class="d-flex align-center">
+                     
+                            <v-col cols="12" lg="12" md="6" class="d-flex align-center">
                                 <label class="mr-2  font-weight-bold ">New VeH Insurance #</label>
                                 <div style="background-color: azure; width: 30em;" class=" BckCol">
 
@@ -82,11 +82,11 @@
                                 </div>
 
                             </v-col>
-                        </v-row>
+                       
 
 
-                        <v-row class="d-flex justify-center align-center">
-                            <v-col cols="12" lg="6" md="6" class="d-flex align-center">
+                    
+                            <v-col cols="12" lg="12" md="6" class="d-flex align-center">
                                 <label class="mr-2  font-weight-bold ">New Owner Account Name</label>
                                 <div style="background-color: azure; width: 30em;" class=" BckCol">
                                     <v-text-field v-model="input6" label="New  Owner Account Name" outlined color="white"
