@@ -28,7 +28,7 @@
         <v-container>
             <v-form @submit.prevent="signUp">
                 <v-row>
-                    <!-- <v-col cols="" lg="6" sm="6">
+                    <v-col cols="" lg="6" sm="6">
                         <v-label class="font-weight-bold">First Name</v-label>
                         <v-text-field class="text-field  modify" v-model="signupForm.fName" type="name"></v-text-field>
                     </v-col>
@@ -47,7 +47,7 @@
                     <v-col cols="" lg="6" sm="12">
                         <v-label class="font-weight-bold">Mobile Number</v-label>
                         <v-text-field class="text-field  modify" v-model="signupForm.mobileNo" type="number"></v-text-field>
-                    </v-col> -->
+                    </v-col> 
 
                     <v-col cols="" lg="6" sm="12">
                         <v-label class="font-weight-bold">Email</v-label>
