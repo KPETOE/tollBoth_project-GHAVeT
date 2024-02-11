@@ -107,6 +107,10 @@ const signUp = async () => {
     try {
         const { data, error } = await auth.signUp(email = signupForm.email, password = signupForm.pwd1);
         signupForm.fName = '';
+        signupForm.lName = '';
+        signupForm.uName = '';
+        signupForm.ghCardNo = '';
+        signupForm.mobileNo = '';
     } catch (error) {
         console.log(error)
     }
