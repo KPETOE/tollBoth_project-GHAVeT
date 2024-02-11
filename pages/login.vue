@@ -28,7 +28,7 @@
                 <v-row align="center" justify="center">
                     <v-col cols="12" sm="6">
                         <v-text-field class="text-field text-center" type="name" v-model="loginForm.userName"
-                            placeholder="User Name"></v-text-field>
+                            placeholder="User Name/Email"></v-text-field>
                     </v-col>
                 </v-row>
                 <br>
@@ -45,8 +45,6 @@
                     </v-col>
                 </v-row>
             </v-form>
-
-
             <br> <br>
         </v-container>
     </div>
@@ -63,13 +61,29 @@ const logInForm = ref({
     password: ''
 });
 const loginForm = logInForm.value;
+
+const signIn = async () => {
+    try {
+        const { data, error } = await auth.signInWithPassword({
+            email: loginForm.userName,
+            password: loginForm.password
+        });
+        navigateTo('/')
+    } catch (error) {
+        console.log(error)
+    }
+};
+
+// watchEffect(() => {
+//     if (!user.value) {
+//         return navigateTo('/')
+//     }
+// });
 </script>
 
 
 
 <style>
-
-
 .text-field {
     width: 35em;
     height: 3.5em;
@@ -86,6 +100,6 @@ const loginForm = logInForm.value;
 
 .body {
 
-   background: linear-gradient(to right,  #182831, rgba(72, 113, 129, 0.813),  #18252c) !important;
+    background: linear-gradient(to right, #182831, rgba(72, 113, 129, 0.813), #18252c) !important;
 }
 </style>

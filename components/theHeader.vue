@@ -66,7 +66,20 @@
             <!-- Search icon and input -->
 
             <v-spacer></v-spacer>
-            <avatar />
+            <div v-if="!user == true">
+              <v-row>
+                <v-col>
+                  <v-btn to="/login">Login</v-btn>
+                </v-col>
+                <v-col>
+                  <v-btn to="/signup">Register</v-btn>
+                </v-col>
+              </v-row>
+            </div>
+            <div v-else>
+              <avatar />
+            </div>
+
           </div>
         </div>
       </div>
@@ -88,7 +101,7 @@
 import logo from "/img/A-transformed.png";
 import { ref } from "vue";
 const { auth } = useSupabaseClient()
-
+const user = useSupabaseUser();
 const isSearchVisible = ref(false);
 
 const toggleSearch = () => {

@@ -48,7 +48,7 @@
                         <v-label class="font-weight-bold">Mobile Number</v-label>
                         <v-text-field class="text-field  modify" v-model="signupForm.mobileNo" type="number"></v-text-field>
                     </v-col> -->
-                    
+
                     <v-col cols="" lg="6" sm="12">
                         <v-label class="font-weight-bold">Email</v-label>
                         <v-text-field class="text-field modify" v-model="signupForm.email" type="email"></v-text-field>
@@ -123,11 +123,17 @@ const signUp = async () => {
             email: signupForm.email,
             password: signupForm.pwd1,
         });
-
+        navigateTo('/')
     } catch (error) {
         console.log(error)
     }
 };
+
+// watchEffect(() => {
+//     if (!user.value) {
+//         return navigateTo('/');
+//     }
+// });
 </script>
 
 <style scoped>
