@@ -21,10 +21,10 @@
             </v-col>
         </v-row> -->
 
-        <v-parallax style="background-color: aliceblue;">
+        <!-- <v-parallax style="">
             <v-img src="/img/ETC2.jpg" height="30em"></v-img>
 
-        </v-parallax>
+        </v-parallax> -->
         <v-container>
             <v-form @submit.prevent="signUp">
                 <v-row>
@@ -145,7 +145,10 @@ const signUp = async () => {
     border-bottom-right-radius: 15px;
 
 }
+.modifyl{
 
+    
+}
 .social-divider {
     color: rgb(243, 242, 242);
 
