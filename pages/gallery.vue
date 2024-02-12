@@ -141,10 +141,7 @@
                                 <button class="reference  text-black font-weight-bold">BACK</button>
                                 <br>
 
-                                <h1 class="mx-auto text-uppercase text-black text-start text-center  font-weight-bold"
-                                    style="font-size: 2em">
-                                    statement
-                                </h1>
+                                
                             </div>
                         </div>
 
