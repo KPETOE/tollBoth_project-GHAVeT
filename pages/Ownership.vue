@@ -135,10 +135,26 @@
                         </v-row> -->
                         <v-row class="d-flex justify-center align-center">
                             <v-col cols="12" lg="6" md="6">
-                                <v-btn @click="handleSubmit" type="submit" color="success">Submit</v-btn>
+                                <!-- <v-btn @click="handleSubmit" type="submit" color="success">Submit</v-btn> -->
+
+                                <v-btn @click="handleSubmit" type="submit" prepend-icon="mdi-check-circle"  class="B-clear">
+                                    <template v-slot:prepend>
+                                        <v-icon color="success"></v-icon>
+                                    </template>
+                                    Submit
+                                    <template v-slot:append>
+                                        <v-icon color="warning"></v-icon>
+                                    </template>
+                                </v-btn>
                             </v-col>
+
                             <v-col cols="12" lg="6" md="6">
-                                <v-btn @click="clearForm" color="error">Clear</v-btn>
+                                <v-btn @click="clearForm" prepend-icon="mdi-alert-circle"  class="B-clear text-red">Clear
+                                    <template v-slot:append>
+                                        <v-icon color="warning"></v-icon>
+                                    </template>
+
+                                </v-btn>
                             </v-col>
                         </v-row>
                     </form>
@@ -284,4 +300,27 @@ const input6Rules = [
     background-color: aliceblue;
 
 } */
+.BckCol {
+
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+
+.B-clear{
+
+    background: linear-gradient(to right, rgba(36, 71, 37, 0.331), rgba(135, 235, 173, 0), #31759ab4, #153445b4) !important;
+
+
+}
+
+.B-clear:hover{
+    transition: all 0.9s ease;
+    font-weight: bold; 
+    opacity: 0.8;
+    color: #000000;
+    border: 2px solid #ffffff;
+}
 </style>
