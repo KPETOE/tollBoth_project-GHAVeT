@@ -74,23 +74,23 @@
                      
                             <v-col cols="12" lg="12" md="6" class="d-flex align-center">
                                 <label class="mr-2  font-weight-bold ">New VeH Insurance #</label>
-                                <div style="background-color: azure; width: 30em;" class=" BckCol">
+                                <div style="background-color: azure; width: 30em;" class=" BckCol  text-field-margin">
 
                                     <v-text-field v-model="input5" label="New VeH Insurance #" outlined color="white"
-                                        class="mx-auto" :rules="input5Rules" style="box-shadow: none;width: 500px;"
+                                        class="mx-auto  " :rules="input5Rules" style="box-shadow: none;width: 500px;"
                                         variant="plain"></v-text-field>
                                 </div>
 
                             </v-col>
                        
 
-
+                            <br> <br>
                     
                             <v-col cols="12" lg="12" md="6" class="d-flex align-center">
                                 <label class="mr-2  font-weight-bold ">New Owner Account Name</label>
                                 <div style="background-color: azure; width: 30em;" class=" BckCol">
                                     <v-text-field v-model="input6" label="New  Owner Account Name" outlined color="white"
-                                        class="mx-auto  BckCol" :rules="input6Rules" style="box-shadow: none; width: 500px;"
+                                        class="mx-auto  BckCol  " :rules="input6Rules" style="box-shadow: none; width: 500px;"
                                         variant="plain"></v-text-field>
                                 </div>
                             </v-col>
@@ -249,7 +249,7 @@ const input6Rules = [
 
 
 
-<style>
+<style scoped>
 .form {
     text-align: center;
 }
@@ -259,10 +259,15 @@ const input6Rules = [
     align-items: center;
 }
 
+.BckCol{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
 
+.text-field-margin{
+    margin-left: 2.5em !important;
 
-/* . {
-    background-color: aliceblue;
-
-} */
+} 
 </style>
