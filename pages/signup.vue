@@ -153,7 +153,7 @@ const signUp = async () => {
 
 }
 
-.modifyl {}
+
 
 .social-divider {
     color: rgb(243, 242, 242);
