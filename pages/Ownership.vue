@@ -20,10 +20,10 @@
                         <v-row class="d-flex justify-center align-center">
                             <v-col cols="" lg="12" md="6" class="d-flex align-center">
                                 <v-row>
-                                    <v-col cols="" lg="6" sm="6">
+                                    <v-col cols="" lg="6" md="6" sm="6">
                                         <label class="font-weight-bold ">GHAVeTTag #</label>
                                     </v-col>
-                                    <v-col cols="" lg="6" sm="6">
+                                    <v-col cols="" lg="6" md="6" sm="6">
                                         <div style="background-color: azure; width: 30em;" class="mx-auto BckCol">
                                             <v-text-field v-model="input1" label="GHAVeTTag  #" outlined color="white"
                                                 class="mx-auto" :rules="input1Rules"
@@ -35,10 +35,10 @@
 
                             <v-col cols="" lg="12" md="6" class="d-flex align-center">
                                 <v-row>
-                                    <v-col cols="" lg="6" sm="6">
+                                    <v-col cols="" lg="6" md="6" sm="6">
                                         <label class="font-weight-bold">Previous VeH Reg #</label>
                                     </v-col>
-                                    <v-col cols="" lg="6" sm="6">
+                                    <v-col cols="" lg="6" md="6" sm="6">
                                         <div style="background-color: azure; width: 30em;" class="mx-auto BckCol">
 
                                             <v-text-field v-model="input2" label="Previous VeH Reg #" outlined color="white"
@@ -51,10 +51,10 @@
 
                             <v-col cols="" lg="12" md="6" class="d-flex align-center">
                                 <v-row>
-                                    <v-col cols="" lg="6" sm="6">
+                                    <v-col cols="" lg="6" md="6" sm="6">
                                         <label class="font-weight-bold ">New VeH Reg #</label>
                                     </v-col>
-                                    <v-col cols="" lg="6" sm="6">
+                                    <v-col cols="" lg="6" md="6" sm="6">
                                         <div style="background-color: azure; width: 30em;" class="mx-auto BckCol">
                                             <v-text-field v-model="input3" label="New VeH Reg #" outlined color="white"
                                                 class="mx-auto" :rules="input3Rules" style="box-shadow: none; width: 500px;"
@@ -67,10 +67,10 @@
 
                             <v-col cols="" lg="12" md="6" class="d-flex align-center">
                                 <v-row>
-                                    <v-col cols="" lg="6" sm="6">
+                                    <v-col cols="" lg="6" md="6" sm="6">
                                         <label class="font-weight-bold ">New VeH Road Worthy #</label>
                                     </v-col>
-                                    <v-col cols="" lg="6" sm="6">
+                                    <v-col cols="" lg="6" md="6" sm="6">
                                         <div style="background-color: azure; width: 30em;" class="mx-auto BckCol">
                                             <v-text-field v-model="input4" label="New VeH Road Worthy #" outlined
                                                 color="white" class="mx-auto" :rules="input4Rules"
@@ -85,10 +85,10 @@
 
                             <v-col cols="" lg="12" md="6" class="d-flex align-center">
                                 <v-row>
-                                    <v-col cols="" lg="6" sm="6">
+                                    <v-col cols="" lg="6" md="6" sm="6">
                                         <label class="mr-2  font-weight-bold ">New VeH Insurance #</label>
                                     </v-col>
-                                    <v-col cols="" lg="6" sm="6">
+                                    <v-col cols="" lg="6" md="6" sm="6">
                                         <div style="background-color: azure; width: 30em;" class="mx-auto BckCol">
 
                                             <v-text-field v-model="input5" label="New VeH Insurance #" outlined
@@ -101,10 +101,10 @@
 
                             <v-col cols="" lg="12" md="6" class="d-flex align-center">
                                 <v-row>
-                                    <v-col cols="" lg="6" sm="6">
+                                    <v-col cols="" lg="6" md="6" sm="6">
                                         <label class="mr-2  font-weight-bold ">New Owner Account Name</label>
                                     </v-col>
-                                    <v-col cols="" lg="6" sm="6">
+                                    <v-col cols="" lg="6" md="6" sm="6">
                                         <div style="background-color: azure; width: 30em;" class="mx-auto BckCol">
                                             <v-text-field v-model="input6" label="New  Owner Account Name" outlined
                                                 color="white" class="mx-auto  BckCol" :rules="input6Rules"
