@@ -40,12 +40,6 @@
                                     </v-col>
                                     <v-col cols="" lg="6" sm="6">
                                         <div style="background-color: azure; width: 30em;" class="mx-auto BckCol">
-                      
-
-                      
-                            <v-col cols="12" lg="12" md="6" class="d-flex align-center">
-                                <label class="mr-2  font-weight-bold">Previous VeH Reg #</label>
-                                <div style="background-color: azure; width: 30em;" class=" BckCol">
 
                                             <v-text-field v-model="input2" label="Previous VeH Reg #" outlined color="white"
                                                 class="mx-auto" :rules="input2Rules"
