@@ -99,43 +99,6 @@
                                 </v-row>
                             </v-col>
 
-<<<<<<< HEAD
-
-                   
-                            <v-col cols="12" lg="12" md="6" class="d-flex align-center">
-                                <label class="mr-2  font-weight-bold ">New VeH Road Worthy #</label>
-                                <div style="background-color: azure; width: 30em;" class=" BckCol">
-                                    <v-text-field v-model="input4" label="New VeH Road Worthy #" outlined color="white"
-                                        class="mx-auto" :rules="input4Rules" style="box-shadow: none;  width: 500px;"
-                                        variant="plain"></v-text-field>
-                                </div>
-
-                            </v-col>
-                
-
-                     
-                            <v-col cols="12" lg="12" md="6" class="d-flex align-center">
-                                <label class="mr-2  font-weight-bold ">New VeH Insurance #</label>
-                                <div style="background-color: azure; width: 30em;" class=" BckCol  text-field-margin">
-
-                                    <v-text-field v-model="input5" label="New VeH Insurance #" outlined color="white"
-                                        class="mx-auto  " :rules="input5Rules" style="box-shadow: none;width: 500px;"
-                                        variant="plain"></v-text-field>
-                                </div>
-
-                            </v-col>
-                       
-
-                            <br> <br>
-                    
-                            <v-col cols="12" lg="12" md="6" class="d-flex align-center">
-                                <label class="mr-2  font-weight-bold ">New Owner Account Name</label>
-                                <div style="background-color: azure; width: 30em;" class=" BckCol">
-                                    <v-text-field v-model="input6" label="New  Owner Account Name" outlined color="white"
-                                        class="mx-auto  BckCol  " :rules="input6Rules" style="box-shadow: none; width: 500px;"
-                                        variant="plain"></v-text-field>
-                                </div>
-=======
                             <v-col cols="" lg="12" md="6" class="d-flex align-center">
                                 <v-row>
                                     <v-col cols="" lg="6" sm="6">
@@ -149,7 +112,6 @@
                                         </div>
                                     </v-col>
                                 </v-row>
->>>>>>> 7430ff3b5ba5f37fc73a84322d8da60db537a503
                             </v-col>
                         </v-row>
                         <br> <br>
