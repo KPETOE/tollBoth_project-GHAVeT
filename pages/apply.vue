@@ -16,9 +16,10 @@
                 </v-col>
             </v-row>
 
-            <p   class="text-center font-weight-bold text-center " style=" color: rgb(219, 54, 54);  font-size: 1rem;"> Please complete
+            <p class="text-center font-weight-bold text-center " style=" color: rgb(219, 54, 54);  font-size: 1rem;"> Please
+                complete
                 the following form for your new RFID tag for tolling. <br> Ensure all information is accurate and complete
-                to expedite the processing of your application.  <br> Thank you for choosing our tolling services.</p>
+                to expedite the processing of your application. <br> Thank you for choosing our tolling services.</p>
             <div>
                 <v-container>
                     <v-row class="align-items-center">
@@ -196,8 +197,27 @@
                     Verify that the data provided is Correct.
                 </h1>
 
-                <v-checkbox label="I Have Read And Agree With Terms And Conditions
+
+              <v-row align="center"   cols="" lg="12" md="6" class="d-flex ">
+
+                <v-col  cols="" lg="6" md="6" sm="6">
+                    <v-checkbox label="I Have Read And Agree With Terms And Conditions
                  Of Used."></v-checkbox>
+                </v-col>
+
+                <v-col align="right"   cols="" lg="6" md="6" sm="6">
+                    <v-btn @click="handleSubmit" type="submit" prepend-icon="mdi-check-circle" class="B-clear">
+                        <template v-slot:prepend>
+                            <v-icon color="success"></v-icon>
+                        </template>
+                        Submit
+                        <template v-slot:append>
+                            <v-icon color="warning"></v-icon>
+                        </template>
+                    </v-btn>
+                </v-col>
+
+            </v-row>
             </v-container>
 
 
