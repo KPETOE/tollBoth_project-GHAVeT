@@ -258,7 +258,6 @@ const input3Rules = [
 
 
 const input4Rules = [
-
     value => !!value || 'Field is required',
     value => (value && value.length <= 20) || 'Max 20 characters',
     value => /^\d+$/.test(value) || 'Only numbers are allowed',

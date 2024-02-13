@@ -26,9 +26,9 @@
 
         </v-parallax> -->
         <v-container>
-            <v-form @submit.prevent="signUp">
+            <v-form v-if="step === steps.register" @submit.prevent="signUp">
                 <v-row>
-                    <v-col cols="" lg="6" sm="6">
+                    <!-- <v-col cols="" lg="6" sm="6">
                         <v-label class="font-weight-bold">First Name</v-label>
                         <v-text-field class="text-field  modify" v-model="signupForm.fName" type="name"></v-text-field>
                     </v-col>
@@ -47,7 +47,7 @@
                     <v-col cols="" lg="6" sm="12">
                         <v-label class="font-weight-bold">Mobile Number</v-label>
                         <v-text-field class="text-field  modify" v-model="signupForm.mobileNo" type="number"></v-text-field>
-                    </v-col> 
+                    </v-col>  -->
 
                     <v-col cols="" lg="6" sm="12">
                         <v-label class="font-weight-bold">Email</v-label>
@@ -68,16 +68,30 @@
                 </span>
                 <v-btn type="submit">Sign Up</v-btn> -->
                 <v-btn type="submit">Sign Up</v-btn>
+                <v-divider>Or Sign up with social media</v-divider>
+                <v-row>
+                    <v-col>
+                        <v-btn icon="mdi-google"></v-btn>
+                    </v-col>
+                    <v-col>
+                        <v-btn icon="mdi-facebook"></v-btn>
+                    </v-col>
+                </v-row>
             </v-form>
-            <v-divider>Or Sign up with social media</v-divider>
-            <v-row>
-                <v-col>
-                    <v-btn icon="mdi-google"></v-btn>
-                </v-col>
-                <v-col>
-                    <v-btn icon="mdi-facebook"></v-btn>
-                </v-col>
-            </v-row>
+            <v-form @submit.prevent="confirmSignUp" v-else>
+                <v-row>
+                    <v-col cols="" lg="6" sm="12">
+                        <v-label class="font-weight-bold">Email</v-label>
+                        <v-text-field class="text-field modify" v-model="confirmForm.email" type="email"></v-text-field>
+                    </v-col>
+                    <v-col cols="" lg="6" sm="12">
+                        <v-label class="font-weight-bold">Code</v-label>
+                        <v-text-field class="text-field modify " v-model="confirmForm.pwd1" type="number"></v-text-field>
+                    </v-col>
+                </v-row>
+                <v-btn type="submit">Confirm</v-btn>
+            </v-form>
+
         </v-container>
         <br>
         <v-divider class="social-divider">Or Sign up with social media</v-divider>
@@ -94,6 +108,15 @@ definePageMeta({
     layout: 'custom'
 });
 
+const bySteps = {
+    register: 'REGISTER',
+    cofirm: 'CONFIRM'
+};
+const Steps = bySteps.value
+const steps = { ...Steps }
+
+
+const step = steps.register;
 const signUpForm = ref({
     // fName: '',
     // lName: '',
@@ -105,11 +128,17 @@ const signUpForm = ref({
     pwd2: ''
 });
 
+const confirmSignUpForm = ref({
+    email: '',
+    code: ''
+});
+
 const signupForm = signUpForm.value;
+const confirmForm = confirmSignUpForm.value;
 
 const signUp = async () => {
     if (signupForm.pwd1 !== signupForm.pwd2) {
-        pwdErr = 'Passwords do not match';
+        alert('Password Does Not Match!')
         signupForm.pwd1 = '';
         signupForm.pwd2 = '';
         setTimeout(() => {
@@ -123,11 +152,19 @@ const signUp = async () => {
             email: signupForm.email,
             password: signupForm.pwd1,
         });
-        navigateTo('/confirmation')
+        // navigateTo('/confirmation')
     } catch (error) {
         console.log(error)
     }
 };
+
+const confirmSignUp = async () => {
+    try {
+        const { data, error } = await auth.verifyOtp({ email, token, type: 'email' });
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 // watchEffect(() => {
 //     if (!user.value) {
