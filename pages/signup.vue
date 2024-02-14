@@ -26,8 +26,8 @@
 
         </v-parallax> -->
         <v-container>
-            <div v-if="!auth.signUp === false">
-                <v-form v-if="step === steps.register" @submit.prevent="signUp">
+            <!-- <div v-if="!auth.signUp"> -->
+                <v-form v-if="step === bySteps.register" @submit.prevent="signUp">
                     <v-row>
                         <!-- <v-col cols="" lg="6" sm="6">
                         <v-label class="font-weight-bold">First Name</v-label>
@@ -92,10 +92,11 @@
                             <v-text-field class="text-field modify " v-model="confirmForm.pwd1"
                                 type="number"></v-text-field>
                         </v-col>
-                    </v-row>
+                    </v-row><br>
                     <v-btn type="submit">Confirm</v-btn>
                 </v-form>
-            </div>
+            <!-- </div> -->
+            <!-- <div v-else>You're In {{ user.email }}</div> -->
 
         </v-container>
         <br>
@@ -115,13 +116,12 @@ definePageMeta({
 
 const bySteps = {
     register: 'REGISTER',
-    cofirm: 'CONFIRM'
+    confirm: 'CONFIRM'
 };
-const Steps = bySteps.value
-const steps = { ...Steps }
 
+const steps = { ...bySteps.value }
+const step = bySteps.register;
 
-const step = steps.register;
 const signUpForm = ref({
     // fName: '',
     // lName: '',
@@ -157,6 +157,8 @@ const signUp = async () => {
             email: signupForm.email,
             password: signupForm.pwd1,
         });
+        this.confirmSignUpForm.email = this.signupForm.email;
+        this.step = this.bySteps.confirm;
         // navigateTo('/confirmation')
     } catch (error) {
         console.log(error)
