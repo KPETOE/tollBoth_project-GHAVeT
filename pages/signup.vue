@@ -26,9 +26,10 @@
 
         </v-parallax> -->
         <v-container>
-            <v-form v-if="step === steps.register" @submit.prevent="signUp">
-                <v-row>
-                    <!-- <v-col cols="" lg="6" sm="6">
+            <div v-if="!auth.isAuthenticated">
+                <v-form v-if="step === steps.register" @submit.prevent="signUp">
+                    <v-row>
+                        <!-- <v-col cols="" lg="6" sm="6">
                         <v-label class="font-weight-bold">First Name</v-label>
                         <v-text-field class="text-field  modify" v-model="signupForm.fName" type="name"></v-text-field>
                     </v-col>
@@ -49,48 +50,52 @@
                         <v-text-field class="text-field  modify" v-model="signupForm.mobileNo" type="number"></v-text-field>
                     </v-col>  -->
 
-                    <v-col cols="" lg="6" sm="12">
-                        <v-label class="font-weight-bold">Email</v-label>
-                        <v-text-field class="text-field modify" v-model="signupForm.email" type="email"></v-text-field>
-                    </v-col>
-                    <v-col cols="" lg="6" sm="12">
-                        <v-label class="font-weight-bold">Password</v-label>
-                        <v-text-field class="text-field modify " v-model="signupForm.pwd1" type="password"></v-text-field>
-                    </v-col>
-                    <v-col cols="" lg="6" sm="12">
-                        <v-label class="font-weight-bold">Confirm Password</v-label>
-                        <v-text-field class="text-field  modify" v-model="signupForm.pwd2" type="password"></v-text-field>
-                    </v-col>
-                </v-row>
-                <br> <br>
-                <!-- <span v-if="pwdErr == true">
+                        <v-col cols="" lg="6" sm="12">
+                            <v-label class="font-weight-bold">Email</v-label>
+                            <v-text-field class="text-field modify" v-model="signupForm.email" type="email"></v-text-field>
+                        </v-col>
+                        <v-col cols="" lg="6" sm="12">
+                            <v-label class="font-weight-bold">Password</v-label>
+                            <v-text-field class="text-field modify " v-model="signupForm.pwd1"
+                                type="password"></v-text-field>
+                        </v-col>
+                        <v-col cols="" lg="6" sm="12">
+                            <v-label class="font-weight-bold">Confirm Password</v-label>
+                            <v-text-field class="text-field  modify" v-model="signupForm.pwd2"
+                                type="password"></v-text-field>
+                        </v-col>
+                    </v-row>
+                    <br> <br>
+                    <!-- <span v-if="pwdErr == true">
                     <p>{{ pwdErr }}</p>
                 </span>
                 <v-btn type="submit">Sign Up</v-btn> -->
-                <v-btn type="submit">Sign Up</v-btn>
-                <v-divider>Or Sign up with social media</v-divider>
-                <v-row>
-                    <v-col>
-                        <v-btn icon="mdi-google"></v-btn>
-                    </v-col>
-                    <v-col>
-                        <v-btn icon="mdi-facebook"></v-btn>
-                    </v-col>
-                </v-row>
-            </v-form>
-            <v-form @submit.prevent="confirmSignUp" v-else>
-                <v-row>
-                    <v-col cols="" lg="6" sm="12">
-                        <v-label class="font-weight-bold">Email</v-label>
-                        <v-text-field class="text-field modify" v-model="confirmForm.email" type="email"></v-text-field>
-                    </v-col>
-                    <v-col cols="" lg="6" sm="12">
-                        <v-label class="font-weight-bold">Code</v-label>
-                        <v-text-field class="text-field modify " v-model="confirmForm.pwd1" type="number"></v-text-field>
-                    </v-col>
-                </v-row>
-                <v-btn type="submit">Confirm</v-btn>
-            </v-form>
+                    <v-btn type="submit">Sign Up</v-btn>
+                    <v-divider>Or Sign up with social media</v-divider>
+                    <v-row>
+                        <v-col>
+                            <v-btn icon="mdi-google"></v-btn>
+                        </v-col>
+                        <v-col>
+                            <v-btn icon="mdi-facebook"></v-btn>
+                        </v-col>
+                    </v-row>
+                </v-form>
+                <v-form v-else @submit.prevent="confirmSignUp">
+                    <v-row>
+                        <v-col cols="" lg="6" sm="12">
+                            <v-label class="font-weight-bold">Email</v-label>
+                            <v-text-field class="text-field modify" v-model="confirmForm.email" type="email"></v-text-field>
+                        </v-col>
+                        <v-col cols="" lg="6" sm="12">
+                            <v-label class="font-weight-bold">Code</v-label>
+                            <v-text-field class="text-field modify " v-model="confirmForm.pwd1"
+                                type="number"></v-text-field>
+                        </v-col>
+                    </v-row>
+                    <v-btn type="submit">Confirm</v-btn>
+                </v-form>
+            </div>
 
         </v-container>
         <br>
@@ -161,6 +166,7 @@ const signUp = async () => {
 const confirmSignUp = async () => {
     try {
         const { data, error } = await auth.verifyOtp({ email, token, type: 'email' });
+        return navigateTo('/')
     } catch (error) {
         console.log(error);
     }
@@ -195,5 +201,4 @@ const confirmSignUp = async () => {
 .social-divider {
     color: rgb(243, 242, 242);
 
-}
-</style>
+}</style>
