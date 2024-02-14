@@ -26,8 +26,8 @@
 
         </v-parallax> -->
         <v-container>
-            <!-- <div v-if="!auth.signUp"> -->
-                <v-form v-if="step === bySteps.register" @submit.prevent="signUp">
+            <!-- <div v-if="auth.signUp"> -->
+                <v-form @submit.prevent="signUp">
                     <v-row>
                         <!-- <v-col cols="" lg="6" sm="6">
                         <v-label class="font-weight-bold">First Name</v-label>
@@ -81,7 +81,7 @@
                         </v-col>
                     </v-row>
                 </v-form>
-                <v-form v-else @submit.prevent="confirmSignUp">
+                <!-- <v-form v-else @submit.prevent="confirmSignUp">
                     <v-row>
                         <v-col cols="" lg="6" sm="12">
                             <v-label class="font-weight-bold">Email</v-label>
@@ -94,7 +94,7 @@
                         </v-col>
                     </v-row><br>
                     <v-btn type="submit">Confirm</v-btn>
-                </v-form>
+                </v-form> -->
             <!-- </div> -->
             <!-- <div v-else>You're In {{ user.email }}</div> -->
 
@@ -114,13 +114,13 @@ definePageMeta({
     layout: 'custom'
 });
 
-const bySteps = {
-    register: 'REGISTER',
-    confirm: 'CONFIRM'
-};
+// const bySteps = {
+//     register: 'REGISTER',
+//     confirm: 'CONFIRM'
+// };
 
-const steps = { ...bySteps.value }
-const step = bySteps.register;
+// const steps = { ...bySteps.value }
+// const step = bySteps.register;
 
 const signUpForm = ref({
     // fName: '',
@@ -133,13 +133,14 @@ const signUpForm = ref({
     pwd2: ''
 });
 
-const confirmSignUpForm = ref({
-    email: '',
-    code: ''
-});
+// const confirmSignUpForm = ref({
+//     email: '',
+//     code: ''
+// });
 
 const signupForm = signUpForm.value;
-const confirmForm = confirmSignUpForm.value;
+// const confirmForm = confirmSignUpForm.value;
+
 
 const signUp = async () => {
     if (signupForm.pwd1 !== signupForm.pwd2) {
@@ -157,22 +158,22 @@ const signUp = async () => {
             email: signupForm.email,
             password: signupForm.pwd1,
         });
-        this.confirmSignUpForm.email = this.signupForm.email;
-        this.step = this.bySteps.confirm;
-        // navigateTo('/confirmation')
+        return navigateTo('/confirm')
+        // const confirmMail = signupForm.email;
+        // const step = bySteps.confirm;
     } catch (error) {
         console.log(error)
     }
 };
 
-const confirmSignUp = async () => {
-    try {
-        const { data, error } = await auth.verifyOtp({ email: confirmForm.email, token: confirmForm.code, type: 'email' });
-        return navigateTo('/')
-    } catch (error) {
-        console.log(error);
-    }
-}
+// const confirmSignUp = async () => {
+//     try {
+//         const { data, error } = await auth.verifyOtp({ email: confirmForm.email, token: confirmForm.code, type: 'email' });
+//         return navigateTo('/')
+//     } catch (error) {
+//         console.log(error);
+//     }
+// };
 
 // watchEffect(() => {
 //     if (!user.value) {
