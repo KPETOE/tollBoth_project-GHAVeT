@@ -26,7 +26,7 @@
 
         </v-parallax> -->
         <v-container>
-            <div v-if="!auth.isAuthenticated">
+            <div v-if="!auth.signUp === false">
                 <v-form v-if="step === steps.register" @submit.prevent="signUp">
                     <v-row>
                         <!-- <v-col cols="" lg="6" sm="6">
@@ -165,7 +165,7 @@ const signUp = async () => {
 
 const confirmSignUp = async () => {
     try {
-        const { data, error } = await auth.verifyOtp({ email, token, type: 'email' });
+        const { data, error } = await auth.verifyOtp({ email: confirmForm.email, token: confirmForm.code, type: 'email' });
         return navigateTo('/')
     } catch (error) {
         console.log(error);
@@ -201,4 +201,5 @@ const confirmSignUp = async () => {
 .social-divider {
     color: rgb(243, 242, 242);
 
-}</style>
+}
+</style>
