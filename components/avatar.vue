@@ -14,17 +14,17 @@
                         <v-avatar image="/img/hawa.png">
                             <!-- <span class="text-h5"><v-img src="/img/hawa.png"></v-img></span> -->
                         </v-avatar>
-                        <h3>Hawa Thompson</h3>
+                        <!-- <h3>{{ user.id }}</h3> -->
                         <p class="text-caption mt-1">
-                            ht@gmail.com
+                            {{ user.email }}
                         </p>
                         <v-divider class="my-3"></v-divider>
                         <v-btn rounded variant="text">
                             Edit Account
                         </v-btn>
                         <v-divider class="my-3"></v-divider>
-                        <v-btn rounded variant="text">
-                            Disconnect
+                        <v-btn @click="logOut" rounded variant="text">
+                            Logout
                         </v-btn>
                     </div>
                 </v-card-text>
@@ -32,3 +32,12 @@
         </v-menu>
     </div>
 </template>
+<script setup>
+const { auth } = useSupabaseClient();
+const user = useSupabaseUser();
+
+const logOut = async () => {
+    const { error } = await auth.signOut()
+};
+
+</script>
