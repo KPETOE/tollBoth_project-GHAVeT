@@ -18,7 +18,7 @@
 
             <p class="text-center font-weight-bold text-center " style=" color: rgb(219, 54, 54);  font-size: 1rem;"> Please
                 complete
-                the following form for your new RFID tag for tolling. <br> Ensure all information is accurate and complete
+                the following form for your new RFID tag for your Vehicle. <br> Ensure all information is accurate and complete
                 to expedite the processing of your application. <br> Thank you for choosing our tolling services.</p>
             <div>
                 <v-container>
@@ -33,8 +33,8 @@
                                 <v-row class="d-flex justify-center" style="text-align: center">
                                     <v-col cols="12">
                                         <div style="background-color: azure; width: 34.5em;" class=" corners">
-                                            <v-text-field v-model="input6" label="New  Owner Account Name" outlined
-                                                color="white" class="mx-auto  corners" :rules="input6Rules"
+                                            <v-text-field v-model="input6" label="Vehicle make and Modle" outlined
+                                                color="white" class="mx-auto  corners"  :rules="vehicleMakeModelRules"
                                                 style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
                                                 variant="plain"></v-text-field>
                                         </div>
@@ -53,9 +53,9 @@
                                 <v-row class="d-flex justify-center" style="text-align: center">
                                     <v-col cols="12">
                                         <div style="background-color: azure; width: 34.5em;" class=" corners">
-                                            <v-text-field v-model="input6" label="New  Owner Account Name" outlined
-                                                color="white" class="mx-auto corners" :rules="input6Rules"
-                                                style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
+                                            <v-text-field v-model="input1" label="Home or Work Address" outlined
+                                                color="white" class="mx-auto corners" :rules="addressRules"
+                                                style="box-shadow: none; width: 550px; background: linear-gradient(to right, rgba(75, 156, 162, 0.331), rgba(135, 207, 235, 0.486), #31759a48, #153445b4) !important;"
                                                 variant="plain"></v-text-field>
                                         </div>
                                     </v-col>
@@ -74,8 +74,8 @@
                                 <v-row class="d-flex justify-center" style="text-align: center">
                                     <v-col cols="12">
                                         <div style="background-color: azure; width: 34.5em;" class=" corners">
-                                            <v-text-field v-model="input6" label="GH Card Number" outlined
-                                                color="white" class="mx-auto corners" :rules="input6Rules"
+                                            <v-text-field v-model="input2" label="GH Card Number" outlined
+                                                color="white" class="mx-auto corners" :rules="ghCardNumberRules"
                                                 style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
                                                 variant="plain"></v-text-field>
                                         </div>
@@ -95,8 +95,8 @@
                                 <v-row class="d-flex justify-center" style="text-align: center">
                                     <v-col cols="12">
                                         <div style="background-color: azure; width: 34.5em;" class=" corners">
-                                            <v-text-field v-model="input6" label="New  Owner Account Name" outlined
-                                                color="white" class="mx-auto  corners" :rules="input6Rules"
+                                            <v-text-field v-model="input3" label="Plate Number" outlined
+                                                color="white" class="mx-auto  corners" :rules="plateNumberRules"
                                                 style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
                                                 variant="plain"></v-text-field>
                                         </div>
@@ -144,8 +144,8 @@
                                 <v-row class="d-flex justify-center" style="text-align: center">
                                     <v-col cols="12">
                                         <div style="background-color: azure; width: 34.5em;" class=" corners">
-                                            <v-text-field v-model="input6" label="New  Owner Account Name" outlined
-                                                color="white" class="mx-auto corners" :rules="input6Rules"
+                                            <v-text-field v-model="input4" label="Road Worhty" outlined
+                                                color="white" class="mx-auto corners" :rules="roadWorthyRules"
                                                 style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
                                                 variant="plain"></v-text-field>
                                         </div>
@@ -170,8 +170,8 @@
                                         </button> -->
 
                                         <div style="background-color: azure; width: 34.5em;  " class=" corners">
-                                            <v-text-field v-model="input6" label="New  Owner Account Name" outlined
-                                                color="white" class="mx-auto  corners" :rules="input6Rules"
+                                            <v-text-field v-model="input5" label="Serial #" outlined
+                                                color="white" class="mx-auto  corners" :rules="insuranceSerialNumberRules"
                                                 style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
                                                 variant="plain"></v-text-field>
                                         </div>
@@ -199,8 +199,8 @@
                                                 :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
                                                 item-text="name" v-model="selectedItem" outlined hide-details="auto"
                                                 class="custom-background"
-                                                style="box-shadow: none; width: 550px;  height: 4em;  background-color: rgba(170, 170, 221, 0.489);"
-                                                variant="plain" placeholder="Select the Nearest Office"></v-combobox>
+                                                style="box-shadow: none; width: 550px;  height: 4em;  background: linear-gradient(to right, rgba(75, 156, 162, 0.331), rgba(135, 207, 235, 0.486), #31759a48, #153445b4) !important;"
+                                                variant="plain" placeholder="Select the Nearest DVLA Office"></v-combobox>
 
                                         </div>
                                     </v-col>
@@ -252,10 +252,66 @@
 const yesChecked = ref(false);
 const noChecked = ref(false);
 
+
+// Define reactive variables for form inputs
+const input1 = ref('');
+const input2 = ref('');
+const input3 = ref('');
+const input4 = ref('');
+const input5 = ref('');
+const input6 = ref('');
+
+
+
+// Validation rules for Vehicle Make and Model
+const vehicleMakeModelRules = [
+    value => !!value || 'Field is required',
+    value => (value && value.length <= 70) || 'Max 70 characters allowed',
+];
+
+// Validation rules for Home or Work Address
+const addressRules = [
+    value => !!value || 'Field is required',
+    value => (value && value.length <= 100) || 'Max 100 characters allowed',
+];
+
+/// Validation rules for GH Card Number
+const ghCardNumberRules = [
+    value => !!value || 'Field is required',
+    value => (value && value.length === 15) || 'GH Card Number should be 15 characters long',
+    value => /^GHA-\d{9}-\d$/.test(value) || 'Invalid GH Card Number format. Format should be GHA-xxxxxxxxx-x where x is a digit.',
+];
+
+
+
+
+
+
+// Validation rules for License Plate Number
+const plateNumberRules = [
+    value => !!value || 'Field is required',
+    value => (value && value.length <= 15) || 'Max 15 characters allowed',
+    // Add more specific rules for license plate format if needed
+];
+
+// Validation rules for Road Worthy
+const roadWorthyRules = [
+    value => !!value || 'Field is required',
+    value => (value && value.length <= 30) || 'Max 30 characters allowed',
+    // Add more specific rules for roadworthy format if needed
+];
+
+// Validation rules for Insurance Serial Number
+const insuranceSerialNumberRules = [
+    value => !!value || 'Field is required',
+    value => (value && value.length <= 25) || 'Max 25 characters allowed',
+    // Add more specific rules for insurance serial number format if needed
+];
+
 </script>
 <style>
 .corners {
-
+    background: linear-gradient(to right, rgba(75, 156, 162, 0.331), rgba(135, 207, 235, 0.486), #31759a48, #1534459b) !important;
     border-top-left-radius: 10px;
     border-top-right-radius: 0px;
     border-bottom-left-radius: 10px;
