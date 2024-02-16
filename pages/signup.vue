@@ -34,33 +34,33 @@
                         <v-text-field class="text-field  modify" v-model="signupForm.fName" type="name"></v-text-field>
                     </v-col>
                     <v-col cols="" lg="6" sm="6">
-                        <v-label>Other Names / Last Name</v-label>
+                        <v-label class="font-weight-bold text-white">Other Names / Last Name</v-label>
                         <v-text-field class="text-field modify" v-model="signupForm.lName" type="name"></v-text-field>
                     </v-col>
                     <v-col cols="" lg="6" sm="12">
-                        <v-label class="font-weight-bold">User Name</v-label>
+                        <v-label class="font-weight-bold text-white">User Name</v-label>
                         <v-text-field class="text-field  modify" v-model="signupForm.uName" type="name"></v-text-field>
                     </v-col>
                     <v-col cols="" lg="6" sm="12">
-                        <v-label class="font-weight-bold">Gh Card No.</v-label>
+                        <v-label class="font-weight-bold text-white">Gh Card No.</v-label>
                         <v-text-field class="text-field  modify" v-model="signupForm.ghCardNo" type="name"></v-text-field>
                     </v-col>
                     <v-col cols="" lg="6" sm="12">
-                        <v-label class="font-weight-bold">Mobile Number</v-label>
+                        <v-label class="font-weight-bold text-white">Mobile Number</v-label>
                         <v-text-field class="text-field  modify" v-model="signupForm.mobileNo" type="number"></v-text-field>
                     </v-col>  
 
                         <v-col cols="" lg="6" sm="12">
-                            <v-label class="font-weight-bold">Email</v-label>
+                            <v-label class="font-weight-bold text-white">Email</v-label>
                             <v-text-field class="text-field modify" v-model="signupForm.email" type="email"></v-text-field>
                         </v-col>
                         <v-col cols="" lg="6" sm="12">
-                            <v-label class="font-weight-bold">Password</v-label>
+                            <v-label class="font-weight-bold text-white">Password</v-label>
                             <v-text-field class="text-field modify " v-model="signupForm.pwd1"
                                 type="password"></v-text-field>
                         </v-col>
                         <v-col cols="" lg="6" sm="12">
-                            <v-label class="font-weight-bold">Confirm Password</v-label>
+                            <v-label class="font-weight-bold text-white">Confirm Password</v-label>
                             <v-text-field class="text-field  modify" v-model="signupForm.pwd2"
                                 type="password"></v-text-field>
                         </v-col>
