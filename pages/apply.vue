@@ -64,6 +64,47 @@
                         </v-col>
 
 
+                        <v-col cols="12" md="6">
+                            <h1 class="mx-auto text-uppercase text-black text-start text-center" style="font-size: 1.3em">
+                               Gh  Card #
+                            </h1>
+                        </v-col>
+                        <v-col cols="12" md="6">
+                            <div class="container">
+                                <v-row class="d-flex justify-center" style="text-align: center">
+                                    <v-col cols="12">
+                                        <div style="background-color: azure; width: 34.5em;" class=" corners">
+                                            <v-text-field v-model="input6" label="GH Card Number" outlined
+                                                color="white" class="mx-auto corners" :rules="input6Rules"
+                                                style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
+                                                variant="plain"></v-text-field>
+                                        </div>
+                                    </v-col>
+                                </v-row>
+                            </div>
+                        </v-col>
+
+
+                        <v-col cols="12" md="6">
+                            <h1 class="mx-auto text-uppercase text-black text-start text-center" style="font-size: 1.3em">
+                                License plate
+                            </h1>
+                        </v-col>
+                        <v-col cols="12" md="6">
+                            <div class="container">
+                                <v-row class="d-flex justify-center" style="text-align: center">
+                                    <v-col cols="12">
+                                        <div style="background-color: azure; width: 34.5em;" class=" corners">
+                                            <v-text-field v-model="input6" label="New  Owner Account Name" outlined
+                                                color="white" class="mx-auto  corners" :rules="input6Rules"
+                                                style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
+                                                variant="plain"></v-text-field>
+                                        </div>
+                                    </v-col>
+                                </v-row>
+                            </div>
+                        </v-col>
+
 
 
                         <v-col cols="12" md="6">
@@ -90,26 +131,6 @@
                         </v-col>
 
 
-
-                        <v-col cols="12" md="6">
-                            <h1 class="mx-auto text-uppercase text-black text-start text-center" style="font-size: 1.3em">
-                                License plate
-                            </h1>
-                        </v-col>
-                        <v-col cols="12" md="6">
-                            <div class="container">
-                                <v-row class="d-flex justify-center" style="text-align: center">
-                                    <v-col cols="12">
-                                        <div style="background-color: azure; width: 34.5em;" class=" corners">
-                                            <v-text-field v-model="input6" label="New  Owner Account Name" outlined
-                                                color="white" class="mx-auto  corners" :rules="input6Rules"
-                                                style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
-                                                variant="plain"></v-text-field>
-                                        </div>
-                                    </v-col>
-                                </v-row>
-                            </div>
-                        </v-col>
 
 
 
