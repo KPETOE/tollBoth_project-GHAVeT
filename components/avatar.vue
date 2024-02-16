@@ -35,9 +35,10 @@
 <script setup>
 const { auth } = useSupabaseClient();
 const user = useSupabaseUser();
-
+const router = useRouter();
 const logOut = async () => {
-    const { error } = await auth.signOut()
+    const { error } = await auth.signOut();
+    router.push('/')
 };
 
 </script>

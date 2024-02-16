@@ -39,6 +39,7 @@
                     </v-col>
                 </v-row>
                 <br>
+                <p class="text-center">Don't have an account? <nuxt-link to="/signup">Signup here</nuxt-link></p>
                 <v-row align="center" justify="center">
                     <v-col cols="12" sm="6">
                         <v-btn type="submit">Submit</v-btn>

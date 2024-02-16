@@ -44,8 +44,8 @@ export default defineNuxtConfig({
     key: process.env.SUPABASE_KEY,
     redirect:false
   },
-  baseUrl: '/nuxt-github-pages/',
-  buildAssetsDir: 'assets',
+  // baseUrl: '/nuxt-github-pages/',
+  // buildAssetsDir: 'assets',
 
   runtimeConfig: {
     public: {

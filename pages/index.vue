@@ -273,6 +273,10 @@
     </div>
 </template>
 <script setup>
+const { auth } = useSupabaseClient();
+const user = useSupabaseUser();
+const router = useRouter();
+
 // import imgbg from '../assets/img/home.jpeg'
 
 // const homeContent = await useFetch('https://admin.gathstudents.com/api/home-page?populate=*');

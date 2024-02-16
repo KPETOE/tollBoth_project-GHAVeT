@@ -20,35 +20,39 @@
               </li>
               <li class="nav-item">
                 <NuxtLink class="nav-link text-white" to="/events/">
-                  Transaction.
+                  Transaction
                 </NuxtLink>
               </li>
               <li class="nav-item">
                 <NuxtLink class="nav-link text-white" to="/Accountsdetails">
-                  Accounts Details.
+                  Accounts Details
                 </NuxtLink>
               </li>
 
               <li class="nav-item">
-                <NuxtLink class="nav-link text-white" to="/Accounts">
-                  Accounts.
+                <NuxtLink v-if="user == null" class="nav-link text-white" to="/login">
+                  Accounts
                 </NuxtLink>
+                <NuxtLink v-else class="nav-link text-white" to="/Accounts">
+                  Accounts
+                </NuxtLink>
+
               </li>
               <li class="nav-item">
                 <NuxtLink class="nav-link text-white" to="/Ownership">
-                  Tranfer Ownership.
+                  Tranfer Ownership
                 </NuxtLink>
               </li>
               <li class="nav-item">
                 <NuxtLink class="nav-link text-white" to="/about">
-                  About.
+                  About
                 </NuxtLink>
               </li>
               <li class="nav-item">
                 <NuxtLink class="nav-link text-white" to="/apply">Apply</NuxtLink>
               </li>
               <li class="nav-item">
-                <NuxtLink class="nav-link text-white" to="/gallery">My Applications.</NuxtLink>
+                <NuxtLink class="nav-link text-white" to="/gallery">My Applications</NuxtLink>
               </li>
               <li class="nav-item">
                 <NuxtLink class="nav-link text-white" to="/contact">Contact Us</NuxtLink>
