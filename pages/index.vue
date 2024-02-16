@@ -26,7 +26,9 @@
                         </p>
                         <v-row>
                             <v-col class="mx-auto" cols="auto" lg="3" sm="6">
-                                <v-btn variant="flat" to="/about" color="red-accent-2">Learn More
+                                <v-btn v-if="user == null" variant="flat" to="/login" color="red-accent-2">Learn More
+                                    <v-icon>mdi-arrow-right-thin-circle-outline</v-icon></v-btn>
+                                <v-btn v-else variant="flat" to="/about" color="red-accent-2">Learn More
                                     <v-icon>mdi-arrow-right-thin-circle-outline</v-icon></v-btn>
                             </v-col>
                             <!-- <v-col class="mx-auto" cols="auto" lg="6" md="6" sm="6">
@@ -37,7 +39,11 @@
 
                             <v-col class="mx-auto" cols="auto" lg="6" md="6" sm="6">
                                 <v-btn variant="outlined" color="white">
-                                    <NuxtLink to="/apply" class="nav-link text-white">
+                                    <NuxtLink v-if="user == null" to="/login" class="nav-link text-white">
+                                        APPLY FOR YOUR GHaVeT Tag
+                                        <v-icon>mdi-arrow-right-thin-circle-outline</v-icon>
+                                    </NuxtLink>
+                                    <NuxtLink v-else to="/apply" class="nav-link text-white">
                                         APPLY FOR YOUR GHaVeT Tag
                                         <v-icon>mdi-arrow-right-thin-circle-outline</v-icon>
                                     </NuxtLink>
@@ -66,11 +72,15 @@
                         </p>
                         <v-row>
                             <v-col cols="auto" lg="4" sm="6">
-                                <v-btn to="/about" color="red-accent-2">Learn More
+                                <v-btn v-if="user == null" to="/login" color="red-accent-2">Learn More
+                                    <v-icon>mdi-arrow-right-thin-circle-outline</v-icon></v-btn>
+                                <v-btn v-else to="/about" color="red-accent-2">Learn More
                                     <v-icon>mdi-arrow-right-thin-circle-outline</v-icon></v-btn>
                             </v-col>
                             <v-col cols="auto" lg="5" sm="6">
-                                <v-btn variant="outlined" to="/chapter" color="indigo-darken-2" flat>Find More
+                                <v-btn v-if="user==null" variant="outlined" to="/login" color="indigo-darken-2" flat>Find More
+                                    <v-icon>mdi-arrow-right-thin-circle-outline</v-icon></v-btn>
+                                <v-btn v-else variant="outlined" to="/chapter" color="indigo-darken-2" flat>Find More
                                     <v-icon>mdi-arrow-right-thin-circle-outline</v-icon></v-btn>
                             </v-col>
                         </v-row>
