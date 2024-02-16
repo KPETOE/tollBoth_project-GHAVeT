@@ -19,12 +19,18 @@
                 <NuxtLink class="nav-link text-white" aria-current="page" to="/">Home</NuxtLink>
               </li>
               <li class="nav-item">
-                <NuxtLink class="nav-link text-white" to="/events/">
+                <NuxtLink v-if="user == null" class="nav-link text-white" to="/login">
+                  Transaction
+                </NuxtLink>
+                <NuxtLink v-else class="nav-link text-white" to="/events/">
                   Transaction
                 </NuxtLink>
               </li>
               <li class="nav-item">
-                <NuxtLink class="nav-link text-white" to="/Accountsdetails">
+                <NuxtLink v-if="user == null" class="nav-link text-white" to="/login">
+                  Accounts Details
+                </NuxtLink>
+                <NuxtLink v-else class="nav-link text-white" to="/Accountsdetails">
                   Accounts Details
                 </NuxtLink>
               </li>
@@ -39,23 +45,32 @@
 
               </li>
               <li class="nav-item">
-                <NuxtLink class="nav-link text-white" to="/Ownership">
+                <NuxtLink v-if="user == null" class="nav-link text-white" to="/login">
+                  Tranfer Ownership
+                </NuxtLink>
+                <NuxtLink v-else class="nav-link text-white" to="/Ownership">
                   Tranfer Ownership
                 </NuxtLink>
               </li>
               <li class="nav-item">
-                <NuxtLink class="nav-link text-white" to="/about">
+                <NuxtLink v-if="user == null" class="nav-link text-white" to="/login">
+                  About
+                </NuxtLink>
+                <NuxtLink v-else class="nav-link text-white" to="/about">
                   About
                 </NuxtLink>
               </li>
               <li class="nav-item">
-                <NuxtLink class="nav-link text-white" to="/apply">Apply</NuxtLink>
+                <NuxtLink v-if="user == null" class="nav-link text-white" to="/login">Apply</NuxtLink>
+                <NuxtLink v-else class="nav-link text-white" to="/apply">Apply</NuxtLink>
               </li>
               <li class="nav-item">
-                <NuxtLink class="nav-link text-white" to="/gallery">My Applications</NuxtLink>
+                <NuxtLink v-if="user == null" class="nav-link text-white" to="/login">My Applications</NuxtLink>
+                <NuxtLink v-else class="nav-link text-white" to="/gallery">My Applications</NuxtLink>
               </li>
               <li class="nav-item">
-                <NuxtLink class="nav-link text-white" to="/contact">Contact Us</NuxtLink>
+                <NuxtLink v-if="user == null" class="nav-link text-white" to="/login">Contact Us</NuxtLink>
+                <NuxtLink v-else class="nav-link text-white" to="/contact">Contact Us</NuxtLink>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white" @click="toggleSearch">
