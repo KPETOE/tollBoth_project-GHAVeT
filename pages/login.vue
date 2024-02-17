@@ -13,16 +13,6 @@
         </v-row>
 
 
-        <!-- <v-form @submit.prevent="signIn"  style="background-color: aliceblue;">
-            <v-text-field class="text-field  text-center" type="name" v-model="loginForm.userName"
-                placeholder="User Name"></v-text-field>
-
-                <br>  <br>
-            <v-spacer></v-spacer>
-            <v-text-field class="text-field" type="password" v-model="loginForm.password" placeholder="Password"></v-text-field>
-            <br>  <br>
-            <v-btn type="submit">Submit</v-btn>
-        </v-form> -->
         <v-container fluid style="height: ;">
             <v-form @submit.prevent="signIn" style="text-align: center;">
                 <v-row align="center" justify="center">
@@ -39,8 +29,10 @@
                     </v-col>
                 </v-row>
                 <br>
-                <p class="text-center">Don't have an account? <nuxt-link style="text-decoration: none;" class="text-white" to="/signup">Signup here</nuxt-link></p><br>
-                <p class="text-center">Forgot Password? <v-btn style="text-decoration: none;" class="text-white" variant="text" @click="changePwd">Click here</v-btn></p>
+                <p class="text-center">Don't have an account? <nuxt-link style="text-decoration: none;" class="text-white"
+                        to="/signup">Signup here</nuxt-link></p><br>
+                <p class="text-center">Forgot Password? <v-btn style="text-decoration: none;" class="text-white"
+                        variant="text" @click="changePwd">Click here</v-btn></p>
                 <v-row align="center" justify="center">
                     <v-col cols="12" sm="6">
                         <v-btn type="submit">Submit</v-btn>
@@ -76,17 +68,9 @@ const signIn = async () => {
     }
 };
 
-const changePwd = async () => {
-    const { data, error } = await auth.resetPasswordForEmail({
-        redirectTo: 'http://localhost:3000/update-password'
-    })
-};
 
-// watchEffect(() => {
-//     if (!user.value) {
-//         return navigateTo('/login')
-//     }
-// });
+
+
 </script>
 
 
