@@ -40,16 +40,17 @@ const changePwd = async () => {
         alert('Your password does not match!');
     }
 
-    if (user.value.email == true && user.value.email == forgetPwdForm.value.email) {
+    // if (user.value.email === forgetPwdForm.value.email) {
         try {
             const { data, error } = await auth.updateUser({
                 password: forgetPwdForm.value.newPassword
             })
+            navigateTo('/login')
             console.log("Successful!")
         } catch (error) {
             console.log(error)
             alert("An Error Occured!")
         }
-    }
+    // }
 };
 </script>
