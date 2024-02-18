@@ -81,22 +81,7 @@
                         </v-col>
                     </v-row>
                 </v-form>
-                <!-- <v-form v-else @submit.prevent="confirmSignUp">
-                    <v-row>
-                        <v-col cols="" lg="6" sm="12">
-                            <v-label class="font-weight-bold">Email</v-label>
-                            <v-text-field class="text-field modify" v-model="confirmForm.email" type="email"></v-text-field>
-                        </v-col>
-                        <v-col cols="" lg="6" sm="12">
-                            <v-label class="font-weight-bold">Code</v-label>
-                            <v-text-field class="text-field modify " v-model="confirmForm.pwd1"
-                                type="number"></v-text-field>
-                        </v-col>
-                    </v-row><br>
-                    <v-btn type="submit">Confirm</v-btn>
-                </v-form> -->
-            <!-- </div> -->
-            <!-- <div v-else>You're In {{ user.email }}</div> -->
+                
 
         </v-container>
         <br>
@@ -114,20 +99,13 @@ definePageMeta({
     layout: 'custom'
 });
 
-// const bySteps = {
-//     register: 'REGISTER',
-//     confirm: 'CONFIRM'
-// };
-
-// const steps = { ...bySteps.value }
-// const step = bySteps.register;
 
 const signUpForm = ref({
-    // fName: '',
-    // lName: '',
-    // uName: '',
-    // ghCardNo: '',
-    // mobileNo: '',
+    fName: '',
+    lName: '',
+    uName: '',
+    ghCardNo: '',
+    mobileNo: '',
     email: '',
     pwd1: '',
     pwd2: ''
@@ -155,6 +133,11 @@ const signUp = async () => {
 
     try {
         const { data, error } = await auth.signUp({
+            First_Name: signupForm.fName,
+            Last_Name: signupForm.lName,
+            Username: signupForm.uName,
+            GH_Card_Number: signupForm.ghCardNo,
+            Mobile_Number: signupForm.mobileNo,
             email: signupForm.email,
             password: signupForm.pwd1,
         });

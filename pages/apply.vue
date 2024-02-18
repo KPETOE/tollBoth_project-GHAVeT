@@ -16,9 +16,10 @@
                 </v-col>
             </v-row>
 
-            <p class="text-center font-weight-bold text-center " style=" color: rgb(219, 54, 54);  font-size: 1rem;"> Please
+            <p class="text-center font-weight-bold text-center " style=" color: rgb(219, 54, 54);  font-size: 1rem;">Please
                 complete
-                the following form for your new RFID tag for your Vehicle. <br> Ensure all information is accurate and complete
+                the following form for your new RFID tag for your Vehicle. <br> Ensure all information is accurate and
+                complete
                 to expedite the processing of your application. <br> Thank you for choosing our tolling services.</p>
             <div>
                 <v-container>
@@ -34,7 +35,7 @@
                                     <v-col cols="12">
                                         <div style="background-color: azure; width: 34.5em;" class=" corners">
                                             <v-text-field v-model="input6" label="Vehicle make and Modle" outlined
-                                                color="white" class="mx-auto  corners"  :rules="vehicleMakeModelRules"
+                                                color="white" class="mx-auto corners" :rules="vehicleMakeModelRules"
                                                 style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
                                                 variant="plain"></v-text-field>
                                         </div>
@@ -66,7 +67,7 @@
 
                         <v-col cols="12" md="6">
                             <h1 class="mx-auto text-uppercase text-black text-start text-center" style="font-size: 1.3em">
-                               Gh  Card #
+                                Gh Card #
                             </h1>
                         </v-col>
                         <v-col cols="12" md="6">
@@ -74,8 +75,8 @@
                                 <v-row class="d-flex justify-center" style="text-align: center">
                                     <v-col cols="12">
                                         <div style="background-color: azure; width: 34.5em;" class=" corners">
-                                            <v-text-field v-model="input2" label="GH Card Number" outlined
-                                                color="white" class="mx-auto corners" :rules="ghCardNumberRules"
+                                            <v-text-field v-model="input2" label="GH Card Number" outlined color="white"
+                                                class="mx-auto corners" :rules="ghCardNumberRules"
                                                 style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
                                                 variant="plain"></v-text-field>
                                         </div>
@@ -95,8 +96,8 @@
                                 <v-row class="d-flex justify-center" style="text-align: center">
                                     <v-col cols="12">
                                         <div style="background-color: azure; width: 34.5em;" class=" corners">
-                                            <v-text-field v-model="input3" label="Plate Number" outlined
-                                                color="white" class="mx-auto  corners" :rules="plateNumberRules"
+                                            <v-text-field v-model="input3" label="Plate Number" outlined color="white"
+                                                class="mx-auto  corners" :rules="plateNumberRules"
                                                 style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
                                                 variant="plain"></v-text-field>
                                         </div>
@@ -144,8 +145,8 @@
                                 <v-row class="d-flex justify-center" style="text-align: center">
                                     <v-col cols="12">
                                         <div style="background-color: azure; width: 34.5em;" class=" corners">
-                                            <v-text-field v-model="input4" label="Road Worhty" outlined
-                                                color="white" class="mx-auto corners" :rules="roadWorthyRules"
+                                            <v-text-field v-model="input4" label="Road Worhty" outlined color="white"
+                                                class="mx-auto corners" :rules="roadWorthyRules"
                                                 style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
                                                 variant="plain"></v-text-field>
                                         </div>
@@ -170,8 +171,8 @@
                                         </button> -->
 
                                         <div style="background-color: azure; width: 34.5em;  " class=" corners">
-                                            <v-text-field v-model="input5" label="Serial #" outlined
-                                                color="white" class="mx-auto  corners" :rules="insuranceSerialNumberRules"
+                                            <v-text-field v-model="input5" label="Serial #" outlined color="white"
+                                                class="mx-auto  corners" :rules="insuranceSerialNumberRules"
                                                 style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
                                                 variant="plain"></v-text-field>
                                         </div>
@@ -219,26 +220,26 @@
                 </h1>
 
 
-              <v-row align="center"   cols="" lg="12" md="6" class="d-flex ">
+                <v-row align="center" cols="" lg="12" md="6" class="d-flex ">
 
-                <v-col  cols="" lg="6" md="6" sm="6">
-                    <v-checkbox label="I Have Read And Agree With Terms And Conditions
+                    <v-col cols="" lg="6" md="6" sm="6">
+                        <v-checkbox label="I Have Read And Agree With Terms And Conditions
                  Of Used."></v-checkbox>
-                </v-col>
+                    </v-col>
 
-                <v-col align="right"   cols="" lg="6" md="6" sm="6">
-                    <v-btn @click="handleSubmit" type="submit" prepend-icon="mdi-check-circle" class="B-clear">
-                        <template v-slot:prepend>
-                            <v-icon color="success"></v-icon>
-                        </template>
-                        Submit
-                        <template v-slot:append>
-                            <v-icon color="warning"></v-icon>
-                        </template>
-                    </v-btn>
-                </v-col>
+                    <v-col align="right" cols="" lg="6" md="6" sm="6">
+                        <v-btn @click="handleSubmit" type="submit" prepend-icon="mdi-check-circle" class="B-clear">
+                            <template v-slot:prepend>
+                                <v-icon color="success"></v-icon>
+                            </template>
+                            Submit
+                            <template v-slot:append>
+                                <v-icon color="warning"></v-icon>
+                            </template>
+                        </v-btn>
+                    </v-col>
 
-            </v-row>
+                </v-row>
             </v-container>
 
 
@@ -248,6 +249,8 @@
 </template>
 <script setup>
 // import imgbg from '../assets/img/home.jpeg'
+const client = useSupabaseClient();
+
 
 const yesChecked = ref(false);
 const noChecked = ref(false);

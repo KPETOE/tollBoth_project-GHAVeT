@@ -3,7 +3,7 @@
         <div>
             <v-container>
                 <h2 class="text-uppercase text-black text-center font-weight-bold  ">
-                    Transfer of OWwnership
+                    Transfer of Ownership
 
 
                 </h2>
@@ -13,7 +13,7 @@
                 <div class="form">
 
 
-                    <form id="myForm" style="text-align: center; ">
+                    <form @submit.prevent="" id="myForm" style="text-align: center; ">
                         <!-- Text inputs -->
 
 
@@ -137,7 +137,7 @@
                             <v-col cols="12" lg="6" md="6">
                                 <!-- <v-btn @click="handleSubmit" type="submit" color="success">Submit</v-btn> -->
 
-                                <v-btn @click="handleSubmit" type="submit" prepend-icon="mdi-check-circle"  class="B-clear">
+                                <v-btn @click="handleSubmit" type="submit" prepend-icon="mdi-check-circle" class="B-clear">
                                     <template v-slot:prepend>
                                         <v-icon color="success"></v-icon>
                                     </template>
@@ -149,7 +149,7 @@
                             </v-col>
 
                             <v-col cols="12" lg="6" md="6">
-                                <v-btn @click="clearForm" prepend-icon="mdi-alert-circle"  class="B-clear text-red">Clear
+                                <v-btn @click="clearForm" prepend-icon="mdi-alert-circle" class="B-clear text-red">Clear
                                     <template v-slot:append>
                                         <v-icon color="warning"></v-icon>
                                     </template>
@@ -202,9 +202,8 @@
 </template>
 
 <script setup>
-
-import { ref } from 'vue';
-
+const client = useSupabaseClient();
+const user = useSupabaseUser();
 // Define reactive variables for form inputs
 const input1 = ref('');
 const input2 = ref('');
@@ -308,16 +307,16 @@ const input6Rules = [
 }
 
 
-.B-clear{
+.B-clear {
 
     background: linear-gradient(to right, rgba(36, 71, 37, 0.331), rgba(135, 235, 173, 0), #31759ab4, #153445b4) !important;
 
 
 }
 
-.B-clear:hover{
+.B-clear:hover {
     transition: all 0.9s ease;
-    font-weight: bold; 
+    font-weight: bold;
     opacity: 0.8;
     color: #000000;
     border: 2px solid #ffffff;
