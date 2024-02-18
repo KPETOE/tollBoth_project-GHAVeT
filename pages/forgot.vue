@@ -4,7 +4,7 @@
             <v-form @submit.prevent="changePwd">
                 <v-row>
                     <v-col>
-                        <v-text-field type="email" style="background-color: white;" placeholder="email"
+                        <v-text-field  class="forgot" type="email" style="" placeholder="email"
                             v-model="change.email"></v-text-field>
                     </v-col>
                 </v-row><br>
@@ -37,3 +37,16 @@ const changePwd = async () => {
 
 };
 </script>
+
+<style>
+
+.forgot{
+
+    background: linear-gradient(to right, rgba(75, 156, 162, 0.331), rgba(135, 207, 235, 0.486), #31759a48, #1534459b) !important;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 15px;
+}
+
+</style>
