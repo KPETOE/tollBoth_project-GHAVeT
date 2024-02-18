@@ -1,21 +1,18 @@
 <template>
-    <div>
-        <v-container>
-            <v-form @submit.prevent="changePwd">
+    <div   style="height:500em;">
+        <v-container class="row justify-content-center" style="height=500em;">
+            <v-form @submit.prevent="changePwd" class="text-center">
                 <v-row>
-                    <v-col>
-                        <v-text-field  class="forgot" type="email" style="
-    background: linear-gradient(to right, rgba(75, 156, 162, 0.331), rgba(135, 207, 235, 0.486), #31759a48, #1534459b) !important;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 15px;" placeholder="email"
-                            v-model="change.email"></v-text-field>
+                    <v-col class="text-center">
+                        <v-text-field class="forgot" type="email" placeholder="email" v-model="change.email"></v-text-field>
                     </v-col>
                 </v-row><br>
                 <v-btn type="submit">Send Reset Link</v-btn>
             </v-form>
         </v-container>
+
+       
+
     </div>
 </template>
 <script setup>
@@ -44,14 +41,23 @@ const changePwd = async () => {
 </script>
 
 <style>
-/* 
-.forgot{
+.forgot {
 
+    width: 40em;
+    margin: 0 auto;
     background: linear-gradient(to right, rgba(75, 156, 162, 0.331), rgba(135, 207, 235, 0.486), #31759a48, #1534459b) !important;
     border-top-left-radius: 10px;
     border-top-right-radius: 0px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 15px;
-} */
+}
 
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 0 auto;
+}
 </style>
