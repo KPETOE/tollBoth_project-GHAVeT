@@ -62,7 +62,7 @@
                         <h3 class="text-sentence">DRIVING INTO THE FUTURE WITH GHaVeT REVOLUTIONARY ElECTRONIC TOLL
                             COLLECTION SERVICES</h3> <br>
                         <p class="justify-content-start">In the fast-paced world of transportation,
-                            efficiency is key. At [Your Company Name], we understand the importance of
+                            efficiency is key. At GHAVeT's, we understand the importance of
                             smooth and hassle-free journeys, which is why we specialize in cutting-edge
                             Electronic Toll Collection (ETC) services.Our state-of-the-art ETC system is
                             designed to simplify your travel experience, eliminating the need for cash
@@ -78,7 +78,8 @@
                                     <v-icon>mdi-arrow-right-thin-circle-outline</v-icon></v-btn>
                             </v-col>
                             <v-col cols="auto" lg="5" sm="6">
-                                <v-btn v-if="user==null" variant="outlined" to="/login" color="indigo-darken-2" flat>Find More
+                                <v-btn v-if="user == null" variant="outlined" to="/login" color="indigo-darken-2" flat>Find
+                                    More
                                     <v-icon>mdi-arrow-right-thin-circle-outline</v-icon></v-btn>
                                 <v-btn v-else variant="outlined" to="/chapter" color="indigo-darken-2" flat>Find More
                                     <v-icon>mdi-arrow-right-thin-circle-outline</v-icon></v-btn>
@@ -103,12 +104,6 @@
                                 Together, we're paving the way for a future where drivers can thrive, supported
                                 by innovative solutions and strong partnerships.
                             </p>
-                            <!-- <v-col v-for="logo in uniLogos.data" :key="logo.id" cols="4">
-                                <v-img height="4em" aspect-ratio="1"
-                                    :src="'https://admin.gathstudents.com' + logo.attributes.img.data.attributes.url"></v-img>
-                            </v-col> -->
-
-
                         </v-row>
 
                     </v-container>
