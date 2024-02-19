@@ -5,11 +5,11 @@
 
             <br />
 
-            <ul class="d-flex justify-content-end">
+            <!-- <ul class="d-flex justify-content-end">
                 <li class="nav-item">
                     <avatar />
                 </li>
-            </ul>
+            </ul> -->
             <v-row>
                 <v-col cols="12">
                     <h2 class="text-center mb-10  Ella">New Application </h2>

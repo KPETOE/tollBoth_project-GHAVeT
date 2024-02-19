@@ -1,81 +1,81 @@
 <template>
     <div>
-        <v-parallax style="">
-            <div class="accountimg">
-                <br />
+        <!-- <v-parallax style=""> -->
+        <div class="accountimg">
+            <br />
 
-                <ul class="d-flex justify-content-end">
+            <!-- <ul class="d-flex justify-content-end">
                     <li class="nav-item">
                         <avatar />
                     </li>
-                </ul>
+                </ul> -->
 
-                <div>
-                    <v-container>
-                        <v-row class="align-items-center">
-                            <v-col cols="12" md="6">
-                                <h1 class="mx-auto text-uppercase text-white text-start text-center" style="font-size: 2em">
-                                    my account
-                                </h1>
-                            </v-col>
-                            <v-col cols="12" md="6">
-                                <div class="container">
-                                    <v-row class="d-flex justify-center" style="text-align: center">
-                                        <v-col cols="12">
-                                            <!-- <button 
+            <div>
+                <v-container>
+                    <v-row class="align-items-center">
+                        <v-col cols="12" md="6">
+                            <h1 class="mx-auto text-uppercase text-white text-start text-center" style="font-size: 2em">
+                                my account
+                            </h1>
+                        </v-col>
+                        <v-col cols="12" md="6">
+                            <div class="container">
+                                <v-row class="d-flex justify-center" style="text-align: center">
+                                    <v-col cols="12">
+                                        <!-- <button 
                                             class="btn btn-primary goods">
                                                 <input type="text" class="form-control textbox" id="textBox1"
                                                     placeholder="GHS 500.00" />
                                             </button> -->
 
-                                            <div style="background-color: rgb(130, 206, 206); width: 20em;  height: 3em;   display: flex; justify-content: center; align-items: center;"
-                                                class="AccField ">
-                                                <v-text-field v-model="input6" label="GHS 500.00" outlined color="white"
-                                                    class="mx-auto AccField" :rules="input6Rules"
-                                                    style="box-shadow: none; width: 50%; margin: 50%; background-color: azure;"
-                                                    variant="plain"></v-text-field>
-                                            </div>
-                                        </v-col>
-                                    </v-row>
-                                </div>
-                            </v-col>
-                        </v-row>
-                    </v-container>
-                    <br>
-                        
-                </div>
+                                        <div style="background-color: rgb(130, 206, 206); width: 20em;  height: 3em;   display: flex; justify-content: center; align-items: center;"
+                                            class="AccField ">
+                                            <v-text-field v-model="input6" label="GHS 500.00" outlined color="white"
+                                                class="mx-auto AccField" :rules="input6Rules"
+                                                style="box-shadow: none; width: 50%; margin: 50%; background-color: azure;"
+                                                variant="plain"></v-text-field>
+                                        </div>
+                                    </v-col>
+                                </v-row>
+                            </div>
+                        </v-col>
+                    </v-row>
+                </v-container>
+                <br>
+
+            </div>
 
 
-                <v-parallax src="/img/Registration.jpg">
-                    <v-container>
-                        <v-table height="300px" dense>
-                            <thead class="bg">
-                                <tr>
-                                    <th class="text-center with-border">GHAVeT Tag</th>
-                                    <th class="text-center with-border">Account</th>
-                                    <th class="text-center with-border">Last Checkpoint</th>
-                                    <th class="text-center with-border">Balance</th>
-                                    <th class="text-center">Deposit</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="item in desserts" :key="item.name" class="text-center">
-                                    <td>{{ item.ghavetTag }}</td>
-                                    <td>{{ item.account }}</td>
-                                    <td>{{ item.lastCheckpoint }}</td>
-                                    <td>{{ item.balance }}</td>
-                                    <td>
-                                        <a :href="getLink(item.deposit)" class="underline-link">{{
-                                            item.deposit
-                                        }}</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </v-table>
-                    </v-container>
+            <v-parallax src="/img/Registration.jpg">
+                <v-container>
+                    <v-table height="500" dense>
+                        <thead class="bg">
+                            <tr>
+                                <th class="text-center with-border">GHAVeT Tag</th>
+                                <th class="text-center with-border">Account</th>
+                                <th class="text-center with-border">Last Checkpoint</th>
+                                <th class="text-center with-border">Balance</th>
+                                <th class="text-center">Deposit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="item in desserts" :key="item.name" class="text-center">
+                                <td>{{ item.ghavetTag }}</td>
+                                <td>{{ item.account }}</td>
+                                <td>{{ item.lastCheckpoint }}</td>
+                                <td>{{ item.balance }}</td>
+                                <td>
+                                    <a :href="getLink(item.deposit)" class="underline-link">{{
+                                        item.deposit
+                                    }}</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </v-table>
+                </v-container>
 
-                    <br /><br />
-                    <v-container>
+                <!-- <br /><br /> -->
+                <!-- <v-container>
                         <v-table height="300px" dense>
                             <thead class="bg">
                                 <tr>
@@ -100,19 +100,19 @@
                                 </tr>
                             </tbody>
                         </v-table>
-                    </v-container>
-                </v-parallax>
+                    </v-container> -->
+            </v-parallax>
 
-                <v-container>
-                    <h3 class="mx-auto text-uppercase text-black text-center block-text" style="font-size: 1em">
-                        ALL Deposited Funds Are Subject to <br />Financial Management And
-                        Money<br />
-                        Laundering REGUALATIONS <br />
-                        ACT 921 2016
-                    </h3>
-                </v-container>
-            </div>
-        </v-parallax>
+            <v-container>
+                <h3 class="mx-auto text-uppercase text-black text-center block-text" style="font-size: 1em">
+                    ALL Deposited Funds Are Subject to <br />Financial Management And
+                    Money<br />
+                    Laundering REGUALATIONS <br />
+                    ACT 921 2016
+                </h3>
+            </v-container>
+        </div>
+        <!-- </v-parallax> -->
     </div>
 </template>
 <script setup>

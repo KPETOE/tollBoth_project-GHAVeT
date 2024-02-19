@@ -10,11 +10,11 @@
                         </a>
                     </li>
                 </ul> -->
-                <ul class="d-flex justify-content-end">
+                <!-- <ul class="d-flex justify-content-end">
                     <li class="nav-item">
                         <avatar />
                     </li>
-                </ul>
+                </ul> -->
                 <v-container>
                     <h1 class="mx-auto text-uppercase text-white text-center" style="font-size: 1.8em">
                         WELCOME TO YOUR FINANCED PLATFORM ALL NECESSARY MEASURES ARE IN
@@ -134,39 +134,39 @@
 <script setup>
 // import imgbg from '../assets/img/home.jpeg'
 
-const homeContent = await useFetch(
-    "https://admin.gathstudents.com/api/home-page?populate=*"
-);
-const home = homeContent.data.value;
-// console.log(homeContent)
-const { data: uniLogos } = await useFetch(
-    "https://admin.gathstudents.com/api/uni-logos?populate=*"
-);
+// const homeContent = await useFetch(
+//     "https://admin.gathstudents.com/api/home-page?populate=*"
+// );
+// const home = homeContent.data.value;
+// // console.log(homeContent)
+// const { data: uniLogos } = await useFetch(
+//     "https://admin.gathstudents.com/api/uni-logos?populate=*"
+// );
 
-const link = "Tourism Impact Report (2022).";
+// const link = "Tourism Impact Report (2022).";
 
-const exeMem = "From the University Tourism Community";
-const memDes =
-    "5+ thousand tourism students have already joined the  university tourism community.";
+// const exeMem = "From the University Tourism Community";
+// const memDes =
+//     "5+ thousand tourism students have already joined the  university tourism community.";
 
-const { data: reps } = await useFetch(
-    "https://admin.gathstudents.com/api/executives?populate=*"
-);
-const { data: testimonies } = await useFetch(
-    "https://admin.gathstudents.com/api/testimonies?populate=*"
-);
-// console.log(testimonies.attributes)
-const { data: events } = await useFetch(
-    "https://admin.gathstudents.com/api/events?populate=*"
-);
-const { data: partners } = await useFetch(
-    "https://admin.gathstudents.com/api/partners?populate=*"
-);
-// console.log(partners)
+// const { data: reps } = await useFetch(
+//     "https://admin.gathstudents.com/api/executives?populate=*"
+// );
+// const { data: testimonies } = await useFetch(
+//     "https://admin.gathstudents.com/api/testimonies?populate=*"
+// );
+// // console.log(testimonies.attributes)
+// const { data: events } = await useFetch(
+//     "https://admin.gathstudents.com/api/events?populate=*"
+// );
+// const { data: partners } = await useFetch(
+//     "https://admin.gathstudents.com/api/partners?populate=*"
+// );
+// // console.log(partners)
 
-const emits = ["profilePhotoClick"]; // Declare the emitted event
+// const emits = ["profilePhotoClick"]; // Declare the emitted event
 
-const profilePhoto = ref("/img/hawa.png"); // Set the default profile photo path
+// const profilePhoto = ref("/img/hawa.png"); // Set the default profile photo path
 
 const showSubscriberDetails = () => {
     // Emit the 'profilePhotoClick' event to be handled internally
