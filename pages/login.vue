@@ -18,7 +18,7 @@
                 <v-row align="center" justify="center">
                     <v-col cols="12" sm="6">
                         <v-text-field class="text-field text-center" type="name" v-model="loginForm.userName"
-                            placeholder="User Name/Email"></v-text-field>
+                            placeholder="User Name/Email" variant="flat"></v-text-field>
                     </v-col>
                 </v-row>
                 <br>
@@ -32,10 +32,10 @@
                         <v-text-field class="text-field text-center" v-model="loginForm.password"
                             :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                             :type="showPassword ? 'text' : 'password'" @click:append="showPassword = !showPassword"
-                            placeholder="Password">
+                            variant="flat" placeholder="Password">
                         </v-text-field>
 
-                        
+
                     </v-col>
                 </v-row>
                 <br>
@@ -74,7 +74,14 @@ const signIn = async () => {
             email: loginForm.userName,
             password: loginForm.password
         });
-        navigateTo('/')
+        if (user.value) {
+            navigateTo('/')
+        }
+        if (!user.value) {
+            alert('Wrong  username or password');
+            navigateTo('/login')
+        }
+        
     } catch (error) {
         console.log(error)
     }
@@ -93,7 +100,7 @@ const showPassword = ref(false);
     width: 35em;
     height: 3.5em;
 
-    background: linear-gradient(to right, rgba(252, 252, 252, 0.331), rgba(135, 207, 235, 0.486), #31759ab4, #153445b4) !important;
+    background: linear-gradient(to right, rgba(252, 252, 252, 0.331), rgba(122, 200, 230, 0.486), #31759ab4, #153445b4) !important;
 
 
     border-top-left-radius: 10px;
@@ -106,6 +113,4 @@ const showPassword = ref(false);
 .body {
     background: linear-gradient(to right, #182831, rgba(72, 113, 129, 0.813), #18252c) !important;
 }
-
-
 </style>
