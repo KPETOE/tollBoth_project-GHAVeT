@@ -205,31 +205,52 @@
 const client = useSupabaseClient();
 const user = useSupabaseUser();
 // Define reactive variables for form inputs
-const input1 = ref('');
-const input2 = ref('');
-const input3 = ref('');
-const input4 = ref('');
-const input5 = ref('');
-const input6 = ref('');
+// const input1 = ref('');
+// const input2 = ref('');
+// const input3 = ref('');
+// const input4 = ref('');
+// const input5 = ref('');
+// const input6 = ref('');
 
 const checked = ref('');
 
 // // Function to clear the form
-const clearForm = () => {
-    input1.value = '';
-    input2.value = '';
-    input3.value = '';
-    input4.value = '';
-    input5.value = '';
-    input6.value = '';
-};
+// const clearForm = () => {
+//     input1.value = '';
+//     input2.value = '';
+//     input3.value = '';
+//     input4.value = '';
+//     input5.value = '';
+//     input6.value = '';
+// };
+const ownForm = ref({
+    vettag: '',
+    prevTag: '',
+    newTag: '',
+    ghCard: '',
+    residence: '',
+    veh_type: '',
+    insurance: '',
+    pickup_loc: '',
+    
+})
 
-
-const handleSubmit = () => {
+const  handleSubmit = async () => {
     // Handle form submission logic
     // You can perform additional validation or submit data to the server
     if (checked == ! true) {
         alert('You have not agreed!')
+    }
+
+    try {
+        const { data, error } = await client.from('ownership').insert({
+            GHAVeTag: ownForm.value.vettag,
+            Prev_tags: ownForm.value.prevTag,
+            newtag: ownForm.value.newTag,
+            gh_card: ownForm.value.ghCard,
+        })
+    } catch (error) {
+        console.log(error)
     }
 };
 
