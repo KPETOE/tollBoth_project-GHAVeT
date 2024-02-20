@@ -78,8 +78,7 @@
                                     <v-icon>mdi-arrow-right-thin-circle-outline</v-icon></v-btn>
                             </v-col>
                             <v-col cols="auto" lg="5" sm="6">
-                                <v-btn v-if="user == null" variant="outlined" to="/login" color="indigo-darken-2" flat>Find
-                                    More
+                                <v-btn v-if="user==null" variant="outlined" to="/login" color="indigo-darken-2" flat>Find More
                                     <v-icon>mdi-arrow-right-thin-circle-outline</v-icon></v-btn>
                                 <v-btn v-else variant="outlined" to="/chapter" color="indigo-darken-2" flat>Find More
                                     <v-icon>mdi-arrow-right-thin-circle-outline</v-icon></v-btn>
@@ -104,7 +103,7 @@
                                 Together, we're paving the way for a future where drivers can thrive, supported
                                 by innovative solutions and strong partnerships.
                             </p>
-                        </v-row>
+                                                    </v-row>
 
                     </v-container>
                 </v-col>

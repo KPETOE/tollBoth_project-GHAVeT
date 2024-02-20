@@ -23,16 +23,26 @@
                 </v-row>
                 <br>
                 <v-row align="center" justify="center">
-                    <v-col cols="12" sm="6">
+                    <!--  <v-col cols="12" sm="6">
                         <v-text-field class="text-field  text-center" type="password" v-model="loginForm.password"
                             placeholder="Password"></v-text-field>
+                    </v-col>-->
+
+                    <v-col cols="12" sm="6">
+                        <v-text-field class="text-field text-center" v-model="loginForm.password"
+                            :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+                            :type="showPassword ? 'text' : 'password'" @click:append="showPassword = !showPassword"
+                            placeholder="Password">
+                        </v-text-field>
+
+                        
                     </v-col>
                 </v-row>
                 <br>
                 <p class="text-center">Don't have an account? <nuxt-link style="text-decoration: none;" class="text-white"
                         to="/signup">Signup here</nuxt-link></p><br>
                 <p class="text-center">Forgot Password? <nuxt-link style="text-decoration: none;" class="text-white"
-                            to="/forgot">Click here</nuxt-link></p>
+                        to="/forgot">Click here</nuxt-link></p>
                 <v-row align="center" justify="center">
                     <v-col cols="12" sm="6">
                         <v-btn type="submit">Submit</v-btn>
@@ -43,6 +53,8 @@
         </v-container>
     </div>
 </template>
+
+
 <script setup>
 definePageMeta({
     layout: 'custom'
@@ -70,6 +82,7 @@ const signIn = async () => {
 
 
 
+const showPassword = ref(false);
 
 </script>
 
@@ -93,4 +106,6 @@ const signIn = async () => {
 .body {
     background: linear-gradient(to right, #182831, rgba(72, 113, 129, 0.813), #18252c) !important;
 }
+
+
 </style>
