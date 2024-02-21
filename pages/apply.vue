@@ -297,9 +297,8 @@ const submitApplication = async () => {
     // if (checked == ! true) {
     //     alert('You have not agreed!')
     // }
-
     try {
-        const { data, error } = await client.from('ownership').insert([
+        const { data, error } = await client.from('users').select('user_id, name') && await client.from('ownership').insert([
             {
                 GHAVeTag: applyForm.value.vettag,
                 Prev_tags: applyForm.value.prevTag,
@@ -308,9 +307,10 @@ const submitApplication = async () => {
                 residence: applyForm.value.residence,
                 veh_type: applyForm.value.veh_type,
                 Insurance: applyForm.value.insurance,
-                // Pickup_loc: applyForm.value.pickup_loc
+                Pickup_loc: applyForm.value.pickup_loc
             }
-        ]).select()
+        ]).select();
+
     } catch (error) {
         console.log(error)
     }
