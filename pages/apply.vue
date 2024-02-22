@@ -185,7 +185,7 @@
                                                     color="white" class="mx-auto  corners"
                                                     :rules="insuranceSerialNumberRules"
                                                     style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
-                                                    variant="plain"></v-text-field>
+                                                    variant="outlined" ></v-text-field>
                                             </div>
                                         </v-col>
                                     </v-row>
@@ -340,7 +340,7 @@ const ghCardNumberRules = [
 const plateNumberRules = [
     value => !!value || 'Field is required',
     value => (value && value.length <= 15) || 'Max 15 characters allowed',
-    // Add more specific rules for license plate format if needed
+   
 ];
 
 // Validation rules for Road Worthy
