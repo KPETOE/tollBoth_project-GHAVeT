@@ -297,17 +297,20 @@ const submitApplication = async () => {
     // if (checked == ! true) {
     //     alert('You have not agreed!')
     // }
-
     try {
-        const { data, error } = await client.from('ownership').insert({
-            GHAVeTag: applyForm.value.vettag,
-            Prev_tags: applyForm.value.prevTag,
-            // newtag: ownForm.value.newTag,
-            gh_card: applyForm.value.ghCard,
-            residence: applyForm.value.residence,
-            veh_type: applyForm.value.veh_type,
-            insurance: applyForm.value.insurance,
-        })
+        const { data, error } = await client.from('users').select('user_id, name') && await client.from('ownership').insert([
+            {
+                GHAVeTag: applyForm.value.vettag,
+                Prev_tags: applyForm.value.prevTag,
+                // newtag: ownForm.value.newTag,
+                Gh_card: applyForm.value.ghCard,
+                residence: applyForm.value.residence,
+                veh_type: applyForm.value.veh_type,
+                Insurance: applyForm.value.insurance,
+                Pickup_loc: applyForm.value.pickup_loc
+            }
+        ]).select();
+
     } catch (error) {
         console.log(error)
     }
@@ -456,4 +459,5 @@ body {
     border-top-right-radius: 0px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 0px;
-}</style>
+}
+</style>
