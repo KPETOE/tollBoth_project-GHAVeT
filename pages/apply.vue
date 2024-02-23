@@ -185,7 +185,7 @@
                                                     color="white" class="mx-auto  corners"
                                                     :rules="insuranceSerialNumberRules"
                                                     style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
-                                                    variant="outlined" ></v-text-field>
+                                                    variant="outlined"></v-text-field>
                                             </div>
                                         </v-col>
                                     </v-row>
@@ -264,7 +264,7 @@
 <script setup>
 // import imgbg from '../assets/img/home.jpeg'
 const client = useSupabaseClient();
-
+const user = useSupabaseUser();
 
 const yesChecked = ref(false);
 const noChecked = ref(false);
@@ -288,7 +288,8 @@ const applyForm = ref({
     veh_type: '',
     insurance: '',
     pickup_loc: '',
-    roadWorthy: ''
+    roadWorthy: '',
+    user_id: ''
 })
 
 const submitApplication = async () => {
@@ -298,7 +299,7 @@ const submitApplication = async () => {
     //     alert('You have not agreed!')
     // }
     try {
-        const { data, error } = await client.from('users').select('user_id, name') && await client.from('ownership').insert([
+        const { data, error } = await client.from('ownership').insert([
             {
                 GHAVeTag: applyForm.value.vettag,
                 Prev_tags: applyForm.value.prevTag,
@@ -307,7 +308,8 @@ const submitApplication = async () => {
                 residence: applyForm.value.residence,
                 veh_type: applyForm.value.veh_type,
                 Insurance: applyForm.value.insurance,
-                Pickup_loc: applyForm.value.pickup_loc
+                Pickup_loc: applyForm.value.pickup_loc,
+                // user_id: user.value.id
             }
         ]).select();
 
@@ -343,7 +345,7 @@ const ghCardNumberRules = [
 const plateNumberRules = [
     value => !!value || 'Field is required',
     value => (value && value.length <= 15) || 'Max 15 characters allowed',
-   
+
 ];
 
 // Validation rules for Road Worthy
