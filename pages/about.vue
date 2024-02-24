@@ -2,11 +2,7 @@
     <div>
         <v-parallax height="800">
             <div style="position: relative;">
-                <video id="myVideo" autoplay loop muted class="aboutVideo" style="width: 100%; height: 100%;"
-                    @click="toggleMute">
-                    <source src="/img/Taginstallation.mp4" type="video/mp4">
-                    <!-- You can add other video formats here -->
-                </video>
+                
                 <div style="position: absolute; bottom: 10px; right: 10px; cursor: pointer;" @click="toggleMute">
                     <v-icon :color="isMuted ? 'grey' : 'red'">mdi-volume-{{ isMuted ? 'off' : 'high' }}</v-icon>
                 </div>
@@ -102,8 +98,15 @@
 
     </div>
 </template>
+
+
+
 <script setup>
+
 </script>
+
+
+
 <style>
 
 
