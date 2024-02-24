@@ -1,7 +1,18 @@
 <template>
     <div>
-        <v-parallax :src="aboutImgBg" style="background-image: url('/img/ETC2.jpg');" height="800">
-            <div class="aboutImg">
+        <v-parallax height="800">
+            <div style="position: relative;">
+                <video id="myVideo" autoplay loop muted class="aboutVideo" style="width: 100%; height: 100%;"
+                    @click="toggleMute">
+                    <source src="/img/Taginstallation.mp4" type="video/mp4">
+                    <!-- You can add other video formats here -->
+                </video>
+                <div style="position: absolute; bottom: 10px; right: 10px; cursor: pointer;" @click="toggleMute">
+                    <v-icon :color="isMuted ? 'grey' : 'red'">mdi-volume-{{ isMuted ? 'off' : 'high' }}</v-icon>
+                </div>
+            </div>
+            <div class="aboutImg"  style="    background: linear-gradient(to right, rgba(252, 252, 252, 0.331), rgba(135, 207, 235, 0.486), #31759ab4, #153445b4) !important;
+">
                 <v-container>
                     <h2 class="text-uppercase blue-text text-center ">
                         Welcome to Ghana vehicle Electronic toll collection
