@@ -201,7 +201,21 @@
     </div>
 </template>
 
+
 <script setup>
+
+import { ref } from 'vue';
+
+const ownForm = {
+    vettag: '',
+    prevTag: '',
+    newTag: '',
+    road_worthy: '',
+    newVeh_Reg: '',
+    accountHolder: ''
+};
+
+
 const client = useSupabaseClient();
 const user = useSupabaseUser();
 // Define reactive variables for form inputs
