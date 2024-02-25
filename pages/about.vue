@@ -2,12 +2,12 @@
     <div>
         <v-parallax height="800">
             <div style="position: relative;">
-                
+
                 <div style="position: absolute; bottom: 10px; right: 10px; cursor: pointer;" @click="toggleMute">
                     <v-icon :color="isMuted ? 'grey' : 'red'">mdi-volume-{{ isMuted ? 'off' : 'high' }}</v-icon>
                 </div>
             </div>
-            <div class="aboutImg"  style="    background: linear-gradient(to right, rgba(252, 252, 252, 0.331), rgba(135, 207, 235, 0.486), #31759ab4, #153445b4) !important;
+            <div class="aboutImg" style="background: linear-gradient(to right, rgba(252, 252, 252, 0.331), rgba(135, 207, 235, 0.486), #31759ab4, #153445b4) !important;
 ">
                 <v-container>
                     <h2 class="text-uppercase blue-text text-center ">
@@ -26,13 +26,13 @@
                                 is simple: to make your journey smoother, faster, and hassle-free. By harnessing the power
                                 of cutting-edge technology, we're transforming toll collection into a seamless process that
                                 enhances mobility and connectivity on the road.</h4>
-                            
+
                             <h4 class="underline text-">What Sets Us Apart</h4>
                             <p class="text-justify">
-                            At SmartToll, innovation is at the heart of everything we do. We've combined advanced RFID
-                            and wireless communication technologies to create a next-generation toll collection system
-                            that's not only efficient but also incredibly convenient. No more fumbling for loose change
-                            or waiting in long queues – with SmartToll, you can breeze through toll plazas with ease.
+                                At SmartToll, innovation is at the heart of everything we do. We've combined advanced RFID
+                                and wireless communication technologies to create a next-generation toll collection system
+                                that's not only efficient but also incredibly convenient. No more fumbling for loose change
+                                or waiting in long queues – with SmartToll, you can breeze through toll plazas with ease.
                             </p>
                             <p class="text-muted text-italize"> Experience the Future of Toll Collection
 
@@ -42,7 +42,7 @@
                         </v-container>
                     </v-col>
                     <v-col cols="" lg="" md="" sm="">
-                        <v-img class="mt-10 mb-10" aspect-ratio="1" height="350"   src="/img/ETC1.jpg"></v-img>
+                        <v-img class="mt-10 mb-10" aspect-ratio="1" height="350" src="/img/ETC1.jpg"></v-img>
                     </v-col>
                 </v-row>
             </v-container>
@@ -95,7 +95,10 @@
                 </v-row>
             </v-container>
         </div>
-
+        <iframe width="100%" height="500em" src="https://www.youtube.com/embed/USG0exgFTzI"
+            title="Tag Installation  AT GHAVeT" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
     </div>
 </template>
 
@@ -108,8 +111,6 @@
 
 
 <style>
-
-
 .mission-statement {
     background: rgba(0, 0, 0, .1);
 }
@@ -121,7 +122,7 @@
     text-decoration: underline;
 }
 
-.blue-text{
+.blue-text {
 
     color: #06211d;
 }
