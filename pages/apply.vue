@@ -103,7 +103,7 @@
                                     <v-row class="d-flex justify-center" style="text-align: center">
                                         <v-col cols="12">
                                             <div style="background-color: azure; width: 34.5em;" class=" corners">
-                                                <v-text-field v-model="applyForm.prevTag" label="Plate Number" outlined
+                                                <v-text-field v-model="applyForm.license" label="Plate Number" outlined
                                                     color="white" class="mx-auto  corners" :rules="plateNumberRules"
                                                     style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
                                                     variant="plain"></v-text-field>
@@ -236,7 +236,8 @@
                     <v-row align="center" cols="" lg="12" md="6" class="d-flex ">
 
                         <v-col cols="" lg="6" md="6" sm="6">
-                            <v-checkbox label="I Have Read And Agree With Terms And Conditions
+                            <v-checkbox v-model="checkbox" :rules="[v => !!v || 'You must agree to continue!']" required
+                                label="I Have Read And Agree With Terms And Conditions
                  Of Used."></v-checkbox>
                         </v-col>
 
@@ -266,8 +267,8 @@
 const client = useSupabaseClient();
 const user = useSupabaseUser();
 
-const yesChecked = ref(false);
-const noChecked = ref(false);
+// const yesChecked = ref(false);
+// const noChecked = ref(false);
 
 
 // Define reactive variables for form inputs
@@ -281,7 +282,7 @@ const noChecked = ref(false);
 
 const applyForm = ref({
     vettag: '',
-    prevTag: '',
+    license: '',
     newTag: '',
     ghCard: '',
     residence: '',
@@ -289,20 +290,29 @@ const applyForm = ref({
     insurance: '',
     pickup_loc: '',
     roadWorthy: '',
-    user_id: ''
+    user_id: '',
+    // checkbox:false
 })
-
+const checkbox = ref(false);
 const submitApplication = async () => {
     // Handle form submission logic
     // You can perform additional validation or submit data to the server
     // if (checked == ! true) {
     //     alert('You have not agreed!')
     // }
+    // if (checkbox == !true) {
+    //     alert('Check the Box first! :)')
+    // }
+
     try {
+
+        // if (checkbox == true) {
+        //     console.log('Null')
+        // } else {
         const { data, error } = await client.from('ownership').insert([
             {
                 GHAVeTag: applyForm.value.vettag,
-                Prev_tags: applyForm.value.prevTag,
+                Licenced_plate: applyForm.value.license,
                 // newtag: ownForm.value.newTag,
                 Gh_card: applyForm.value.ghCard,
                 residence: applyForm.value.residence,
@@ -312,6 +322,11 @@ const submitApplication = async () => {
                 // user_id: user.value.id
             }
         ]).select();
+        alert('Submitted Successfully!')
+
+
+        // }
+
 
     } catch (error) {
         console.log(error)
