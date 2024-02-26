@@ -1,5 +1,6 @@
 <template>
     <div>
+
         <v-parallax height="800">
             <div style="position: relative;">
 
@@ -104,7 +105,11 @@
 
 
 
+
+
 <script setup>
+ 
+
 
 </script>
 
