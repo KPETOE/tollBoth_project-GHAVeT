@@ -309,7 +309,7 @@ const submitApplication = async () => {
         // if (checkbox == true) {
         //     console.log('Null')
         // } else {
-        const { data, error } = await client.from('ownership').insert([
+        const { data, error } = await client.from('application').insert([
             {
                 GHAVeTag: applyForm.value.vettag,
                 Licenced_plate: applyForm.value.license,
