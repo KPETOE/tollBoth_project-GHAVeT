@@ -278,8 +278,8 @@ const user = useSupabaseUser();
 // const input4 = ref('');
 // const input5 = ref('');
 // const input6 = ref('');
-
-
+// const serial = 1++;
+var count = ref(0)
 const applyForm = ref({
     vettag: '',
     license: '',
@@ -293,7 +293,12 @@ const applyForm = ref({
     user_id: '',
     // checkbox:false
 })
+// const ghCardNo = 
+
+// const gVet = applyForm.value.ghCard + '-'+ count++;
 const checkbox = ref(false);
+
+//submit function
 const submitApplication = async () => {
     // Handle form submission logic
     // You can perform additional validation or submit data to the server
@@ -311,7 +316,7 @@ const submitApplication = async () => {
         // } else {
         const { data, error } = await client.from('application').insert([
             {
-                GHAVeTag: applyForm.value.vettag,
+                GHAVeTag: applyForm.value.ghCard + '-' + count++,
                 Licenced_plate: applyForm.value.license,
                 // newtag: ownForm.value.newTag,
                 Gh_card: applyForm.value.ghCard,
