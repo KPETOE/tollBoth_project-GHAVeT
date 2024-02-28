@@ -279,7 +279,7 @@ const user = useSupabaseUser();
 // const input5 = ref('');
 // const input6 = ref('');
 // const serial = 1++;
-var count = ref(0)
+var count = ref(0);
 const applyForm = ref({
     vettag: '',
     license: '',
