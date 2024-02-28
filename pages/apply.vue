@@ -311,7 +311,8 @@ const submitApplication = async () => {
     // if (checkbox == !true) {
     //     alert('Check the Box first! :)')
     // }
-    // var count = ref(0);
+    let x = 0;
+    // const y = x++;
     try {
 
         // if (checkbox == true) {
@@ -319,7 +320,7 @@ const submitApplication = async () => {
         // } else {
         const { data, error } = await client.from('application').insert([
             {
-                GHAVeTag: applyForm.value.ghCard + '-' + id,
+                GHAVeTag: applyForm.value.ghCard + '-' + x++,
                 Licenced_plate: applyForm.value.license,
                 // newtag: ownForm.value.newTag,
                 Gh_card: applyForm.value.ghCard,
