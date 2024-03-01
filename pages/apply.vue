@@ -263,6 +263,8 @@
     </div>
 </template>
 <script setup>
+import { id } from 'vuetify/locale';
+
 // import imgbg from '../assets/img/home.jpeg'
 const client = useSupabaseClient();
 const user = useSupabaseUser();
@@ -278,7 +280,7 @@ const user = useSupabaseUser();
 // const input4 = ref('');
 // const input5 = ref('');
 // const input6 = ref('');
-
+// const serial = 1++;
 
 const applyForm = ref({
     vettag: '',
@@ -291,9 +293,15 @@ const applyForm = ref({
     pickup_loc: '',
     roadWorthy: '',
     user_id: '',
+    // id:''
     // checkbox:false
 })
+// const ghCardNo = 
+
+// const gVet = applyForm.value.ghCard + '-'+ count++;
 const checkbox = ref(false);
+
+//submit function
 const submitApplication = async () => {
     // Handle form submission logic
     // You can perform additional validation or submit data to the server
@@ -303,15 +311,16 @@ const submitApplication = async () => {
     // if (checkbox == !true) {
     //     alert('Check the Box first! :)')
     // }
-
+    let x = 0;
+    // const y = x++;
     try {
 
         // if (checkbox == true) {
         //     console.log('Null')
         // } else {
-        const { data, error } = await client.from('ownership').insert([
+        const { data, error } = await client.from('application').insert([
             {
-                GHAVeTag: applyForm.value.vettag,
+                GHAVeTag: applyForm.value.ghCard + '-' + x++,
                 Licenced_plate: applyForm.value.license,
                 // newtag: ownForm.value.newTag,
                 Gh_card: applyForm.value.ghCard,
