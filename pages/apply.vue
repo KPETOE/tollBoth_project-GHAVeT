@@ -209,7 +209,7 @@
                                             <div style="background-color: azure; width:34.5em;" class=" corners">
 
                                                 <v-combobox clearable
-                                                    :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
+                                                    :items="['California', 'ACCRA', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
                                                     item-text="name" v-model="applyForm.pickup_loc" outlined
                                                     hide-details="auto" class="custom-background"
                                                     style="box-shadow: none; width: 550px;  height: 4em;  background: linear-gradient(to right, rgba(75, 156, 162, 0.331), rgba(135, 207, 235, 0.486), #31759a48, #153445b4) !important;"
