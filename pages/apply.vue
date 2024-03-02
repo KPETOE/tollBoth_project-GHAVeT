@@ -242,7 +242,7 @@
                         </v-col>
 
                         <v-col align="right" cols="" lg="6" md="6" sm="6">
-                            <v-btn @click="handleSubmit" type="submit" prepend-icon="mdi-check-circle" class="B-clear">
+                            <v-btn @click="setTimeout(handleSubmit(), 6000)" type="submit" prepend-icon="mdi-check-circle" class="B-clear">
                                 <template v-slot:prepend>
                                     <v-icon color="success"></v-icon>
                                 </template>
@@ -310,11 +310,7 @@ const checkbox = ref(false);
 
 //submit function
 const submitApplication = async () => {
-
-
     // Handle form submission logic
-
-
     // You can perform additional validation or submit data to the server
     // if (checked == ! true) {
     //     alert('You have not agreed!')
@@ -324,7 +320,7 @@ const submitApplication = async () => {
     // }
 
     let x = 0;
-    // const y = x++;
+   
     try {
 
 
@@ -332,36 +328,21 @@ const submitApplication = async () => {
         // if (checkbox == true) {
         //     console.log('Null')
         // } else {
-
         const { data, error } = await client.from('application').insert([
             {
                 GHAVeTag: applyForm.value.ghCard + '-' + x++,
                 Licenced_plate: applyForm.value.license,
-                // newtag: ownForm.value.newTag,
                 Gh_card: applyForm.value.ghCard,
                 residence: applyForm.value.residence,
                 veh_type: applyForm.value.veh_type,
                 Insurance: applyForm.value.insurance,
                 Pickup_loc: applyForm.value.pickup_loc,
-                // user_id: user.value.id
             }
         ]).select();
-
-        // Clear form fields after successful submission
-        applyForm.value.ghCard = '';
-        applyForm.value.license = '';
-        applyForm.value.residence = '';
-        applyForm.value.veh_type = '';
-        applyForm.value.insurance = '';
-        applyForm.value.pickup_loc = '';
-        applyForm.value.roadWorthy = '';
-
-
         alert('Submitted Successfully!')
         const dialog = true
-
-        // }
-
+        
+        
 
     } catch (error) {
         console.log(error);
