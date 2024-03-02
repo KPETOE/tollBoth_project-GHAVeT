@@ -251,6 +251,10 @@
                                     <v-icon color="warning"></v-icon>
                                 </template>
                             </v-btn>
+                            <v-dialog v-model="alert" :type="type" width="20em">
+                                <v-alert width="600" height="400" closable variant="flat" color="blue" title="Application Success"
+                                    text="You've submited Successfully!"></v-alert>
+                            </v-dialog>
                         </v-col>
 
                     </v-row>
@@ -281,7 +285,10 @@ const user = useSupabaseUser();
 // const input5 = ref('');
 // const input6 = ref('');
 // const serial = 1++;
+// let dialog = false;
 
+let alert = ref(false);
+let type = ref('success');
 const applyForm = ref({
     vettag: '',
     license: '',
@@ -311,10 +318,11 @@ const submitApplication = async () => {
     // if (checkbox == !true) {
     //     alert('Check the Box first! :)')
     // }
+
     let x = 0;
     // const y = x++;
     try {
-
+        alert.value = true
         // if (checkbox == true) {
         //     console.log('Null')
         // } else {
@@ -332,7 +340,7 @@ const submitApplication = async () => {
             }
         ]).select();
         alert('Submitted Successfully!')
-
+        const dialog = true
 
         // }
 
