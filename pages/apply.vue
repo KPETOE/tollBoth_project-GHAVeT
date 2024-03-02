@@ -242,7 +242,8 @@
                         </v-col>
 
                         <v-col align="right" cols="" lg="6" md="6" sm="6">
-                            <v-btn @click="setTimeout(handleSubmit(), 6000)" type="submit" prepend-icon="mdi-check-circle" class="B-clear">
+                            <v-btn @click="setTimeout(handleSubmit(), 6000)" type="submit" prepend-icon="mdi-check-circle"
+                                class="B-clear">
                                 <template v-slot:prepend>
                                     <v-icon color="success"></v-icon>
                                 </template>
@@ -320,7 +321,7 @@ const submitApplication = async () => {
     // }
 
     let x = 0;
-   
+
     try {
 
 
@@ -339,10 +340,20 @@ const submitApplication = async () => {
                 Pickup_loc: applyForm.value.pickup_loc,
             }
         ]).select();
+
+        // Clear form fields after successful submission
+        applyForm.value.ghCard = '';
+        applyForm.value.license = '';
+        applyForm.value.residence = '';
+        applyForm.value.veh_type = '';
+        applyForm.value.insurance = '';
+        applyForm.value.pickup_loc = '';
+        applyForm.value.roadWorthy = '';
+
         alert('Submitted Successfully!')
         const dialog = true
-        
-        
+
+
 
     } catch (error) {
         console.log(error);
