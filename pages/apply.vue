@@ -252,8 +252,8 @@
                                 </template>
                             </v-btn>
                             <v-dialog v-model="alert" :type="type" width="20em">
-                                <v-alert width="600" height="400" closable variant="flat" color="blue" title="Application Success"
-                                    text="You've submited Successfully!"></v-alert>
+                                <v-alert width="600" height="400" closable variant="flat" color="blue"
+                                    title="Application Success" text="You've submited Successfully!"></v-alert>
                             </v-dialog>
                         </v-col>
 
@@ -310,7 +310,11 @@ const checkbox = ref(false);
 
 //submit function
 const submitApplication = async () => {
+
+
     // Handle form submission logic
+
+
     // You can perform additional validation or submit data to the server
     // if (checked == ! true) {
     //     alert('You have not agreed!')
@@ -322,10 +326,13 @@ const submitApplication = async () => {
     let x = 0;
     // const y = x++;
     try {
+
+
         alert.value = true
         // if (checkbox == true) {
         //     console.log('Null')
         // } else {
+
         const { data, error } = await client.from('application').insert([
             {
                 GHAVeTag: applyForm.value.ghCard + '-' + x++,
@@ -339,6 +346,17 @@ const submitApplication = async () => {
                 // user_id: user.value.id
             }
         ]).select();
+
+        // Clear form fields after successful submission
+        applyForm.value.ghCard = '';
+        applyForm.value.license = '';
+        applyForm.value.residence = '';
+        applyForm.value.veh_type = '';
+        applyForm.value.insurance = '';
+        applyForm.value.pickup_loc = '';
+        applyForm.value.roadWorthy = '';
+
+
         alert('Submitted Successfully!')
         const dialog = true
 
@@ -346,9 +364,11 @@ const submitApplication = async () => {
 
 
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 };
+
+
 // Validation rules for Vehicle Make and Model
 const vehicleMakeModelRules = [
     value => !!value || 'Field is required',
@@ -395,6 +415,8 @@ const insuranceSerialNumberRules = [
 ];
 
 </script>
+
+
 <style>
 .corners {
     background: linear-gradient(to right, rgba(75, 156, 162, 0.331), rgba(135, 207, 235, 0.486), #31759a48, #1534459b) !important;
