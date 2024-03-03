@@ -17,8 +17,7 @@
                     </v-col>
                 </v-row>
 
-                <p class="text-center font-weight-bold text-center "
-                    style=" color: rgb(219, 54, 54);  font-size: 1rem;">
+                <p class="text-center font-weight-bold text-center " style=" color: rgb(219, 54, 54);  font-size: 1rem;">
                     Please
                     complete
                     the following form for your new RFID tag for your Vehicle. <br> Ensure all information is accurate
@@ -40,9 +39,9 @@
                                     <v-row class="d-flex justify-center" style="text-align: center">
                                         <v-col cols="12">
                                             <div style="background-color: azure; width: 34.5em;" class=" corners">
-                                                <v-text-field v-model="applyForm.veh_type"
-                                                    label="Vehicle make and Modle" outlined color="white"
-                                                    class="mx-auto corners" :rules="vehicleMakeModelRules"
+                                                <v-text-field v-model="applyForm.veh_type" label="Vehicle make and Modle"
+                                                    outlined color="white" class="mx-auto corners"
+                                                    :rules="vehicleMakeModelRules"
                                                     style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
                                                     variant="plain"></v-text-field>
                                             </div>
@@ -157,9 +156,8 @@
                                     <v-row class="d-flex justify-center" style="text-align: center">
                                         <v-col cols="12">
                                             <div style="background-color: azure; width: 34.5em;" class=" corners">
-                                                <v-text-field v-model="applyForm.roadWorthy" label="Road Worhty"
-                                                    outlined color="white" class="mx-auto corners"
-                                                    :rules="roadWorthyRules"
+                                                <v-text-field v-model="applyForm.roadWorthy" label="Road Worhty" outlined
+                                                    color="white" class="mx-auto corners" :rules="roadWorthyRules"
                                                     style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
                                                     variant="plain"></v-text-field>
                                             </div>
@@ -246,8 +244,8 @@
                         </v-col>
 
                         <v-col align="right" cols="" lg="6" md="6" sm="6">
-                            <v-btn @click="setTimeout(handleSubmit(), 6000)" type="submit"
-                                prepend-icon="mdi-check-circle" class="B-clear">
+                            <v-btn @click="setTimeout(handleSubmit(), 6000)" type="submit" prepend-icon="mdi-check-circle"
+                                class="B-clear">
                                 <template v-slot:prepend>
                                     <v-icon color="success"></v-icon>
                                 </template>
@@ -257,7 +255,7 @@
                                     <v-icon color="warning"></v-icon>
                                 </template>
                             </v-btn>
-                            <v-dialog v-model="alert" :type="type" width="20em">
+                            <v-dialog v-model="Alert" :type="type" width="20em">
                                 <v-alert width="600" height="400" closable variant="flat" color="blue"
                                     title="Application Success" text="You've submited Successfully!"></v-alert>
                             </v-dialog>
@@ -274,12 +272,11 @@
 </template>
 
 <script setup>
-import { id } from 'vuetify/locale';
 
 // import imgbg from '../assets/img/home.jpeg'
 const client = useSupabaseClient();
 const user = useSupabaseUser();
-
+// let alert = document.getElementById('alert')
 // const yesChecked = ref(false);
 // const noChecked = ref(false);
 
@@ -294,7 +291,7 @@ const user = useSupabaseUser();
 // const serial = 1++;
 // let dialog = false;
 
-let alert = ref(false);
+let Alert = ref(false);
 let type = ref('success');
 const applyForm = ref({
     vettag: '',
@@ -307,8 +304,9 @@ const applyForm = ref({
     pickup_loc: '',
     roadWorthy: '',
     user_id: '',
+    roadWorthy: '',
     // id:''
-    // checkbox:false
+    checkbox: false
 })
 // const ghCardNo = 
 
@@ -331,31 +329,40 @@ const submitApplication = async () => {
     // if (checkbox == !true) {
     //     alert('Check the Box first! :)')
     // }
+    if (!checkbox.value) {
+        alert('You have not agreed!')
+        return
+    }
 
+    let serial = applyForm.value.ghCard + '-' + count++;
+    applyForm.value.vettag = serial;
 
-     let serial = applyForm.value.ghCard + '-' + count++;
-     applyForm.value.vettag = serial;
-
-
+    if (applyForm.value.ghCard === '' || applyForm.value.license === '' || applyForm.value.residence === '' || applyForm.value.veh_type === '' || applyForm.value.insurance === '' || applyForm.value.pickup_loc === '' || applyForm.value.roadWorthy === '') {
+        alert('Please fill form!')
+        return
+    }
     // let x = 0;
 
     try {
 
 
-        alert.value = true
+        Alert.value = true
         // if (checkbox == true) {
         //     console.log('Null')
         // } else {
+
+
         const { data, error } = await client.from('application').insert([
             {
-                  GHAVeTag: applyForm.value.ghCard + '-' + count++,
-               // GHAVeTag: applyForm.value.ghCard + '-' + x++,
+                GHAVeTag: applyForm.value.ghCard + '-' + count++,
+                // GHAVeTag: applyForm.value.ghCard + '-' + x++,
                 Licenced_plate: applyForm.value.license,
                 Gh_card: applyForm.value.ghCard,
                 residence: applyForm.value.residence,
                 veh_type: applyForm.value.veh_type,
                 Insurance: applyForm.value.insurance,
                 Pickup_loc: applyForm.value.pickup_loc,
+                road_worthy: applyForm.value.roadWorthy
             }
         ]).select();
 
@@ -373,6 +380,9 @@ const submitApplication = async () => {
 
 
 
+
+
+
     } catch (error) {
         console.log(error);
 
@@ -380,8 +390,8 @@ const submitApplication = async () => {
 
     // Increment the count variable by a random number
     count += Math.floor(Math.random() * 1000);
-    
-   // x += Math.floor(Math.random() * 0);
+
+    // x += Math.floor(Math.random() * 0);
 
 };
 
