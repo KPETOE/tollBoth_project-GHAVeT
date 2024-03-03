@@ -317,9 +317,9 @@ const checkbox = ref(false);
 
 //Initialise the count
 
-//let count = 1000;
+let count = 1000;
 
- let x = 0;
+//let x = 0;
 
 //submit function
 const submitApplication = async () => {
@@ -333,8 +333,8 @@ const submitApplication = async () => {
     // }
 
 
-    // let serial = applyForm.value.ghCard + '-' + count++;
-    //  applyForm.value.vettag = serial;
+     let serial = applyForm.value.ghCard + '-' + count++;
+     applyForm.value.vettag = serial;
 
 
     // let x = 0;
@@ -348,8 +348,8 @@ const submitApplication = async () => {
         // } else {
         const { data, error } = await client.from('application').insert([
             {
-                //  GHAVeTag: applyForm.value.ghCard + '-' + count++,
-                GHAVeTag: applyForm.value.ghCard + '-' + x++,
+                  GHAVeTag: applyForm.value.ghCard + '-' + count++,
+               // GHAVeTag: applyForm.value.ghCard + '-' + x++,
                 Licenced_plate: applyForm.value.license,
                 Gh_card: applyForm.value.ghCard,
                 residence: applyForm.value.residence,
@@ -379,8 +379,9 @@ const submitApplication = async () => {
     }
 
     // Increment the count variable by a random number
-    //count += Math.floor(Math.random() * 1000);
-    x += Math.floor(Math.random() * 0);
+    count += Math.floor(Math.random() * 1000);
+    
+   // x += Math.floor(Math.random() * 0);
 
 };
 
