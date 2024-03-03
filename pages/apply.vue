@@ -330,7 +330,7 @@ const submitApplication = async () => {
     //     alert('Check the Box first! :)')
     // }
     if (!checkbox.value) {
-        alert('You have not agreed!')
+        alert('You Have Not Agreed To Terms  & Conditons!')
         return
     }
 
@@ -338,7 +338,7 @@ const submitApplication = async () => {
     applyForm.value.vettag = serial;
 
     if (applyForm.value.ghCard === '' || applyForm.value.license === '' || applyForm.value.residence === '' || applyForm.value.veh_type === '' || applyForm.value.insurance === '' || applyForm.value.pickup_loc === '' || applyForm.value.roadWorthy === '') {
-        alert('Please fill form!')
+        alert('Please  Ensure All You Fields Are Completely Filled!')
         return
     }
     // let x = 0;
@@ -375,7 +375,7 @@ const submitApplication = async () => {
         applyForm.value.pickup_loc = '';
         applyForm.value.roadWorthy = '';
 
-        alert('Submitted Successfully!')
+       
         const dialog = true
 
 

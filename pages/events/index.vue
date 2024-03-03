@@ -38,34 +38,14 @@
                         </v-col>
                     </div>
 
-                    <!--the -->
-                    <!-- 
-                    <v-row justify="center">
-                        <v-col cols="12" sm="10" md="8" lg="6">
-                          
-                                <v-card-text>
-                                  
-
-                                 
-
-                                    <v-autocomplete ref="   " v-model="country"
-                                        :rules="[() => !!country || 'This field is required']" :items="countries"
-                                        label="Country" placeholder="Select tag..." required></v-autocomplete>
-                                </v-card-text>
-                              
-                               
-                          
-                        </v-col>
-                    </v-row> -->
-
-                    <!--the -->
+                  
                     <div class="col-md-6 text-center" style="background-color: rgb(127, 203, 203);">
-                        <label for="textBox2" class="form-label mx-auto text-uppercase text-BLACK text-center"
+                        <label for="textBox2" class="form-label mx-auto text-uppercase text-BLACK text-center "
                             style="font-size: 1.5rem; font-weight: bold">Balance</label>
-                        <button class="btn btn-primary non-responsive-button">
-                            <input type="text" class="form-control square-box" id="textBox2" placeholder="GHS 500.00" />
-                        </button>
-                    </div>
+                        <div class="con text-center  d-flex justify-content-center ml-auto "  >
+                            <input type="text" class="balance bg-white  text-center" id="textBox2"  placeholder="GHS 500.00"  readonly/>
+                        </div>
+                    </div>    
                 </div>
             </div>
             <br> <br>
@@ -104,7 +84,7 @@
                     <div style="display: flex; flex-direction: column; align-items: center;">
                         <br>
 
-                        <button class="btn btn-primary  custom-width">Search</button>
+                        <button class="search font-weight-bold">Search</button>
 
                     </div>
                 </div>
@@ -140,7 +120,7 @@
                     <div style="display: flex; flex-direction: column; align-items: center;">
                         <br>
 
-                        <button class="btn btn-primary  custom-width">Download</button>
+                        <button class="search font-weight-bold">Download</button>
                         <br>
 
                         <h1 class="mx-auto text-uppercase text-black text-start text-center  font-weight-bold"
@@ -243,5 +223,39 @@ const desserts = ref([
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 15px;
 
+}
+
+.con {
+  margin-right: 2em;
+    align-items: center;
+   width: 80%;  
+   height: 15em;
+    background-color: rgba(16, 27, 16, 0.233);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 15px;
+
+}
+
+
+.balance{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    height: 35%;
+    width: 40%;
+ 
+}
+
+input:focus {
+  border-color: #e1dada00 !important;
+}
+
+.search{
+    width: 6em;
+    background: linear-gradient(to right, rgba(75, 156, 162, 0.331), rgba(135, 207, 235, 0.486), #31759a48, #1534459b) !important;
 }
 </style>
