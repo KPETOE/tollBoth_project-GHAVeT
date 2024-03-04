@@ -136,7 +136,7 @@ const signUp = async () => {
             email: signupForm.email,
             password: signupForm.pwd1,
 
-        })
+        });
         const { data0, error0 } = await client.from('profile').insert([
             {
                 first_name: signupForm.fName,
@@ -145,7 +145,7 @@ const signUp = async () => {
                 gh_card_no: signupForm.ghCardNo,
                 Mobile_Number: signupForm.mobileNo,
             }
-        ])
+        ]).select()
         // return navigateTo('/confirm')
         // const confirmMail = signupForm.email;
         // const step = bySteps.confirm;
