@@ -108,7 +108,7 @@ const signUpForm = ref({
     email: '',
     pwd1: '',
     pwd2: '',
-    id:''
+    // id:''
 });
 
 // const confirmSignUpForm = ref({
