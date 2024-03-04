@@ -27,9 +27,9 @@
         </v-parallax> -->
         <v-container>
             <!-- <div v-if="auth.signUp"> -->
-                <v-form @submit.prevent="signUp">
-                    <v-row>
-                       <v-col cols="" lg="6" sm="6">
+            <v-form @submit.prevent="signUp">
+                <v-row>
+                    <v-col cols="" lg="6" sm="6">
                         <v-label class="font-weight-bold text-white">First Name</v-label>
                         <v-text-field class="text-field  modify" v-model="signupForm.fName" type="name"></v-text-field>
                     </v-col>
@@ -48,40 +48,38 @@
                     <v-col cols="" lg="6" sm="12">
                         <v-label class="font-weight-bold text-white">Mobile Number</v-label>
                         <v-text-field class="text-field  modify" v-model="signupForm.mobileNo" type="number"></v-text-field>
-                    </v-col>  
+                    </v-col>
 
-                        <v-col cols="" lg="6" sm="12">
-                            <v-label class="font-weight-bold text-white">Email</v-label>
-                            <v-text-field class="text-field modify" v-model="signupForm.email" type="email"></v-text-field>
-                        </v-col>
-                        <v-col cols="" lg="6" sm="12">
-                            <v-label class="font-weight-bold text-white">Password</v-label>
-                            <v-text-field class="text-field modify " v-model="signupForm.pwd1"
-                                type="password"></v-text-field>
-                        </v-col>
-                        <v-col cols="" lg="6" sm="12">
-                            <v-label class="font-weight-bold text-white">Confirm Password</v-label>
-                            <v-text-field class="text-field  modify" v-model="signupForm.pwd2"
-                                type="password"></v-text-field>
-                        </v-col>
-                    </v-row>
-                    <br> <br>
-                    <!-- <span v-if="pwdErr == true">
+                    <v-col cols="" lg="6" sm="12">
+                        <v-label class="font-weight-bold text-white">Email</v-label>
+                        <v-text-field class="text-field modify" v-model="signupForm.email" type="email"></v-text-field>
+                    </v-col>
+                    <v-col cols="" lg="6" sm="12">
+                        <v-label class="font-weight-bold text-white">Password</v-label>
+                        <v-text-field class="text-field modify " v-model="signupForm.pwd1" type="password"></v-text-field>
+                    </v-col>
+                    <v-col cols="" lg="6" sm="12">
+                        <v-label class="font-weight-bold text-white">Confirm Password</v-label>
+                        <v-text-field class="text-field  modify" v-model="signupForm.pwd2" type="password"></v-text-field>
+                    </v-col>
+                </v-row>
+                <br> <br>
+                <!-- <span v-if="pwdErr == true">
                     <p>{{ pwdErr }}</p>
                 </span>
                 <v-btn type="submit">Sign Up</v-btn> -->
-                    <v-btn type="submit">Sign Up</v-btn>
-                    <v-divider>Or Sign up with social media</v-divider>
-                    <v-row>
-                        <v-col>
-                            <v-btn icon="mdi-google"></v-btn>
-                        </v-col>
-                        <v-col>
-                            <v-btn icon="mdi-facebook"></v-btn>
-                        </v-col>
-                    </v-row>
-                </v-form>
-                
+                <v-btn type="submit">Sign Up</v-btn>
+                <v-divider>Or Sign up with social media</v-divider>
+                <v-row>
+                    <v-col>
+                        <v-btn icon="mdi-google"></v-btn>
+                    </v-col>
+                    <v-col>
+                        <v-btn icon="mdi-facebook"></v-btn>
+                    </v-col>
+                </v-row>
+            </v-form>
+
 
         </v-container>
         <br>
@@ -92,6 +90,7 @@
 </template>
 <script setup>
 const { auth } = useSupabaseClient()
+const client = useSupabaseClient()
 const user = useSupabaseUser()
 const router = useRouter()
 
@@ -108,7 +107,8 @@ const signUpForm = ref({
     mobileNo: '',
     email: '',
     pwd1: '',
-    pwd2: ''
+    pwd2: '',
+    id:''
 });
 
 // const confirmSignUpForm = ref({
@@ -133,15 +133,20 @@ const signUp = async () => {
 
     try {
         const { data, error } = await auth.signUp({
-            First_Name: signupForm.fName,
-            Last_Name: signupForm.lName,
-            Username: signupForm.uName,
-            GH_Card_Number: signupForm.ghCardNo,
-            Mobile_Number: signupForm.mobileNo,
             email: signupForm.email,
             password: signupForm.pwd1,
-        });
-        return navigateTo('/confirm')
+
+        })
+        const { data0, error0 } = await client.from('profile').insert([
+            {
+                first_name: signupForm.fName,
+                last_name: signupForm.lName,
+                Username: signupForm.uName,
+                gh_card_no: signupForm.ghCardNo,
+                Mobile_Number: signupForm.mobileNo,
+            }
+        ])
+        // return navigateTo('/confirm')
         // const confirmMail = signupForm.email;
         // const step = bySteps.confirm;
     } catch (error) {
