@@ -2,8 +2,10 @@
     <div class="body">
 
 
-        <p class="text-center justify-text text-white ">Join the fast lane to convenience! Sign up now for effortless <br>
-            electronic toll collection on your journeys.</p>
+        <p class="text-center justify-text text-white ">Join the fast lane to convenience! Sign up now for effortless
+            <br>
+            electronic toll collection on your journeys.
+        </p>
         <br>
 
         <!-- <v-row align="center" justify="center">
@@ -26,6 +28,18 @@
 
         </v-parallax> -->
         <v-container>
+
+
+            <v-dialog v-model="dialog" max-width="400">
+                <v-card>
+                    <v-card-title class="headline">Error</v-card-title>
+                    <v-card-text>Please fill in all fields</v-card-text>
+                    <v-card-actions>
+                        <v-btn color="primary" @click="dialog = false">OK</v-btn>
+                    </v-card-actions>
+                </v-card>
+            </v-dialog>
+
             <!-- <div v-if="auth.signUp"> -->
             <v-form @submit.prevent="signUp">
                 <v-row>
@@ -43,11 +57,13 @@
                     </v-col>
                     <v-col cols="" lg="6" sm="12">
                         <v-label class="font-weight-bold text-white">Gh Card No.</v-label>
-                        <v-text-field class="text-field  modify" v-model="signupForm.ghCardNo" type="name"></v-text-field>
+                        <v-text-field class="text-field  modify" v-model="signupForm.ghCardNo"
+                            type="name"></v-text-field>
                     </v-col>
                     <v-col cols="" lg="6" sm="12">
                         <v-label class="font-weight-bold text-white">Mobile Number</v-label>
-                        <v-text-field class="text-field  modify" v-model="signupForm.mobileNo" type="number"></v-text-field>
+                        <v-text-field class="text-field  modify" v-model="signupForm.mobileNo"
+                            type="number"></v-text-field>
                     </v-col>
 
                     <v-col cols="" lg="6" sm="12">
@@ -56,26 +72,38 @@
                     </v-col>
                     <v-col cols="" lg="6" sm="12">
                         <v-label class="font-weight-bold text-white">Password</v-label>
-                        <v-text-field class="text-field modify " v-model="signupForm.pwd1" type="password"></v-text-field>
+                        <v-text-field class="text-field modify " v-model="signupForm.pwd1"
+                            type="password"></v-text-field>
                     </v-col>
                     <v-col cols="" lg="6" sm="12">
                         <v-label class="font-weight-bold text-white">Confirm Password</v-label>
-                        <v-text-field class="text-field  modify" v-model="signupForm.pwd2" type="password"></v-text-field>
+                        <v-text-field class="text-field  modify" v-model="signupForm.pwd2"
+                            type="password"></v-text-field>
                     </v-col>
                 </v-row>
                 <br> <br>
-                <!-- <span v-if="pwdErr == true">
-                    <p>{{ pwdErr }}</p>
-                </span>
-                <v-btn type="submit">Sign Up</v-btn> -->
-                <v-btn type="submit">Sign Up</v-btn>
-                <v-divider>Or Sign up with social media</v-divider>
+
+                <v-row>
+                    <v-col cols="" lg="6" sm="12" class="d-flex justify-center">
+                        <v-btn type="submit">Sign Up</v-btn>
+                    </v-col>
+                    <v-col cols="" lg="6" sm="12" class="d-flex justify-center">
+                        <v-btn @click="clearForm">Clear</v-btn>
+                    </v-col>
+                    <v-divider>Or Sign up with social media</v-divider>
+                </v-row>
+
                 <v-row>
                     <v-col>
-                        <v-btn icon="mdi-google"></v-btn>
+                        <v-btn icon>
+                            <v-icon>mdi-google</v-icon>
+                        </v-btn>
                     </v-col>
                     <v-col>
-                        <v-btn icon="mdi-facebook"></v-btn>
+                        <v-btn  icon="mdi-facebook"></v-btn>
+                    </v-col>
+                    <v-col>
+                        <v-btn  icon=" mdi-apple"></v-btn>
                     </v-col>
                 </v-row>
             </v-form>
@@ -88,7 +116,11 @@
         <br>
     </div>
 </template>
+
 <script setup>
+
+
+
 const { auth } = useSupabaseClient()
 const client = useSupabaseClient()
 const user = useSupabaseUser()
@@ -120,7 +152,21 @@ const signupForm = signUpForm.value;
 // const confirmForm = confirmSignUpForm.value;
 
 
+
+
+
 const signUp = async () => {
+
+
+
+    // Check if any required field is empty
+    for (const key in signupForm) {
+        if (signupForm[key].trim() === '') {
+            alert('Please  Complete ALL fields !!!')
+            return;
+        }
+    }
+
     if (signupForm.pwd1 !== signupForm.pwd2) {
         alert('Password Does Not Match!')
         signupForm.pwd1 = '';
@@ -168,6 +214,12 @@ const signUp = async () => {
 //         return navigateTo('/signup');
 //     }
 // });
+
+const clearForm = () => {
+    for (const key in signupForm) {
+        signupForm[key] = '';
+    }
+};
 </script>
 
 <style scoped>
