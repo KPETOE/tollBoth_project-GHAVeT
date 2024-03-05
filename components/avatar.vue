@@ -14,7 +14,7 @@
                         <v-avatar image="/img/hawa.png">
                             <!-- <span class="text-h5"><v-img src="/img/hawa.png"></v-img></span> -->
                         </v-avatar>
-                        <!-- <h3>{{ user.name }}</h3> -->
+                        <!-- <h3>{{  }}</h3> -->
                         <p class="text-caption mt-1">
                             {{ user.email }}
                         </p>
@@ -35,10 +35,33 @@
 <script setup>
 const { auth } = useSupabaseClient();
 const user = useSupabaseUser();
+const client = useSupabaseClient();
 const router = useRouter();
+
+const profile = ref([]);
+const user_id = user.value.id;
+const getProfile = async () => {
+
+    // const id = profId;
+    try {
+        const profId = client.from('profile').select('id', user_id)
+        profId.then((res) => (profile.value = res.data));
+        
+        if (profId.length > 0) {
+            const rowData = profId[0]
+            console.log(rowData)
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 const logOut = async () => {
     const { error } = await auth.signOut();
     router.push('/')
 };
+
+onMounted(getProfile);
+
 
 </script>
