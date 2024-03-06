@@ -16,19 +16,19 @@
         <v-container fluid style="height: ;">
             <v-form @submit.prevent="signIn" style="text-align: center;">
                 <v-row align="center" justify="center">
+
                     <v-col cols="12" sm="6">
+                        <label class="text-white" style="font-size: 1.2em; font-weight: bold;">Username / Email</label>
                         <v-text-field class="text-field text-center" type="name" v-model="loginForm.userName"
                             placeholder="User Name/Email" variant="flat"></v-text-field>
                     </v-col>
                 </v-row>
                 <br>
                 <v-row align="center" justify="center">
-                    <!--  <v-col cols="12" sm="6">
-                        <v-text-field class="text-field  text-center" type="password" v-model="loginForm.password"
-                            placeholder="Password"></v-text-field>
-                    </v-col>-->
+
 
                     <v-col cols="12" sm="6">
+                        <v-label class="text-white" style="font-size: 1.2em; font-weight: bold;"> PASSWORD</v-label>
                         <v-text-field class="text-field text-center" v-model="loginForm.password"
                             :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                             :type="showPassword ? 'text' : 'password'" @click:append="showPassword = !showPassword"
@@ -39,8 +39,8 @@
                     </v-col>
                 </v-row>
                 <br>
-                <p class="text-center">Don't have an account? <nuxt-link style="text-decoration: none;" class="text-white"
-                        to="/signup">Signup here</nuxt-link></p><br>
+                <p class="text-center">Don't have an account? <nuxt-link style="text-decoration: none;"
+                        class="text-white" to="/signup">Signup here</nuxt-link></p><br>
                 <p class="text-center">Forgot Password? <nuxt-link style="text-decoration: none;" class="text-white"
                         to="/forgot">Click here</nuxt-link></p>
                 <v-row align="center" justify="center">
@@ -81,7 +81,7 @@ const signIn = async () => {
             alert('Wrong  username or password');
             navigateTo('/login')
         }
-        
+
     } catch (error) {
         console.log(error)
     }
@@ -113,6 +113,4 @@ const showPassword = ref(false);
 .body {
     background: linear-gradient(to right, #182831, rgba(72, 113, 129, 0.813), #18252c) !important;
 }
-
-
 </style>

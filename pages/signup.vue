@@ -192,7 +192,7 @@ const signUp = async () => {
                 Mobile_Number: signupForm.mobileNo,
             }
         ]).select()
-        return navigateTo('/confirm')
+        // return navigateTo('/confirm')
         // const confirmMail = signupForm.email;
         // const step = bySteps.confirm;
     } catch (error) {
