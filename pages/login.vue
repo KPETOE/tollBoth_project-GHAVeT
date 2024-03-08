@@ -13,7 +13,7 @@
         </v-row>
 
 
-        <v-container fluid style="height: ;">
+        <v-container fluid style="height: ">
             <v-form @submit.prevent="signIn" style="text-align: center;">
                 <v-row align="center" justify="center">
 
