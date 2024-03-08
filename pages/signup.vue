@@ -107,11 +107,6 @@ definePageMeta({
 
 
 const signUpForm = ref({
-    fName: '',
-    lName: '',
-    uName: '',
-    ghCardNo: '',
-    mobileNo: '',
     email: '',
     pwd1: '',
     pwd2: '',
@@ -151,7 +146,7 @@ const signUp = async () => {
         }, 3000);
         return;
     }
-    
+
 
     try {
         const { data, error } = await auth.signUp({
@@ -160,7 +155,7 @@ const signUp = async () => {
         });
 
         // user.value.id = data.user.id;
-        
+
         // if (user.value.id !== '') {
         //     const { data: profile, error } = await client.from('profile').insert([
         //         {
