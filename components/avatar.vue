@@ -14,7 +14,7 @@
                         <v-avatar image="/img/hawa.png">
                             <!-- <span class="text-h5"><v-img src="/img/hawa.png"></v-img></span> -->
                         </v-avatar>
-                        <!-- <h3>{{  }}</h3> -->
+                        <!-- <h3>{{ profile.value.First_name }}</h3> -->
                         <p class="text-caption mt-1">
                             {{ user.email }}
                         </p>

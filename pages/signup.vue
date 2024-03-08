@@ -43,42 +43,17 @@
             <!-- <div v-if="auth.signUp"> -->
             <v-form @submit.prevent="signUp">
                 <v-row>
-                    <v-col cols="" lg="6" sm="6">
-                        <v-label class="font-weight-bold text-white">First Name</v-label>
-                        <v-text-field class="text-field  modify" v-model="signupForm.fName" type="name"></v-text-field>
-                    </v-col>
-                    <v-col cols="" lg="6" sm="6">
-                        <v-label class="font-weight-bold text-white">Other Names / Last Name</v-label>
-                        <v-text-field class="text-field modify" v-model="signupForm.lName" type="name"></v-text-field>
-                    </v-col>
-                    <v-col cols="" lg="6" sm="12">
-                        <v-label class="font-weight-bold text-white">User Name</v-label>
-                        <v-text-field class="text-field  modify" v-model="signupForm.uName" type="name"></v-text-field>
-                    </v-col>
-                    <v-col cols="" lg="6" sm="12">
-                        <v-label class="font-weight-bold text-white">Gh Card No.</v-label>
-                        <v-text-field class="text-field  modify" v-model="signupForm.ghCardNo"
-                            type="name"></v-text-field>
-                    </v-col>
-                    <v-col cols="" lg="6" sm="12">
-                        <v-label class="font-weight-bold text-white">Mobile Number</v-label>
-                        <v-text-field class="text-field  modify" v-model="signupForm.mobileNo"
-                            type="number"></v-text-field>
-                    </v-col>
-
                     <v-col cols="" lg="6" sm="12">
                         <v-label class="font-weight-bold text-white">Email</v-label>
                         <v-text-field class="text-field modify" v-model="signupForm.email" type="email"></v-text-field>
                     </v-col>
                     <v-col cols="" lg="6" sm="12">
                         <v-label class="font-weight-bold text-white">Password</v-label>
-                        <v-text-field class="text-field modify " v-model="signupForm.pwd1"
-                            type="password"></v-text-field>
+                        <v-text-field class="text-field modify " v-model="signupForm.pwd1" type="password"></v-text-field>
                     </v-col>
                     <v-col cols="" lg="6" sm="12">
                         <v-label class="font-weight-bold text-white">Confirm Password</v-label>
-                        <v-text-field class="text-field  modify" v-model="signupForm.pwd2"
-                            type="password"></v-text-field>
+                        <v-text-field class="text-field  modify" v-model="signupForm.pwd2" type="password"></v-text-field>
                     </v-col>
                 </v-row>
                 <br> <br>
@@ -100,10 +75,10 @@
                         </v-btn>
                     </v-col>
                     <v-col>
-                        <v-btn  icon="mdi-facebook"></v-btn>
+                        <v-btn icon="mdi-facebook"></v-btn>
                     </v-col>
                     <v-col>
-                        <v-btn  icon=" mdi-apple"></v-btn>
+                        <v-btn icon=" mdi-apple"></v-btn>
                     </v-col>
                 </v-row>
             </v-form>
@@ -146,7 +121,7 @@ const signUpForm = ref({
 // const confirmSignUpForm = ref({
 //     email: '',
 //     code: ''
-// });
+// }); 
 
 const signupForm = signUpForm.value;
 // const confirmForm = confirmSignUpForm.value;
@@ -176,23 +151,28 @@ const signUp = async () => {
         }, 3000);
         return;
     }
+    
 
     try {
         const { data, error } = await auth.signUp({
             email: signupForm.email,
             password: signupForm.pwd1,
-
         });
-        const { data0, error0 } = await client.from('profile').insert([
-            {
-                first_name: signupForm.fName,
-                last_name: signupForm.lName,
-                Username: signupForm.uName,
-                gh_card_no: signupForm.ghCardNo,
-                Mobile_Number: signupForm.mobileNo,
-            }
-        ]).select()
-        // return navigateTo('/confirm')
+
+        // user.value.id = data.user.id;
+        
+        // if (user.value.id !== '') {
+        //     const { data: profile, error } = await client.from('profile').insert([
+        //         {
+        //             first_name: signupForm.fName,
+        //             last_name: signupForm.lName,
+        //             Username: signupForm.uName,
+        //             gh_card_no: signupForm.ghCardNo,
+        //             Mobile_Number: signupForm.mobileNo,
+        //         }
+        //     ]).select()
+        // }
+        return navigateTo('/confirm')
         // const confirmMail = signupForm.email;
         // const step = bySteps.confirm;
     } catch (error) {
@@ -200,6 +180,12 @@ const signUp = async () => {
     }
 };
 
+
+const triggerProfile = async () => {
+    // const triggerPsql = '
+    //     CREATE
+    // ';
+}
 // const confirmSignUp = async () => {
 //     try {
 //         const { data, error } = await auth.verifyOtp({ email: confirmForm.email, token: confirmForm.code, type: 'email' });
