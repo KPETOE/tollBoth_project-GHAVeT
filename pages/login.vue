@@ -76,9 +76,10 @@ const signIn = async () => {
             email: loginForm.userName,
             password: loginForm.password
         });
-        if (user.value.created_at === user.value.last_sign_in_at) {
+        if (user.value.last_sign_in_at = null) {
             return navigateTo('/confirmDets')
-        } else if(user.value){
+        }
+        if (user.value) {
             return navigateTo('/')
         }
         // if (user.value) {
