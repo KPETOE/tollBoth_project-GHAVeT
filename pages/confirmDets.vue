@@ -48,7 +48,7 @@ const profile = ref({
 })
 const confirm = async () => {
     try {
-        const { data: profile, error } = await client.from('profile').insert([
+        const { data, error } = await client.from('profile').insert([
             {
                 first_name: profile.value.fName,
                 last_name: profile.value.lName,
@@ -56,7 +56,8 @@ const confirm = async () => {
                 gh_card_no: profile.value.ghCardNo,
                 Mobile_Number: profile.value.mobileNo
             }
-        ])
+        ]).single();
+        return navigateTo('/')
     } catch (error) {
         console.log(error);
     }

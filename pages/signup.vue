@@ -176,11 +176,11 @@ const signUp = async () => {
 };
 
 
-const triggerProfile = async () => {
+// const triggerProfile = async () => {
     // const triggerPsql = '
     //     CREATE
     // ';
-}
+// }
 // const confirmSignUp = async () => {
 //     try {
 //         const { data, error } = await auth.verifyOtp({ email: confirmForm.email, token: confirmForm.code, type: 'email' });
