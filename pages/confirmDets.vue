@@ -38,6 +38,7 @@ definePageMeta({
 const client = useSupabaseClient();
 const user = useSupabaseUser();
 const { auth } = useSupabaseClient();
+const router = useRouter();
 
 const profile = ref({
     fName: '',
@@ -57,9 +58,16 @@ const confirm = async () => {
                 Mobile_Number: profile.value.mobileNo
             }
         ]).single();
-        return navigateTo('/')
+        router.push('/')
+        // return navigateTo('/')
     } catch (error) {
         console.log(error);
     }
 };
+
+// watchEffect(() => {
+//     if (user.value.last_sign_in_at = null) {
+//         router.push('/confirmDets')
+//     }
+// });
 </script>

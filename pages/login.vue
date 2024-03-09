@@ -17,7 +17,7 @@
             <v-form @submit.prevent="signIn" style="text-align: center;">
                 <v-row align="center" justify="center">
 
-                    <v-col cols="12" sm="6"  class="label-left">
+                    <v-col cols="12" sm="6" class="label-left">
                         <v-label class="text-white " style="font-size: 1.2em; font-weight: bold;"> Username /
                             Email</v-label>
                         <v-text-field class="text-field text-center" type="name" v-model="loginForm.userName"
@@ -41,8 +41,8 @@
                 </v-row>
 
                 <br>
-                <p class="text-center">Don't have an account? <nuxt-link style="text-decoration: none;"
-                        class="text-white" to="/signup">Signup here</nuxt-link></p><br>
+                <p class="text-center">Don't have an account? <nuxt-link style="text-decoration: none;" class="text-white"
+                        to="/signup">Signup here</nuxt-link></p><br>
                 <p class="text-center">Forgot Password? <nuxt-link style="text-decoration: none;" class="text-white"
                         to="/forgot">Click here</nuxt-link></p>
                 <v-row align="center" justify="center">
@@ -63,25 +63,41 @@ definePageMeta({
 });
 const { auth } = useSupabaseClient();
 const user = useSupabaseUser();
+const client = useSupabaseClient();
+const router = useRouter();
 
 const logInForm = ref({
     userName: '',
     password: ''
 });
 const loginForm = logInForm.value;
-
+const profile = client.from('profile').select('*');
+console.log(profile)
 const signIn = async () => {
     try {
         const { data, error } = await auth.signInWithPassword({
             email: loginForm.userName,
             password: loginForm.password
         });
-        if (user.value.last_sign_in_at = null) {
-            return navigateTo('/confirmDets')
+
+        // watchEffect(() => {
+        if (user.value.last_sign_in_at == !  null) {
+            router.push('/')
+        } else {
+            router.push('/confirmDets')
+        } 
+
+        if (user.value.id == client.from('profile').select('id', user.value.id)) {
+            router.push('/')
         }
-        if (user.value) {
-            return navigateTo('/')
-        }
+        // })
+
+        //     if (!user.value) {
+        //     return navigateTo('/login')
+        // } else if(user.value){
+        //     return navigateTo('/')
+        // }
+
         // if (user.value) {
         //     navigateTo('/')
         // }
@@ -89,6 +105,7 @@ const signIn = async () => {
             alert('Wrong  username or password');
             navigateTo('/login')
         }
+        
 
     } catch (error) {
         console.log(error)
