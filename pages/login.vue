@@ -58,6 +58,7 @@
 
 
 <script setup>
+
 definePageMeta({
     layout: 'custom'
 });
@@ -71,25 +72,35 @@ const logInForm = ref({
     password: ''
 });
 const loginForm = logInForm.value;
-const profile = client.from('profile').select('*');
-console.log(profile)
+// const profile = client.from('profile').select('*').then((res) => profile.value = res.data);
+const { profile } = await client.from('profile').select('id, Username, first_name, last_name').eq('');
+
+//profId.then((res) => (profile.value = res.data));
+if (profile) {
+    id.value = profile.id
+    Username.value = profile.Username
+    first_Name.value = profile.first_Name
+    last_Name.value = profile.last_Name
+}
+
 const signIn = async () => {
     try {
         const { data, error } = await auth.signInWithPassword({
             email: loginForm.userName,
             password: loginForm.password
         });
-
+        const person = await client.from('profile').select('id').eq('id', user.value.id).single()
+        console.log(person)
         // watchEffect(() => {
-        if (user.value.last_sign_in_at == !  null) {
-            router.push('/')
-        } else {
+        if (person.data == null) {
             router.push('/confirmDets')
-        } 
-
-        if (user.value.id == client.from('profile').select('id', user.value.id)) {
+        } else {
             router.push('/')
         }
+
+        // if (user.value.id == profile.value.id) {
+        //     router.push('/')
+        // }
         // })
 
         //     if (!user.value) {
@@ -105,7 +116,7 @@ const signIn = async () => {
             alert('Wrong  username or password');
             navigateTo('/login')
         }
-        
+
 
     } catch (error) {
         console.log(error)

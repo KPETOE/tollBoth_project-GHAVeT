@@ -44,7 +44,7 @@ const getProfile = async () => {
 
     // const id = profId;
     try {
-        const profId = client.from('profile').select('id', user_id)
+        const profId = client.from('profile').select()
         profId.then((res) => (profile.value = res.data));
         
         if (profId.length > 0) {
