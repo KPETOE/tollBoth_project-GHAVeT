@@ -76,12 +76,12 @@ const loginForm = logInForm.value;
 const { profile } = await client.from('profile').select('id, Username, first_name, last_name').eq('');
 
 //profId.then((res) => (profile.value = res.data));
-if (profile) {
-    id.value = profile.id
-    Username.value = profile.Username
-    first_Name.value = profile.first_Name
-    last_Name.value = profile.last_Name
-}
+// if (profile) {
+//     id.value = profile.id
+//     Username.value = profile.Username
+//     first_Name.value = profile.first_Name
+//     last_Name.value = profile.last_Name
+// }
 
 const signIn = async () => {
     try {
