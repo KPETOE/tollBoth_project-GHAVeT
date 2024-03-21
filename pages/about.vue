@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <v-parallax height="800">
+        <v-parallax height="">
             <div style="position: relative;">
 
                 <div style="position: absolute; bottom: 10px; right: 10px; cursor: pointer;" @click="toggleMute">
@@ -24,16 +24,22 @@
                         <v-container class="mt-10 mb-10">
                             <h4 class="text-justify"> At GHAVet, we're on a mission to redefine the way you experience
                                 tolls. Our vision
-                                is simple: to make your journey smoother, faster, and hassle-free. By harnessing the power
-                                of cutting-edge technology, we're transforming toll collection into a seamless process that
+                                is simple: to make your journey smoother, faster, and hassle-free. By harnessing the
+                                power
+                                of cutting-edge technology, we're transforming toll collection into a seamless process
+                                that
                                 enhances mobility and connectivity on the road.</h4>
 
                             <h4 class="underline text-">What Sets Us Apart</h4>
                             <p class="text-justify">
-                                At SmartToll, innovation is at the heart of everything we do. We've combined advanced RFID
-                                and wireless communication technologies to create a next-generation toll collection system
-                                that's not only efficient but also incredibly convenient. No more fumbling for loose change
-                                or waiting in long queues – with SmartToll, you can breeze through toll plazas with ease.
+                                At SmartToll, innovation is at the heart of everything we do. We've combined advanced
+                                RFID
+                                and wireless communication technologies to create a next-generation toll collection
+                                system
+                                that's not only efficient but also incredibly convenient. No more fumbling for loose
+                                change
+                                or waiting in long queues – with SmartToll, you can breeze through toll plazas with
+                                ease.
                             </p>
                             <p class="text-muted text-italize"> Experience the Future of Toll Collection
 
@@ -58,7 +64,8 @@
                         <v-container>
                             <v-card class="ma-2 pa-2" style="width: 20em;">
                                 <v-container fluid>
-                                    <v-icon class="d-flex justtify-center mt-5 mx-auto" style="font-size: 60px;"></v-icon>
+                                    <v-icon class="d-flex justtify-center mt-5 mx-auto"
+                                        style="font-size: 60px;"></v-icon>
                                     <v-card-item>
                                         <h4 class="text-center"></h4><br>
                                         <p class="text-justify"></p>
@@ -76,7 +83,8 @@
             <v-container>
                 <h2 class="text-center text-uppercase"></h2>
                 <p class="text-justify"></p>
-                <v-btn class="mx-auto d-flex" to="/history" style="width: 15em;" variant="flat" color="red-accent-2">Read
+                <v-btn class="mx-auto d-flex" to="/history" style="width: 15em;" variant="flat"
+                    color="red-accent-2">Read
                     More
                     <v-icon>mdi-arrow-right-thin-circle-outline</v-icon></v-btn>
             </v-container>
@@ -108,7 +116,7 @@
 
 
 <script setup>
- 
+
 
 
 </script>
