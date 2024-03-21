@@ -8,7 +8,7 @@
                     </h2>
 
                 </v-container>
-                <p class="text-center font-weight-bold text-center " style=" color: rgb(43, 130, 104);  font-size: 1rem;">
+                <p class="text-center font-weight-bold text-center text-teal-darken-3" style=" color: rgb(43, 130, 104);  font-size: 1rem;">
                     Explore your transaction history and track your toll payments with ease. <br> Select a tag number,
                     choose the
                     date range, and view detailed information about your toll<br> transactions below.
@@ -40,7 +40,7 @@
 
                   
                     <div class="col-md-6 text-center" style="background-color: rgb(127, 203, 203);">
-                        <label for="textBox2" class="form-label mx-auto text-uppercase text-BLACK text-center "
+                        <label for="textBox2" class="form-label mx-auto text-uppercase text-black text-center "
                             style="font-size: 1.5rem; font-weight: bold">Balance</label>
                         <div class="con text-center  d-flex justify-content-center ml-auto "  >
                             <input type="text" class="balance bg-white  text-center" id="textBox2"  placeholder="GHS 500.00"  readonly/>
@@ -50,22 +50,12 @@
             </div>
             <br> <br>
 
-            <!-- <div style="display: flex; justify-content: space-between; width: 300px;">
-                <div style="display: flex; flex-direction: column; align-items: center;">
-                    <label for="fromDate">FROM</label>
-                    <input type="date" id="fromDate" v-model="fromDate" class="underlined-input">
-                </div>
-
-                <div style="display: flex; flex-direction: column; align-items: center;">
-                    <label for="toDate">TO</label>
-                    <input type="date" id="toDate" v-model="toDate" class="underlined-input">
-                </div>
-            </div> -->
+           
             <br>
             <div style="display: flex; flex-direction: row;">
                 <div style="flex: 1; margin-right: 10px;">
                     <div style="display: flex; flex-direction: column; align-items: center;">
-                        <label for="fromDate" class="font-weight-bold">FROM</label>
+                        <label for="fromDate" class="font-weight-bold text-black">FROM</label>
                         <br>
                         <input type="date" id="fromDate" v-model="fromDate" class="underlined-input">
                     </div>
@@ -73,7 +63,7 @@
 
                 <div style="flex: 2;">
                     <div style="display: flex; flex-direction: column; align-items: center;">
-                        <label for="toDate" class="font-weight-bold">TO</label>
+                        <label for="toDate" class="font-weight-bold text-black">TO</label>
 
                         <br>
                         <input type="date" id="toDate" v-model="toDate" class="underlined-input">
@@ -84,7 +74,7 @@
                     <div style="display: flex; flex-direction: column; align-items: center;">
                         <br>
 
-                        <button class="search font-weight-bold">Search</button>
+                        <button class="search font-weight-bold ">Search</button>
 
                     </div>
                 </div>
@@ -123,7 +113,7 @@
                         <button class="search font-weight-bold">Download</button>
                         <br>
 
-                        <h1 class="mx-auto text-uppercase text-black text-start text-center  font-weight-bold"
+                        <h1 class="mx-auto text-uppercase text-lime-darken-4 text-start text-center  font-weight-bold"
                             style="font-size: 2em">
                             statement
                         </h1>

@@ -3,125 +3,85 @@
         <v-parallax style="">
             <div class="accountimg">
                 <br />
-                <!-- <ul class="d-flex justify-content-end">
-                    <li class="nav-item">
-                        <a class="nav-link text-white" @click="showSubscriberDetails">
-                            <img :src="profilePhoto" class="profile-photo" alt="Profile Photo">
-                        </a>
-                    </li>
-                </ul> -->
-                <!-- <ul class="d-flex justify-content-end">
-                    <li class="nav-item">
-                        <avatar />
-                    </li>
-                </ul> -->
+               
                 <v-container>
-                    <h1 class="mx-auto text-uppercase text-white text-center" style="font-size: 1.8em">
+                    <h1 class="mx-auto text-uppercase text-teal-darken-3 text-center" style="font-size: 1.8em">
                         WELCOME TO YOUR FINANCED PLATFORM ALL NECESSARY MEASURES ARE IN
                         PLACE
                     </h1>
-                    <p class="text-center font-weight-bold  text-white" style="   font-size: 1.5rem;"> To protect your information.</p>
-                <br>
+                    <p class="text-center font-weight-bold text-teal-darken-3 " style="   font-size: 1.5rem;"> To protect your
+                        information.</p>
+                    <br>
                 </v-container>
                 <v-container>
-                    <h1 class="mx-auto text-uppercase text-BLACK text-center" style="font-size: 1.5em">
+                    <h1 class="mx-auto text-uppercase text-black text-center" style="font-size: 1.5em">
                         ACCOUNT DETAILS
                     </h1>
                 </v-container>
                 <br />
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-md-6" style="text-align: center">
-                            <label for="textBox2" class="form-label mx-auto text-uppercase text-BLACK text-center"
+                        <div class="col-md-6" style="text-align: center;">
+                            <label for="textBox2" class="form-label mx-auto text-uppercase text-black text-center"
                                 style="font-size: 1.5rem; font-weight: bold">BALANCE</label>
-                            <button class="btn btn-primary non-responsive-button">
-                                <input type="text" class="form-control square-box" id="textBox1" placeholder="GHS 500.00" />
-                            </button>
+                            <div class="bawa mx-auto d-flex justify-content-center align-items-center"
+                                style="margin-top: 20px;">
+                                <input type="text" class="form-control square-box" id="textBox1"
+                                    placeholder="GHS 500.00" />
+                            </div>
                         </div>
 
                         <div class="col-md-6 text-center" style="">
-                            <label for="textBox2" class="form-label mx-auto text-uppercase text-BLACK text-center"
+                            <label for="textBox2" class="form-label mx-auto text-uppercase text-black text-center"
                                 style="font-size: 1.5rem; font-weight: bold">DEDUCTIONS</label>
-                            <button class="btn btn-primary non-responsive-button">
-                                <input type="text" class="form-control square-box" id="textBox2" placeholder="GHS 500.00" />
-                            </button>
+                            <div class="bawa mx-auto d-flex justify-content-center align-items-center"
+                                style="margin-top: 20px;">
+                                <input type="text" class="form-control square-box" id="textBox1"
+                                    placeholder="GHS 500.00" />
+                            </div>
                         </div>
                     </div>
                 </div>
                 <br /><br />
                 <br /><br />
+                <br><br>
+                
 
                 <div class="container d-flex justify-content-center align-items-center">
                     <div class="col-md-6 text-center" style="">
-                        <label for="textBox3" class="form-label mx-auto text-uppercase text-BLACK text-center"
+                        <label for="textBox3" class="form-label mx-auto text-uppercase text-black text-center"
                             style="font-size: 1.5rem; font-weight: bold">LAST DEPOSIT</label>
-                        <button class="btn btn-primary host">
+                        <div class="lastDep mx-auto d-flex justify-content-center align-items-center"
+                            style="margin-top: 10px;">
                             <div class="mb-3 d-flex">
-                                <input type="text" style="
-                    height: 40px;
-                    width: 65%;
-                    margin: 0 auto;
-                    border-top-left-radius: 0px;
-                    border-top-right-radius: 3px;
-                    border-bottom-left-radius: 0px;
-                    border-bottom-right-radius: 3px;
-                  " class="form-control table" id="textBox3" placeholder="GHS 500.00" />
+                                <input type="text" readonly class="form-control table" id="textBox3" value="GHS 500.00" />
 
                                 &nbsp;
-                                <input type="text" style="
-                    height: 40px;
-                    width: 65%;
-                    margin: 0 auto;
-                    border-top-left-radius: 3px;
-                    border-top-right-radius: 0px;
-                    border-bottom-left-radius: 3px;
-                    border-bottom-right-radius: 0px;
-                  " class="form-control table" id="textBox4" placeholder="01/01/2024" />
+                                <input type="text" readonly class="form-control table" id="textBox4"  value="01/01/2024" />
                             </div>
-                        </button>
+                        </div>
                     </div>
                 </div>
 
                 <br><br>
-                <!-- <div class="container">
-                    <v-row class="d-flex justify-center  " style="text-align: center;">
+              
+                <br><br>
 
-                        <v-col cols="" md="12">
-                            <button @click="handleButtonClick" class="btn btn-primary  custom-width  ">DEPOSIT FUNDS</button>
-
-                        </v-col>
-                        <v-col cols="" md="12">
-                            <button @click="handleButtonClick" class="btn btn-primary  custom-width">STATEMENT</button>
-                        </v-col>
-                    </v-row>
-                    
-                </div> -->
-
-                
                 <div class="container">
                     <v-row justify="space-between" style="text-align: center;">
                         <v-col cols="12" md="6">
-                            <button 
-                             class="btn btn-primary custom-width">DEPOSIT FUNDS</button>
+                            <button class="btn btn-primary custom-width font-weight-bold">DEPOSIT FUNDS</button>
                         </v-col>
                         <v-col cols="12" md="6">
-                            <button  class="btn btn-primary custom-width">STATEMENT</button>
+                            <button class="btn btn-primary custom-width  font-weight-bold ">STATEMENT</button>
                         </v-col>
                     </v-row>
                 </div>
 
-                <!-- <div class="row justify-content-center">
-                    </div>
-                    <div class="col-md-12">
-
-
-                        <div class="col-md-12" style="text-align: center;">
-
-                        </div>
-                    </div> -->
+                <br><br>
                 <br /><br />
                 <v-container>
-                    <h3 class="mx-auto text-uppercase text-black text-center block-text" style="font-size: 1em">
+                    <h3 class="mx-auto text-uppercase text-lime-darken-4 text-center block-text" style="font-size: 1em">
                         ALL Funds Are Subject to <br />Financial Management And Money<br />
                         Laundering REGUALATIONS <br />
                         ACT 921 2016
@@ -131,42 +91,10 @@
         </v-parallax>
     </div>
 </template>
+
+
 <script setup>
-// import imgbg from '../assets/img/home.jpeg'
 
-// const homeContent = await useFetch(
-//     "https://admin.gathstudents.com/api/home-page?populate=*"
-// );
-// const home = homeContent.data.value;
-// // console.log(homeContent)
-// const { data: uniLogos } = await useFetch(
-//     "https://admin.gathstudents.com/api/uni-logos?populate=*"
-// );
-
-// const link = "Tourism Impact Report (2022).";
-
-// const exeMem = "From the University Tourism Community";
-// const memDes =
-//     "5+ thousand tourism students have already joined the  university tourism community.";
-
-// const { data: reps } = await useFetch(
-//     "https://admin.gathstudents.com/api/executives?populate=*"
-// );
-// const { data: testimonies } = await useFetch(
-//     "https://admin.gathstudents.com/api/testimonies?populate=*"
-// );
-// // console.log(testimonies.attributes)
-// const { data: events } = await useFetch(
-//     "https://admin.gathstudents.com/api/events?populate=*"
-// );
-// const { data: partners } = await useFetch(
-//     "https://admin.gathstudents.com/api/partners?populate=*"
-// );
-// // console.log(partners)
-
-// const emits = ["profilePhotoClick"]; // Declare the emitted event
-
-// const profilePhoto = ref("/img/hawa.png"); // Set the default profile photo path
 
 const showSubscriberDetails = () => {
     // Emit the 'profilePhotoClick' event to be handled internally
@@ -177,27 +105,13 @@ const showSubscriberDetails = () => {
 
 
 </script>
+
 <style>
-.non-responsive-button {
-    width: 250px;
-    height: 150px;
-    background-color: rgb(24, 132, 114);
-}
 
-.non-responsive-button:hover {
-    border-color: rgb(24, 132, 114);
-    background-color: rgb(24, 132, 114);
-}
-
-.host {
-    width: 300px;
-    height: 100px;
-    background-color: rgb(40, 195, 169);
-}
 
 .square-box {
     height: 80px;
-    width: 70%;
+    width: 50%;
     margin: 0 auto;
 
     border-top-left-radius: 15px;
@@ -207,8 +121,8 @@ const showSubscriberDetails = () => {
 }
 
 .accountimg {
-    background: rgb(127, 203, 203);
-    height: 100%;
+   /* background: rgba(255, 255, 255, 0.8) !important;  Adjust the alpha value as needed */
+    background-color: rgb(127, 203, 203);
 }
 
 body {
@@ -238,31 +152,42 @@ body {
     /* Add a smooth transition effect */
 
     /* Additional styling for the normal state */
-    background-color: #105340f5;
+   
+    background: linear-gradient(to right, rgba(75, 156, 162, 0.331), rgba(135, 207, 235, 0.486), #31759a48, #1534459b) !important;
     color: #fff;
     border: 1px solid #040a11;
 }
 
-.custom-width:hover {
-    background-color: #249385;
-    /* Change background color on hover */
-    color: #fff;
-    /* Change text color on hover */
-    border: 1px solid #ededed;
-    /* Change border color on hover */
-}
+
 
 .block-text {
     display: block;
 }
 
 
-.btn-primary.host {
-    background-color: rgb(24, 132, 114);
-    border-color: rgb(24, 132, 114);
+
+.bawa {
+
+
+    width: 50%;
+    height: 10em;
+    background-color: rgba(57, 98, 95, 0.384) !important;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 15px;
 }
 
-.btn-primary.host:hover {
-    background-color: rgb(24, 132, 114);
+.lastDep {
+    margin-top: 20px;
+    height: 4em;
+    height: 7em;
+    width: 50%;
+    margin: 0 auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 6px;
+    background-color: rgba(57, 98, 95, 0.384) !important;
 }
 </style>
