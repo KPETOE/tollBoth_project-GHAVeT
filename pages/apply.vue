@@ -17,7 +17,8 @@
                     </v-col>
                 </v-row>
 
-                <p class="text-center font-weight-bold text-center " style=" color: rgb(219, 54, 54);  font-size: 1rem;">
+                <p class="text-center font-weight-bold text-center "
+                    style=" color: rgb(219, 54, 54);  font-size: 1rem;">
                     Please
                     complete
                     the following form for your new RFID tag for your Vehicle. <br> Ensure all information is accurate
@@ -39,9 +40,9 @@
                                     <v-row class="d-flex justify-center" style="text-align: center">
                                         <v-col cols="12">
                                             <div style="background-color: azure; width: 34.5em;" class=" corners">
-                                                <v-text-field v-model="applyForm.veh_type" label="Vehicle make and Modle"
-                                                    outlined color="white" class="mx-auto corners"
-                                                    :rules="vehicleMakeModelRules"
+                                                <v-text-field v-model="applyForm.veh_type"
+                                                    label="Vehicle make and Modle" outlined color="white"
+                                                    class="mx-auto corners" :rules="vehicleMakeModelRules"
                                                     style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
                                                     variant="plain"></v-text-field>
                                             </div>
@@ -156,8 +157,9 @@
                                     <v-row class="d-flex justify-center" style="text-align: center">
                                         <v-col cols="12">
                                             <div style="background-color: azure; width: 34.5em;" class=" corners">
-                                                <v-text-field v-model="applyForm.roadWorthy" label="Road Worhty" outlined
-                                                    color="white" class="mx-auto corners" :rules="roadWorthyRules"
+                                                <v-text-field v-model="applyForm.roadWorthy" label="Road Worhty"
+                                                    outlined color="white" class="mx-auto corners"
+                                                    :rules="roadWorthyRules"
                                                     style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
                                                     variant="plain"></v-text-field>
                                             </div>
@@ -244,8 +246,8 @@
                         </v-col>
 
                         <v-col align="right" cols="" lg="6" md="6" sm="6">
-                            <v-btn @click="setTimeout(handleSubmit(), 6000)" type="submit" prepend-icon="mdi-check-circle"
-                                class="B-clear">
+                            <v-btn @click="setTimeout(handleSubmit(), 6000)" type="submit"
+                                prepend-icon="mdi-check-circle" class="B-clear">
                                 <template v-slot:prepend>
                                     <v-icon color="success"></v-icon>
                                 </template>
@@ -272,6 +274,8 @@
 </template>
 
 <script setup>
+import { application } from 'express';
+
 
 // import imgbg from '../assets/img/home.jpeg'
 const client = useSupabaseClient();
@@ -290,14 +294,14 @@ const user = useSupabaseUser();
 // const input6 = ref('');
 // const serial = 1++;
 // let dialog = false;
-
+const profile = await client.from('profile').select('Username, first_name, last_name, gh_card_no').eq('id', user.value.id).single()
 let Alert = ref(false);
 let type = ref('success');
 const applyForm = ref({
     vettag: '',
     license: '',
     newTag: '',
-    ghCard: '',
+    ghCard: profile.data.gh_card_no,
     residence: '',
     veh_type: '',
     insurance: '',
@@ -337,6 +341,7 @@ const submitApplication = async () => {
     let serial = applyForm.value.ghCard + '-' + count++;
     applyForm.value.vettag = serial;
 
+
     if (applyForm.value.ghCard === '' || applyForm.value.license === '' || applyForm.value.residence === '' || applyForm.value.veh_type === '' || applyForm.value.insurance === '' || applyForm.value.pickup_loc === '' || applyForm.value.roadWorthy === '') {
         alert('Please  Ensure All You Fields Are Completely Filled!')
         return
@@ -366,6 +371,12 @@ const submitApplication = async () => {
             }
         ]).select();
 
+        const { data0, error0 } = await client.from('Myapplication').insert([
+            {
+                Licenced_plate: applyForm.value.license,
+                Pickup_loc: applyForm.value.pickup_loc,
+            }
+        ]).select();
         // Clear form fields after successful submission
         applyForm.value.ghCard = '';
         applyForm.value.license = '';
@@ -375,7 +386,7 @@ const submitApplication = async () => {
         applyForm.value.pickup_loc = '';
         applyForm.value.roadWorthy = '';
 
-       
+
         const dialog = true
 
 
@@ -409,11 +420,11 @@ const addressRules = [
 ];
 
 /// Validation rules for GH Card Number
-const ghCardNumberRules = [
-    value => !!value || 'Field is required',
-    value => (value && value.length === 15) || 'GH Card Number should be 15 characters long',
-    value => /^GHA-\d{9}-\d$/.test(value) || 'Invalid GH Card Number format. Format should be GHA-xxxxxxxxx-x where x is a digit.',
-];
+// const ghCardNumberRules = [
+//     value => !!value || 'Field is required',
+//     value => (value && value.length === 15) || 'GH Card Number should be 15 characters long',
+//     value => /^GHA-\d{9}-\d$/.test(value) || 'Invalid GH Card Number format. Format should be GHA-xxxxxxxxx-x where x is a digit.',
+// ];
 
 
 
