@@ -274,7 +274,7 @@
 </template>
 
 <script setup>
-import { application } from 'express';
+//import { application } from 'express';
 
 
 // import imgbg from '../assets/img/home.jpeg'
@@ -371,12 +371,9 @@ const submitApplication = async () => {
             }
         ]).select();
 
-        const { data0, error0 } = await client.from('Myapplication').insert([
-            {
-                Licenced_plate: applyForm.value.license,
-                Pickup_loc: applyForm.value.pickup_loc,
-            }
-        ]).select();
+      
+
+
         // Clear form fields after successful submission
         applyForm.value.ghCard = '';
         applyForm.value.license = '';
