@@ -320,9 +320,18 @@ const checkbox = ref(false);
 //Initialise the count
 
 let count = 1000;
-
+let ref1 = 100
+let ref2 = 10
+let ref3 = 200
 //let x = 0;
-
+const applDate = await client.from('application').select('AppointmentDate').eq('id', user.value.id).single();
+const currentDate = new Date();
+const setMins = new Date(currentDate.getTime() + (3 * 60000));
+// async function getStatus() {
+//     }
+// onMounted(() => {
+//     getStatus()
+// })
 //submit function
 const submitApplication = async () => {
     // Handle form submission logic
@@ -341,6 +350,8 @@ const submitApplication = async () => {
     let serial = applyForm.value.ghCard + '-' + count++;
     applyForm.value.vettag = serial;
 
+    let reference = 'G' + ref1++ + 'V' + ref2++ + 'T' + ref3++;
+    'G' + ref1++ + 'V' + ref2++ + 'T' + ref3++ == reference;
 
     if (applyForm.value.ghCard === '' || applyForm.value.license === '' || applyForm.value.residence === '' || applyForm.value.veh_type === '' || applyForm.value.insurance === '' || applyForm.value.pickup_loc === '' || applyForm.value.roadWorthy === '') {
         alert('Please  Ensure All You Fields Are Completely Filled!')
@@ -356,6 +367,11 @@ const submitApplication = async () => {
         //     console.log('Null')
         // } else {
 
+        if (applDate == currentDate) {
+            const { data, error } = await client.from('application').update({
+                Status: 'Approved',
+            });
+        } 
 
         const { data, error } = await client.from('application').insert([
             {
@@ -367,11 +383,14 @@ const submitApplication = async () => {
                 veh_type: applyForm.value.veh_type,
                 Insurance: applyForm.value.insurance,
                 Pickup_loc: applyForm.value.pickup_loc,
-                road_worthy: applyForm.value.roadWorthy
+                road_worthy: applyForm.value.roadWorthy,
+                Refrence_No: 'G' + ref1++ + 'V' + ref2++ + 'T' + ref3++,
+                // AppointmentDate: '',
+                Status: 'Pending'
             }
         ]).select();
 
-      
+
 
 
         // Clear form fields after successful submission
@@ -398,7 +417,9 @@ const submitApplication = async () => {
 
     // Increment the count variable by a random number
     count += Math.floor(Math.random() * 1000);
-
+    ref1 += Math.floor(Math.random() * 100);
+    ref2 += Math.floor(Math.random() * 10);
+    ref3 += Math.floor(Math.random() * 200);
     // x += Math.floor(Math.random() * 0);
 
 };

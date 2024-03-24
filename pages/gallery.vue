@@ -172,46 +172,6 @@
 
 
 <script setup>
-
-//const tagItems = ref(['Num 1', 'Num 2',  'Num 3', 'Num 4'])
-//import { ref, watch } from 'vue';
-
-//const tagItems = ref(['New Application', 'Change of Ownership']);
-//const tagNo = ref(null);
-/*
-watch(tagNo, (newValue) => {
-    if (newValue === 'Num 1') {
-        // You can set the select box value or perform any action here
-        // For example, you can set it to a specific value or load additional data
-        // tagNo.value = 'New Value';
-        // Or perform any other actions as needed
-        console.log('Num 1 selected');
-    }
-});
-
-const desserts = ref([
-    {
-        ghavetTag: "29/03/2023",
-        account: "GHs30",
-        lastCheckpoint: "Achimota",
-
-    },
-    {
-        ghavetTag: "29/01/2024",
-        account: "GHs350",
-        lastCheckpoint: "Tesano",
-
-    },
-    {
-        ghavetTag: "09/01/2023",
-        account: "GHs5.00",
-        lastCheckpoint: "Sogakope",
-
-    },
-]);*/
-
-import { ref, watch } from 'vue';
-
 // Sample data
 const newAppData = ref([
     { id: 1, field1: 'Data 1', field2: 'Data 2', field3: 'Data 3', field4: 'Data 3', field5: 'Data 3' },
