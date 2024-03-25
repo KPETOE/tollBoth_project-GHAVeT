@@ -6,7 +6,8 @@
                 <v-parallax>
                     <div>
                         <v-container>
-                            <h2 class="text-uppercase text-black text-center font-weight-bold   text-decoration-underline">
+                            <h2
+                                class="text-uppercase text-black text-center font-weight-bold   text-decoration-underline">
                                 MY APPLICATIONS
                             </h2>
 
@@ -121,12 +122,13 @@
                             <thead class="b">
                                 <tr>
                                     <!-- Dynamically generate table headers based on the selected option -->
-                                    <th v-for="(header, index) in tableHeaders" :key="index" class="text-center with-bordr">
+                                    <th v-for="(header, index) in tableHeaders" :key="index"
+                                        class="text-center with-bordr">
                                         {{ header }}</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="item in filteredData" :key="item.id" class="text-center">
+                                <tr v-for="item in filteredData" :key="item" class="text-center">
                                     <!-- Bind table data dynamically based on the selected option -->
                                     <td v-for="(field, index) in itemFields" :key="index">{{ item[field] }}</td>
                                 </tr>
@@ -141,7 +143,7 @@
                                 <button class="reference  text-black font-weight-bold">BACK</button>
                                 <br>
 
-                                
+
                             </div>
                         </div>
 
@@ -173,25 +175,26 @@
 
 <script setup>
 // Sample data
-const newAppData = ref([
-    { id: 1, field1: 'Data 1', field2: 'Data 2', field3: 'Data 3', field4: 'Data 3', field5: 'Data 3' },
 
-    { id: 2, field1: 'Data 2', field2: 'Data 2', field3: 'Data 3', field4: 'Data 3', field5: 'Data 3' },
+const client = useSupabaseClient()
+const user = useSupabaseUser()
 
-    { id: 3, field1: 'Data 3', field2: 'Data 2', field3: 'Data 3', field4: 'Data 3', field5: 'Data 3' },
+//getting data from application table specific
+const newAppData = await client.from('application').select('Refrence_No, veh_type, Status, AppointmentDate, Pickup_loc').eq('user_id', user.value.id)
 
-    { id: 4, field1: 'Data 4', field2: 'Data 2', field3: 'Data 3', field4: 'Data 3', field5: 'Data 3' },
-    // Add more data as needed
-]);
+// const changeOwnershipData = ref([
+//     { id: 1, field1: 'TT6', field2: 'Data 2', field3: 'Data 3' },
 
-const changeOwnershipData = ref([
-    { id: 1, field1: 'TT6', field2: 'Data 2', field3: 'Data 3' },
+//     { id: 2, field1: 'TT7', field2: 'Data 2', field3: 'Data 3' },
+//     { id: 3, field1: 'TT8', field2: 'Data 2', field3: 'Data 3' },
+//     // Add more data as needed
+// ]);
 
-    { id: 2, field1: 'TT7', field2: 'Data 2', field3: 'Data 3' },
-    { id: 3, field1: 'TT8', field2: 'Data 2', field3: 'Data 3' },
-    // Add more data as needed
-]);
 
+//fetching data from user
+const myApplication = await client.from('application').select('*').eq('user_id', user.value.id);
+// console.log(myApplication)
+// const appField = await client.from('application').select('Refrence_No, veh_type, Status, AppointmentDate, Pickup_loc').eq('user_id', user.value.id)
 const tagItems = ref(['New Application', 'Change of Ownership']);
 const tagNo = ref('New Application');
 const referenceNumber = ref('');
@@ -203,12 +206,12 @@ watch(tagNo, (newValue) => {
     // Update table structure and data binding based on the selected option
     if (newValue === 'New Application') {
         tableHeaders.value = ['Reference  #', 'VeH Reg #', 'Status', 'Appointment Date', 'LOCATION'];
-        itemFields.value = ['field1', 'field2', 'field3', 'field4', 'field5'];
-        filteredData.value = newAppData.value;
+        itemFields.value = ['Refrence_No', 'veh_type', 'Status', 'AppointmentDate', 'Pickup_loc'];
+        filteredData.value = newAppData.data;
     } else if (newValue === 'Change of Ownership') {
         tableHeaders.value = ['Reference  #', 'VeH Reg #', 'Status'];
-        itemFields.value = ['field1', 'field2', 'field3',];
-        filteredData.value = changeOwnershipData.value;
+        itemFields.value = ['Refrence_No', 'veh_type', 'Status'];
+        filteredData.value = newAppData.data;
     }
 });
 
