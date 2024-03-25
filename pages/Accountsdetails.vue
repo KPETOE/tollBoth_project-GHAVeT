@@ -149,9 +149,7 @@ body {
 .custom-width {
     width: 150px;
     transition: background-color 0.3s ease;
-    /* Add a smooth transition effect */
-
-    /* Additional styling for the normal state */
+  
    
     background: linear-gradient(to right, rgba(75, 156, 162, 0.331), rgba(135, 207, 235, 0.486), #31759a48, #1534459b) !important;
     color: #fff;

@@ -19,6 +19,8 @@
                     <v-icon size="28">mdi-credit-card</v-icon>
                     GHAVeTTag
                 </v-tab>
+
+                
                 <!-- Other tabs omitted for brevity -->
                 <v-tab value="tab-6">
                     <v-icon   size="28">mdi-car</v-icon>
@@ -148,17 +150,7 @@
                             <br> <br>
 
 
-                            <!-- Buttons-->
-
-
-                            <!-- <v-row>
-                            <v-col>
-                                <v-btn @click="handleSubmit" type="submit" color="success">Submit</v-btn>
-                            </v-col>
-                            <v-col>
-                                <v-btn @click="clearForm" color="error">Clear</v-btn>
-                            </v-col>
-                        </v-row> -->
+                           
                             <v-row class="d-flex justify-center align-center">
                                 <v-col cols="12" lg="6" md="6">
                                     <!-- <v-btn @click="handleSubmit" type="submit" color="success">Submit</v-btn> -->
@@ -251,25 +243,10 @@ const ownForm = {
 
 const client = useSupabaseClient();
 const user = useSupabaseUser();
-// Define reactive variables for form inputs
-// const input1 = ref('');
-// const input2 = ref('');
-// const input3 = ref('');
-// const input4 = ref('');
-// const input5 = ref('');
-// const input6 = ref('');
+
 
 const checked = ref('');
 
-// // Function to clear the form
-// const clearForm = () => {
-//     input1.value = '';
-//     input2.value = '';
-//     input3.value = '';
-//     input4.value = '';
-//     input5.value = '';
-//     input6.value = '';
-// };
 
 
 

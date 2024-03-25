@@ -6,11 +6,7 @@
 
                 <br />
 
-                <!-- <ul class="d-flex justify-content-end">
-                <li class="nav-item">
-                    <avatar />
-                </li>
-            </ul> -->
+                
                 <v-row>
                     <v-col cols="12">
                         <h2 class="text-center mb-10  Ella">New Application </h2>
@@ -179,10 +175,7 @@
                                 <div class="container">
                                     <v-row class="d-flex justify-center" style="text-align: center">
                                         <v-col cols="12">
-                                            <!-- <button @click="handleButtonClick" class=" app ">
-                                            <input type="text" class="form-control textbox" id="textBox1"
-                                                placeholder="GHS 500.00" />
-                                        </button> -->
+                                          
 
                                             <div style="background-color: azure; width: 34.5em;  " class=" corners">
                                                 <v-text-field v-model="applyForm.insurance" label="Serial #" outlined
@@ -274,26 +267,18 @@
 </template>
 
 <script setup>
-//import { application } from 'express';
+
+// Function to generate random number within a range
+function generateRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 
-// import imgbg from '../assets/img/home.jpeg'
 const client = useSupabaseClient();
 const user = useSupabaseUser();
-// let alert = document.getElementById('alert')
-// const yesChecked = ref(false);
-// const noChecked = ref(false);
 
 
-// Define reactive variables for form inputs
-// const input1 = ref('');
-// const input2 = ref('');
-// const input3 = ref('');
-// const input4 = ref('');
-// const input5 = ref('');
-// const input6 = ref('');
-// const serial = 1++;
-// let dialog = false;
+
 const profile = await client.from('profile').select('Username, first_name, last_name, gh_card_no').eq('id', user.value.id).single()
 let Alert = ref(false);
 let type = ref('success');
@@ -312,36 +297,28 @@ const applyForm = ref({
     // id:''
     checkbox: false
 })
-// const ghCardNo = 
 
-// const gVet = applyForm.value.ghCard + '-'+ count++;
+
+
 const checkbox = ref(false);
 
-//Initialise the count
+
 
 let count = 1000;
-let ref1 = 100
-let ref2 = 10
-let ref3 = 200
-//let x = 0;
+
+// Variables for reference numbers
+let ref1 = 100;
+let ref2 = 10;
+let ref3 = 200;
+
+
 const applDate = await client.from('application').select('AppointmentDate').eq('id', user.value.id).single();
 const currentDate = new Date();
 const setMins = new Date(currentDate.getTime() + (3 * 60000));
-// async function getStatus() {
-//     }
-// onMounted(() => {
-//     getStatus()
-// })
-//submit function
+
+
 const submitApplication = async () => {
-    // Handle form submission logic
-    // You can perform additional validation or submit data to the server
-    // if (checked == ! true) {
-    //     alert('You have not agreed!')
-    // }
-    // if (checkbox == !true) {
-    //     alert('Check the Box first! :)')
-    // }
+
     if (!checkbox.value) {
         alert('You Have Not Agreed To Terms  & Conditons!')
         return
@@ -350,8 +327,12 @@ const submitApplication = async () => {
     let serial = applyForm.value.ghCard + '-' + count++;
     applyForm.value.vettag = serial;
 
-    let reference = 'G' + ref1++ + 'V' + ref2++ + 'T' + ref3++;
-    'G' + ref1++ + 'V' + ref2++ + 'T' + ref3++ == reference;
+    // Generate random reference numbers
+    let ref1 = generateRandomNumber(1, 100);
+    let ref2 = generateRandomNumber(1, 100);
+    let ref3 = generateRandomNumber(1, 200);
+
+    let reference = 'G' + ref1 + 'V' + ref2 + 'T' + ref3;
 
     if (applyForm.value.ghCard === '' || applyForm.value.license === '' || applyForm.value.residence === '' || applyForm.value.veh_type === '' || applyForm.value.insurance === '' || applyForm.value.pickup_loc === '' || applyForm.value.roadWorthy === '') {
         alert('Please  Ensure All You Fields Are Completely Filled!')
@@ -363,15 +344,12 @@ const submitApplication = async () => {
 
 
         Alert.value = true
-        // if (checkbox == true) {
-        //     console.log('Null')
-        // } else {
 
         if (applDate == currentDate) {
             const { data, error } = await client.from('application').update({
                 Status: 'Approved',
             });
-        } 
+        }
 
         const { data, error } = await client.from('application').insert([
             {
@@ -384,7 +362,7 @@ const submitApplication = async () => {
                 Insurance: applyForm.value.insurance,
                 Pickup_loc: applyForm.value.pickup_loc,
                 road_worthy: applyForm.value.roadWorthy,
-                Refrence_No: 'G' + ref1++ + 'V' + ref2++ + 'T' + ref3++,
+                Refrence_No: reference,
                 // AppointmentDate: '',
                 Status: 'Pending'
             }
@@ -415,12 +393,12 @@ const submitApplication = async () => {
 
     }
 
-    // Increment the count variable by a random number
+
     count += Math.floor(Math.random() * 1000);
     ref1 += Math.floor(Math.random() * 100);
     ref2 += Math.floor(Math.random() * 10);
     ref3 += Math.floor(Math.random() * 200);
-    // x += Math.floor(Math.random() * 0);
+
 
 };
 
