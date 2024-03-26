@@ -12,36 +12,20 @@
 
 
 
-
-
-            <v-tabs v-model="tab" bg-color="deep-purple-accent-4" align-tabs="center" stacked>
-                <v-tab value="tab-1">
-                    <v-icon size="28">mdi-credit-card</v-icon>
-                    GHAVeTTag
+            <v-tabs v-model="tab" align-tabs="center" bg-color="deep-purple-accent-4">
+                <v-tab value="tag">
+                    <v-icon>mdi-credit-card</v-icon>GHAVeTTag
                 </v-tab>
-
-                
-                <!-- Other tabs omitted for brevity -->
-                <v-tab value="tab-6">
-                    <v-icon   size="28">mdi-car</v-icon>
-                    VEHICLE
+                <v-tab value="veh">
+                    <v-icon>mdi-car</v-icon>Vehicle
                 </v-tab>
             </v-tabs>
 
-            <br>
+            <v-window v-model="tab">
+                <v-window-item value="tag">
+                    <v-container>
 
-            <br>
-
-
-         
-
-                <v-window v-model="tab">
-                    <v-window-item style="height: auto; background-color:  rgb(213, 244, 244);" v-if="tab === 'tab-1'"
-                        :value="'tab-1'">
-
-                        <form @submit.prevent="submitOwnership" id="myForm" style="text-align: center; ">
-
-
+                        <v-form @submit.prevent="submitOwnership">
                             <v-row class="d-flex justify-center align-center">
                                 <v-col cols="" lg="12" md="6" class="d-flex align-center">
                                     <v-row>
@@ -67,9 +51,10 @@
                                         <v-col cols="" lg="6" md="6" sm="6">
                                             <div style="background-color: azure; width: 30em;" class="mx-auto BckCol">
 
-                                                <v-text-field v-model="ownForm.prevTag" label="Previous VeH Reg #" outlined
-                                                    color="white" class="mx-auto" :rules="input2Rules"
-                                                    style="box-shadow: none;  width: 500px;" variant="plain"></v-text-field>
+                                                <v-text-field v-model="ownForm.prevTag" label="Previous VeH Reg #"
+                                                    outlined color="white" class="mx-auto" :rules="input2Rules"
+                                                    style="box-shadow: none;  width: 500px;"
+                                                    variant="plain"></v-text-field>
                                             </div>
                                         </v-col>
                                     </v-row>
@@ -84,7 +69,8 @@
                                             <div style="background-color: azure; width: 30em;" class="mx-auto BckCol">
                                                 <v-text-field v-model="ownForm.newTag" label="New VeH Reg #" outlined
                                                     color="white" class="mx-auto" :rules="input3Rules"
-                                                    style="box-shadow: none; width: 500px;" variant="plain"></v-text-field>
+                                                    style="box-shadow: none; width: 500px;"
+                                                    variant="plain"></v-text-field>
                                             </div>
                                         </v-col>
                                     </v-row>
@@ -98,9 +84,10 @@
                                         </v-col>
                                         <v-col cols="" lg="6" md="6" sm="6">
                                             <div style="background-color: azure; width: 30em;" class="mx-auto BckCol">
-                                                <v-text-field v-model="ownForm.road_worthy" label="New VeH Road Worthy #"
-                                                    outlined color="white" class="mx-auto" :rules="input4Rules"
-                                                    style="box-shadow: none;  width: 500px;" variant="plain"></v-text-field>
+                                                <v-text-field v-model="ownForm.road_worthy"
+                                                    label="New VeH Road Worthy #" outlined color="white" class="mx-auto"
+                                                    :rules="input4Rules" style="box-shadow: none;  width: 500px;"
+                                                    variant="plain"></v-text-field>
                                             </div>
                                         </v-col>
                                     </v-row>
@@ -119,7 +106,8 @@
 
                                                 <v-text-field v-model="ownForm.newVeh_Reg" label="New VeH Insurance #"
                                                     outlined color="white" class="mx-auto" :rules="input5Rules"
-                                                    style="box-shadow: none;width: 500px;" variant="plain"></v-text-field>
+                                                    style="box-shadow: none;width: 500px;"
+                                                    variant="plain"></v-text-field>
                                             </div>
                                         </v-col>
                                     </v-row>
@@ -135,7 +123,8 @@
                                                 <v-text-field v-model="ownForm.accountHolder"
                                                     label="New  Owner Account Name" outlined color="white"
                                                     class="mx-auto  BckCol" :rules="input6Rules"
-                                                    style="box-shadow: none; width: 500px;" variant="plain"></v-text-field>
+                                                    style="box-shadow: none; width: 500px;"
+                                                    variant="plain"></v-text-field>
                                             </div>
                                         </v-col>
                                     </v-row>
@@ -150,7 +139,7 @@
                             <br> <br>
 
 
-                           
+
                             <v-row class="d-flex justify-center align-center">
                                 <v-col cols="12" lg="6" md="6">
                                     <!-- <v-btn @click="handleSubmit" type="submit" color="success">Submit</v-btn> -->
@@ -167,7 +156,8 @@
                                 </v-col>
 
                                 <v-col cols="12" lg="6" md="6">
-                                    <v-btn @click="clearForm" prepend-icon="mdi-alert-circle" class="B-clear text-red">Clear
+                                    <v-btn @click="clearForm" prepend-icon="mdi-alert-circle"
+                                        class="B-clear text-red">Clear
                                         <template v-slot:append>
                                             <v-icon color="warning"></v-icon>
                                         </template>
@@ -175,25 +165,24 @@
                                     </v-btn>
                                 </v-col>
                             </v-row>
-                        </form>
-                    </v-window-item>
-
-
-                    <v-window-item style="height: auto; background-color: rgb(213, 244, 244);" v-else-if="tab === 'tab-6'"
-                        :value="'tab-6'">
-                        <form @submit.prevent="submitVehicle" id="vehicleForm" style="text-align: center;">
-                            <!-- Only one text field for tab-6 -->
-                            <v-text-field v-model="vehicleForm.fieldName" label="Field Label" outlined></v-text-field>
-                        </form>
-                    </v-window-item>
-
-                </v-window>
-
+                        </v-form>
+                    </v-container>
+                </v-window-item>
+                <v-window-item value="veh">
+                    <v-container>
+                        <v-form @submit.prevent="submitVehicle">
+                            <h1>Hello</h1>
+                        </v-form>
+                    </v-container>
+                </v-window-item>
+            </v-window>
 
 
 
 
-                <br> <br>
+
+
+            <br> <br>
         </div>
 
 
@@ -216,19 +205,15 @@
 
 
 <script setup>
-
-
-import { ref } from 'vue';
-
 const tab = ref(null);
 
 
 const submitOwnership = () => {
-  // Logic for submitting ownership form
+    // Logic for submitting ownership form
 };
 
 const submitVehicle = () => {
-  // Logic for submitting vehicle form
+    // Logic for submitting vehicle form
 };
 
 // Define ownForm object
