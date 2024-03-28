@@ -12,13 +12,25 @@
 
 
 
-            <v-tabs v-model="tab" align-tabs="center" bg-color="deep-purple-accent-4">
-                <v-tab value="tag">
-                    <v-icon>mdi-credit-card</v-icon>GHAVeTTag
+            <v-tabs v-model="tab" align-tabs="center" bg-color="light-green-lighten-5">
+
+                <v-tab value="tag" class="mr-12">
+                    <div class="d-flex flex-column align-items-center">
+                        <v-icon>mdi-credit-card</v-icon>
+                        <span class="text-center">GHAVeTTag</span>
+                    </div>
                 </v-tab>
+
+
+
                 <v-tab value="veh">
-                    <v-icon>mdi-car</v-icon>Vehicle
+                    <div class="d-flex flex-column align-items-center">
+                        <v-icon>mdi-car</v-icon>
+                        <span class="text-center">Vehicle</span>
+                    </div>
                 </v-tab>
+
+
             </v-tabs>
 
             <v-window v-model="tab">
@@ -116,6 +128,24 @@
                                 <v-col cols="" lg="12" md="6" class="d-flex align-center">
                                     <v-row>
                                         <v-col cols="" lg="6" md="6" sm="6">
+                                            <label class="font-weight-bold ">DATE</label>
+                                        </v-col>
+                                        <v-col cols="" lg="6" md="6" sm="6">
+                                            <div style="background-color: azure; width: 30em;" class="mx-auto BckCol">
+                                                <v-text-field v-model="ownForm.newTag" label="Date of Transaction"
+                                                    outlined color="white" class="mx-auto" :rules="input10Rules"
+                                                    style="box-shadow: none; width: 500px;" variant="plain"
+                                                    type="date"></v-text-field>
+
+                                            </div>
+                                        </v-col>
+                                    </v-row>
+                                </v-col>
+
+
+                                <v-col cols="" lg="12" md="6" class="d-flex align-center">
+                                    <v-row>
+                                        <v-col cols="" lg="6" md="6" sm="6">
                                             <label class="mr-2  font-weight-bold ">New Owner Account Name</label>
                                         </v-col>
                                         <v-col cols="" lg="6" md="6" sm="6">
@@ -168,10 +198,132 @@
                         </v-form>
                     </v-container>
                 </v-window-item>
+
+                <!-- Begining of the  vehicle transfer tap -->
+
                 <v-window-item value="veh">
                     <v-container>
                         <v-form @submit.prevent="submitVehicle">
-                            <h1>Hello</h1>
+                            <v-row class="d-flex justify-center align-center">
+                                <v-col cols="" lg="12" md="6" class="d-flex align-center">
+                                    <v-row>
+                                        <v-col cols="" lg="6" md="6" sm="6">
+                                            <label class="font-weight-bold ">GHAVeTTag #</label>
+                                        </v-col>
+                                        <v-col cols="" lg="6" md="6" sm="6">
+                                            <div style="background-color: azure; width: 30em;" class="mx-auto BckCol">
+                                                <v-text-field v-model="ownForm.vettag" label="GHAVeTTag  #" outlined
+                                                    color="white" class="mx-auto" :rules="input1Rules"
+                                                    style="box-shadow: none;    width: 500px;"
+                                                    variant="plain"></v-text-field>
+                                            </div>
+                                        </v-col>
+                                    </v-row>
+                                </v-col>
+
+                                <v-col cols="" lg="12" md="6" class="d-flex align-center">
+                                    <v-row>
+                                        <v-col cols="" lg="6" md="6" sm="6">
+                                            <label class="font-weight-bold"> VeH Reg #</label>
+                                        </v-col>
+                                        <v-col cols="" lg="6" md="6" sm="6">
+                                            <div style="background-color: azure; width: 30em;" class="mx-auto BckCol">
+
+                                                <v-text-field v-model="ownForm.prevTag" label="Previous VeH Reg #"
+                                                    outlined color="white" class="mx-auto" :rules="input2Rules"
+                                                    style="box-shadow: none;  width: 500px;"
+                                                    variant="plain"></v-text-field>
+                                            </div>
+                                        </v-col>
+                                    </v-row>
+                                </v-col>
+
+                                <v-col cols="" lg="12" md="6" class="d-flex align-center">
+                                    <v-row>
+                                        <v-col cols="" lg="6" md="6" sm="6">
+                                            <label class="font-weight-bold ">DATE</label>
+                                        </v-col>
+                                        <v-col cols="" lg="6" md="6" sm="6">
+                                            <div style="background-color: azure; width: 30em;" class="mx-auto BckCol">
+                                                <v-text-field v-model="ownForm.newTag" label="Date of Transaction"
+                                                    outlined color="white" class="mx-auto" :rules="input9Rules"
+                                                    style="box-shadow: none; width: 500px;" variant="plain"
+                                                    type="date"></v-text-field>
+
+                                            </div>
+                                        </v-col>
+                                    </v-row>
+
+                                </v-col>
+
+
+                                <v-col cols="" lg="12" md="6" class="d-flex align-center">
+                                    <v-row>
+                                        <v-col cols="" lg="6" md="6" sm="6">
+                                            <label class="mr-2  font-weight-bold ">New Owner Account Name</label>
+                                        </v-col>
+                                        <v-col cols="" lg="6" md="6" sm="6">
+                                            <div style="background-color: azure; width: 30em;" class="mx-auto BckCol">
+                                                <v-text-field v-model="ownForm.accountHolder"
+                                                    label="New  Owner Account Name" outlined color="white"
+                                                    class="mx-auto  BckCol" :rules="input6Rules"
+                                                    style="box-shadow: none; width: 500px;"
+                                                    variant="plain"></v-text-field>
+                                            </div>
+                                        </v-col>
+                                    </v-row>
+                                </v-col>
+                                <v-col cols="" lg="12" md="6" class="d-flex align-center">
+                                    <v-row>
+                                        <v-col cols="" lg="6" md="6" sm="6">
+                                            <label class="mr-2  font-weight-bold ">MILLAGE</label>
+                                        </v-col>
+                                        <v-col cols="" lg="6" md="6" sm="6">
+                                            <div style="background-color: azure; width: 30em;" class="mx-auto BckCol">
+                                                <v-text-field v-model="ownForm.odometerReading" label="Odometer Reading"
+                                                    outlined color="white" class="mx-auto" :rules="odometerReadingRules"
+                                                    style="box-shadow: none; width: 500px;" variant="plain"
+                                                    type="number"></v-text-field>
+                                            </div>
+                                        </v-col>
+                                    </v-row>
+                                </v-col>
+                            </v-row>
+                            <br> <br>
+                            <br>
+                            <input value="checked" type="checkbox">
+                            <label for="checked" class="ml-5 text-red">I Have Read And Agree With All Terms And
+                                Conditions
+                                Of Used.</label>
+                            <br> <br>
+
+
+
+                            <v-row class="d-flex justify-center align-center">
+                                <v-col cols="12" lg="6" md="6">
+                                    <!-- <v-btn @click="handleSubmit" type="submit" color="success">Submit</v-btn> -->
+
+                                    <v-btn type="submit" prepend-icon="mdi-check-circle" class="B-clear">
+                                        <template v-slot:prepend>
+                                            <v-icon color="success"></v-icon>
+                                        </template>
+                                        Submit
+                                        <template v-slot:append>
+                                            <v-icon color="warning"></v-icon>
+                                        </template>
+                                    </v-btn>
+                                </v-col>
+
+                                <v-col cols="12" lg="6" md="6">
+                                    <v-btn @click="clearForm" prepend-icon="mdi-alert-circle"
+                                        class="B-clear text-red">Clear
+                                        <template v-slot:append>
+                                            <v-icon color="warning"></v-icon>
+                                        </template>
+
+                                    </v-btn>
+                                </v-col>
+                            </v-row>
                         </v-form>
                     </v-container>
                 </v-window-item>
@@ -251,11 +403,28 @@ const input2Rules = [
     value => /^[a-zA-Z0-9]+$/.test(value) || 'Only alphanumeric characters are allowed',
 ];
 
-
 const input3Rules = [
     value => !!value || 'Field is required',
     value => (value && value.length <= 20) || 'Max 20 characters',
     value => /^\d+$/.test(value) || 'Only numbers are allowed',
+];
+
+const input9Rules = [
+    value => !!value || 'Field is required',
+    value => {
+        const isValidDate = !isNaN(Date.parse(value));
+        return isValidDate || 'Invalid date format';
+    }
+];
+
+
+
+const input10Rules = [
+    value => !!value || 'Field is required',
+    value => {
+        const isValidDate = !isNaN(Date.parse(value));
+        return isValidDate || 'Invalid date format';
+    }
 ];
 
 
