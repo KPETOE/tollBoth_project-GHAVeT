@@ -126,13 +126,14 @@ const client = useSupabaseClient();
 const user = useSupabaseUser();
 const checked = ref('');
 
+const props = defineProps(['ownForm']);
 
-const owner = await client.from('Change_owner').select('GhaveTTag, Prev_Veh_Reg, New_Veh_Reg, New_Owner_Acc_Name').eq('user_id', user.value.id);
+
 const vehicle = ref({
-    vettag: owner.data.GhaveTTag,
-    prevTag: owner.data.Prev_Veh_Reg,
-    newTag: owner.data.New_Veh_Reg,
-    accountHolder: owner.data.New_Owner_Acc_Name,
+    vettag: '',
+    prevTag: '',
+    newTag: '',
+    accountHolder: '',
     mileage: '',
 
 });
@@ -140,9 +141,14 @@ const vehicle = ref({
 
 const submitVehicle = async () => {
     try {
-        const { data, error } = await client.from('Change_owner').insert({
-            mileage:vehicle.mileage
-        })
+        const { data, error } = await client.from('vehicle').insert({
+            vettag: vehicle.value.vettag,
+            mileage: vehicle.value.mileage,
+            newTag: vehicle.value.newTag,
+            accountHolder: vehicle.value.accountHolder,
+            mileage: vehicle.value.mileage
+
+        });
     } catch (error) {
         console.log(error)
     }

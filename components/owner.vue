@@ -170,18 +170,16 @@ const ownForm = ref({
     insurance: ''
 });
 
-
-
 const submitOwnership = async () => {
     try {
         const { data, error } = await client.from('Change_owner').insert({
-            GhaveTTag: ownForm.vettag,
-            Prev_Veh_Reg: ownForm.prevTag,
-            New_Veh_Reg: ownForm.newVeh_Reg,
-            New_Road_Worthy: ownForm.road_worthy,
-            New_Veh_Insurance: ownForm.insurance,
-            Transaction_date: ownForm.date,
-            New_Owner_Acc_Name: ownForm.accountHolder
+            GhaveTTag: ownForm.value.vettag,
+            Prev_Veh_Reg: ownForm.value.prevTag,
+            New_Veh_Reg: ownForm.value.newVeh_Reg,
+            New_Road_Worhty: ownForm.value.road_worthy,
+            New_Veh_Insurance: ownForm.value.insurance,
+            Transaction_date: ownForm.value.date,
+            New_Owner_Acc_Name: ownForm.value.accountHolder
         });
     } catch (error) {
         console.log(error)
