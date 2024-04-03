@@ -11,7 +11,7 @@
                             <v-col cols="" lg="6" md="6" sm="6">
                                 <div style="background-color: azure; width: 30em;" class="mx-auto BckCol">
                                     <v-text-field v-model="vehicle.vettag" label="GHAVeTTag  #" outlined color="white"
-                                        class="mx-auto" :rules="input1Rules" style="box-shadow: none;    width: 500px;"
+                                        class="mx-auto" style="box-shadow: none;    width: 500px;"
                                         variant="plain"></v-text-field>
                                 </div>
                             </v-col>
@@ -126,7 +126,7 @@ const client = useSupabaseClient();
 const user = useSupabaseUser();
 const checked = ref('');
 
-const props = defineProps(['ownForm']);
+// const props = defineProps(['ownForm']);
 
 
 const vehicle = ref({
@@ -135,7 +135,6 @@ const vehicle = ref({
     newTag: '',
     accountHolder: '',
     mileage: '',
-
 });
 
 
@@ -147,7 +146,6 @@ const submitVehicle = async () => {
             newTag: vehicle.value.newTag,
             accountHolder: vehicle.value.accountHolder,
             mileage: vehicle.value.mileage
-
         });
     } catch (error) {
         console.log(error)
