@@ -40,9 +40,9 @@ export default defineNuxtConfig({
   ],
   modules: ['@nuxtjs/supabase'],
   supabase: {
-    url: process.env.SUPABASE_URL,
-    key: process.env.SUPABASE_KEY,
-    redirect:false
+    url: "https://fnjbhxrpikspggruoitj.supabase.co", // Updated Supabase URL
+    key: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZuamJoeHJwaWtzcGdncnVvaXRqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDc1MTM2MjUsImV4cCI6MjAyMzA4OTYyNX0.0f01t3HvjZPyJYxNDtjmizM9yzJ0ZrwlLv7BRbTZ32A", // Updated Supabase key
+    redirect: false
   },
   // baseUrl: '/nuxt-github-pages/',
   // buildAssetsDir: 'assets',

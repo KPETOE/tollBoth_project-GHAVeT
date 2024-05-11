@@ -76,7 +76,7 @@
                             <v-col cols="" lg="6" md="6" sm="6">
                                 <div style="background-color: azure; width: 30em;" class="mx-auto BckCol">
 
-                                    <v-text-field v-model="ownForm.newVeh_Reg" label="New VeH Insurance #" outlined
+                                    <v-text-field v-model="ownForm.insurance" label="New VeH Insurance #" outlined
                                         color="white" class="mx-auto" :rules="input5Rules"
                                         style="box-shadow: none;width: 500px;" variant="plain"></v-text-field>
                                 </div>
@@ -164,10 +164,10 @@ const ownForm = ref({
     vettag: '',
     prevTag: '',
     road_worthy: '',
-    newVeh_Reg: '',
+    //newVeh_Reg: '',
     accountHolder: '',
     date: '',
-    insurance: ''
+    insurance: '',
 });
 
 const submitOwnership = async () => {
@@ -175,7 +175,7 @@ const submitOwnership = async () => {
         const { data, error } = await client.from('Change_owner').insert({
             GhaveTTag: ownForm.value.vettag,
             Prev_Veh_Reg: ownForm.value.prevTag,
-            New_Veh_Reg: ownForm.value.newVeh_Reg,
+            //New_Veh_Reg: ownForm.value.newVeh_Reg,
             New_Road_Worhty: ownForm.value.road_worthy,
             New_Veh_Insurance: ownForm.value.insurance,
             Transaction_date: ownForm.value.date,

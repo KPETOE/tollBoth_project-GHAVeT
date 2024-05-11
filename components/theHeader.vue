@@ -66,7 +66,7 @@
               </li>
               <li class="nav-item">
                 <NuxtLink v-if="user == null" class="nav-link text-white" to="/login">My Applications</NuxtLink>
-                <NuxtLink v-else class="nav-link text-white" to="/gallery">My Applications</NuxtLink>
+                <NuxtLink v-else class="nav-link text-white" to="/Myapp">My Applications</NuxtLink>
               </li>
               <li class="nav-item">
                 <NuxtLink v-if="user == null" class="nav-link text-white" to="/login">Contact Us</NuxtLink>
