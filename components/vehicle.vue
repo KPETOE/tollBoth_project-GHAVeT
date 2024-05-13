@@ -26,7 +26,7 @@
                             <v-col cols="" lg="6" md="6" sm="6">
                                 <div style="background-color: azure; width: 30em;" class="mx-auto BckCol">
 
-                                    <v-text-field v-model="vehicle.prevTag" label="Previous VeH Reg #" outlined
+                                    <v-text-field v-model="vehicle.prevTag" label="VeH Reg #" outlined
                                         color="white" class="mx-auto" :rules="input2Rules"
                                         style="box-shadow: none;  width: 500px;" variant="plain"></v-text-field>
                                 </div>
@@ -142,10 +142,13 @@ const submitVehicle = async () => {
     try {
         const { data, error } = await client.from('vehicle').insert({
             vettag: vehicle.value.vettag,
-            mileage: vehicle.value.mileage,
+            prevTag: vehicle.value.prevTag,
             newTag: vehicle.value.newTag,
             accountHolder: vehicle.value.accountHolder,
-            mileage: vehicle.value.mileage
+            mileage: vehicle.value.mileage,
+
+            Status: 'Pending',
+            Reference_No: reference,
         });
     } catch (error) {
         console.log(error)

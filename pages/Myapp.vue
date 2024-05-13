@@ -181,7 +181,7 @@ const user = useSupabaseUser()
 
 //getting data from application table specific
 const newAppData = await client.from('application').select('Refrence_No, veh_type, Status, AppointmentDate, Pickup_loc').eq('user_id', user.value.id)
-
+const ownerShip = await client.from('vehicle').select('Reference_no, vettag, Status').eq('user_id', user.value.id)
 // const changeOwnershipData = ref([
 //     { id: 1, field1: 'TT6', field2: 'Data 2', field3: 'Data 3' },
 
@@ -209,9 +209,9 @@ watch(tagNo, (newValue) => {
         itemFields.value = ['Refrence_No', 'veh_type', 'Status', 'AppointmentDate', 'Pickup_loc'];
         filteredData.value = newAppData.data;
     } else if (newValue === 'Change of Ownership') {
-        tableHeaders.value = ['Reference  #', 'VeH Reg #', 'Status'];
-        itemFields.value = ['Refrence_No', 'veh_type', 'Status'];
-        filteredData.value = newAppData.data;
+        tableHeaders.value = ['Reference  #', 'VeH Reg #', 'GHAVeTTag' ,'Status'];
+        itemFields.value = ['Reference_no', '', 'vettag', 'Status'];
+        filteredData.value = ownerShip.data;
     }
 });
 
