@@ -210,7 +210,7 @@ watch(tagNo, (newValue) => {
         filteredData.value = newAppData.data;
     } else if (newValue === 'Change of Ownership') {
         tableHeaders.value = ['Reference  #', 'VeH Reg #', 'GHAVeTTag' ,'Status'];
-        itemFields.value = ['Reference_no', '', 'vettag', 'Status'];
+        itemFields.value = ['Reference_No', 'VeH_Reg', 'vettag', 'Status'];
         filteredData.value = ownerShip.data;
     }
 });

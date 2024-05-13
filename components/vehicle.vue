@@ -122,6 +122,13 @@
     </div>
 </template>
 <script setup>
+
+// Function to generate random number within a range
+function generateRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
 const client = useSupabaseClient();
 const user = useSupabaseUser();
 const checked = ref('');
@@ -138,12 +145,28 @@ const vehicle = ref({
 });
 
 
+// Variables for reference numbers
+let ref1 = 100;
+let ref2 = 10;
+let ref3 = 200;
+
+
 const submitVehicle = async () => {
     try {
+
+
+        // Generate random reference numbers
+    let ref1 = generateRandomNumber(1, 100);
+    let ref2 = generateRandomNumber(1, 100);
+    let ref3 = generateRandomNumber(1, 200);
+
+    let reference = 'G' + ref1 + 'V' + ref2 + 'T' + ref3;
+
+    
         const { data, error } = await client.from('vehicle').insert({
             vettag: vehicle.value.vettag,
-            prevTag: vehicle.value.prevTag,
-            newTag: vehicle.value.newTag,
+            VeH_Reg: vehicle.value.prevTag,
+           Date: vehicle.value.newTag,
             accountHolder: vehicle.value.accountHolder,
             mileage: vehicle.value.mileage,
 
