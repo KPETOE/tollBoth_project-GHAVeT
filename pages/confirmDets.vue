@@ -24,6 +24,10 @@
                         <v-label class="font-weight-bold text-white">Mobile Number</v-label>
                         <v-text-field class="text-field  modify" v-model="profile.mobileNo" type="number"></v-text-field>
                     </v-col>
+                    <v-col cols="" lg="6" sm="12">
+                        <v-label class="font-weight-bold text-white">Driver License</v-label>
+                        <v-text-field class="text-field  modify" v-model="profile.Driver_License" type="number"></v-text-field>
+                    </v-col>
                 </v-row>
                 <v-btn type="submit">Confirm</v-btn>
             </v-form>
@@ -45,7 +49,8 @@ const profile = ref({
     lName: '',
     uName: '',
     ghCardNo: '',
-    mobileNo: ''
+    mobileNo: '',
+    Driver_License:''
 })
 const confirm = async () => {
     try {
@@ -55,7 +60,8 @@ const confirm = async () => {
                 last_name: profile.value.lName,
                 Username: profile.value.uName,
                 gh_card_no: profile.value.ghCardNo,
-                Mobile_Number: profile.value.mobileNo
+                Mobile_Number: profile.value.mobileNo,
+                Driver_License: profile.value.Driver_License
             }
         ]).single();
         router.push('/')
