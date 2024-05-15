@@ -181,7 +181,7 @@ const user = useSupabaseUser()
 
 //getting data from application table specific
 const newAppData = await client.from('application').select('Refrence_No, veh_type, Status, AppointmentDate, Pickup_loc').eq('user_id', user.value.id)
-const ownerShip = await client.from('vehicle').select('Reference_no, vettag, Status').eq('user_id', user.value.id)
+const ownerShip = await client.from('vehicle').select('Reference_No, vettag, Status').eq('user_id', user.value.id)
 // const changeOwnershipData = ref([
 //     { id: 1, field1: 'TT6', field2: 'Data 2', field3: 'Data 3' },
 
@@ -194,7 +194,7 @@ const ownerShip = await client.from('vehicle').select('Reference_no, vettag, Sta
 //fetching data from user
 const myApplication = await client.from('application').select('*').eq('user_id', user.value.id);
 // console.log(myApplication)
-// const appField = await client.from('application').select('Refrence_No, veh_type, Status, AppointmentDate, Pickup_loc').eq('user_id', user.value.id)
+const vehicle = await client.from('vehicle').select('*').eq('user_id', user.value.id)
 const tagItems = ref(['New Application', 'Change of Ownership']);
 const tagNo = ref('New Application');
 const referenceNumber = ref('');
