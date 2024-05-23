@@ -198,7 +198,7 @@ const vehicle = await client.from('vehicle').select('*').eq('user_id', user.valu
 const tagItems = ref(['New Application', 'Change of Ownership']);
 const tagNo = ref('New Application');
 const referenceNumber = ref('');
-const filteredData = ref([]);
+const filteredData = ref([]); 
 const tableHeaders = ref([]);
 const itemFields = ref([]);
 
