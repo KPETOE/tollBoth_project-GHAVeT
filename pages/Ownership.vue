@@ -38,8 +38,6 @@
                     <owner />
                 </v-window-item>
 
-                <!-- Begining of the  vehicle transfer tap -->
-
                 <v-window-item value="veh">
                     <vehicle />
                 </v-window-item>

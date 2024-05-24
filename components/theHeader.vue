@@ -40,7 +40,7 @@
                   Accounts
                 </NuxtLink>
                 <NuxtLink v-else class="nav-link text-white" to="/Deposit">
-                  DEPOSIT
+                  Deposit
                 </NuxtLink>
 
               </li>
