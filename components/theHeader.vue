@@ -37,7 +37,7 @@
 
               <li class="nav-item">
                 <NuxtLink v-if="user == null" class="nav-link text-white" to="/login">
-                  Accounts
+                  Deposit
                 </NuxtLink>
                 <NuxtLink v-else class="nav-link text-white" to="/Deposit">
                   Deposit

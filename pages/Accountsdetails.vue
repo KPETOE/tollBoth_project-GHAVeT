@@ -164,28 +164,6 @@ body {
 
 
 
-.bawa {
 
 
-    width: 50%;
-    height: 10em;
-    background-color: rgba(57, 98, 95, 0.384) !important;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 15px;
-}
-
-.lastDep {
-    margin-top: 20px;
-    height: 4em;
-    height: 7em;
-    width: 50%;
-    margin: 0 auto;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 6px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 6px;
-    background-color: rgba(57, 98, 95, 0.384) !important;
-}
 </style>

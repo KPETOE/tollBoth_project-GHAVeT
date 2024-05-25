@@ -3,15 +3,15 @@
         <v-parallax>
             <div>
                 <v-container>
-                    <h2 class="text-uppercase text-black text-center font-weight-bold  ">
+                    <h2 class="text-uppercase text-black text-center font-weight-bold text-teal-darken-3 ">
                         Transaction history
                     </h2>
 
                 </v-container>
-                <p class="text-center font-weight-bold text-center text-teal-darken-3" style=" color: rgb(43, 130, 104);  font-size: 1rem;">
-                    Explore your transaction history and track your toll payments with ease. <br> Select a tag number,
-                    choose the
-                    date range, and view detailed information about your toll<br> transactions below.
+                <p class="text-center font-weight-bold text-center text-teal-darken-3"
+                    style=" color: rgb(43, 130, 104);  font-size: 1rem;">
+                    Explore your transaction history and track your toll payments with <br>
+                    ease. .
                 </p>
             </div>
         </v-parallax>
@@ -20,7 +20,7 @@
             <div class="container">
                 <div class="row justify-content-center" style="background-color:  rgb(127, 203, 203);">
 
-                    <div class="col-md-6" style="text-align: center">
+                    <!-- <div class="col-md-6" style="text-align: center">
 
                         <br>
                         <br> <br>
@@ -36,21 +36,52 @@
 
 
                         </v-col>
-                    </div>
+                    </div> -->
 
-                  
-                    <div class="col-md-6 text-center" style="background-color: rgb(127, 203, 203);">
+
+
+
+
+
+                    <div class="col-md-6 text-center" style="background-color:aliceblue;">
                         <label for="textBox2" class="form-label mx-auto text-uppercase text-black text-center "
                             style="font-size: 1.5rem; font-weight: bold">Balance</label>
-                        <div class="con text-center  d-flex justify-content-center ml-auto "  >
-                            <input type="text" class="balance bg-white  text-center" id="textBox2"  placeholder="GHS 500.00"  readonly/>
+                        <div class="con mx-auto  d-flex justify-content-center align-items-center" style="margin-top: 20px;  
+                        border-width: 2px; border-style: solid; border-color: black;">
+                            <input type="text" class="balance bg-white  text-center" id="textBox2"
+                                placeholder="GHS 500.00" readonly />
                         </div>
-                    </div>    
+                    </div>
+
+                    <div class="col-md-6 text-center" style="background-color: aliceblue;">
+                        <label for="textBox2" class="form-label mx-auto text-uppercase text-black text-center"
+                            style="font-size: 1.5rem; font-weight: bold">DEDUCTIONS</label>
+                        <v-col class="bawa mx-auto d-flex justify-content-center align-items-center"
+                            style="margin-top: 20px; border-width: 2px; border-style: solid; border-color: black;">
+                            <input type="text" class="form-control square-box" id="textBox1" placeholder="GHS 500.00" />
+                        </v-col>
+                    </div>
                 </div>
             </div>
             <br> <br>
 
-           
+            <div class="container d-flex justify-content-center align-items-center">
+                <div class="col-md-6 text-center" style="">
+                    <label for="textBox3" class="form-label mx-auto text-uppercase text-black text-center"
+                        style="font-size: 1.5rem; font-weight: bold">LAST DEPOSIT</label>
+                    <div class="lastDep mx-auto d-flex justify-content-center align-items-center"
+                        style="margin-top: 10px;  border-width: 2px; border-style: solid; border-color: black;">
+                        <div class="mb-3 d-flex">
+                            <input type="text" readonly class="form-control table" id="textBox3" value="GHS 500.00" />
+
+                            &nbsp;
+                            <input type="text" readonly class="form-control table" id="textBox4" value="01/01/2024" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <br>
             <div style="display: flex; flex-direction: row;">
                 <div style="flex: 1; margin-right: 10px;">
@@ -109,10 +140,16 @@
                 <div style="flex: 1;" class="d-flex flex-column align-items-end flex-grow-1">
                     <div style="display: flex; flex-direction: column; align-items: center;">
                         <br>
+                        <v-row>
+                            <v-col>
+                                <button class="search font-weight-bold">Download</button>
+                            </v-col>
+                            <v-col>
+                                <button class="search font-weight-bold">Deposit Funds</button>
+                            </v-col>
+                            <br>
 
-                        <button class="search font-weight-bold">Download</button>
-                        <br>
-
+                        </v-row>
                         <h1 class="mx-auto text-uppercase text-lime-darken-4 text-start text-center  font-weight-bold"
                             style="font-size: 2em">
                             statement
@@ -123,41 +160,13 @@
 
             </v-container>
 
-            <v-row>
-                <!-- <template v-for="event in events.data" :key="event.id">
-                    <v-col>
-                        <v-card width="300">
-                            <nuxt-link style="text-decoration: none;" :to="'/events/' + event.id">
-
-
-
-
-                            </nuxt-link>
-                        </v-card>
-                        <br>
-                    </v-col>
-                </template> -->
-            </v-row>
         </v-container>
     </div>
 </template>
 <script setup>
 
-//const tagItems = ref(['Num 1', 'Num 2',  'Num 3', 'Num 4'])
-import { ref, watch } from 'vue';
 
-const tagItems = ref(['Num 1', 'Num 2', 'Num 3', 'Num 4']);
-const tagNo = ref(null);
 
-watch(tagNo, (newValue) => {
-    if (newValue === 'Num 1') {
-        // You can set the select box value or perform any action here
-        // For example, you can set it to a specific value or load additional data
-        // tagNo.value = 'New Value';
-        // Or perform any other actions as needed
-        console.log('Num 1 selected');
-    }
-});
 
 const desserts = ref([
     {
@@ -180,14 +189,29 @@ const desserts = ref([
     },
 ]);
 </script>
+
+
 <style>
+.bawa {
+
+
+    width: 50%;
+    height: 10em;
+    background-color: rgba(228, 238, 237, 0.384) !important;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 15px;
+}
+
 .about {
 
-    background-color: rgb(127, 203, 203);
+    /* background-color: rgb(127, 203, 203); */
+    background-color: aliceblue;
 }
 
 .b {
-    background-color: #105340ad;
+    /* background-color: #105340ad; */
 }
 
 .underlined-input {
@@ -216,11 +240,11 @@ const desserts = ref([
 }
 
 .con {
-  margin-right: 2em;
+    margin-right: 2em;
     align-items: center;
-   width: 80%;  
-   height: 15em;
-    background-color: rgba(16, 27, 16, 0.233);
+    width: 50%;
+    height: 10em;
+    background-color: rgba(228, 238, 237, 0.384);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -229,7 +253,7 @@ const desserts = ref([
 }
 
 
-.balance{
+.balance {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -237,15 +261,33 @@ const desserts = ref([
 
     height: 35%;
     width: 40%;
- 
+
 }
+
+
+
+.lastDep {
+    margin-top: 20px;
+    height: 4em;
+    height: 7em;
+    width: 50%;
+    margin: 0 auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 6px;
+    background-color: rgba(228, 238, 237, 0.384)!important;
+}
+
 
 input:focus {
-  border-color: #e1dada00 !important;
+    border-color: #e1dada00 !important;
 }
 
-.search{
+.search {
     width: 6em;
     background: linear-gradient(to right, rgba(75, 156, 162, 0.331), rgba(135, 207, 235, 0.486), #31759a48, #1534459b) !important;
 }
+
+
 </style>
