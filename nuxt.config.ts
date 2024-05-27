@@ -38,7 +38,7 @@ export default defineNuxtConfig({
   plugins: [
     { src: '~/plugins/bootstrap.js', mode: 'client' }
   ],
-  modules: ['@nuxtjs/supabase'],
+  modules: ['@nuxtjs/supabase'/*, 'nuxt-paystack'*/],
   supabase: {
     url: process.env.SUPABASE_URL, // Updated Supabase URL
     key: process.env.SUPABASE_KEY, // Updated Supabase key

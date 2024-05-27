@@ -145,7 +145,7 @@
                                 <button class="search font-weight-bold">Download</button>
                             </v-col>
                             <v-col>
-                                <button class="search font-weight-bold">Deposit Funds</button>
+                                <v-btn to="/Payment" class="search font-weight-bold">Deposit Funds</v-btn>
                             </v-col>
                             <br>
 

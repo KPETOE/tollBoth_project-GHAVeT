@@ -22,7 +22,7 @@
                 <NuxtLink v-if="user == null" class="nav-link text-white" to="/login">
                   Transaction
                 </NuxtLink>
-                <NuxtLink v-else class="nav-link text-white" to="/events/">
+                <NuxtLink v-else class="nav-link text-white" to="/transac">
                   Transaction
                 </NuxtLink>
               </li>
