@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <v-container>
+    <div class="card mx-auto"  style="max-width: 75rem;">
+        <v-container   class="card-body">
             <v-form @submit.prevent="submitOwnership">
                 <v-row class="d-flex justify-center align-center">
                     <v-col cols="" lg="12" md="6" class="d-flex align-center">
@@ -28,7 +28,7 @@
 
                                     <v-text-field v-model="ownForm.prevTag" label="Previous VeH Reg #" outlined
                                         color="white" class="mx-auto" :rules="input2Rules"
-                                        style="box-shadow: none;  width: 500px;" variant="plain"></v-text-field>
+                                        style="box-shadow: none;  width: 500px; " variant="plain"></v-text-field>
                                 </div>
                             </v-col>
                         </v-row>
@@ -110,7 +110,7 @@
                             <v-col cols="" lg="6" md="6" sm="6">
                                 <div style="background-color: azure; width: 30em;" class="mx-auto BckCol">
                                     <v-text-field v-model="ownForm.accountHolder" label="New  Owner Account Name"
-                                        outlined color="white" class="mx-auto  BckCol" :rules="input6Rules"
+                                        outlined color="white" class="mx-auto  " :rules="input6Rules"
                                         style="box-shadow: none; width: 500px;" variant="plain"></v-text-field>
                                 </div>
                             </v-col>
@@ -189,3 +189,29 @@ const submitOwnership = async () => {
 
 
 </script>
+
+
+<style scoped>
+
+.BckCol {
+    border-width: 1px; border-style: solid; border-color: black;
+border-top-left-radius: 15px;
+border-top-right-radius: 15px;
+border-bottom-left-radius: 15px;
+border-bottom-right-radius: 15px;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 0 15px rgba(19, 15, 15, 0.562);
+    margin-bottom: 1rem;
+
+    margin-top: 1rem;
+  }
+
+
+  .card-body {
+    padding: 2rem;
+  }
+
+</style>

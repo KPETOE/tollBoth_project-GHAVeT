@@ -2,7 +2,7 @@
     <div class="Ownership" style="background-color:  rgb(213, 244, 244);">
         <div>
 
-            <h2 class="text-uppercase text-black text-center font-weight-bold  ">
+            <h2 class="text-uppercase text-teal-darken-3 text-center font-weight-bold  ">
                 Transfer of Ownership
 
 
@@ -12,9 +12,9 @@
 
 
 
-            <v-tabs v-model="tab" align-tabs="center" bg-color="light-green-lighten-5">
+            <v-tabs class=" TabOwner" v-model="tab" align-tabs="center" bg-color="white" style=" border-width: 1px; border-style: solid; border-color: black;">
 
-                <v-tab value="tag" class="mr-12">
+                <v-tab value="tag" class="mr-12"  >
                     <div class="d-flex flex-column align-items-center">
                         <v-icon>mdi-credit-card</v-icon>
                         <span class="text-center">GHAVeTTag</span>
@@ -45,24 +45,8 @@
 
 
 
-
-
-
             <br> <br>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     </div>
@@ -152,6 +136,13 @@ const input6Rules = [
 
 
 <style>
+
+.TabOwner{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
 .form {
     text-align: center;
 }
