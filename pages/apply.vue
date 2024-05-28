@@ -267,15 +267,12 @@
 </template>
 
 <script setup>
-
+const client = useSupabaseClient();
+const user = useSupabaseUser();
 // Function to generate random number within a range
 function generateRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-
-const client = useSupabaseClient();
-const user = useSupabaseUser();
 
 
 
@@ -293,9 +290,8 @@ const applyForm = ref({
     pickup_loc: '',
     roadWorthy: '',
     user_id: '',
-    roadWorthy: '',
     // id:''
-    checkbox: false
+    // checkbox: false
 })
 
 
@@ -312,7 +308,7 @@ let ref2 = 10;
 let ref3 = 200;
 
 
-const applDate = await client.from('application').select('AppointmentDate').eq('id', user.value.id).single();
+// const applDate = await client.from('application').select('AppointmentDate').eq('id', user.value.id).single();
 const currentDate = new Date();
 const setMins = new Date(currentDate.getTime() + (3 * 60000));
 
@@ -345,11 +341,11 @@ const submitApplication = async () => {
 
         Alert.value = true
 
-        if (applDate == currentDate) {
-            const { data, error } = await client.from('application').update({
-                Status: 'Approved',
-            });
-        }
+        // if (applDate == currentDate) {
+        //     const { data, error } = await client.from('application').update({
+        //         Status: 'Approved',
+        //     });
+        // }
 
         const { data, error } = await client.from('application').insert([
             {

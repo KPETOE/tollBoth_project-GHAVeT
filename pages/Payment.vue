@@ -34,12 +34,12 @@
 
 ,
 <script setup>
-const { auth } = useSupabaseClient();
+// const { auth } = useSupabaseClient();
 const user = useSupabaseUser();
 const client = useSupabaseClient();
-const router = useRouter();
+// const router = useRouter();
 
-const user_id = user.value.id;
+// const user_id = user.value.id;
 
 const profile = await client.from('profile').select('Username, first_name, last_name, gh_card_no').eq('id', user.value.id).single()
 
