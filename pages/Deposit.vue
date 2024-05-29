@@ -88,15 +88,15 @@ const tableColumns = ref([
 
 const tableData = ref([]);
 
-onMounted(async () => {
-    // Fetch data from your database
-    // Replace the URL with your API endpoint
-    const response = await fetch("https://example.com/api/data");
-    const data = await response.json();
+// onMounted(async () => {
+//     // Fetch data from your database
+//     // Replace the URL with your API endpoint
+//     const response = await fetch("https://example.com/api/data");
+//     const data = await response.json();
 
-    //   // Assign the fetched data to tableData
-    tableData.value = data;
-});
+//     //   // Assign the fetched data to tableData
+//     tableData.value = data;
+// });
 
 
 

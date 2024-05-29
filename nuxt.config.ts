@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     define: {
       "process.env.DEBUG": true,
       // plugins: [graphql()]
-    },
+    }, 
   },
   // ssr: false,
   // autoImports: {
@@ -38,11 +38,11 @@ export default defineNuxtConfig({
   plugins: [
     { src: '~/plugins/bootstrap.js', mode: 'client' }
   ],
-  modules: ['@nuxtjs/supabase'/*, 'nuxt-paystack'*/],
+  modules: ['@nuxtjs/supabase'],
   supabase: {
     url: process.env.SUPABASE_URL, // Updated Supabase URL
     key: process.env.SUPABASE_KEY, // Updated Supabase key
-    redirect: false
+    // redirect: false
   },
   // baseUrl: '/nuxt-github-pages/',
   // buildAssetsDir: 'assets',

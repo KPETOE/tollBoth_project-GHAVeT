@@ -1,6 +1,6 @@
 <template>
     <div   style="height:45em;">
-        <v-container class="row justify-content-center" style="height=500em;">
+        <v-container class="row justify-content-center" style="height: 500em;">
             <v-form @submit.prevent="changePwd" class="text-center">
                 <v-row>
                     <v-col class="text-center">

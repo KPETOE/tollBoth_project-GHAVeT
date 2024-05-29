@@ -192,7 +192,7 @@ const ownerShip = await client.from('vehicle').select('Reference_No, vettag, Sta
 
 
 //fetching data from user
-const myApplication = await client.from('application').select('*').eq('user_id', user.value.id);
+// const myApplication = await client.from('application').select('*').eq('user_id', user.value.id);
 // console.log(myApplication)
 const vehicle = await client.from('vehicle').select('*').eq('user_id', user.value.id)
 const tagItems = ref(['New Application', 'Change of Ownership']);
