@@ -35,5 +35,8 @@
     "vue-social-sharing": "^4.0.0-alpha4",
     "vue3-markdown-it": "^1.0.10",
     "vuetify": "^3.3.16"
-  }
+  },
+  "resolutions": {
+    "jackspeak": "2.1.1"
+ }
 }
