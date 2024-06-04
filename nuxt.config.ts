@@ -48,6 +48,7 @@ export default defineNuxtConfig({
   // buildAssetsDir: 'assets',
 
   runtimeConfig: {
+    apiSecret: process.env.PAYSTACK_SECRET,
     public: {
       apiBase: process.env.API_URL
     }

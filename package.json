@@ -31,9 +31,11 @@
     "nuxt-paystack": "^0.0.12",
     "sass": "^1.68.0",
     "superjson": "^2.0.0",
+    "vue-paystack": "^2.0.4",
     "vue-preloader": "^1.1.2",
     "vue-social-sharing": "^4.0.0-alpha4",
     "vue3-markdown-it": "^1.0.10",
+    "vue3-paystack": "^0.0.5",
     "vuetify": "^3.3.16"
   }
 }

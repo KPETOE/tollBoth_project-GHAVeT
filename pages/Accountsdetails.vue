@@ -24,10 +24,9 @@
                         <div class="col-md-6" style="text-align: center;">
                             <label for="textBox2" class="form-label mx-auto text-uppercase text-black text-center"
                                 style="font-size: 1.5rem; font-weight: bold">BALANCE</label>
-                            <div class="bawa mx-auto d-flex justify-content-center align-items-center"
+                            <div  class="bawa mx-auto d-flex justify-content-center align-items-center"
                                 style="margin-top: 20px;">
-                                <input type="text" class="form-control square-box" id="textBox1"
-                                    placeholder="GHS 500.00" />
+                                <h5>GHS 500.00</h5>
                             </div>
                         </div>
 
@@ -36,8 +35,7 @@
                                 style="font-size: 1.5rem; font-weight: bold">DEDUCTIONS</label>
                             <div class="bawa mx-auto d-flex justify-content-center align-items-center"
                                 style="margin-top: 20px;">
-                                <input type="text" class="form-control square-box" id="textBox1"
-                                    placeholder="GHS 500.00" />
+                                <h5>GHS 500.00</h5>
                             </div>
                         </div>
                     </div>
@@ -70,10 +68,10 @@
                 <div class="container">
                     <v-row justify="space-between" style="text-align: center;">
                         <v-col cols="12" md="6">
-                            <button class="btn btn-primary custom-width font-weight-bold">DEPOSIT FUNDS</button>
+                            <v-btn to="/payment" class="btn btn-primary custom-width font-weight-bold">DEPOSIT FUNDS</v-btn>
                         </v-col>
                         <v-col cols="12" md="6">
-                            <button class="btn btn-primary custom-width  font-weight-bold ">STATEMENT</button>
+                            <v-btn class="btn btn-primary custom-width  font-weight-bold ">STATEMENT</v-btn>
                         </v-col>
                     </v-row>
                 </div>
