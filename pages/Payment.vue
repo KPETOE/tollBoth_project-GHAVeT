@@ -42,6 +42,7 @@
 import paystack from 'vue3-paystack';
 
 const nuxtapp = useNuxtApp();
+const router = useRouter();
 // const { auth } = useSupabaseClient();
 const user = useSupabaseUser();
 const client = useSupabaseClient();
@@ -66,10 +67,12 @@ const reference = ref("");
 
 
 const onSuccessfulPayment = function (response) {
+  router.push('/transac');
   console.log(response)
 };
 
 const onCancelledPayment = function (response) {
+  router.push('/Payment')
   console.log(response)
 };
 </script>
