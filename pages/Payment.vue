@@ -15,21 +15,21 @@
       <div class="card-body">
         <v-form @submit.prevent="" class="mt-10 mb-10">
           <v-label class="fw-bold">Full Name</v-label>
-          <v-text-field variant="outlined" v-model="dispForm.fName" placeholder="Nathan Fletcher"
+          <v-text-field variant="outlined" v-model="fullname" disabled
             style="width: 100%;"></v-text-field>
 
           <v-label class="fw-bold mt-3">Email</v-label>
-          <v-text-field variant="outlined" v-model="dispForm.email" placeholder="Current location"
+          <v-text-field variant="outlined" v-model="email" disabled
             style="width: 100%;"></v-text-field>
 
           <v-label class="fw-bold mt-3">Ammount</v-label>
-          <v-text-field v-model="dispForm.ammount" placeholder="GHS 5.00" variant="outlined"
-            style="width: 100%;"></v-text-field>
+          <v-text-field v-model="amount" placeholder="GHS 5.00" variant="outlined" style="width: 100%;"></v-text-field>
 
           <div class="text-center mt-4">
-            <paystack buttonClass="'button-class btn btn-primary'" buttonText="Deposite" :amount="dispForm.ammount"
-              :email="dispForm.email" :paystackkey="publicKey" :reference="reference" :callback="processPayment"
-              :onSuccess="onSuccessfulPayment" :onCancel="onCancelledPayment"></paystack>
+            <paystack buttonClass="'button-class btn btn-primary'" buttonText="Deposite" :amount="amount*100" :email="email"
+               :publicKey="publickey" type="submit" :reference="reference" :callback="processPayment"
+              :onSuccess="onSuccessfulPayment" currency="GHS" :onCancel="onCancelledPayment"
+              ></paystack>
           </div>
         </v-form>
       </div>
@@ -40,6 +40,8 @@
 
 <script setup>
 import paystack from 'vue3-paystack';
+
+const nuxtapp = useNuxtApp();
 // const { auth } = useSupabaseClient();
 const user = useSupabaseUser();
 const client = useSupabaseClient();
@@ -49,18 +51,22 @@ const config = useRuntimeConfig();
 // const user_id = user.value.id;
 
 const profile = await client.from('profile').select('Username, first_name, last_name, gh_card_no').eq('id', user.value.id).single()
-const publicKey= ref("pk_test_c1570346ac949ab850bc5b02fe90f2e8b1967bde");
+const publickey = config.public.PAYSTACK_PUBLIC_KEY;
 
-const dispForm = ref({
-  fName: profile.data.first_name + " " + profile.data.last_name,
-  ammount: "",
-  email: user.value.email,
-  
-});
+const fullname = ref(profile.data.first_name + " " + profile.data.last_name);
+const email = ref(user.value.email);
+const amount = ref(0);
+const reference = ref("");
+// console.log(publickey);
+// const dispForm = ref({
+//   fName: profile.data.first_name + " " + profile.data.last_name,
+//   ammount: "",
+//   email: user.value.email,
+// });
 
 
 const onSuccessfulPayment = function (response) {
-  console.log(response) 
+  console.log(response)
 };
 
 const onCancelledPayment = function (response) {

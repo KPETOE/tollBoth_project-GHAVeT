@@ -46,12 +46,11 @@ export default defineNuxtConfig({
   },
   // baseUrl: '/nuxt-github-pages/',
   // buildAssetsDir: 'assets',
-
-  runtimeConfig: {
-    apiSecret: process.env.PAYSTACK_SECRET,
-    public: {
-      apiBase: process.env.API_URL
-    }
+  runtimeConfig:{
+    public:{
+      PAYSTACK_PUBLIC_KEY: process.env.PAYSTACK_PUBLIC
+    },
+    PAYSTACK_SECRET_KEY: process.env.PAYSTACK_SECRET
   },
   imports: {
     dirs: [
