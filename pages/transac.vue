@@ -207,7 +207,7 @@ const desserts = ref([
 .about {
 
     /* background-color: rgb(127, 203, 203); */
-    background-color: aliceblue;
+    /*background-color: rgb(33, 84, 129);*/
 }
 
 /* .b {

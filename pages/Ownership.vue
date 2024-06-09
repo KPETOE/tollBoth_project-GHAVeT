@@ -1,20 +1,35 @@
 <template>
-    <div class="Ownership" style="background-color:  rgb(213, 244, 244);">
+    <div class="Ownership" style="">
         <div>
 
             <h2 class="text-uppercase text-teal-darken-3 text-center font-weight-bold  ">
                 Transfer of Ownership
-
-
             </h2>
             <p class="text-center font-weight-bold " style=" color: rgb(219, 54, 54);  font-size: 1rem;"> Data Provided
                 will be Verified And Approved</p>
 
 
 
-            <v-tabs class=" TabOwner" v-model="tab" align-tabs="center" bg-color="white" style=" border-width: 1px; border-style: solid; border-color: black;">
+            <v-row align="center" justify="center">
+                <v-col cols="auto">
+                    <v-img src="@/assets/img/th.jpeg" max-width="100"></v-img>
+                </v-col>
+                <v-col cols="auto" class="text-center">
+                    <p class="font-weight-bold" style="color: rgb(219, 54, 54); font-size: 1rem;">
+                        Data Provided will be Verified And Approved
+                    </p>
+                </v-col>
+                <v-col cols="auto">
+                    <v-img src="@/assets/img/th.jpeg" max-width="100"></v-img>
+                </v-col>
+            </v-row>
 
-                <v-tab value="tag" class="mr-12"  >
+
+
+            <v-tabs class=" TabOwner tab" v-model="tab" align-tabs="center" bg-color="white"
+                style=" border-width: 0.1px;  border-color: black;">
+
+                <v-tab value="tag" class="mr-12">
                     <div class="d-flex flex-column align-items-center">
                         <v-icon>mdi-credit-card</v-icon>
                         <span class="text-center">GHAVeTTag</span>
@@ -136,13 +151,13 @@ const input6Rules = [
 
 
 <style>
-
-.TabOwner{
+.TabOwner {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+
 .form {
     text-align: center;
 }
@@ -180,5 +195,16 @@ const input6Rules = [
     opacity: 0.8;
     color: #000000;
     border: 2px solid #ffffff;
+}
+
+.tab {
+
+
+    border: none;
+    box-shadow: 0 0 5px rgba(19, 15, 15, 0.562);
+    margin-bottom: 1rem;
+
+    margin-top: 1rem;
+
 }
 </style>
