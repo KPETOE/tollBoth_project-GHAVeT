@@ -1,10 +1,10 @@
 <template>
-    <div style="background-color:  rgb(213, 244, 244);">
+    <div >
         <v-container>
 
             <div class="">
                 <v-parallax>
-                    <div>
+                    <div class="card-Myapp">
                         <v-container>
                             <h2
                                 class="text-uppercase text-black text-center font-weight-bold   text-decoration-underline">
@@ -22,26 +22,19 @@
                 <v-container>
 
                     <div class="container">
-                        <div class="row justify-content-left" style="background-color:  rgba(127, 203, 203, 0.105);">
+                        <div class="row justify-content-left" style=" background-color:  rgb(213, 244, 200);">
 
-                            <div class="col-md-6" style="text-align: center">
+                            <div class="col-md-6" style="text-align: center; ">
 
 
                                 <h1 class="mx-auto text-uppercase text-black text-start text-center  font-weight-bold"
                                     style="font-size: 1.3em">
                                     Choose Tag #
                                 </h1>
-                                <!-- <v-col cols="12">
-                                    <div style="background-color: rgb(254, 255, 255);" class="text-1">
-                                        <v-select label="Tag #" :items="tagItems" v-model="tagNo"
-                                            variant="plain"></v-select>
-                                    </div>
-
-
-                                </v-col> -->
+                                
 
                                 <v-col cols="12">
-                                    <div style="background-color: rgb(254, 255, 255);" class="text-1">
+                                    <div style="background-color: azure;" class="text-1">
                                         <v-select label="Tag #" :items="tagItems" v-model="tagNo"
                                             variant="plain"></v-select>
                                     </div>
@@ -54,7 +47,7 @@
                     <br> <br>
 
                     <br>
-                    <div style="display: flex; flex-direction: row;">
+                    <div class="card-Myapp"  style="display: flex; flex-direction: row; background-color:  rgb(213, 244, 200);">
                         <div style="flex: 1; ">
                             <div style="display: flex; flex-direction: column; align-items: center;"><br>
                                 <h3 class="mx-auto text-uppercase font-weight-bold text-black text-start text-center"
@@ -64,15 +57,7 @@
 
                             </div>
                         </div>
-                        <!-- 
-                        <div style="flex: 1;">
-                            <div style="display: flex; flex-direction: column; align-items: center;">
-                                <v-text-field class="ref" label="Enter Number" outlined color="plain" variant="plain"
-                                    style="  width: 10em;"></v-text-field>
-                                <br>
-
-                            </div>
-                        </div> -->
+                 
 
                         <div style="flex: 1;">
                             <div style="display: flex; flex-direction: column; align-items: center;">
@@ -91,29 +76,11 @@
 
 
 
-                    <v-container>
-                        <!-- <v-table height="300px" dense>
-                            <thead class="b">
-                                <tr>
-                                    <th class="text-center with-bordr">BILL DATE</th>
-                                    <th class="text-center with-border">BILL AMOUNT</th>
-                                    <th class="text-center with-border">LOCATION</th>
-
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="item in desserts" :key="item.name" class="text-center">
-                                    <td>{{ item.ghavetTag }}</td>
-                                    <td>{{ item.account }}</td>
-                                    <td>{{ item.lastCheckpoint }}</td>
-                                </tr>
-                            </tbody>
-                        </v-table> -->
-
+                    <v-container class="card-Myapp" style="background-color:  rgb(213, 244, 244);" >
+                      
                         <!-- Button for refreshing -->
                         <div class="d-flex justify-end mb-4" style="flex: 1; ">
-                            <v-btn @click="refresh" class="mr-4  RefrehBut">Refresh</v-btn>
+                            <v-btn @click="refresh" class="mr-4  search ">Refresh</v-btn>
                             <div style="width: 3.8%;"></div>
                         </div>
 
@@ -140,7 +107,7 @@
                             <div style="display: flex; flex-direction: column; align-items: center;">
                                 <br>
 
-                                <button class="reference  text-black font-weight-bold">BACK</button>
+                                <button class="search   text-black font-weight-bold">BACK</button>
                                 <br>
 
 
@@ -151,19 +118,7 @@
                     </v-container>
 
                     <v-row>
-                        <!-- <template v-for="event in events.data" :key="event.id">
-                    <v-col>
-                        <v-card width="300">
-                            <nuxt-link style="text-decoration: none;" :to="'/events/' + event.id">
-
-
-
-
-                            </nuxt-link>
-                        </v-card>
-                        <br>
-                    </v-col>
-                </template> -->
+                      
                     </v-row>
                 </v-container>
             </div>
@@ -345,4 +300,18 @@ const refresh = () => {
     background-color: #249385;
     border: 1px solid #ededed;
 }
+
+
+.card-Myapp{
+
+    border: none;
+    box-shadow: 0 0 15px rgba(19, 15, 15, 0.562);
+    margin-bottom: 1rem;
+
+    margin-top: 1px;
+}
+
+.card-Myapp-Body {
+    padding: 2rem;
+  }
 </style>
