@@ -1,12 +1,12 @@
 <template>
-    <div class="apply">
-        <v-parallax style=" background-color: rgb(213, 244, 244);">
+    <div class="">
+        <v-parallax style=" " class="container-fluid full-height d-flex justify-content-center align-items-center">
             <v-form @submit.prevent="submitApplication">
 
 
                 <br />
 
-                
+
                 <v-row>
                     <v-col cols="12">
                         <h2 class="text-center mb-10  Ella">New Application </h2>
@@ -22,7 +22,7 @@
                     complete
                     to expedite the processing of your application. <br> Thank you for choosing our tolling services.
                 </p>
-                <div>
+                <div class="card-Apply">
                     <v-container>
                         <v-row class="align-items-center">
                             <v-col cols="12" md="6">
@@ -60,7 +60,7 @@
                                             <div style="background-color: azure; width: 34.5em;" class=" corners">
                                                 <v-text-field v-model="applyForm.residence" label="Home or Work Address"
                                                     outlined color="white" class="mx-auto corners" :rules="addressRules"
-                                                    style="box-shadow: none; width: 550px; background: linear-gradient(to right, rgba(75, 156, 162, 0.331), rgba(135, 207, 235, 0.486), #31759a48, #153445b4) !important;"
+                                                    style="box-shadow: none; width: 550px; "
                                                     variant="plain"></v-text-field>
                                             </div>
                                         </v-col>
@@ -175,7 +175,7 @@
                                 <div class="container">
                                     <v-row class="d-flex justify-center" style="text-align: center">
                                         <v-col cols="12">
-                                          
+
 
                                             <div style="background-color: azure; width: 34.5em;  " class=" corners">
                                                 <v-text-field v-model="applyForm.insurance" label="Serial #" outlined
@@ -208,8 +208,8 @@
                                                 <v-combobox clearable
                                                     :items="['California', 'ACCRA', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
                                                     item-text="name" v-model="applyForm.pickup_loc" outlined
-                                                    hide-details="auto" class="custom-background"
-                                                    style="box-shadow: none; width: 550px;  height: 4em;  background: linear-gradient(to right, rgba(75, 156, 162, 0.331), rgba(135, 207, 235, 0.486), #31759a48, #153445b4) !important;"
+                                                    hide-details="auto" class="custom-background corners"
+                                                    style="box-shadow: none; width: 550px;  height: 4em;  "
                                                     variant="plain"
                                                     placeholder="Select the Nearest DVLA Office"></v-combobox>
 
@@ -221,44 +221,49 @@
                         </v-row>
                     </v-container>
                 </div>
-                <br><br>
+                <br>
 
-                <v-container style="text-align: center;">
+                <v-col class="  container-fluid full-height d-flex justify-content-center align-items-center">
+                    <v-row class="form-below">
 
-                    <h1 class="mx-auto text-uppercase text-red text-center" style="font-size: 1.2em">
-                        Verify that the data provided is Correct.
-                    </h1>
+                        <v-container style="text-align: center;">
+
+                            <h1 class="mx-auto text-uppercase text-red text-center" style="font-size: 1.2em">
+                                Verify that the data provided is Correct.
+                            </h1>
 
 
-                    <v-row align="center" cols="" lg="12" md="6" class="d-flex ">
+                            <v-row align="center" cols="" lg="12" md="6" class="d-flex ">
 
-                        <v-col cols="" lg="6" md="6" sm="6">
-                            <v-checkbox v-model="checkbox" :rules="[v => !!v || 'You must agree to continue!']" required
-                                label="I Have Read And Agree With Terms And Conditions
+                                <v-col cols="" lg="6" md="6" sm="6">
+                                    <v-checkbox v-model="checkbox" :rules="[v => !!v || 'You must agree to continue!']"
+                                        required label="I Have Read And Agree With Terms And Conditions
                  Of Used."></v-checkbox>
-                        </v-col>
+                                </v-col>
 
-                        <v-col align="right" cols="" lg="6" md="6" sm="6">
-                            <v-btn @click="setTimeout(handleSubmit(), 6000)" type="submit"
-                                prepend-icon="mdi-check-circle" class="B-clear">
-                                <template v-slot:prepend>
-                                    <v-icon color="success"></v-icon>
-                                </template>
-                                Submit
+                                <v-col align="right" cols="" lg="6" md="6" sm="6">
+                                    <v-btn @click="setTimeout(handleSubmit(), 6000)" type="submit"
+                                        prepend-icon="mdi-check-circle" class="B-clear">
+                                        <template v-slot:prepend>
+                                            <v-icon color="success"></v-icon>
+                                        </template>
+                                        Submit
 
-                                <template v-slot:append>
-                                    <v-icon color="warning"></v-icon>
-                                </template>
-                            </v-btn>
-                            <v-dialog v-model="Alert" :type="type" width="20em">
-                                <v-alert width="600" height="400" closable variant="flat" color="blue"
-                                    title="Application Success" text="You've submited Successfully!"></v-alert>
-                            </v-dialog>
-                        </v-col>
+                                        <template v-slot:append>
+                                            <v-icon color="warning"></v-icon>
+                                        </template>
+                                    </v-btn>
+                                    <v-dialog v-model="Alert" :type="type" width="20em">
+                                        <v-alert width="600" height="400" closable variant="flat" color="blue"
+                                            title="Application Success" text="You've submited Successfully!"></v-alert>
+                                    </v-dialog>
+                                </v-col>
 
+                            </v-row>
+                        </v-container>
                     </v-row>
-                </v-container>
 
+                </v-col>
             </v-form>
 
 
@@ -449,17 +454,30 @@ const insuranceSerialNumberRules = [
 
 <style>
 .corners {
-    background: linear-gradient(to right, rgba(75, 156, 162, 0.331), rgba(135, 207, 235, 0.486), #31759a48, #1534459b) !important;
+    background: linear-gradient(to right, rgba(135, 235, 222, 0.082), #abc8d831, #bee0f38a) !important;
     border-top-left-radius: 10px;
     border-top-right-radius: 0px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 15px;
+
+    border-width: 0.5px;
+    border-style: solid;
+    border-color: rgb(102, 92, 92);
 
 }
 
 .Ella {
 
     text-decoration: underline;
+}
+
+
+
+.form-below {
+    background-color: rgb(213, 244, 200);
+    
+    margin-bottom: 1rem;
+    box-shadow: 0 0 10px rgba(19, 15, 15, 0.562);
 }
 
 
@@ -520,7 +538,14 @@ body {
     display: block;
 }
 
+.card-Apply {
 
+    border: none;
+    box-shadow: 0 0 15px rgba(19, 15, 15, 0.562);
+    margin-bottom: 1rem;
+
+    margin-top: 1px;
+}
 
 
 .radio-wrapper {

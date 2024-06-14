@@ -76,7 +76,7 @@
 
 
 
-                    <v-container class="card-Myapp" style="background-color:  rgb(213, 244, 244);" >
+                    <v-container class="card-Myapp" style="background-color:  rgb(213, 244, 200);" >
                       
                         <!-- Button for refreshing -->
                         <div class="d-flex justify-end mb-4" style="flex: 1; ">
@@ -294,7 +294,7 @@ const refresh = () => {
 
 .search:hover {
 
-
+/*background-color:  rgb(213, 244, 244);   this color may be the alternative for all background*/
     color: white;
     /* Change text color to white */
     background-color: #249385;
