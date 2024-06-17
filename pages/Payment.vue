@@ -56,13 +56,6 @@ const email = ref(user.value.email);
 const amount = ref(0);
 const reference = ref("");
 const transactions = await client.from('transactions').select('amountEnt');
-// console.log(publickey);
-// const dispForm = ref({
-//   fName: profile.data.first_name + " " + profile.data.last_name,
-//   ammount: "",
-//   email: user.value.email,
-// });
-
 
 const onSuccessfulPayment = async () => {
   // const {data, error} = await client.from()
@@ -79,6 +72,7 @@ const onSuccessfulPayment = async () => {
 
 const onCancelledPayment = function (response) {
   router.push('/Payment')
+  alert('Failed Transaction!');
   console.log(response)
 };
 </script>
