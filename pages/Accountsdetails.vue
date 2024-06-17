@@ -15,7 +15,7 @@
                     <br>
                 </v-container>
                 <div class="wrapper">
-                    <div class="AccDetails text-center"  >
+                    <div class="AccDetails text-center">
                         <v-container>
                             <h1 class="mx-auto text-uppercase text-black text-center" style="font-size: 1.5em">
                                 ACCOUNT DETAILS
@@ -73,29 +73,33 @@
                 </div>
                 <br><br>
 
-                <br><br>
 
-                <div class="container">
-                    <v-row justify="space-between" style="text-align: center;">
-                        <v-col cols="12" md="6">
-                            <v-btn to="/payment" class="btn btn-primary custom-width font-weight-bold">DEPOSIT
-                                FUNDS</v-btn>
-                        </v-col>
-                        <v-col cols="12" md="6">
-                            <v-btn class="btn btn-primary custom-width  font-weight-bold ">STATEMENT</v-btn>
-                        </v-col>
+                <v-col class="  container-fluid full-height d-flex justify-content-center align-items-center">  <br><br>
+                    <v-row class="form-below">  <br><br>
+                        <div class="container">
+                            <v-row justify="space-between" style="text-align: center;">
+                                <v-col cols="12" md="6">
+                                    <v-btn to="/payment" class="btn btn-primary custom-width font-weight-bold">DEPOSIT
+                                        FUNDS</v-btn>
+                                </v-col>
+                                <v-col cols="12" md="6">
+                                    <v-btn class="btn btn-primary custom-width  font-weight-bold ">STATEMENT</v-btn>
+                                </v-col>
+                            </v-row>
+                        </div>
+
+                        <br><br>
+                        <br /><br />
+                        <v-container>
+                            <h3 class="mx-auto text-uppercase text-lime-darken-4 text-center block-text"
+                                style="font-size: 1em">
+                                ALL Funds Are Subject to <br />Financial Management And Money<br />
+                                Laundering REGUALATIONS <br />
+                                ACT 921 2016
+                            </h3>
+                        </v-container>
                     </v-row>
-                </div>
-
-                <br><br>
-                <br /><br />
-                <v-container>
-                    <h3 class="mx-auto text-uppercase text-lime-darken-4 text-center block-text" style="font-size: 1em">
-                        ALL Funds Are Subject to <br />Financial Management And Money<br />
-                        Laundering REGUALATIONS <br />
-                        ACT 921 2016
-                    </h3>
-                </v-container>
+                </v-col>
             </div>
         </v-parallax>
     </div>
@@ -116,8 +120,6 @@ const showSubscriberDetails = () => {
 </script>
 
 <style>
-
-
 .square-box {
     height: 80px;
     width: 50%;
@@ -127,6 +129,14 @@ const showSubscriberDetails = () => {
     border-top-right-radius: 0px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 15px;
+}
+
+
+.form-below {
+    background-color: rgba(213, 244, 200, 0.575);
+    
+    margin-bottom: 1rem;
+    box-shadow: 0 0 10px rgba(19, 15, 15, 0.562);
 }
 
 
@@ -143,8 +153,8 @@ const showSubscriberDetails = () => {
 
 .form-label {
     display: block;
-     margin-bottom: 5px;
-    
+    margin-bottom: 5px;
+
 }
 
 .custom-width {
@@ -179,6 +189,4 @@ const showSubscriberDetails = () => {
     align-items: center;
     width: 100%;
 }
-
-
 </style>

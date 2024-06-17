@@ -238,7 +238,7 @@
                                 <v-col cols="" lg="6" md="6" sm="6">
                                     <v-checkbox v-model="checkbox" :rules="[v => !!v || 'You must agree to continue!']"
                                         required label="I Have Read And Agree With Terms And Conditions
-                 Of Used."></v-checkbox>
+                                   Of Used."></v-checkbox>
                                 </v-col>
 
                                 <v-col align="right" cols="" lg="6" md="6" sm="6">
@@ -474,7 +474,7 @@ const insuranceSerialNumberRules = [
 
 
 .form-below {
-    background-color: rgb(213, 244, 200);
+    background-color: rgba(213, 244, 200, 0.575);
     
     margin-bottom: 1rem;
     box-shadow: 0 0 10px rgba(19, 15, 15, 0.562);

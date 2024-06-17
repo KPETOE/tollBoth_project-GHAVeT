@@ -152,7 +152,9 @@ const sendMessage = async () => {
 
 <style scoped>
 .your-custom-class {
-    background-color: #3ecee7;
+    background: linear-gradient(to right, rgba(36, 71, 37, 0.331), rgba(135, 235, 173, 0), #31759ab4, #153445b4) !important;
+
+
     color: rgb(7, 4, 4);
 }
 
