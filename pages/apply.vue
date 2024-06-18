@@ -478,6 +478,12 @@ const insuranceSerialNumberRules = [
     
     margin-bottom: 1rem;
     box-shadow: 0 0 10px rgba(19, 15, 15, 0.562);
+
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
 }
 
 

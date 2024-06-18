@@ -22,14 +22,14 @@
                             </h1>
                         </v-container>
                         <br />
-                        <div class="container">
+                        <div class="container"  style=" ">
                             <div class="row justify-content-center">
-                                <div class="col-md-6" style="text-align: center;">
+                                <div class="col-md-6" style="text-align: center; ">
                                     <label for="textBox2"
                                         class="form-label mx-auto text-uppercase text-black text-center"
                                         style="font-size: 1.5rem; font-weight: bold">BALANCE</label>
                                     <div class="bawa mx-auto d-flex justify-content-center align-items-center"
-                                        style="margin-top: 20px; ">
+                                        style="margin-top: 20px; background-color: rgba(0, 0, 0, 0.1) !important; ">
                                         <h5>GHS 500.00</h5>
                                     </div>
                                 </div>
@@ -39,7 +39,7 @@
                                         class="form-label mx-auto text-uppercase text-black text-center"
                                         style="font-size: 1.5rem; font-weight: bold">DEDUCTIONS</label>
                                     <div class="bawa mx-auto d-flex justify-content-center align-items-center"
-                                        style="margin-top: 20px;">
+                                        style="margin-top: 20px; background-color: rgba(0, 0, 0, 0.1) !important;">
                                         <h5>GHS 500.00</h5>
                                     </div>
                                 </div>
@@ -57,8 +57,8 @@
                                 <label for="textBox3" class="form-label mx-auto text-uppercase text-black text-center"
                                     style="font-size: 1.5rem; font-weight: bold">LAST DEPOSIT</label>
                                 <div class="lastDep mx-auto d-flex justify-content-center align-items-center"
-                                    style="margin-top: 10px;">
-                                    <div class="mb-3 d-flex">
+                                    style="margin-top: 10px; ">
+                                    <div class="mb-3 d-flex"   style="padding: 2rem; margin-bottom: 2rem;  background-color: rgba(0, 0, 0, 0.1) !important;">
                                         <input type="text" readonly class="form-control table" id="textBox3"
                                             value="GHS 500.00" />
 
@@ -71,12 +71,12 @@
                         </div>
                     </div>
                 </div>
-                <br><br>
+                
 
 
-                <v-col class="  container-fluid full-height d-flex justify-content-center align-items-center">  <br><br>
-                    <v-row class="form-below">  <br><br>
-                        <div class="container">
+                <v-col class=" wrapper  container-fluid full-height d-flex justify-content-center align-items-center"  style="width: 60;">  
+                    <v-row class="form-below  wrapper "  style="margin-top: 10px;">  
+                        <div class="container"  style="padding: 2rem;">
                             <v-row justify="space-between" style="text-align: center;">
                                 <v-col cols="12" md="6">
                                     <v-btn to="/payment" class="btn btn-primary custom-width font-weight-bold">DEPOSIT
@@ -89,7 +89,7 @@
                         </div>
 
                         <br><br>
-                        <br /><br />
+                        <br />
                         <v-container>
                             <h3 class="mx-auto text-uppercase text-lime-darken-4 text-center block-text"
                                 style="font-size: 1em">
@@ -133,10 +133,12 @@ const showSubscriberDetails = () => {
 
 
 .form-below {
-    background-color: rgba(213, 244, 200, 0.575);
-    
     margin-bottom: 1rem;
     box-shadow: 0 0 10px rgba(19, 15, 15, 0.562);
+
+    background-color: rgba(213, 244, 200, 0.575);
+
+  
 }
 
 
@@ -181,6 +183,12 @@ const showSubscriberDetails = () => {
     text-align: center;
     margin-top: 1px;
 
+   
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
 }
 
 .wrapper {
@@ -188,5 +196,12 @@ const showSubscriberDetails = () => {
     justify-content: center;
     align-items: center;
     width: 100%;
+
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
 }
 </style>
