@@ -10,8 +10,8 @@
 
 
   <!-- Form Container -->
-  <div class="container mt-2">
-    <div class="card mx-auto" style="max-width: 45rem;">
+  <div class="mt-2">
+    <div class="card mx-auto" style="max-width: 42rem;">
       <div class="card-body">
         <v-form @submit.prevent="" class="mt-10 mb-10">
           <v-label class="fw-bold">Full Name</v-label>
@@ -56,15 +56,18 @@ const email = ref(user.value.email);
 const amount = ref(0);
 const reference = ref("");
 const transactions = await client.from('transactions').select('amountEnt');
+let amountEnt = await client.from('transactions').select('amountEnt');
+let amountent = parseFloat(amount);
+let addBal = parseFloat(amountEnt + amount);
+
+
 
 const onSuccessfulPayment = async () => {
   // const {data, error} = await client.from()
-  if (transactions.data == null) {
-    const { data, error } = await client.from('transactions').insert({ amount: amount });
-  }else if(transactions.data != null){
-    const amountEnt = await client.from('transactions').select('amountEnt');
-    const addBal = amountEnt + amount;
-    const {data, error} = await client.from('transactions').insert({amount: current_bal})
+  if (transactions.data == 0) {
+    let { data, error } = await client.from('transactions').insert({ amountEnt: amountent, current_bal: 0 });
+  } else if (user.value.id = ! null && transactions.data != 0) {
+    const { data, error } = await client.from('transactions').insert({ amountEnt: 0, current_bal: addBal })
   }
   router.push('/transac');
   console.log(response)
