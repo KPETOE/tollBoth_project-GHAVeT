@@ -76,7 +76,7 @@
 
                 <v-col class=" wrapper  container-fluid full-height d-flex justify-content-center align-items-center"  style="width: 60;">  
                     <v-row class="form-below  wrapper "  style="margin-top: 10px;">  
-                        <div class="container"  style="padding: 2rem;">
+                        <div class="container "  style="padding: 2rem;">
                             <v-row justify="space-between" style="text-align: center;">
                                 <v-col cols="12" md="6">
                                     <v-btn to="/payment" class="btn btn-primary custom-width font-weight-bold">DEPOSIT

@@ -56,20 +56,18 @@
         </div>
         <v-divider></v-divider>
         <div class="values">
-            <h3 class=" mt-10 text-center">Core Values</h3><br>
+            <h3 class=" mt-10 text-center  text-success">Core Values</h3><br>
             <v-container class="mt-10 d-flex justify-space-evenly">
                 <br>
                 <v-row dense>
-                    <v-col v-for="value in values" :key="value" cols="auto" sm="">
+                    <v-col v-for="(value, index) in values" :key="index" cols="auto" sm="">
                         <v-container>
                             <v-card class="ma-2 pa-2" style="width: 20em;">
                                 <v-container fluid>
-                                    <v-icon class="d-flex justtify-center mt-5 mx-auto"
-                                        style="font-size: 60px;"></v-icon>
+                                    <v-icon class="d-flex justify-center mt-5 mx-auto" style="font-size: 60px;">{{ value.icon }}</v-icon>
                                     <v-card-item>
-                                        <h4 class="text-center"></h4><br>
-                                        <p class="text-justify"></p>
-
+                                        <h4 class="text-center">{{ value.title }}</h4><br>
+                                        <p class="text-justify">{{ value.description }}</p>
                                     </v-card-item>
                                 </v-container>
                             </v-card>
@@ -118,6 +116,33 @@
 <script setup>
 
 
+const values = [
+    {
+        icon: 'mdi-lightbulb-on-outline',
+        title: 'Innovation',
+        description: 'We embrace cutting-edge technology and strive to continually innovate to improve the toll collection process.'
+    },
+    {
+        icon: 'mdi-account-group-outline',
+        title: 'Customer Focus',
+        description: 'Our customers are at the heart of everything we do. We are dedicated to providing exceptional service and a seamless experience.'
+    },
+    {
+        icon: 'mdi-earth',
+        title: 'Sustainability',
+        description: 'We are committed to sustainable practices that minimize environmental impact and promote a greener future.'
+    },
+    {
+        icon: 'mdi-shield-check-outline',
+        title: 'Integrity',
+        description: 'We uphold the highest standards of integrity and transparency in all our operations.'
+    },
+    {
+        icon: 'mdi-speedometer',
+        title: 'Efficiency',
+        description: 'Our systems are designed to provide fast, reliable, and efficient toll collection, reducing travel time and congestion.'
+    }
+];
 
 </script>
 
@@ -139,4 +164,6 @@
 
     color: #06211d;
 }
+
+
 </style>

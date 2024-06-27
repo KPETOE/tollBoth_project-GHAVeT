@@ -35,7 +35,7 @@
                                 <div class="container">
                                     <v-row class="d-flex justify-center" style="text-align: center">
                                         <v-col cols="12">
-                                            <div style="background-color: azure; width: 34.5em;" class=" corners">
+                                            <div style="background-color: azure; width: 34.5em;" class=" ">
                                                 <v-text-field v-model="applyForm.veh_type"
                                                     label="Vehicle make and Modle" outlined color="white"
                                                     class="mx-auto corners" :rules="vehicleMakeModelRules"
@@ -57,7 +57,7 @@
                                 <div class="container">
                                     <v-row class="d-flex justify-center" style="text-align: center">
                                         <v-col cols="12">
-                                            <div style="background-color: azure; width: 34.5em;" class=" corners">
+                                            <div style="background-color: azure; width: 34.5em;" class=" ">
                                                 <v-text-field v-model="applyForm.residence" label="Home or Work Address"
                                                     outlined color="white" class="mx-auto corners" :rules="addressRules"
                                                     style="box-shadow: none; width: 550px; "
@@ -79,7 +79,7 @@
                                 <div class="container">
                                     <v-row class="d-flex justify-center" style="text-align: center">
                                         <v-col cols="12">
-                                            <div style="background-color: azure; width: 34.5em;" class=" corners">
+                                            <div style="background-color: azure; width: 34.5em;" class=" ">
                                                 <v-text-field v-model="applyForm.ghCard" label="GH Card Number" outlined
                                                     color="white" class="mx-auto corners" :rules="ghCardNumberRules"
                                                     style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
@@ -101,7 +101,7 @@
                                 <div class="container">
                                     <v-row class="d-flex justify-center" style="text-align: center">
                                         <v-col cols="12">
-                                            <div style="background-color: azure; width: 34.5em;" class=" corners">
+                                            <div style="background-color: azure; width: 34.5em;" class=" ">
                                                 <v-text-field v-model="applyForm.license" label="Plate Number" outlined
                                                     color="white" class="mx-auto  corners" :rules="plateNumberRules"
                                                     style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
@@ -152,7 +152,7 @@
                                 <div class="container">
                                     <v-row class="d-flex justify-center" style="text-align: center">
                                         <v-col cols="12">
-                                            <div style="background-color: azure; width: 34.5em;" class=" corners">
+                                            <div style="background-color: azure; width: 34.5em;" class=" ">
                                                 <v-text-field v-model="applyForm.roadWorthy" label="Road Worhty"
                                                     outlined color="white" class="mx-auto corners"
                                                     :rules="roadWorthyRules"
@@ -177,7 +177,7 @@
                                         <v-col cols="12">
 
 
-                                            <div style="background-color: azure; width: 34.5em;  " class=" corners">
+                                            <div style="background-color: azure; width: 34.5em;  " class=" ">
                                                 <v-text-field v-model="applyForm.insurance" label="Serial #" outlined
                                                     color="white" class="mx-auto  corners"
                                                     :rules="insuranceSerialNumberRules"
@@ -203,7 +203,7 @@
                                 <div class="container">
                                     <v-row class="d-flex justify-center" style="text-align: center">
                                         <v-col cols="12">
-                                            <div style="background-color: azure; width:34.5em;" class=" corners">
+                                            <div style="background-color: azure; width:34.5em;" class="">
 
                                                 <v-combobox clearable
                                                     :items="['California', 'ACCRA', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
@@ -551,6 +551,11 @@ body {
     margin-bottom: 1rem;
 
     margin-top: 1px;
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 
@@ -577,4 +582,6 @@ body {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 0px;
 }
+
+
 </style>
