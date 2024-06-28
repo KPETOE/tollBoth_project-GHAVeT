@@ -55,8 +55,8 @@ const fullname = ref(profile.data.first_name + " " + profile.data.last_name);
 const email = ref(user.value.email);
 const amount = ref(0);
 const reference = ref("");
-const transactions = await client.from('transactions').select('amountEnt');
-let amountEnt = await client.from('transactions').select('amountEnt').eq('id', user.value.id);
+const transactions = await client.from('transactions').select('amountEnt').eq('user_id', user.value.id);
+console.log(transactions);
 // let amountFloat = parseFloat(amount);
 
 
@@ -64,10 +64,18 @@ let amountEnt = await client.from('transactions').select('amountEnt').eq('id', u
 const onSuccessfulPayment = async () => {
   // const {data, error} = await client.from()
   if (transactions.data == 0) {
-    let { data, error } = await client.from('transactions').insert({ amountEnt: amount.value, current_bal: 0 });
+    try {
+      const { data, error } = await client.from('transactions').insert({ amountEnt: amount.value, current_bal: 0 }).eq('user_id', user.value.id);
+    } catch (error) {
+      console.log(error)
+    }
   } else if (user.value.id = ! null && transactions.data != 0) {
-    let addBal = amountEnt.data.values + amount.value;
-    const { data, error } = await client.from('transactions').insert({ amountEnt: 0, current_bal: addBal })
+    let addBal = transactions.data + amount.value;
+    try {
+      const { data, error } = await client.from('transactions').insert({ amountEnt: 0, current_bal: addBal }).eq('user_id', user.value.id)
+    } catch (error) {
+      console.log(error)
+    }
   }
   router.push('/transac');
   console.log(response)
