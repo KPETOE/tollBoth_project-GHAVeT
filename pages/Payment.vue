@@ -56,6 +56,7 @@ const email = ref(user.value.email);
 const amount = ref(0);
 const reference = ref("");
 const transactions = await client.from('transactions').select('amountEnt').eq('user_id', user.value.id);
+const amountVal = await client.from('transaction').select('amountEnt').in('amountEnt', ).eq('user_id', user.value.id);
 console.log(transactions);
 // let amountFloat = parseFloat(amount);
 
@@ -65,14 +66,14 @@ const onSuccessfulPayment = async () => {
   // const {data, error} = await client.from()
   if (transactions.data == 0) {
     try {
-      const { data, error } = await client.from('transactions').insert({ amountEnt: amount.value, current_bal: 0 }).eq('user_id', user.value.id);
+      const { data, error } = await client.from('transactions').insert({ amountEnt: amount.value }).eq('user_id', user.value.id);
     } catch (error) {
       console.log(error)
     }
   } else if (user.value.id = ! null && transactions.data != 0) {
-    let addBal = transactions.data + amount.value;
+    const addBal = transactions.data + amount.value;
     try {
-      const { data, error } = await client.from('transactions').insert({ amountEnt: 0, current_bal: addBal }).eq('user_id', user.value.id)
+      const { data, error } = await client.from('transactions').insert({ amountEnt: addBal }).eq('user_id', user.value.id)
     } catch (error) {
       console.log(error)
     }
