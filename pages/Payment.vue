@@ -37,6 +37,7 @@
 
 <script setup>
 import paystack from 'vue3-paystack';
+import { id } from 'vuetify/locale';
 
 // const nuxtapp = useNuxtApp();
 const router = useRouter();
@@ -55,9 +56,9 @@ const fullname = ref(profile.data.first_name + " " + profile.data.last_name);
 const email = ref(user.value.email);
 const amount = ref(0);
 const reference = ref("");
-const transactions = await client.from('transactions').select('amountEnt').eq('user_id', user.value.id);
-const amountVal = await client.from('transaction').select('amountEnt').in('amountEnt', ).eq('user_id', user.value.id);
-console.log(transactions);
+const transactions = await client.from('transactions').select('amountEnt').eq('user_id', user.value.id).limit().single();
+// const amountVal = await client.from('transaction').select('amountEnt').in('amountEnt', ).eq('user_id', user.value.id);
+console.log(transactions.data);
 // let amountFloat = parseFloat(amount);
 
 
@@ -71,9 +72,9 @@ const onSuccessfulPayment = async () => {
       console.log(error)
     }
   } else if (user.value.id = ! null && transactions.data != 0) {
-    const addBal = transactions.data + amount.value;
+    const addBal = parseInt(transactions.data.amountEnt) + parseInt(amount.value);
     try {
-      const { data, error } = await client.from('transactions').insert({ amountEnt: addBal }).eq('user_id', user.value.id)
+      const { data, error } = await client.from('transactions').insert({ amountEnt: addBal }).eq('user_id', user.value.id).select();
     } catch (error) {
       console.log(error)
     }
