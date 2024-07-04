@@ -56,9 +56,11 @@ const fullname = ref(profile.data.first_name + " " + profile.data.last_name);
 const email = ref(user.value.email);
 const amount = ref(0);
 const reference = ref("");
-const transactions = await client.from('transactions').select('amountEnt').eq('user_id', user.value.id).limit().single();
+// const idNum = await client.from('transactions').select('id').eq('user_id', user.value.id).single();
+const transactions = await client.from('transactions').select('amountEnt').eq('user_id', user.value.id).order('created_at', {ascending:false}).limit(1).single();
 // const amountVal = await client.from('transaction').select('amountEnt').in('amountEnt', ).eq('user_id', user.value.id);
 console.log(transactions.data);
+// console.log(idNum.data.id);
 // let amountFloat = parseFloat(amount);
 
 
