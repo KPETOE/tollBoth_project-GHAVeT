@@ -20,15 +20,22 @@
           <v-label class="fw-bold mt-3">Email</v-label>
           <v-text-field variant="outlined" v-model="email" disabled style="width: 100%;"></v-text-field>
 
-          <v-label class="fw-bold mt-3">Ammount</v-label>
+          <v-label class="fw-bold mt-3">AMOUNT</v-label>
           <v-text-field v-model="amount" placeholder="GHS 5.00" variant="outlined" style="width: 100%;"></v-text-field>
 
-          <div class="text-center mt-4">
-            <paystack buttonClass="'button-class btn btn-primary'" buttonText="Deposite" :amount="amount * 100"
+          <div class="  d-flex justify-content-between align-items-center mt-4 ">
+            <paystack buttonClass="button-class btn btn-primary ml-5" buttonText="Deposit" :amount="amount * 100"
               :email="email" :publicKey="publickey" type="submit" :reference="reference" :callback="processPayment"
               :onSuccess="onSuccessfulPayment" currency="GHS" :onCancel="onCancelledPayment"></paystack>
+
+
+            <v-col class="d-flex justify-content-end">
+              <v-btn to="/transac" class="search font-weight-bold ml-30">Back</v-btn>
+            </v-col>
           </div>
         </v-form>
+
+       
       </div>
     </div>
   </div>
@@ -57,7 +64,7 @@ const email = ref(user.value.email);
 const amount = ref(0);
 const reference = ref("");
 // const idNum = await client.from('transactions').select('id').eq('user_id', user.value.id).single();
-const transactions = await client.from('transactions').select('amountEnt').eq('user_id', user.value.id).order('created_at', {ascending:false}).limit(1).single();
+const transactions = await client.from('transactions').select('amountEnt').eq('user_id', user.value.id).order('created_at', { ascending: false }).limit(1).single();
 // const amountVal = await client.from('transaction').select('amountEnt').in('amountEnt', ).eq('user_id', user.value.id);
 console.log(transactions.data);
 // console.log(idNum.data.id);
@@ -108,15 +115,22 @@ h1 {
   padding: 2rem;
 }
 
-.btn-primary {
-  background-color: white;
-  border-color: black;
-  border-width: 1.5px;
+
+.button-class {
+  background: linear-gradient(to right, rgba(75, 156, 162, 0.331), rgba(135, 207, 235, 0.486), #31759a48, #1534459b) !important;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+
 }
 
-.btn-primary:hover {
-  color: rgb(23, 77, 63);
-  border-color: black;
-  background: linear-gradient(to right, rgba(75, 156, 162, 0.331), rgba(169, 215, 233, 0.486), #4ca4d348, #1534459b) !important;
+.button-class:hover {
+  background-color: #00b3aa !important;
+
+  color: white;
 }
 </style>
