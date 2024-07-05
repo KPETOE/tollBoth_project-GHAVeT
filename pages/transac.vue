@@ -72,8 +72,7 @@
                     <div class="col-md-6 text-center" style="">
                         <label for="textBox3" class="form-label mx-auto text-uppercase text-black text-center"
                             style="font-size: 1.5rem; font-weight: bold">LAST DEPOSIT</label>
-                        <div class="lastDep mx-auto d-flex justify-content-center align-items-center"
-                            style="margin-top: 10px;  border-width: 1px; border-style: solid; border-color: black;  
+                        <div class="lastDep mx-auto d-flex justify-content-center align-items-center" style="margin-top: 10px;  border-width: 1px; border-style: solid; border-color: black;  
                             background-color: rgba(0, 0, 0, 0.1) !important;">
                             <div class="mb-3 d-flex">
                                 <input type="text" readonly class="form-control table" id="textBox3"
@@ -89,7 +88,7 @@
             </v-col>
 
 
-            <v-col  class="middle">
+            <v-col class="middle">
                 <br>
                 <div style="display: flex; flex-direction: row;">
                     <div style="flex: 1; margin-right: 10px;">
@@ -169,6 +168,11 @@
                             statement
                         </h1>
                     </div>
+                    <br>
+                    <h1 class="text-uppercase text-lime-darken-4 font-weight-bold"
+                        style="font-size: 2em; align-self: flex-end;">
+                        statement
+                    </h1>
                 </div>
 
 
@@ -206,8 +210,7 @@ const desserts = ref([
 
 
 <style>
-
-.middle{
+.middle {
 
     width: 100rem;
     border: none;
@@ -216,12 +219,13 @@ const desserts = ref([
     text-align: center;
     margin-top: 2rem;
 
-   
+
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+
 .container {
 
     width: 100rem;
