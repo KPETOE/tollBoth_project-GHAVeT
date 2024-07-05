@@ -158,7 +158,7 @@
                             </v-col>
                             
                             <v-col>
-                                <button class="search font-weight-bold">Download</button>
+                                <v-btn class="search font-weight-bold">Download</v-btn>
                             </v-col>
                             
                             <br>
@@ -211,7 +211,7 @@ const desserts = ref([
 
     width: 100rem;
     border: none;
-    box-shadow: 0 0 15px rgba(19, 15, 15, 0.562);
+    /* box-shadow: 0 0 15px rgba(19, 15, 15, 0.562); */
     margin-bottom: 1px;
     text-align: center;
     margin-top: 2rem;
@@ -226,7 +226,7 @@ const desserts = ref([
 
     width: 100rem;
     border: none;
-    box-shadow: 0 0 15px rgba(19, 15, 15, 0.562);
+    /* box-shadow: 0 0 15px rgba(19, 15, 15, 0.562); */
     margin-bottom: 1px;
     text-align: center;
     margin-top: 1px;
@@ -323,7 +323,7 @@ input:focus {
 }
 
 .search {
-    width: 6em;
+    /* width: 6em; */
     background: linear-gradient(to right, rgba(75, 156, 162, 0.331), rgba(135, 207, 235, 0.486), #31759a48, #1534459b) !important;
 }
 </style>

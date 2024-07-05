@@ -134,7 +134,7 @@ const showSubscriberDetails = () => {
 
 .form-below {
     margin-bottom: 1rem;
-    box-shadow: 0 0 10px rgba(19, 15, 15, 0.562);
+    /* box-shadow: 0 0 10px rgba(19, 15, 15, 0.562); */
 
     background-color: rgba(213, 244, 200, 0.575);
 
@@ -178,7 +178,7 @@ const showSubscriberDetails = () => {
 .AccDetails {
     width: 80rem;
     border: none;
-    box-shadow: 0 0 15px rgba(19, 15, 15, 0.562);
+    /* box-shadow: 0 0 15px rgba(19, 15, 15, 0.562); */
     margin-bottom: 1px;
     text-align: center;
     margin-top: 1px;

@@ -1,18 +1,11 @@
 <template>
     <div class="body">
-        <div  style="width: 40%;"  class=" CARD" justify="center">
+        <div style="width: 40%;" class="CARD" justify="center">
             <h3 class="text-center">Welcome</h3>
             <h5 class="text-center">Glad to having you</h5>
 
-
-            <v-col class="text-center custom-offset" align="center" justify="center">
-                <v-row cols="12" sm="6" >
-                    <v-avatar size="400" >
-                        <v-img src="/img/LoginLogo.png" contain fill-height></v-img>
-                    </v-avatar>
-                </v-row>
-            </v-col>
-
+            <v-img src="/img/LoginLogo.png" height="400"></v-img>
+            
 
             <v-container fluid style="height: " class="">
                 <v-form @submit.prevent="signIn" style="text-align: center;">
@@ -161,16 +154,17 @@ const showPassword = ref(false);
 
 
 .CARD {
-  padding: 20px;
-  box-shadow: 0 0 35px rgba(81, 151, 151, 0.562);
-  border-radius: 10px;
-  max-width: 800px;
-  margin: auto;
-  height: 60%;
+    padding: 20px;
+    /* box-shadow: 0 0 35px rgba(81, 151, 151, 0.562); */
+    border-radius: 10px;
+    /* max-width: 800px; */
+    margin: auto;
+    height: 100vh;
 
- 
+
 }
 
 .custom-offset {
-    margin-left: 70px; }
+    margin-left: 70px;
+}
 </style>

@@ -9,9 +9,9 @@
                                 <label class="font-weight-bold ">GHAVeTTag #</label>
                             </v-col>
                             <v-col cols="" lg="6" md="6" sm="6">
-                                <div style="background-color: azure; width: 30em;" class="mx-auto BckCol-V">
+                                <div style="background-color: azure; width: auto;" class="mx-auto BckCol-V">
                                     <v-text-field v-model="vehicle.vettag" label="GHAVeTTag  #" outlined color="white"
-                                        class="mx-auto" style="box-shadow: none;    width: 500px;"
+                                        class="mx-auto" style="box-shadow: none;    width: auto;"
                                         variant="plain"></v-text-field>
                                 </div>
                             </v-col>
@@ -24,10 +24,10 @@
                                 <label class="font-weight-bold"> VeH Reg #</label>
                             </v-col>
                             <v-col cols="" lg="6" md="6" sm="6">
-                                <div style="background-color: azure; width: 30em;" class="mx-auto BckCol-V">
+                                <div style="background-color: azure; width: auto;" class="mx-auto BckCol-V">
 
                                     <v-text-field v-model="vehicle.prevTag" label="VeH Reg #" outlined color="white"
-                                        class="mx-auto" :rules="input2Rules" style="box-shadow: none;  width: 500px;"
+                                        class="mx-auto" :rules="input2Rules" style="box-shadow: none;  width: auto;"
                                         variant="plain"></v-text-field>
                                 </div>
                             </v-col>
@@ -40,10 +40,10 @@
                                 <label class="font-weight-bold ">DATE</label>
                             </v-col>
                             <v-col cols="" lg="6" md="6" sm="6">
-                                <div style="background-color: azure; width: 30em;" class="mx-auto BckCol-V">
+                                <div style="background-color: azure; width: auto;" class="mx-auto BckCol-V">
                                     <v-text-field v-model="vehicle.newTag" label="Date of Transaction" outlined
                                         color="white" class="mx-auto" :rules="input9Rules"
-                                        style="box-shadow: none; width: 500px;" variant="plain"
+                                        style="box-shadow: none; width: auto;" variant="plain"
                                         type="date"></v-text-field>
 
                                 </div>
@@ -59,10 +59,10 @@
                                 <label class="mr-2  font-weight-bold ">New Owner Account Name</label>
                             </v-col>
                             <v-col cols="" lg="6" md="6" sm="6">
-                                <div style="background-color: azure; width: 30em;" class="mx-auto BckCol-V">
+                                <div style="background-color: azure; width: auto;" class="mx-auto BckCol-V">
                                     <v-text-field v-model="vehicle.accountHolder" label="New  Owner Account Name"
                                         outlined color="white" class="mx-auto  BckCol" :rules="input6Rules"
-                                        style="box-shadow: none; width: 500px;" variant="plain"></v-text-field>
+                                        style="box-shadow: none; width: auto;" variant="plain"></v-text-field>
                                 </div>
                             </v-col>
                         </v-row>
@@ -73,10 +73,10 @@
                                 <label class="mr-2  font-weight-bold ">MILLAGE</label>
                             </v-col>
                             <v-col cols="" lg="6" md="6" sm="6">
-                                <div style="background-color: azure; width: 30em;" class="mx-auto BckCol-V">
+                                <div style="background-color: azure; width: auto;" class="mx-auto BckCol-V">
                                     <v-text-field v-model="vehicle.mileage" label="Odometer Reading" outlined
                                         color="white" class="mx-auto" :rules="odometerReadingRules"
-                                        style="box-shadow: none; width: 500px;" variant="plain"
+                                        style="box-shadow: none; width: auto;" variant="plain"
                                         type="number"></v-text-field>
                                 </div>
                             </v-col>
@@ -182,7 +182,7 @@ const submitVehicle = async () => {
 <style>
 .Card-veh {
     border: none;
-    box-shadow: 0 0 15px rgba(19, 15, 15, 0.562);
+    /* box-shadow: 0 0 15px rgba(19, 15, 15, 0.562); */
     margin-bottom: 1rem;
 
     margin-top: 1rem;

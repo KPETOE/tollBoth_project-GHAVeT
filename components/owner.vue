@@ -9,9 +9,9 @@
                                 <label class="font-weight-bold ">GHAVeTTag #</label>
                             </v-col>
                             <v-col cols="" lg="6" md="6" sm="6">
-                                <div style="background-color: azure; width: 30em;" class="mx-auto BckCol">
+                                <div style="background-color: azure; width: auto;" class="mx-auto BckCol">
                                     <v-text-field v-model="ownForm.vettag" label="GHAVeTTag  #" outlined color="white"
-                                        class="mx-auto" style="box-shadow: none;    width: 500px;"
+                                        class="mx-auto" style="box-shadow: none;    width: auto;"
                                         variant="plain"></v-text-field>
                                 </div>
                             </v-col>
@@ -24,11 +24,11 @@
                                 <label class="font-weight-bold">Previous VeH Reg #</label>
                             </v-col>
                             <v-col cols="" lg="6" md="6" sm="6">
-                                <div style="background-color: azure; width: 30em;" class="mx-auto BckCol">
+                                <div style="background-color: azure; width: auto;" class="mx-auto BckCol">
 
                                     <v-text-field v-model="ownForm.prevTag" label="Previous VeH Reg #" outlined
                                         color="white" class="mx-auto" :rules="input2Rules"
-                                        style="box-shadow: none;  width: 500px; " variant="plain"></v-text-field>
+                                        style="box-shadow: none;  width: auto; " variant="plain"></v-text-field>
                                 </div>
                             </v-col>
                         </v-row>
@@ -40,9 +40,9 @@
                                 <label class="font-weight-bold ">New VeH Reg #</label>
                             </v-col>
                             <v-col cols="" lg="6" md="6" sm="6">
-                                <div style="background-color: azure; width: 30em;" class="mx-auto BckCol">
+                                <div style="background-color: azure; width: auto;" class="mx-auto BckCol">
                                     <v-text-field v-model="ownForm.newTag" label="New VeH Reg #" outlined color="white"
-                                        class="mx-auto" :rules="input3Rules" style="box-shadow: none; width: 500px;"
+                                        class="mx-auto" :rules="input3Rules" style="box-shadow: none; width: auto;"
                                         variant="plain"></v-text-field>
                                 </div>
                             </v-col>
@@ -56,10 +56,10 @@
                                 <label class="font-weight-bold ">New VeH Road Worthy #</label>
                             </v-col>
                             <v-col cols="" lg="6" md="6" sm="6">
-                                <div style="background-color: azure; width: 30em;" class="mx-auto BckCol">
+                                <div style="background-color: azure; width: auto;" class="mx-auto BckCol">
                                     <v-text-field v-model="ownForm.road_worthy" label="New VeH Road Worthy #" outlined
                                         color="white" class="mx-auto" :rules="input4Rules"
-                                        style="box-shadow: none;  width: 500px;" variant="plain"></v-text-field>
+                                        style="box-shadow: none;  width: auto;" variant="plain"></v-text-field>
                                 </div>
                             </v-col>
                         </v-row>
@@ -74,11 +74,11 @@
                                 <label class="mr-2  font-weight-bold ">New VeH Insurance #</label>
                             </v-col>
                             <v-col cols="" lg="6" md="6" sm="6">
-                                <div style="background-color: azure; width: 30em;" class="mx-auto BckCol">
+                                <div style="background-color: azure; width: auto;" class="mx-auto BckCol">
 
                                     <v-text-field v-model="ownForm.insurance" label="New VeH Insurance #" outlined
                                         color="white" class="mx-auto" :rules="input5Rules"
-                                        style="box-shadow: none;width: 500px;" variant="plain"></v-text-field>
+                                        style="box-shadow: none;width: auto;" variant="plain"></v-text-field>
                                 </div>
                             </v-col>
                         </v-row>
@@ -90,10 +90,10 @@
                                 <label class="font-weight-bold ">DATE</label>
                             </v-col>
                             <v-col cols="" lg="6" md="6" sm="6">
-                                <div style="background-color: azure; width: 30em;" class="mx-auto BckCol">
+                                <div style="background-color: azure; width: auto;" class="mx-auto BckCol">
                                     <v-text-field v-model="ownForm.date" label="Date of Transaction" outlined
                                         color="white" class="mx-auto" :rules="input10Rules"
-                                        style="box-shadow: none; width: 500px;" variant="plain"
+                                        style="box-shadow: none; width: auto;" variant="plain"
                                         type="date"></v-text-field>
 
                                 </div>
@@ -108,10 +108,10 @@
                                 <label class="mr-2  font-weight-bold ">New Owner Account Name</label>
                             </v-col>
                             <v-col cols="" lg="6" md="6" sm="6">
-                                <div style="background-color: azure; width: 30em;" class="mx-auto BckCol">
+                                <div style="background-color: azure; width: auto;" class="mx-auto BckCol">
                                     <v-text-field v-model="ownForm.accountHolder" label="New  Owner Account Name"
                                         outlined color="white" class="mx-auto  " :rules="input6Rules"
-                                        style="box-shadow: none; width: 500px;" variant="plain"></v-text-field>
+                                        style="box-shadow: none; width: auto;" variant="plain"></v-text-field>
                                 </div>
                             </v-col>
                         </v-row>
@@ -203,7 +203,7 @@ border-bottom-right-radius: 15px;
 
 .card {
     border: none;
-    box-shadow: 0 0 15px rgba(19, 15, 15, 0.562);
+    /* box-shadow: 0 0 15px rgba(19, 15, 15, 0.562); */
     margin-bottom: 1rem;
 
     margin-top: 1rem;

@@ -201,7 +201,7 @@ const input6Rules = [
 
 
     border: none;
-    box-shadow: 0 0 5px rgba(19, 15, 15, 0.562);
+    /* box-shadow: 0 0 5px rgba(19, 15, 15, 0.562); */
     margin-bottom: 1rem;
 
     margin-top: 1rem;
