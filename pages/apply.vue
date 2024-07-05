@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <v-parallax style=" " class="container-fluid full-height d-flex justify-content-center align-items-center">
+        <!-- <div class="container-fluid full-height d-flex justify-content-center align-items-center"> -->
             <v-form @submit.prevent="submitApplication">
 
 
@@ -35,11 +35,11 @@
                                 <div class="container">
                                     <v-row class="d-flex justify-center" style="text-align: center">
                                         <v-col cols="12">
-                                            <div style="background-color: azure; width: 34.5em;" class=" ">
+                                            <div style="background-color: azure; " class=" ">
                                                 <v-text-field v-model="applyForm.veh_type"
                                                     label="Vehicle make and Modle" outlined color="white"
                                                     class="mx-auto corners" :rules="vehicleMakeModelRules"
-                                                    style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
+                                                    style="box-shadow: none;  background-color: rgba(170, 170, 221, 0.489);"
                                                     variant="plain"></v-text-field>
                                             </div>
                                         </v-col>
@@ -57,10 +57,10 @@
                                 <div class="container">
                                     <v-row class="d-flex justify-center" style="text-align: center">
                                         <v-col cols="12">
-                                            <div style="background-color: azure; width: 34.5em;" class=" ">
+                                            <div style="background-color: azure; " class=" ">
                                                 <v-text-field v-model="applyForm.residence" label="Home or Work Address"
                                                     outlined color="white" class="mx-auto corners" :rules="addressRules"
-                                                    style="box-shadow: none; width: 550px; "
+                                                    style="box-shadow: none;  "
                                                     variant="plain"></v-text-field>
                                             </div>
                                         </v-col>
@@ -79,10 +79,10 @@
                                 <div class="container">
                                     <v-row class="d-flex justify-center" style="text-align: center">
                                         <v-col cols="12">
-                                            <div style="background-color: azure; width: 34.5em;" class=" ">
-                                                <v-text-field v-model="applyForm.ghCard" label="GH Card Number" outlined
+                                            <div style="background-color: azure; " class=" ">
+                                                <v-text-field v-model="applyForm.ghCard" label="GH Card Number" disabled
                                                     color="white" class="mx-auto corners" :rules="ghCardNumberRules"
-                                                    style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
+                                                    style="box-shadow: none;  background-color: rgba(170, 170, 221, 0.489);"
                                                     variant="plain"></v-text-field>
                                             </div>
                                         </v-col>
@@ -101,10 +101,10 @@
                                 <div class="container">
                                     <v-row class="d-flex justify-center" style="text-align: center">
                                         <v-col cols="12">
-                                            <div style="background-color: azure; width: 34.5em;" class=" ">
+                                            <div style="background-color: azure; " class=" ">
                                                 <v-text-field v-model="applyForm.license" label="Plate Number" outlined
                                                     color="white" class="mx-auto  corners" :rules="plateNumberRules"
-                                                    style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
+                                                    style="box-shadow: none;  background-color: rgba(170, 170, 221, 0.489);"
                                                     variant="plain"></v-text-field>
                                             </div>
                                         </v-col>
@@ -152,11 +152,11 @@
                                 <div class="container">
                                     <v-row class="d-flex justify-center" style="text-align: center">
                                         <v-col cols="12">
-                                            <div style="background-color: azure; width: 34.5em;" class=" ">
+                                            <div style="background-color: azure; " class=" ">
                                                 <v-text-field v-model="applyForm.roadWorthy" label="Road Worhty"
                                                     outlined color="white" class="mx-auto corners"
                                                     :rules="roadWorthyRules"
-                                                    style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
+                                                    style="box-shadow: none;  background-color: rgba(170, 170, 221, 0.489);"
                                                     variant="plain"></v-text-field>
                                             </div>
                                         </v-col>
@@ -177,12 +177,12 @@
                                         <v-col cols="12">
 
 
-                                            <div style="background-color: azure; width: 34.5em;  " class=" ">
-                                                <v-text-field v-model="applyForm.insurance" label="Serial #" outlined
-                                                    color="white" class="mx-auto  corners"
+                                            <div style="background-color: azure;" class=" ">
+                                                <v-text-field v-model="applyForm.insurance" label="Serial #"
+                                                    color="white" class="mx-auto corners"
                                                     :rules="insuranceSerialNumberRules"
-                                                    style="box-shadow: none; width: 550px; background-color: rgba(170, 170, 221, 0.489);"
-                                                    variant="outlined"></v-text-field>
+                                                    style="box-shadow: none;  background-color: rgba(170, 170, 221, 0.489);"
+                                                    ></v-text-field>
                                             </div>
                                         </v-col>
                                     </v-row>
@@ -203,13 +203,13 @@
                                 <div class="container">
                                     <v-row class="d-flex justify-center" style="text-align: center">
                                         <v-col cols="12">
-                                            <div style="background-color: azure; width:34.5em;" class="">
+                                            <div style="background-color: azure; " class="">
 
                                                 <v-combobox clearable
                                                     :items="['California', 'ACCRA', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
                                                     item-text="name" v-model="applyForm.pickup_loc" outlined
                                                     hide-details="auto" class="custom-background corners"
-                                                    style="box-shadow: none; width: 550px;  height: 4em;  "
+                                                    style="box-shadow: none;   height: 4em;  "
                                                     variant="plain"
                                                     placeholder="Select the Nearest DVLA Office"></v-combobox>
 
@@ -267,7 +267,7 @@
             </v-form>
 
 
-        </v-parallax>
+        <!-- </div> -->
     </div>
 </template>
 
@@ -477,7 +477,7 @@ const insuranceSerialNumberRules = [
     background-color: rgba(213, 244, 200, 0.575);
     
     margin-bottom: 1rem;
-    box-shadow: 0 0 10px rgba(19, 15, 15, 0.562);
+    /* box-shadow: 0 0 10px rgba(19, 15, 15, 0.562); */
 
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -547,7 +547,7 @@ body {
 .card-Apply {
 
     border: none;
-    box-shadow: 0 0 15px rgba(19, 15, 15, 0.562);
+    /* box-shadow: 0 0 15px rgba(19, 15, 15, 0.562); */
     margin-bottom: 1rem;
 
     margin-top: 1px;
