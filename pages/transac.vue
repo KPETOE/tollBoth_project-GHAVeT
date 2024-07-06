@@ -147,26 +147,20 @@
 
                 <br> <br>
 
-                <div style="flex: 1;" class="d-flex flex-column align-items-end flex-grow-1">
+                <div style="flex: 1;" class="d-flex flex-column flex-grow-1 ">
                     <div style="display: flex; flex-direction: column; align-items: center;">
                         <br>
-                        <v-row  >
-
-                            <v-col>
-                                <v-btn to="/Payment" class="search font-weight-bold">Deposit Funds</v-btn>
+                        <v-row class="w-100 justify-content-between">
+                            <!-- Added class w-100 and justify-content-between -->
+                            <v-col class="d-flex justify-content-start">
+                                <v-btn to="/Payment" class=""  style=" background: linear-gradient(to right, rgba(75, 156, 162, 0.331), rgba(135, 207, 235, 0.486), #31759a48, #1534459b) !important;">Deposit Funds</v-btn>
                             </v-col>
-                            
-                            <v-col>
-                                <v-btn class="search font-weight-bold">Download</v-btn>
-                            </v-col>
-                            
-                            <br>
 
+                            <v-col class="d-flex justify-content-end">
+                                <button class="search font-weight-bold  mr-10">Download</button>
+                            </v-col>
                         </v-row>
-                        <h1 class="mx-auto text-uppercase text-lime-darken-4 text-start text-center  font-weight-bold"
-                            style="font-size: 2em">
-                            statement
-                        </h1>
+
                     </div>
                     <br>
                     <h1 class="text-uppercase text-lime-darken-4 font-weight-bold"
@@ -327,7 +321,12 @@ input:focus {
 }
 
 .search {
-    /* width: 6em; */
+    width: 7em;
     background: linear-gradient(to right, rgba(75, 156, 162, 0.331), rgba(135, 207, 235, 0.486), #31759a48, #1534459b) !important;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 6px;
+
 }
 </style>
