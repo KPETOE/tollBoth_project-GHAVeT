@@ -1,5 +1,5 @@
 <template>
-    <div >
+    <div>
         <v-container>
 
             <div class="">
@@ -14,7 +14,7 @@
                         </v-container>
                         <p class="text-center font-weight-bold text-center "
                             style=" color: rgb(43, 130, 104);  font-size: 1rem;">
-                            Manage your applications and stay updated with your transaction history. <br>
+                            Manage your applications and stay updated with your transaction history. <br/>
                             Explore detailed information about your transactions below.
                         </p>
                     </div>
@@ -31,7 +31,7 @@
                                     style="font-size: 1.3em">
                                     Choose Tag #
                                 </h1>
-                                
+
 
                                 <v-col cols="12">
                                     <div style="background-color: azure;" class="text-1">
@@ -47,7 +47,8 @@
                     <br> <br>
 
                     <br>
-                    <div class="card-Myapp"  style="display: flex; flex-direction: row; background-color:  rgb(213, 244, 200);">
+                    <div class="card-Myapp"
+                        style="display: flex; flex-direction: row; background-color:  rgb(213, 244, 200);">
                         <div style="flex: 1; ">
                             <div style="display: flex; flex-direction: column; align-items: center;"><br>
                                 <h3 class="mx-auto text-uppercase font-weight-bold text-black text-start text-center"
@@ -57,7 +58,7 @@
 
                             </div>
                         </div>
-                 
+
 
                         <div style="flex: 1;">
                             <div style="display: flex; flex-direction: column; align-items: center;">
@@ -76,8 +77,8 @@
 
 
 
-                    <v-container class="card-Myapp" style="background-color:  rgb(213, 244, 200);" >
-                      
+                    <v-container class="card-Myapp" style="background-color:  rgb(213, 244, 200);">
+
                         <!-- Button for refreshing -->
                         <div class="d-flex justify-end mb-4" style="flex: 1; ">
                             <v-btn @click="refresh" class="mr-4  search ">Refresh</v-btn>
@@ -107,7 +108,7 @@
                             <div style="display: flex; flex-direction: column; align-items: center;">
                                 <br>
 
-                                <button class="search   text-black font-weight-bold"  @click="scrollToTop" >BACK</button>
+                                <button class="search   text-black font-weight-bold" @click="scrollToTop">BACK</button>
                                 <br>
 
 
@@ -118,7 +119,7 @@
                     </v-container>
 
                     <v-row>
-                      
+
                     </v-row>
                 </v-container>
             </div>
@@ -146,7 +147,7 @@ const vehicle = await client.from('vehicle').select('*').eq('user_id', user.valu
 const tagItems = ref(['New Application', 'Change of Ownership']);
 const tagNo = ref('New Application');
 const referenceNumber = ref('');
-const filteredData = ref([]); 
+const filteredData = ref([]);
 const tableHeaders = ref([]);
 const itemFields = ref([]);
 
@@ -157,7 +158,7 @@ watch(tagNo, (newValue) => {
         itemFields.value = ['Refrence_No', 'veh_type', 'Status', 'AppointmentDate', 'Pickup_loc'];
         filteredData.value = newAppData.data;
     } else if (newValue === 'Change of Ownership') {
-        tableHeaders.value = ['Reference  #', 'VeH Reg #', 'GHAVeTTag' ,'Status'];
+        tableHeaders.value = ['Reference  #', 'VeH Reg #', 'GHAVeTTag', 'Status'];
         itemFields.value = ['Reference_No', 'VeH_Reg', 'vettag', 'Status'];
         filteredData.value = ownerShip.data;
     }
@@ -186,8 +187,8 @@ const refresh = () => {
 
 
 function scrollToTop() {
-        window.scrollTo({ top: 1, behavior: 'smooth' });
-    }
+    window.scrollTo({ top: 1, behavior: 'smooth' });
+}
 
 </script>
 
@@ -293,7 +294,7 @@ function scrollToTop() {
 
 .search:hover {
 
-/*background-color:  rgb(213, 244, 244);   this color may be the alternative for all background*/
+    /*background-color:  rgb(213, 244, 244);   this color may be the alternative for all background*/
     color: white;
     /* Change text color to white */
     background-color: #249385;
@@ -301,10 +302,10 @@ function scrollToTop() {
 }
 
 
-.card-Myapp{
+.card-Myapp {
 
     border: none;
-    box-shadow: 0 0 15px rgba(19, 15, 15, 0.562);
+    /* box-shadow: 0 0 15px rgba(19, 15, 15, 0.562); */
     margin-bottom: 1rem;
 
     margin-top: 1px;
@@ -312,5 +313,5 @@ function scrollToTop() {
 
 .card-Myapp-Body {
     padding: 2rem;
-  }
+}
 </style>
