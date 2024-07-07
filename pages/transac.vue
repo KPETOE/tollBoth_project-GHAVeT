@@ -88,37 +88,32 @@
             </v-col>
 
 
-            <v-col class="middle">
-                <br>
-                <div style="display: flex; flex-direction: row;">
-                    <div style="flex: 1; margin-right: 10px;">
-                        <div style="display: flex; flex-direction: column; align-items: center;">
-                            <label for="fromDate" class="font-weight-bold text-black">FROM</label>
-                            <br>
-                            <input type="date" id="fromDate" v-model="fromDate" class="underlined-input">
-                        </div>
+
+            <br>
+            <v-row>
+                <v-col col="auto" lg="4" sm="12">
+                    <div class="d-flex justify-center">
+                        <label for="fromDate" class="font-weight-bold text-black mx-5">FROM</label>
+                        <input type="date" id="fromDate" v-model="fromDate" class="underlined-input">
                     </div>
+                </v-col>
 
-                    <div style="flex: 2;">
-                        <div style="display: flex; flex-direction: column; align-items: center;">
-                            <label for="toDate" class="font-weight-bold text-black">TO</label>
+                <v-col col="auto" lg="4" sm="12">
+                    <div class="d-flex justify-center">
+                        <label for="toDate" class="font-weight-bold text-black mx-5">TO</label>
 
-                            <br>
-                            <input type="date" id="toDate" v-model="toDate" class="underlined-input">
-                        </div>
+                        <input type="date" id="toDate" v-model="toDate" class="underlined-input">
                     </div>
+                </v-col>
 
-                    <div style="flex: 1;">
-                        <div style="display: flex; flex-direction: column; align-items: center;">
-                            <br>
+                <v-col col="auto" lg="4" sm="12">
+                    <div class="d-flex justify-center">
 
-                            <button class="search font-weight-bold ">Search</button>
+                        <button class="search font-weight-bold ">Search</button>
 
-                        </div>
                     </div>
-                </div>
-            </v-col>
-
+                </v-col>
+            </v-row>
 
             <br><br><br>
             <v-container>
@@ -150,29 +145,29 @@
                 <div style="flex: 1;" class="d-flex flex-column align-items-end flex-grow-1">
                     <div style="display: flex; flex-direction: column; align-items: center;">
                         <br>
-                        <v-row  >
+                        <v-row>
 
                             <v-col>
                                 <v-btn to="/Payment" class="search font-weight-bold">Deposit Funds</v-btn>
                             </v-col>
-                            
+
                             <v-col>
                                 <v-btn class="search font-weight-bold">Download</v-btn>
                             </v-col>
-                            
+
                             <br>
 
                         </v-row>
-                        <h1 class="mx-auto text-uppercase text-lime-darken-4 text-start text-center  font-weight-bold"
+                        <!-- <h1 class="mx-auto text-uppercase text-lime-darken-4 text-start text-center  font-weight-bold"
                             style="font-size: 2em">
                             statement
-                        </h1>
+                        </h1> -->
                     </div>
                     <br>
-                    <h1 class="text-uppercase text-lime-darken-4 font-weight-bold"
+                    <!-- <h1 class="text-uppercase text-lime-darken-4 font-weight-bold"
                         style="font-size: 2em; align-self: flex-end;">
                         statement
-                    </h1>
+                    </h1> -->
                 </div>
 
 

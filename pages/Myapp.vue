@@ -3,43 +3,46 @@
         <v-container>
 
             <div class="">
-                <v-parallax>
-                    <div class="card-Myapp">
-                        <v-container>
-                            <h2
-                                class="text-uppercase text-black text-center font-weight-bold   text-decoration-underline">
-                                MY APPLICATIONS
-                            </h2>
+                <!-- <v-parallax> -->
+                <div class="card-Myapp">
+                    <v-container>
+                        <h2 class="text-uppercase text-black text-center font-weight-bold   text-decoration-underline">
+                            MY APPLICATIONS
+                        </h2>
 
-                        </v-container>
-                        <p class="text-center font-weight-bold text-center "
-                            style=" color: rgb(43, 130, 104);  font-size: 1rem;">
-                            Manage your applications and stay updated with your transaction history. <br/>
-                            Explore detailed information about your transactions below.
-                        </p>
-                    </div>
-                </v-parallax>
+                    </v-container>
+                    <p class="text-center font-weight-bold text-center "
+                        style=" color: rgb(43, 130, 104);  font-size: 1rem;">
+                        Manage your applications and stay updated with your transaction history. <br />
+                        Explore detailed information about your transactions below.
+                    </p>
+                </div>
+                <!-- </v-parallax> -->
                 <v-container>
 
                     <div class="container">
                         <div class="row justify-content-left" style=" background-color:  rgb(213, 244, 200);">
 
-                            <div class="col-md-6" style="text-align: center; ">
+                            <!-- <div class="" style="text-align: center; "> -->
 
 
-                                <h1 class="mx-auto text-uppercase text-black text-start text-center  font-weight-bold"
-                                    style="font-size: 1.3em">
-                                    Choose Tag #
-                                </h1>
+                            <h1 class="mx-auto text-uppercase text-black text-start text-center  font-weight-bold"
+                                style="font-size: 1.3em">
+                                Choose Tag #
+                            </h1><br>
 
 
-                                <v-col cols="12">
-                                    <div style="background-color: azure;" class="text-1">
-                                        <v-select label="Tag #" :items="tagItems" v-model="tagNo"
-                                            variant="plain"></v-select>
-                                    </div>
-                                </v-col>
+
+
+                            <div style=" height: auto;" class="text-1">
+                                <v-select label="Tag #" :items="tagItems" v-model="tagNo" variant="outlined"></v-select>
                             </div>
+
+
+
+
+
+                            <!-- </div> -->
 
 
                         </div>
@@ -48,31 +51,42 @@
 
                     <br>
                     <div class="card-Myapp"
-                        style="display: flex; flex-direction: row; background-color:  rgb(213, 244, 200);">
-                        <div style="flex: 1; ">
-                            <div style="display: flex; flex-direction: column; align-items: center;"><br>
-                                <h3 class="mx-auto text-uppercase font-weight-bold text-black text-start text-center"
-                                    style="font-size: 1.3em  ">
-                                    &nbsp;&nbsp;&nbsp; Reference &nbsp;&nbsp;&nbsp; #
-                                </h3>
+                        style="background-color: rgb(213, 244, 200); height: auto">
+                        <v-row class="mx-auto py-auto">
+                            <v-col cols="" lg="3" sm="12">
+                                <div>
+                                    <div><br>
+                                        <h3 class="mx-auto text-uppercase font-weight-bold text-black text-start text-center"
+                                            style="font-size: 1.3em  ">
+                                            &nbsp;&nbsp;&nbsp; Reference &nbsp;&nbsp;&nbsp; #
+                                        </h3>
 
-                            </div>
-                        </div>
+                                    </div>
+                                </div>
+                            </v-col>
+
+                            <v-col cols="" lg="6" sm="12">
+                                <div>
+                                    <div>
+                                        <v-text-field v-model="referenceNumber" class="ref" label="Enter Number"
+                                            outlined color="plain" variant="plain" style="width: 100%;"></v-text-field>
+                                        <br>
+                                    </div>
+                                </div>
+                            </v-col>
+                            <v-col cols="" lg="3" sm="12">
+                                <div class="d-flex justify-center" style="">
+                                    <button @click="search" class="search">Search</button>
+                                    <br>
+                                </div>
+                            </v-col>
+                           
+                        </v-row>
 
 
-                        <div style="flex: 1;">
-                            <div style="display: flex; flex-direction: column; align-items: center;">
-                                <v-text-field v-model="referenceNumber" class="ref" label="Enter Number" outlined
-                                    color="plain" variant="plain" style="width: 10em;"></v-text-field>
-                                <br>
-                            </div>
-                        </div>
-                        <div style="flex: 1;">
-                            <div style="display: flex; flex-direction: column; align-items: center;">
-                                <br>
-                                <button @click="search" class="search">Search</button>
-                            </div>
-                        </div>
+
+
+
                     </div>
 
 
@@ -216,13 +230,13 @@ function scrollToTop() {
     border-left: 2px solid #000;
 }
 
-.text-1 {
+/* .text-1 {
     border-top-left-radius: 10px;
     border-top-right-radius: 0px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 15px;
 
-}
+} */
 
 .ref {
 
