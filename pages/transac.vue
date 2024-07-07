@@ -128,8 +128,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="item in desserts" :key="item.name" class="text-center">
-                            <td>{{ item.ghavetTag }}</td>
+                        <tr v-for="transaction in transactions.data" :key="transaction.id" class="text-center">
+                            <!-- <td>{{ transaction.data.created_at}}</td> -->
                             <td>{{ item.account }}</td>
                             <td>{{ item.lastCheckpoint }}</td>
                         </tr>
@@ -177,30 +177,33 @@
     </div>
 </template>
 <script setup>
+const user = useSupabaseUser();
+const client = useSupabaseClient();
+
+const transactions = await client.from('transactions').select('*').eq('user_id', user.value.id);
+console.log(transactions)
 
 
+// const desserts = ref([
+//     {
+//         ghavetTag: "29/03/2023",
+//         account: "GHs30",
+//         lastCheckpoint: "Achimota",
 
+//     },
+//     {
+//         ghavetTag: "29/01/2024",
+//         account: "GHs350",
+//         lastCheckpoint: "Tesano",
 
-const desserts = ref([
-    {
-        ghavetTag: "29/03/2023",
-        account: "GHs30",
-        lastCheckpoint: "Achimota",
+//     },
+//     {
+//         ghavetTag: "09/01/2023",
+//         account: "GHs5.00",
+//         lastCheckpoint: "Sogakope",
 
-    },
-    {
-        ghavetTag: "29/01/2024",
-        account: "GHs350",
-        lastCheckpoint: "Tesano",
-
-    },
-    {
-        ghavetTag: "09/01/2023",
-        account: "GHs5.00",
-        lastCheckpoint: "Sogakope",
-
-    },
-]);
+//     },
+// ]);
 </script>
 
 

@@ -1,6 +1,6 @@
 <template>
     <div class="body">
-        <div style="width: 40%;" class="CARD" justify="center">
+        <div style="width: auto;" class="py-10" justify="center">
             <h3 class="text-center">Welcome</h3>
             <h5 class="text-center">Glad to having you</h5>
 
@@ -11,24 +11,24 @@
                 <v-form @submit.prevent="signIn" style="text-align: center;">
                     <v-row align="center" justify="center">
 
-                        <v-col cols="12" sm="6" class="label-left">
+                        <v-col cols="" sm="12" lg="6">
                             <v-label class="text-white " style="font-size: 1.2em; font-weight: bold;"> Username /
                                 Email</v-label>
-                            <v-text-field class="text-field text-center" type="name" v-model="loginForm.userName"
-                                placeholder="User Name/Email" variant="flat"></v-text-field>
+                            <v-text-field class="" type="name" v-model="loginForm.userName"
+                                placeholder="User Name/Email" variant="solo" color="white"></v-text-field>
                         </v-col>
                     </v-row>
                     <br>
                     <v-row align="center" justify="center">
 
 
-                        <v-col cols="12" sm="6" class="label-left">
+                        <v-col cols="" sm="12" lg="6">
                             <v-label class="text-white  " style="font-size: 1.2em; font-weight: bold; ">
                                 Password</v-label>
-                            <v-text-field class="text-field text-center" v-model="loginForm.password"
-                                :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+                            <v-text-field  v-model="loginForm.password"
+                                :append-inner-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                                 :type="showPassword ? 'text' : 'password'" @click:append="showPassword = !showPassword"
-                                variant="flat" placeholder="Password">
+                                variant="solo" placeholder="Password">
                             </v-text-field>
                         </v-col>
 
@@ -40,7 +40,7 @@
                     <p class="text-center">Forgot Password? <nuxt-link style="text-decoration: none;" class="text-white"
                             to="/forgot">Click here</nuxt-link></p>
                     <v-row align="center" justify="center">
-                        <v-col cols="12" sm="6">
+                        <v-col cols="auto" sm="6">
                             <v-btn type="submit">Submit</v-btn>
                         </v-col>
                     </v-row>
@@ -129,16 +129,16 @@ const showPassword = ref(false);
 
 <style>
 .text-field {
-    width: 25em;
+    /* width: 25em; */
     height: 3.5em;
 
     background: linear-gradient(to right, rgba(252, 252, 252, 0.331), rgba(122, 200, 230, 0.486), #31759ab4, #4f819c73) !important;
 
 
-    border-top-left-radius: 10px;
+    /* border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-right-radius: 10px; */
 }
 
 
