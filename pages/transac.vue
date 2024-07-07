@@ -142,7 +142,7 @@
 
                 <br> <br>
 
-                <div style="flex: 1;" class="d-flex flex-column align-items-end flex-grow-1">
+                <div style="flex: 1;" class="d-flex flex-column flex-grow-1 ">
                     <div style="display: flex; flex-direction: column; align-items: center;">
                         <br>
                         <v-row>
@@ -322,7 +322,12 @@ input:focus {
 }
 
 .search {
-    /* width: 6em; */
+    width: 7em;
     background: linear-gradient(to right, rgba(75, 156, 162, 0.331), rgba(135, 207, 235, 0.486), #31759a48, #1534459b) !important;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 6px;
+
 }
 </style>
