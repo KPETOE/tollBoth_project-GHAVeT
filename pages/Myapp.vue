@@ -34,7 +34,7 @@
 
 
 
-                            <div style=" height: auto;" class="text-1">
+                            <div style=" height: auto;" class="">
                                 <v-select label="Tag #" :items="tagItems" v-model="tagNo" variant="outlined"></v-select>
                             </div>
 

@@ -131,7 +131,7 @@
                         <tr v-for="transaction in transactions.data" :key="transaction.id" class="text-center">
                             <td>{{ transaction.created_at}}</td>
                             <td>{{ transaction.amountEnt }}</td>
-                            <!-- <td>{{ transaction. }}</td> -->
+                            <td>{{ transaction.location }}</td>
                         </tr>
                     </tbody>
                 </v-table>
