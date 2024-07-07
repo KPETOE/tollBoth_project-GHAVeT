@@ -122,9 +122,9 @@ const router = useRouter();
 
 
 
-const emits = ['profilePhotoClick']; // Declare the emitted event
+// const emits = ['profilePhotoClick']; // Declare the emitted event
 
-const profilePhoto = ref('/img/hawa.png'); // Set the default profile photo path
+// const profilePhoto = ref('/img/hawa.png'); // Set the default profile photo path
 
 
 </script>

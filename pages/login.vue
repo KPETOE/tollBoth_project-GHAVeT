@@ -20,8 +20,6 @@
                     </v-row>
                     <br>
                     <v-row align="center" justify="center">
-
-
                         <v-col cols="" sm="12" lg="6">
                             <v-label class="text-white  " style="font-size: 1.2em; font-weight: bold; ">
                                 Password</v-label>
@@ -35,10 +33,10 @@
                     </v-row>
 
                     <br>
-                    <p class="text-center">Don't have an account? <nuxt-link style="text-decoration: none;"
-                            class="text-white" to="/signup">Signup here</nuxt-link></p><br>
-                    <p class="text-center">Forgot Password? <nuxt-link style="text-decoration: none;" class="text-white"
-                            to="/forgot">Click here</nuxt-link></p>
+                    <p class="text-center">Don't have an account? <NuxtLink style="text-decoration: none;"
+                            class="text-white" to="/signup">Signup here</NuxtLink></p><br>
+                    <p class="text-center">Forgot Password? <NuxtLink style="text-decoration: none;" class="text-white"
+                            to="/forgot">Click here</NuxtLink></p>
                     <v-row align="center" justify="center">
                         <v-col cols="auto" sm="6">
                             <v-btn type="submit">Submit</v-btn>
@@ -94,20 +92,7 @@ const signIn = async () => {
             router.push('/')
         }
 
-        // if (user.value.id == profile.value.id) {
-        //     router.push('/')
-        // }
-        // })
-
-        //     if (!user.value) {
-        //     return navigateTo('/login')
-        // } else if(user.value){
-        //     return navigateTo('/')
-        // }
-
-        // if (user.value) {
-        //     navigateTo('/')
-        // }
+      
         if (!user.value) {
             alert('Wrong  username or password');
             navigateTo('/login')

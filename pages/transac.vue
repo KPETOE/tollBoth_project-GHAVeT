@@ -129,9 +129,9 @@
                     </thead>
                     <tbody>
                         <tr v-for="transaction in transactions.data" :key="transaction.id" class="text-center">
-                            <!-- <td>{{ transaction.data.created_at}}</td> -->
-                            <td>{{ item.account }}</td>
-                            <td>{{ item.lastCheckpoint }}</td>
+                            <td>{{ transaction.created_at}}</td>
+                            <td>{{ transaction.amountEnt }}</td>
+                            <!-- <td>{{ transaction. }}</td> -->
                         </tr>
                     </tbody>
                 </v-table>
@@ -184,26 +184,7 @@ const transactions = await client.from('transactions').select('*').eq('user_id',
 console.log(transactions)
 
 
-// const desserts = ref([
-//     {
-//         ghavetTag: "29/03/2023",
-//         account: "GHs30",
-//         lastCheckpoint: "Achimota",
 
-//     },
-//     {
-//         ghavetTag: "29/01/2024",
-//         account: "GHs350",
-//         lastCheckpoint: "Tesano",
-
-//     },
-//     {
-//         ghavetTag: "09/01/2023",
-//         account: "GHs5.00",
-//         lastCheckpoint: "Sogakope",
-
-//     },
-// ]);
 </script>
 
 
