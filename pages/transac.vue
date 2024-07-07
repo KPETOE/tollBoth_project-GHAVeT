@@ -129,7 +129,7 @@
                     </thead>
                     <tbody>
                         <tr v-for="transaction in transactions.data" :key="transaction.id" class="text-center">
-                            <td>{{ transaction.created_at}}</td>
+                            <td>{{ transaction.created_at }}</td>
                             <td>{{ transaction.amountEnt }}</td>
                             <td>{{ transaction.location }}</td>
                         </tr>
@@ -142,33 +142,25 @@
 
                 <br> <br>
 
-                <div style="flex: 1;" class="d-flex flex-column flex-grow-1 ">
-                    <div style="display: flex; flex-direction: column; align-items: center;">
-                        <br>
-                        <v-row>
 
-                            <v-col>
-                                <v-btn to="/Payment" class="search font-weight-bold">Deposit Funds</v-btn>
-                            </v-col>
+                <v-row>
 
-                            <v-col>
-                                <v-btn class="search font-weight-bold">Download</v-btn>
-                            </v-col>
+                    <v-col col="auto" sm="12" lg="6" md="4">
+                        <v-btn to="/Payment" class="search font-weight-bold">Deposit Funds</v-btn>
+                    </v-col>
 
-                            <br>
+                    <v-col col="auto" sm="12" lg="6" md="4">
+                        <v-btn class="search font-weight-bold">Download</v-btn>
+                    </v-col>
 
-                        </v-row>
-                        <!-- <h1 class="mx-auto text-uppercase text-lime-darken-4 text-start text-center  font-weight-bold"
+                    <br>
+
+                </v-row>
+                <!-- <h1 class="mx-auto text-uppercase text-lime-darken-4 text-start text-center  font-weight-bold"
                             style="font-size: 2em">
                             statement
                         </h1> -->
-                    </div>
-                    <br>
-                    <!-- <h1 class="text-uppercase text-lime-darken-4 font-weight-bold"
-                        style="font-size: 2em; align-self: flex-end;">
-                        statement
-                    </h1> -->
-                </div>
+
 
 
             </v-container>
