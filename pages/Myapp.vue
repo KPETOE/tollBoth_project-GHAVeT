@@ -21,12 +21,12 @@
                 <v-container>
 
                     <div class="container">
-                        <div class="row justify-content-left" style=" background-color:  rgb(213, 244, 200);">
+                        <div class="row justify-content-left" style=" background: linear-gradient(to right, #182831, rgba(72, 113, 129, 0.813), #18252c) !important;">
 
                             <!-- <div class="" style="text-align: center; "> -->
 
 
-                            <h1 class="mx-auto text-uppercase text-black text-start text-center  font-weight-bold"
+                            <h1 class="mx-auto text-uppercase text-white text-start text-center  font-weight-bold"
                                 style="font-size: 1.3em">
                                 Choose Tag #
                             </h1><br>
@@ -34,7 +34,7 @@
 
 
 
-                            <div style=" height: auto;" class="">
+                            <div style=" height: auto;" class="text-white">
                                 <v-select label="Tag #" :items="tagItems" v-model="tagNo" variant="outlined"></v-select>
                             </div>
 
@@ -51,12 +51,12 @@
 
                     <br>
                     <div class="card-Myapp"
-                        style="background-color: rgb(213, 244, 200); height: auto">
+                        style=" background: linear-gradient(to right, #182831, rgba(72, 113, 129, 0.813), #18252c) !important; height: auto">
                         <v-row class="mx-auto py-auto">
                             <v-col cols="" lg="3" sm="12">
                                 <div>
                                     <div><br>
-                                        <h3 class="mx-auto text-uppercase font-weight-bold text-black text-start text-center"
+                                        <h3 class="mx-auto text-uppercase font-weight-bold text-white text-start text-center"
                                             style="font-size: 1.3em  ">
                                             &nbsp;&nbsp;&nbsp; Reference &nbsp;&nbsp;&nbsp; #
                                         </h3>
@@ -68,15 +68,15 @@
                             <v-col cols="" lg="6" sm="12">
                                 <div>
                                     <div>
-                                        <v-text-field v-model="referenceNumber" class="ref" label="Enter Number"
+                                        <v-text-field v-model="referenceNumber" class="ref text-white" label="Enter Number"
                                             outlined color="plain" variant="plain" style="width: 100%;"></v-text-field>
                                         <br>
                                     </div>
                                 </div>
                             </v-col>
                             <v-col cols="" lg="3" sm="12">
-                                <div class="d-flex justify-center" style="">
-                                    <button @click="search" class="search">Search</button>
+                                <div class="d-flex justify-center  text-black" style="">
+                                    <button @click="search" class="search" style=" background: white !important;">Search</button>
                                     <br>
                                 </div>
                             </v-col>
@@ -91,11 +91,11 @@
 
 
 
-                    <v-container class="card-Myapp" style="background-color:  rgb(213, 244, 200);">
+                    <v-container class="card-Myapp" style=" background: linear-gradient(to right, #182831, rgba(72, 113, 129, 0.813), #18252c) !important;">
 
                         <!-- Button for refreshing -->
                         <div class="d-flex justify-end mb-4" style="flex: 1; ">
-                            <v-btn @click="refresh" class="mr-4  search ">Refresh</v-btn>
+                            <v-btn @click="refresh" class="mr-4  search " style="background: white !important;" >Refresh</v-btn>
                             <div style="width: 3.8%;"></div>
                         </div>
 
@@ -122,7 +122,7 @@
                             <div style="display: flex; flex-direction: column; align-items: center;">
                                 <br>
 
-                                <button class="search   text-black font-weight-bold" @click="scrollToTop">BACK</button>
+                                <button class="search   text-black font-weight-bold" style="background: white !important; " @click="scrollToTop">BACK</button>
                                 <br>
 
 
