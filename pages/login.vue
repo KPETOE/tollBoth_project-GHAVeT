@@ -5,9 +5,9 @@
             <h5 class="text-center">Glad to having you</h5>
 
             <v-img src="/img/LoginLogo.png" height="400"></v-img>
-            
 
-            <v-container fluid style="height: " class="">
+
+            <v-container style="height: " class="">
                 <v-form @submit.prevent="signIn" style="text-align: center;">
                     <v-row align="center" justify="center">
 
@@ -21,9 +21,9 @@
                     <br>
                     <v-row align="center" justify="center">
                         <v-col cols="" sm="12" lg="6">
-                            <v-label class="text-white  " style="font-size: 1.2em; font-weight: bold; ">
+                            <v-label class="text-white" style="font-size: 1.2em; font-weight: bold; ">
                                 Password</v-label>
-                            <v-text-field  v-model="loginForm.password"
+                            <v-text-field v-model="loginForm.password"
                                 :append-inner-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                                 :type="showPassword ? 'text' : 'password'" @click:append="showPassword = !showPassword"
                                 variant="solo" placeholder="Password">
@@ -33,10 +33,14 @@
                     </v-row>
 
                     <br>
-                    <p class="text-center">Don't have an account? <NuxtLink style="text-decoration: none;"
-                            class="text-white" to="/signup">Signup here</NuxtLink></p><br>
-                    <p class="text-center">Forgot Password? <NuxtLink style="text-decoration: none;" class="text-white"
-                            to="/forgot">Click here</NuxtLink></p>
+                    <p class="text-center">Don't have an account? <v-btn class="text-white" variant="text"
+                            @click="signUp">Signup here
+                        </v-btn>
+                    </p><br>
+                    <p class="text-center">Forgot Password? <v-btn class="text-white" variant="text"
+                            @click="forGet">Click
+                            here</v-btn>
+                    </p>
                     <v-row align="center" justify="center">
                         <v-col cols="auto" sm="6">
                             <v-btn type="submit">Submit</v-btn>
@@ -66,16 +70,6 @@ const logInForm = ref({
     password: ''
 });
 const loginForm = logInForm.value;
-// const profile = client.from('profile').select('*').then((res) => profile.value = res.data);
-const { profile } = await client.from('profile').select('id, Username, first_name, last_name').eq('');
-
-//profId.then((res) => (profile.value = res.data));
-// if (profile) {
-//     id.value = profile.id
-//     Username.value = profile.Username
-//     first_Name.value = profile.first_Name
-//     last_Name.value = profile.last_Name
-// }
 
 const signIn = async () => {
     try {
@@ -83,25 +77,30 @@ const signIn = async () => {
             email: loginForm.userName,
             password: loginForm.password
         });
-        const person = await client.from('profile').select('id').eq('id', user.value.id).single()
-        console.log(person)
-        // watchEffect(() => {
+        const person = await client.from('profile').select('id').eq('id', user.value.id).single();
+        // console.log(person)
         if (person.data == null) {
             router.push('/confirmDets')
         } else {
             router.push('/')
         }
-
-      
         if (!user.value) {
-            alert('Wrong  username or password');
-            navigateTo('/login')
+            alert('Wrong username or password');
+            router.push('/login');
         }
-
-
     } catch (error) {
         console.log(error)
     }
+
+};
+
+const forGet = () => {
+    console.log('routing to forget')
+    router.push('/forgot')
+};
+const signUp = () => {
+    console.log('routing to signup')
+    router.push('/signup')
 };
 
 

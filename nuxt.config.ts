@@ -42,7 +42,7 @@ export default defineNuxtConfig({
   supabase: {
     url: process.env.SUPABASE_URL, // Updated Supabase URL
     key: process.env.SUPABASE_KEY, // Updated Supabase key
-    // redirect: false
+    redirect: false
   },
   // baseUrl: '/nuxt-github-pages/',
   // buildAssetsDir: 'assets',

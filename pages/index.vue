@@ -7,7 +7,7 @@
               
 
                 <div class="mx-auto ">
-                    <v-container class="justify-content-center" style="width: 50%;">
+                    <v-container class="justify-content-center">
                         <h1 class="mx-auto mt-16 pt-10 text-uppercase text-white text-center">
 
 

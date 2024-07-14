@@ -124,7 +124,7 @@
 
 <script setup>
 import logo from "/img/A-transformed.png";
-import { ref } from "vue";
+// import { ref } from "vue";
 const { auth } = useSupabaseClient()
 const user = useSupabaseUser();
 const isSearchVisible = ref(false);

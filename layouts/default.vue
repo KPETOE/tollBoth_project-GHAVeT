@@ -13,6 +13,4 @@
 </template>
 <script setup>
 import { VuePreloader } from 'vue-preloader';
-import '@/node_modules/vue-preloader/dist/style.css'
-const showAnimation = ref(true);
 </script>

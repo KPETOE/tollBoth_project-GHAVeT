@@ -1,29 +1,21 @@
 <template>
   <div class="body">
     <br />
-    
 
-    <v-row align="center">
-  <v-col cols="12">
-    <div class="d-flex align-center" style="width: 100%;">
-      <!-- Paragraph in the center -->
-      <p class="text-white" style="flex: 1; text-align: center;">
+    <v-container>
+      <p class="text-white" style="text-align: center;">
         Join the fast lane to convenience! Sign up now for effortless
         <br />
         electronic toll collection on your journeys.
       </p>
-      
-      <router-link class="mr-10 text-white" style="text-decoration: none; border: none; background-color: transparent;" to="/">BacK</router-link>
+    </v-container>
 
-    </div>
-  </v-col>
-</v-row>
 
 
 
     <br />
 
-    
+
     <v-container>
       <v-dialog v-model="dialog" max-width="400">
         <v-card>
@@ -40,32 +32,21 @@
         <v-row>
           <v-col cols="" lg="6" sm="12">
             <v-label class="font-weight-bold text-white">Email</v-label>
-            <v-text-field
-              class="text-field modify"
-              v-model="signupForm.email"
-              type="email"
-            ></v-text-field>
+            <v-text-field variant="solo" class="text-field modify" v-model="signupForm.email"
+              type="email"></v-text-field>
           </v-col>
           <v-col cols="" lg="6" sm="12">
             <v-label class="font-weight-bold text-white">Password</v-label>
-            <v-text-field
-              class="text-field modify"
-              v-model="signupForm.pwd1"
-              type="password"
-            ></v-text-field>
+            <v-text-field variant="solo" class="text-field modify" v-model="signupForm.pwd1"
+              type="password"></v-text-field>
           </v-col>
           <v-col cols="" lg="6" sm="12">
-            <v-label class="font-weight-bold text-white"
-              >Confirm Password</v-label
-            >
-            <v-text-field
-              class="text-field modify"
-              v-model="signupForm.pwd2"
-              type="password"
-            ></v-text-field>
+            <v-label class="font-weight-bold text-white">Confirm Password</v-label>
+            <v-text-field variant="solo" class="text-field modify" v-model="signupForm.pwd2"
+              type="password"></v-text-field>
           </v-col>
 
-          <v-col cols="" lg="6" sm="12">
+          <!-- <v-col cols="" lg="6" sm="12">
             <v-label class="font-weight-bold text-white"
               >Driver Licence ID</v-label
             >
@@ -74,7 +55,7 @@
               v-model="signupForm.pwd2"
               type="Number"
             ></v-text-field>
-          </v-col>
+          </v-col> -->
         </v-row>
         <br />
         <br />
@@ -89,29 +70,23 @@
         </v-row>
       </v-form>
 
-      <br />
+      <!-- <br />
       <br />
       <br />
       <br />
       <v-col>
         <v-row style="align-items: center">
-          <v-divider
-            style="flex: 1; border-color: white; border-width: 2px"
-          ></v-divider>
+          <v-divider style="flex: 1; border-color: white; border-width: 2px"></v-divider>
           <p style="margin: 0 8px; font-weight: bold; color: white">
             Or Sign up with social media
           </p>
-          <v-divider
-            style="flex: 1; border-color: white; border-width: 2px"
-          ></v-divider>
+          <v-divider style="flex: 1; border-color: white; border-width: 2px"></v-divider>
         </v-row>
         <br /><br /><br />
 
         <v-row>
           <v-col align="center">
-            <div
-              style="display: flex; justify-content: space-between; width: 100%"
-            >
+            <div style="display: flex; justify-content: space-between; width: 100%">
               <v-btn icon>
                 <v-icon>mdi-google</v-icon>
               </v-btn>
@@ -120,7 +95,7 @@
             </div>
           </v-col>
         </v-row>
-      </v-col>
+      </v-col> -->
     </v-container>
     <br />
 
@@ -177,47 +152,13 @@ const signUp = async () => {
       email: signupForm.email,
       password: signupForm.pwd1,
     });
-
-    // user.value.id = data.user.id;
-
-    // if (user.value.id !== '') {
-    //     const { data: profile, error } = await client.from('profile').insert([
-    //         {
-    //             first_name: signupForm.fName,
-    //             last_name: signupForm.lName,
-    //             Username: signupForm.uName,
-    //             gh_card_no: signupForm.ghCardNo,
-    //             Mobile_Number: signupForm.mobileNo,
-    //         }
-    //     ]).select()
-    // }
     return navigateTo("/confirm");
-    // const confirmMail = signupForm.email;
-    // const step = bySteps.confirm;
+
   } catch (error) {
     console.log(error);
   }
 };
 
-// const triggerProfile = async () => {
-// const triggerPsql = '
-//     CREATE
-// ';
-// }
-// const confirmSignUp = async () => {
-//     try {
-//         const { data, error } = await auth.verifyOtp({ email: confirmForm.email, token: confirmForm.code, type: 'email' });
-//         return navigateTo('/')
-//     } catch (error) {
-//         console.log(error);
-//     }
-// };
-
-// watchEffect(() => {
-//     if (!user.value) {
-//         return navigateTo('/signup');
-//     }
-// });
 
 const clearForm = () => {
   for (const key in signupForm) {
@@ -229,16 +170,15 @@ const clearForm = () => {
 <style scoped>
 .body {
   background-color: #2e424d !important;
+  height: 100vh
 }
 
 .modify {
-  background: linear-gradient(
-    to right,
-    rgba(252, 252, 252, 0.331),
-    rgba(135, 207, 235, 0.486),
-    #31759ab4,
-    #153445b4
-  ) !important;
+  background: linear-gradient(to right,
+      rgba(252, 252, 252, 0.331),
+      rgba(135, 207, 235, 0.486),
+      #31759ab4,
+      #153445b4) !important;
 
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
