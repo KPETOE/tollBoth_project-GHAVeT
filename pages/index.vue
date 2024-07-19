@@ -4,7 +4,7 @@
 
             <div class="homeImg">
                 <br>
-              
+
 
                 <div class="mx-auto ">
                     <v-container class="justify-content-center">
@@ -19,32 +19,35 @@
                             transactions are swift, seamless, and hassle-free. Enjoy the convenience of
                             uninterrupted journeys as you effortlessly breeze through toll plazas.
                         </p>
-                        <v-row>
-                            <v-col class="mx-auto" cols="auto" lg="3" sm="6">
-                                <v-btn v-if="user == null" variant="flat" to="/login" color="red-accent-2">Learn More
-                                    <v-icon>mdi-arrow-right-thin-circle-outline</v-icon></v-btn>
-                                <v-btn v-else variant="flat" to="/about" color="red-accent-2">Learn More
-                                    <v-icon>mdi-arrow-right-thin-circle-outline</v-icon></v-btn>
-                            </v-col>
-                            <!-- <v-col class="mx-auto" cols="auto" lg="6" md="6" sm="6">
+                        <v-container class="mx-auto">
+                            <v-row>
+                                <v-col class="mx-auto" cols="auto" lg="3" sm="6">
+                                    <v-btn v-if="user == null" variant="flat" to="/login" color="red-accent-2">Learn
+                                        More
+                                        <v-icon>mdi-arrow-right-thin-circle-outline</v-icon></v-btn>
+                                    <v-btn v-else variant="flat" to="/about" color="red-accent-2">Learn More
+                                        <v-icon>mdi-arrow-right-thin-circle-outline</v-icon></v-btn>
+                                </v-col>
+                                <!-- <v-col class="mx-auto" cols="auto" lg="6" md="6" sm="6">
                                 <v-btn variant="outlined" href="https://forms.gle/tjAHEfCEQbUDmqXH8" color="white">APPLY FOR
                                     YOUR GHaVeT Tag
                                     <v-icon>mdi-arrow-right-thin-circle-outline</v-icon></v-btn>
                             </v-col> -->
 
-                            <v-col class="mx-auto" cols="auto" lg="6" md="6" sm="6">
-                                <v-btn variant="outlined" color="white">
-                                    <NuxtLink v-if="user == null" to="/login" class="nav-link text-white">
-                                        APPLY FOR YOUR GHaVeT Tag
-                                        <v-icon>mdi-arrow-right-thin-circle-outline</v-icon>
-                                    </NuxtLink>
-                                    <NuxtLink v-else to="/apply" class="nav-link text-white">
-                                        APPLY FOR YOUR GHaVeT Tag
-                                        <v-icon>mdi-arrow-right-thin-circle-outline</v-icon>
-                                    </NuxtLink>
-                                </v-btn>
-                            </v-col>
-                        </v-row>
+                                <v-col class="mx-auto" cols="auto" lg="6" md="6" sm="6">
+                                    <!-- <v-btn variant="outlined" color="white"> -->
+                                        <v-btn variant="outlined" color="white" v-if="user == null" to="/login">
+                                            APPLY FOR YOUR GHaVeT Tag
+                                            <v-icon>mdi-arrow-right-thin-circle-outline</v-icon>
+                                        </v-btn>
+                                        <v-btn variant="outlined" color="white" v-else to="/apply">
+                                            APPLY FOR YOUR GHaVeT Tag
+                                            <v-icon>mdi-arrow-right-thin-circle-outline</v-icon>
+                                        </v-btn>
+                                    <!-- </v-btn> -->
+                                </v-col>
+                            </v-row>
+                        </v-container>
                     </v-container>
                 </div>
             </div>
@@ -73,7 +76,8 @@
                                     <v-icon>mdi-arrow-right-thin-circle-outline</v-icon></v-btn>
                             </v-col>
                             <v-col cols="auto" lg="5" sm="6">
-                                <v-btn v-if="user==null" variant="outlined" to="/login" color="indigo-darken-2" flat>Find More
+                                <v-btn v-if="user == null" variant="outlined" to="/login" color="indigo-darken-2"
+                                    flat>Find More
                                     <v-icon>mdi-arrow-right-thin-circle-outline</v-icon></v-btn>
                                 <v-btn v-else variant="outlined" to="/chapter" color="indigo-darken-2" flat>Find More
                                     <v-icon>mdi-arrow-right-thin-circle-outline</v-icon></v-btn>
@@ -98,7 +102,7 @@
                                 Together, we're paving the way for a future where drivers can thrive, supported
                                 by innovative solutions and strong partnerships.
                             </p>
-                                                    </v-row>
+                        </v-row>
 
                     </v-container>
                 </v-col>
@@ -111,20 +115,20 @@
                 </v-col>
             </v-row>
         </v-container>
-       
+
     </div>
 </template>
 <script setup>
 const { auth } = useSupabaseClient();
 const user = useSupabaseUser();
-const router = useRouter();
+// const router = useRouter();
 
 
 
 
-// const emits = ['profilePhotoClick']; // Declare the emitted event
+const emits = ['profilePhotoClick']; // Declare the emitted event
 
-// const profilePhoto = ref('/img/hawa.png'); // Set the default profile photo path
+const profilePhoto = ref('/img/hawa.png'); // Set the default profile photo path
 
 
 </script>

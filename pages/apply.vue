@@ -1,6 +1,7 @@
 <template>
     <div class="">
         <!-- <div class="container-fluid full-height d-flex justify-content-center align-items-center"> -->
+        <v-container>
             <v-form @submit.prevent="submitApplication">
 
 
@@ -60,8 +61,7 @@
                                             <div style="background-color: azure; " class=" ">
                                                 <v-text-field v-model="applyForm.residence" label="Home or Work Address"
                                                     outlined color="white" class="mx-auto corners" :rules="addressRules"
-                                                    style="box-shadow: none;  "
-                                                    variant="plain"></v-text-field>
+                                                    style="box-shadow: none;  " variant="plain"></v-text-field>
                                             </div>
                                         </v-col>
                                     </v-row>
@@ -181,8 +181,7 @@
                                                 <v-text-field v-model="applyForm.insurance" label="Serial #"
                                                     color="white" class="mx-auto corners"
                                                     :rules="insuranceSerialNumberRules"
-                                                    style="box-shadow: none;  background-color: rgba(170, 170, 221, 0.489);"
-                                                    ></v-text-field>
+                                                    style="box-shadow: none;  background-color: rgba(170, 170, 221, 0.489);"></v-text-field>
                                             </div>
                                         </v-col>
                                     </v-row>
@@ -209,8 +208,7 @@
                                                     :items="['California', 'ACCRA', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
                                                     item-text="name" v-model="applyForm.pickup_loc" outlined
                                                     hide-details="auto" class="custom-background corners"
-                                                    style="box-shadow: none;   height: 4em;  "
-                                                    variant="plain"
+                                                    style="box-shadow: none;   height: 4em;  " variant="plain"
                                                     placeholder="Select the Nearest DVLA Office"></v-combobox>
 
                                             </div>
@@ -238,7 +236,7 @@
                                 <v-col cols="" lg="6" md="6" sm="6">
                                     <v-checkbox v-model="checkbox" :rules="[v => !!v || 'You must agree to continue!']"
                                         required label="I Have Read And Agree With Terms And Conditions
-                                   Of Used."></v-checkbox>
+                   Of Used."></v-checkbox>
                                 </v-col>
 
                                 <v-col align="right" cols="" lg="6" md="6" sm="6">
@@ -265,6 +263,7 @@
 
                 </v-col>
             </v-form>
+        </v-container>
 
 
         <!-- </div> -->
@@ -475,7 +474,7 @@ const insuranceSerialNumberRules = [
 
 .form-below {
     background-color: rgba(213, 244, 200, 0.575);
-    
+
     margin-bottom: 1rem;
     /* box-shadow: 0 0 10px rgba(19, 15, 15, 0.562); */
 
@@ -582,6 +581,4 @@ body {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 0px;
 }
-
-
 </style>

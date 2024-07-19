@@ -44,7 +44,6 @@
 
 <script setup>
 import paystack from 'vue3-paystack';
-import { id } from 'vuetify/locale';
 
 // const nuxtapp = useNuxtApp();
 const router = useRouter();

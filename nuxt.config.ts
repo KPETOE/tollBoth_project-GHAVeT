@@ -10,7 +10,8 @@ export default defineNuxtConfig({
       // plugins: [graphql()]
     }, 
   },
-  // ssr: false,
+
+  ssr: true,
   // autoImports: {
   //   dirs: ["graphql"], // Enable auto-discovery within given folders
   // },
@@ -32,18 +33,22 @@ export default defineNuxtConfig({
   build: {
     transpile: ['vuetify'],
   },
+
   // hooks: {
   //   'vite:extendConfig': (config) => { }
   // },
   plugins: [
     { src: '~/plugins/bootstrap.js', mode: 'client' }
   ],
+
   modules: ['@nuxtjs/supabase'],
+
   supabase: {
     url: process.env.SUPABASE_URL, // Updated Supabase URL
     key: process.env.SUPABASE_KEY, // Updated Supabase key
     redirect: false
   },
+
   // baseUrl: '/nuxt-github-pages/',
   // buildAssetsDir: 'assets',
   runtimeConfig:{
@@ -52,10 +57,13 @@ export default defineNuxtConfig({
     },
     PAYSTACK_SECRET_KEY: process.env.PAYSTACK_SECRET
   },
+
   imports: {
     dirs: [
       'composables/**'
     ]
   },
-  devtools: { enabled: true }
+
+  devtools: { enabled: true },
+  compatibilityDate: '2024-07-14'
 })

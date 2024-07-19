@@ -20,7 +20,7 @@
                             <v-col cols="auto" lg="3" sm="12" md="6">
                                 <h5 class="text-left" style="color:  rgb(34, 173, 127);">ADDRESS</h5>
                                 <ul class="text-left ml-n8">
-                                    <li><nuxt-link class="link" to="/blogs/"> <v-icon color="yale-blue">mdi-star</v-icon> OSU American Embassy</nuxt-link> </li>
+                                    <!-- <li><nuxt-link class="link" to="/blogs/"> <v-icon color="yale-blue">mdi-star</v-icon> OSU American Embassy</nuxt-link> </li> -->
                                     <li><nuxt-link to=""> &nbsp &nbsp &nbsp P. O. Box 521 Accra, </nuxt-link> </li>
                                     <!-- <li><nuxt-link to="">Legacy Advocacy</nuxt-link> </li> -->
                                     <li><nuxt-link class="link" to="/about"> &nbsp  &nbsp &nbsp GhanaGA-145-7445,</nuxt-link> </li>
@@ -30,7 +30,7 @@
                             <v-col cols="auto" lg="3" sm="12" md="6">
                                 <h5 class="text-left" style="color: rgb(34, 173, 127);">Events</h5>
                                 <ul class="text-left ml-n8">
-                                    <li><nuxt-link class="link" to="/events/"></nuxt-link> Event Calandar</li>
+                                    <!-- <li><nuxt-link class="link" to="/events/"></nuxt-link> Event Calandar</li> -->
                                     <li><nuxt-link to="">Out Reaches</nuxt-link> </li>
                                     <li><nuxt-link to="">Partner With Us</nuxt-link> </li>
                                     <li><nuxt-link to="">Become a Member</nuxt-link> </li>
@@ -39,10 +39,10 @@
                             <v-col cols="auto" lg="3" sm="12" md="6">
                                 <h5 class="text-left" style="color: rgb(34, 173, 127);">Organization</h5>
                                 <ul class="text-left ml-n8">
-                                    <li><nuxt-link class="link" to="/events/">Event Calandar</nuxt-link> </li>
+                                    <!-- <li><nuxt-link class="link" to="/events/">Event Calandar</nuxt-link> </li> -->
                                     <!-- <li><nuxt-link to="">Out Reaches</nuxt-link> </li> -->
                                     <li><nuxt-link to="">Partner With Us</nuxt-link> </li>
-                                    <li><nuxt-link class="link" to="/gallery">Gallery</nuxt-link> </li>
+                                    <!-- <li><nuxt-link class="link" to="/gallery">Gallery</nuxt-link> </li> -->
                                 </ul>
                             </v-col>
                             <v-col cols="auto" lg="5" sm="12" md="6">
