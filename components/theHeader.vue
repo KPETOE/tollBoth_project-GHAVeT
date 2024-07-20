@@ -123,7 +123,7 @@
 
 
 <script setup>
-import logo from "/img/A-transformed.png";
+import logo from '../assets/img/A-transformed.png'
 // import { ref } from "vue";
 const { auth } = useSupabaseClient()
 const user = useSupabaseUser();
