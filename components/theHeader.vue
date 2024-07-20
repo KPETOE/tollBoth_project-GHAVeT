@@ -20,18 +20,18 @@
               </li>
               <li class="nav-item">
                 <NuxtLink v-if="user == null" class="nav-link text-white" to="/login">
-                  Transaction
+                  Accounts Details
                 </NuxtLink>
                 <NuxtLink v-else class="nav-link text-white" to="/transac">
-                  Transaction
+                  Accounts Details
                 </NuxtLink>
               </li>
               <li class="nav-item">
                 <NuxtLink v-if="user == null" class="nav-link text-white" to="/login">
-                  Accounts Details
+                  Transaction
                 </NuxtLink>
                 <NuxtLink v-else class="nav-link text-white" to="/Accountsdetails">
-                  Accounts Details
+                  Transaction
                 </NuxtLink>
               </li>
 
