@@ -33,7 +33,7 @@
                                 </h1>
                             </v-col>
                             <v-col cols="12" md="6">
-                                <div class="container">
+                                <v-container>
                                     <v-row class="d-flex justify-center" style="text-align: center">
                                         <v-col cols="12">
                                             <div style="background-color: azure; " class=" ">
@@ -45,7 +45,7 @@
                                             </div>
                                         </v-col>
                                     </v-row>
-                                </div>
+                                </v-container>
                             </v-col>
 
                             <v-col cols="12" md="6">
@@ -55,7 +55,7 @@
                                 </h1>
                             </v-col>
                             <v-col cols="12" md="6">
-                                <div class="container">
+                                <v-container>
                                     <v-row class="d-flex justify-center" style="text-align: center">
                                         <v-col cols="12">
                                             <div style="background-color: azure; " class=" ">
@@ -65,7 +65,7 @@
                                             </div>
                                         </v-col>
                                     </v-row>
-                                </div>
+                                </v-container>
                             </v-col>
 
 
@@ -76,7 +76,7 @@
                                 </h1>
                             </v-col>
                             <v-col cols="12" md="6">
-                                <div class="container">
+                                <v-container>
                                     <v-row class="d-flex justify-center" style="text-align: center">
                                         <v-col cols="12">
                                             <div style="background-color: azure; " class=" ">
@@ -87,7 +87,7 @@
                                             </div>
                                         </v-col>
                                     </v-row>
-                                </div>
+                                </v-container>
                             </v-col>
 
 
@@ -98,7 +98,7 @@
                                 </h1>
                             </v-col>
                             <v-col cols="12" md="6">
-                                <div class="container">
+                                <v-container>
                                     <v-row class="d-flex justify-center" style="text-align: center">
                                         <v-col cols="12">
                                             <div style="background-color: azure; " class=" ">
@@ -109,7 +109,7 @@
                                             </div>
                                         </v-col>
                                     </v-row>
-                                </div>
+                                </v-container>
                             </v-col>
 
 
@@ -149,7 +149,7 @@
                                 </h1>
                             </v-col>
                             <v-col cols="12" md="6">
-                                <div class="container">
+                                <v-container>
                                     <v-row class="d-flex justify-center" style="text-align: center">
                                         <v-col cols="12">
                                             <div style="background-color: azure; " class=" ">
@@ -161,7 +161,7 @@
                                             </div>
                                         </v-col>
                                     </v-row>
-                                </div>
+                                </v-container>
                             </v-col>
 
 
@@ -172,7 +172,7 @@
                                 </h1>
                             </v-col>
                             <v-col cols="12" md="6">
-                                <div class="container">
+                                <v-container>
                                     <v-row class="d-flex justify-center" style="text-align: center">
                                         <v-col cols="12">
 
@@ -185,7 +185,7 @@
                                             </div>
                                         </v-col>
                                     </v-row>
-                                </div>
+                                </v-container>
                             </v-col>
 
 
@@ -199,7 +199,7 @@
                                 </h3>
                             </v-col>
                             <v-col cols="12" md="6">
-                                <div class="container">
+                                <v-container>
                                     <v-row class="d-flex justify-center" style="text-align: center">
                                         <v-col cols="12">
                                             <div style="background-color: azure; " class="">
@@ -214,7 +214,7 @@
                                             </div>
                                         </v-col>
                                     </v-row>
-                                </div>
+                                </v-container>
                             </v-col>
                         </v-row>
                     </v-container>

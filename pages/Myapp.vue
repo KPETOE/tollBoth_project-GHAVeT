@@ -20,7 +20,7 @@
                 <!-- </v-parallax> -->
                 <v-container>
 
-                    <div class="container">
+                    <v-container>
                         <div class="row justify-content-left" style=" background: linear-gradient(to right, #182831, rgba(72, 113, 129, 0.813), #18252c) !important;">
 
                             <!-- <div class="" style="text-align: center; "> -->
@@ -46,7 +46,7 @@
 
 
                         </div>
-                    </div>
+                    </v-container>
                     <br> <br>
 
                     <br>
