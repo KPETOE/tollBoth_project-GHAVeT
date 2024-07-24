@@ -26,16 +26,16 @@
                   Accounts Details
                 </NuxtLink>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <NuxtLink v-if="user == null" class="nav-link text-white" to="/login">
                   Transaction
                 </NuxtLink>
                 <NuxtLink v-else class="nav-link text-white" to="/Accountsdetails">
                   Transaction
                 </NuxtLink>
-              </li>
+              </li> -->
 
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <NuxtLink v-if="user == null" class="nav-link text-white" to="/login">
                   Deposit
                 </NuxtLink>
@@ -43,7 +43,7 @@
                   Deposit
                 </NuxtLink>
 
-              </li>
+              </li> -->
               <li class="nav-item">
                 <NuxtLink v-if="user == null" class="nav-link text-white" to="/login">
                   Tranfer Ownership

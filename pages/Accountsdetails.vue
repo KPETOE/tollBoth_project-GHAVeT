@@ -22,7 +22,7 @@
                             </h1>
                         </v-container>
                         <br />
-                        <div class="container"  style=" ">
+                        <v-container>
                             <div class="row justify-content-center">
                                 <div class="col-md-6" style="text-align: center; ">
                                     <label for="textBox2"
@@ -44,7 +44,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </v-container>
 
 
                         <br /><br />
@@ -52,7 +52,7 @@
                         <br><br>
 
 
-                        <div class="container d-flex justify-content-center align-items-center">
+                        <v-container class="d-flex justify-content-center align-items-center">
                             <div class="col-md-6 text-center" style="">
                                 <label for="textBox3" class="form-label mx-auto text-uppercase text-black text-center"
                                     style="font-size: 1.5rem; font-weight: bold">LAST DEPOSIT</label>
@@ -68,7 +68,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </v-container>
                     </div>
                 </div>
                 
@@ -76,7 +76,7 @@
 
                 <v-col class=" wrapper  container-fluid full-height d-flex justify-content-center align-items-center"  style="width: 60;">  
                     <v-row class="form-below  wrapper "  style="margin-top: 10px;">  
-                        <div class="container "  style="padding: 2rem;">
+                        <v-container  style="padding: 2rem;">
                             <v-row justify="space-between" style="text-align: center;">
                                 <v-col cols="12" md="6">
                                     <v-btn to="/payment" class="btn btn-primary custom-width font-weight-bold">DEPOSIT
@@ -86,7 +86,7 @@
                                     <v-btn class="btn btn-primary custom-width  font-weight-bold ">STATEMENT</v-btn>
                                 </v-col>
                             </v-row>
-                        </div>
+                        </v-container>
 
                         <br><br>
                         <br />

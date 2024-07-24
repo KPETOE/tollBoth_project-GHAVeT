@@ -21,10 +21,10 @@
                                 <h5 class="text-left" style="color:  rgb(34, 173, 127);">ADDRESS</h5>
                                 <ul class="text-left ml-n8">
                                     <!-- <li><nuxt-link class="link" to="/blogs/"> <v-icon color="yale-blue">mdi-star</v-icon> OSU American Embassy</nuxt-link> </li> -->
-                                    <li><nuxt-link to=""> &nbsp &nbsp &nbsp P. O. Box 521 Accra, </nuxt-link> </li>
+                                    <li><nuxt-link to="">P. O. Box 521 Accra, </nuxt-link> </li>
                                     <!-- <li><nuxt-link to="">Legacy Advocacy</nuxt-link> </li> -->
-                                    <li><nuxt-link class="link" to="/about"> &nbsp  &nbsp &nbsp GhanaGA-145-7445,</nuxt-link> </li>
-                                    <label > &nbsp &nbsp &nbsp Accra</label>
+                                    <li><nuxt-link class="link" to="/about">GhanaGA-145-7445,</nuxt-link> </li>
+                                    <label >Accra</label>
                                 </ul>
                             </v-col>
                             <v-col cols="auto" lg="3" sm="12" md="6">
