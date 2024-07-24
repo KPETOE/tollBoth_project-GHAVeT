@@ -49,8 +49,7 @@
                             <div class="con mx-auto  d-flex justify-content-center align-items-center" style="margin-top: 20px;  
                         border-width: 1px; border-style: solid; border-color: black;  
                         background-color: rgba(0, 0, 0, 0.1) !important; ">
-                                <input type="text" class="balance bg-white  text-center" id="textBox2"
-                                    placeholder="GHS 500.00" readonly />
+                                <h4 class="text-center">GHS {{ bal.data.amountEnt }}</h4>
                             </div>
                         </div>
 
@@ -59,8 +58,7 @@
                                 style="font-size: 1.5rem; font-weight: bold">DEDUCTIONS</label>
                             <v-col class="bawa mx-auto d-flex justify-content-center align-items-center" style="margin-top: 20px; border-width: 1px; border-style: solid; border-color: black; 
                              background-color: rgba(0, 0, 0, 0.1) !important;">
-                                <input type="text" class="form-control square-box" id="textBox1"
-                                    placeholder="GHS 500.00" />
+                                <h4 class="text-center">GHS 500.00</h4>
                             </v-col>
                         </div>
                     </div>
@@ -129,7 +127,7 @@
                     </thead>
                     <tbody>
                         <tr v-for="transaction in transactions.data" :key="transaction.id" class="text-center">
-                            <td>{{ transaction.created_at }}</td>
+                            <td>{{useDateFormat( transaction.created_at, 'MMMM D, YYYY') }}</td>
                             <td>{{ transaction.amountEnt }}</td>
                             <td>{{ transaction.location }}</td>
                         </tr>
@@ -169,13 +167,14 @@
     </div>
 </template>
 <script setup>
+import { useDateFormat, useNow } from '@vueuse/core'
 const user = useSupabaseUser();
 const client = useSupabaseClient();
 
 const transactions = await client.from('transactions').select('*').eq('user_id', user.value.id);
 console.log(transactions)
-
-
+const bal = await client.from('transactions').select('amountEnt').eq('user_id', user.value.id).order('created_at', { ascending: false }).limit(1).single();
+console.log(bal)
 
 </script>
 
@@ -298,7 +297,7 @@ input:focus {
 }
 
 .search {
-    width: 7em;
+    /* width: 7em; */
     background: linear-gradient(to right, rgba(75, 156, 162, 0.331), rgba(135, 207, 235, 0.486), #31759a48, #1534459b) !important;
     border-top-left-radius: 5px;
     border-top-right-radius: 6px;
