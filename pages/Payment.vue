@@ -35,7 +35,7 @@
           </div>
         </v-form>
 
-       
+
       </div>
     </div>
   </div>
@@ -75,14 +75,14 @@ const onSuccessfulPayment = async () => {
   // const {data, error} = await client.from()
   if (transactions.data == 0) {
     try {
-      const { data, error } = await client.from('transactions').insert({ amountEnt: amount.value }).eq('user_id', user.value.id);
+      const { data, error } = await client.from('transactions').insert({ amountEnt: amount.value, amountEntered: amount.value }).eq('user_id', user.value.id);
     } catch (error) {
       console.log(error)
     }
   } else if (user.value.id = ! null && transactions.data != 0) {
     const addBal = parseInt(transactions.data.amountEnt) + parseInt(amount.value);
     try {
-      const { data, error } = await client.from('transactions').insert({ amountEnt: addBal }).eq('user_id', user.value.id).select();
+      const { data, error } = await client.from('transactions').insert({ amountEnt: addBal, amountEntered: amount.value }).eq('user_id', user.value.id).select();
     } catch (error) {
       console.log(error)
     }

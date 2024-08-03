@@ -67,19 +67,23 @@
                 <br> <br>
 
                 <div class=" d-flex justify-content-center align-items-center">
-                    <div class="col-md-6 text-center" style="">
+                    <div class="col-md-6 text-center" style="width: 35em;">
                         <label for="textBox3" class="form-label mx-auto text-uppercase text-black text-center"
                             style="font-size: 1.5rem; font-weight: bold">LAST DEPOSIT</label>
                         <div class="lastDep mx-auto d-flex justify-content-center align-items-center" style="margin-top: 10px;  border-width: 1px; border-style: solid; border-color: black;  
                             background-color: rgba(0, 0, 0, 0.1) !important;">
-                            <div class="mb-3 d-flex">
-                                <input type="text" readonly class="form-control table" id="textBox3"
-                                    value="GHS 500.00" />
-
-                                &nbsp;
-                                <input type="text" readonly class="form-control table" id="textBox4"
-                                    value="01/01/2024" />
-                            </div>
+                            <v-container>
+                                
+                                <v-row>
+                                    <v-col cols="" sm="12" lg="6">
+                                        <h3 class="text-center">GHS {{ bal.data.amountEntered }}</h3>
+                                    </v-col>
+                                    <v-col cols="" sm="12" lg="6">
+                                        <h3 class="text-center">{{ useDateFormat(bal.data.created_at, 'MMMM D, YYYY') }}
+                                        </h3>
+                                    </v-col>
+                                </v-row>
+                            </v-container>
                         </div>
                     </div>
                 </div>
@@ -127,7 +131,7 @@
                     </thead>
                     <tbody>
                         <tr v-for="transaction in transactions.data" :key="transaction.id" class="text-center">
-                            <td>{{useDateFormat( transaction.created_at, 'MMMM D, YYYY') }}</td>
+                            <td>{{ useDateFormat(transaction.created_at, 'MMMM D, YYYY') }}</td>
                             <td>{{ transaction.amountEnt }}</td>
                             <td>{{ transaction.location }}</td>
                         </tr>
@@ -173,7 +177,7 @@ const client = useSupabaseClient();
 
 const transactions = await client.from('transactions').select('*').eq('user_id', user.value.id);
 console.log(transactions)
-const bal = await client.from('transactions').select('amountEnt').eq('user_id', user.value.id).order('created_at', { ascending: false }).limit(1).single();
+const bal = await client.from('transactions').select('amountEnt, amountEntered, created_at').eq('user_id', user.value.id).order('created_at', { ascending: false }).limit(1).single();
 console.log(bal)
 
 </script>
@@ -281,7 +285,7 @@ console.log(bal)
 .lastDep {
     margin-top: 20px;
     height: 4em;
-    height: 7em;
+    height: 9em;
     width: 50%;
     margin: 0 auto;
     border-top-left-radius: 5px;
