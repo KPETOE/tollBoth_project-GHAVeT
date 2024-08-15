@@ -73,6 +73,17 @@
                 </NuxtLink>
               </li>
 
+              <li class="nav-item">
+                <NuxtLink v-if="user == null" class="nav-link text-white" to="/login">
+                  TollBooth
+                </NuxtLink>
+                <NuxtLink v-else class="nav-link text-white" to="/deduction">
+                  TollBooth
+                </NuxtLink>
+              </li>
+
+          
+
 
               <li class="nav-item">
                 <NuxtLink v-if="user == null" class="nav-link text-white" to="/login">Contact Us</NuxtLink>
