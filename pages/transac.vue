@@ -111,7 +111,7 @@
                 <v-col col="auto" lg="4" sm="12">
                     <div class="d-flex justify-center">
 
-                        <button class="search font-weight-bold ">Search</button>
+                        <v-btn class="search font-weight-bold ">Search</v-btn>
 
                     </div>
                 </v-col>
