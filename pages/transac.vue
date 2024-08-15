@@ -73,7 +73,7 @@
                         <div class="lastDep mx-auto d-flex justify-content-center align-items-center" style="margin-top: 10px;  border-width: 1px; border-style: solid; border-color: black;  
                             background-color: rgba(0, 0, 0, 0.1) !important;">
                             <v-container>
-                                
+
                                 <v-row>
                                     <v-col cols="" sm="12" lg="6">
                                         <h3 class="text-center">GHS {{ bal.data.amountEntered }}</h3>
@@ -125,8 +125,6 @@
                             <th class="text-center with-bordr">BILL DATE</th>
                             <th class="text-center with-border">BILL AMOUNT</th>
                             <th class="text-center with-border">LOCATION</th>
-
-
                         </tr>
                     </thead>
                     <tbody>
@@ -152,7 +150,7 @@
                     </v-col>
 
                     <v-col col="auto" sm="12" lg="6" md="4">
-                        <v-btn class="search font-weight-bold">Download</v-btn>
+                        <v-btn @click="downloadCSVFile" class="search font-weight-bold">Download</v-btn>
                     </v-col>
 
                     <br>
@@ -180,6 +178,26 @@ console.log(transactions)
 const bal = await client.from('transactions').select('amountEnt, amountEntered, created_at').eq('user_id', user.value.id).order('created_at', { ascending: false }).limit(1).single();
 console.log(bal)
 
+const downloadCSVFile = () => {
+    const headers = ['Bill Date', 'Bill Amount', 'Location'];
+    const rows = transactions.data.map(transactions => [transactions.created_at, transactions.amountEnt, transactions.location])
+
+    let csvContent = 'data:text/csv;charset=utf-8,';
+    csvContent += headers.join(',') + '\n';
+
+    rows.forEach(row => {
+        csvContent += row.join(',') + '\n';
+    });
+
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement('a');
+    link.setAttribute('href', encodedUri);
+    link.setAttribute('download', 'transaction-history.csv');
+    document.body.appendChild(link);
+
+    link.click();
+    document.body.removeChild(link);
+};
 </script>
 
 
