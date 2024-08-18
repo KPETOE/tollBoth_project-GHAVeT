@@ -77,7 +77,7 @@
                 <NuxtLink v-if="user == null" class="nav-link text-white" to="/login">
                   TollBooth
                 </NuxtLink>
-                <NuxtLink v-else class="nav-link text-white" to="/deduction">
+                <NuxtLink v-else class="nav-link text-white" to="/deductions">
                   TollBooth
                 </NuxtLink>
               </li>
