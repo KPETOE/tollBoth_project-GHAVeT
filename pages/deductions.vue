@@ -25,8 +25,9 @@ const boothForm = ref({
 
 const payToll = async () => {
     const deduct = parseInt(transactions.data.amountEnt) - 50;
-    const { data, error } = await client.from('transactions').insert({ deductions: deduct, location: boothForm.booth }).eq('user_id', user.value.id).select();
+    console.log(deduct)
+    const { data, error } = await client.from('transactions').insert({ deduction: deduct, location: boothForm.booth }).eq('user_id', user.value.id).select();
     alert('Passed Successfully!');
-    router.push('/')
+    // router.push('/')
 };  
 </script>
