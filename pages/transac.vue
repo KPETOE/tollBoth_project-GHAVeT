@@ -58,7 +58,7 @@
                                 style="font-size: 1.5rem; font-weight: bold">DEDUCTIONS</label>
                             <v-col class="bawa mx-auto d-flex justify-content-center align-items-center" style="margin-top: 20px; border-width: 1px; border-style: solid; border-color: black; 
                              background-color: rgba(0, 0, 0, 0.1) !important;">
-                                <h4 class="text-center">GHS 500.00</h4>
+                                <h4 class="text-center">GHS {{ bal.data.deduction }}</h4>
                             </v-col>
                         </div>
                     </div>
@@ -175,7 +175,7 @@ const client = useSupabaseClient();
 
 const transactions = await client.from('transactions').select('*').eq('user_id', user.value.id);
 console.log(transactions)
-const bal = await client.from('transactions').select('amountEnt, amountEntered, created_at').eq('user_id', user.value.id).order('created_at', { ascending: false }).limit(1).single();
+const bal = await client.from('transactions').select('amountEnt, amountEntered, created_at, deduction').eq('user_id', user.value.id).order('created_at', { ascending: false }).limit(1).single();
 console.log(bal)
 
 const downloadCSVFile = () => {

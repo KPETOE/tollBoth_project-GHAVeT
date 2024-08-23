@@ -42,6 +42,7 @@ const payToll = async () => {
         }
     } else {
         alert('Please Deposite fund before passing the Toll Booth!');
+        router.push('/Deposit')
     }
 
 };  
