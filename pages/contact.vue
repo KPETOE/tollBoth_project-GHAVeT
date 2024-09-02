@@ -1,6 +1,3 @@
-
-
-
 <template>
     <v-container>
         <!-- Header -->
@@ -13,16 +10,17 @@
         <!-- Content -->
         <v-row>
             <!-- Left column with form -->
-            <v-col cols="12" md="6"> <h1>Fill In The Details</h1>
+            <v-col cols="12" md="6">
+                <h1>Fill In The Details</h1>
                 <v-form @submit.prevent="sendMessage" class="mt-10 mb-10">
-                   
+
                     <v-label>Full Name</v-label>
-                    <v-text-field v-model="fullName" variant="outlined" placeholder="Nathan Fletcher"></v-text-field>
+                    <v-text-field v-model="fullName" variant="outlined" placeholder="Nathan Fletcher" disabled></v-text-field>
                     <v-label>Subject</v-label>
                     <v-text-field v-model="Complain" variant="outlined" placeholder="Complain"></v-text-field>
 
                     <v-label>Email</v-label>
-                    <v-text-field placeholder="RichEstalla@gmail.com" v-model="email" variant="outlined"></v-text-field>
+                    <v-text-field placeholder="RichEstalla@gmail.com" v-model="email" variant="outlined" disabled></v-text-field>
                     <v-label>Message</v-label>
                     <v-textarea variant="outlined" placeholder="Message" v-model="message"></v-textarea>
 
@@ -45,8 +43,8 @@
                 <v-row>
 
                     <v-col cols="12">
-                                            <h1>Reach Us On</h1>
-                       
+                        <h1>Reach Us On</h1>
+
                         <br>
                         <br>
                         <p><v-icon>mdi-whatsapp</v-icon> +233 547878001</p>
@@ -92,49 +90,33 @@
 <script setup>
 const client = useSupabaseClient();
 const user = useSupabaseUser();
+const mail = useMail();
 
-const profile = await client.from('messages').select('Username, first_name, last_name, gh_card_no').eq('id', user.value.id).single()
+const profile = await client.from('profile').select('Username, first_name, last_name, gh_card_no').eq('id', user.value.id).single()
 let Alert = ref(false);
 let type = ref('success');
-
-const contactForm = ref({
-    fullName: '',
-    subject: '',
-    email: '',
-    message: ''
-});
+const fullName = ref(profile.data.first_name + " " + profile.data.last_name);
+const Complain = ref("")
+const email = ref(user.value.email);
+const message = ref("");
+// const contactForm = ref({
+//     fullName: ref(profile.data.first_name + " " + profile.data.last_name),
+//     subject: '',
+//     email: user.value.email,
+//     message: ''
+// });
 
 
 const isLoading = ref(false);
 
 const sendMessage = async () => {
     isLoading.value = true;
+    mail.send({
+        from: 'Toll Booth',
+        subject: Complain,
+        text: message
+    });
 
-    try {
-        const { data, error } = await client.from('messages').insert([
-            {
-                full_name: contactForm.value.fullName,
-                subject: contactForm.value.subject,
-                email: contactForm.value.email,
-                message: contactForm.value.message
-            }
-        ]);
-
-        if (error) throw error;
-
-        alert('Message sent successfully!');
-        contactForm.value = {
-            fullName: '',
-            subject: '',
-            email: '',
-            message: ''
-        };
-    } catch (error) {
-        console.error('Error sending message:', error);
-        alert('Failed to send message. Please try again later.');
-    } finally {
-        isLoading.value = false;
-    }
 };
 </script>
 

@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 // import  graphql from '@rollup/plugin-graphql'
 import { defineNuxtConfig } from 'nuxt/config'
+import auth from './middleware/auth'
 // const strapiBaseUri = process.env.API_URL || "http://localhost:1337/"
 // import graphql from "@rollup/plugin-graphql";
 export default defineNuxtConfig({
@@ -8,7 +9,7 @@ export default defineNuxtConfig({
     define: {
       "process.env.DEBUG": true,
       // plugins: [graphql()]
-    }, 
+    },
   },
 
   ssr: true,
@@ -41,7 +42,18 @@ export default defineNuxtConfig({
     { src: '~/plugins/bootstrap.js', mode: 'client' }
   ],
 
-  modules: ['@nuxtjs/supabase'],
+  modules: ['@nuxtjs/supabase', ['nuxt-mail', {
+    message: {
+      to: process.env.email
+    },
+    smtp: {
+      service: 'gmail',
+      auth:{
+        user:process.env.email,
+        pass:process.env.password,
+      }
+    },
+  }]],
 
   supabase: {
     url: process.env.SUPABASE_URL, // Updated Supabase URL
@@ -49,10 +61,12 @@ export default defineNuxtConfig({
     redirect: false
   },
 
+
+
   // baseUrl: '/nuxt-github-pages/',
   // buildAssetsDir: 'assets',
-  runtimeConfig:{
-    public:{
+  runtimeConfig: {
+    public: {
       PAYSTACK_PUBLIC_KEY: process.env.PAYSTACK_PUBLIC
     },
     PAYSTACK_SECRET_KEY: process.env.PAYSTACK_SECRET

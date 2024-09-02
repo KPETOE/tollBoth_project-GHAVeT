@@ -2,7 +2,7 @@
   <div class="text-center mt-5">
     <h1 class="fw-bold text-teal-darken-3">Ghana Vehicle Electronic Tolling System</h1>
   </div>
-  <div class="text-center  fs-3">
+  <div class="text-center fs-3">
     <v-label class="fw-bold">
       PAYMENT MADE SIMPLE AND SECURE
     </v-label>
@@ -23,7 +23,7 @@
           <v-label class="fw-bold mt-3">AMOUNT</v-label>
           <v-text-field v-model="amount" placeholder="GHS 5.00" variant="outlined" style="width: 100%;"></v-text-field>
 
-          <div class="  d-flex justify-content-between align-items-center mt-4 ">
+          <div class="d-flex justify-content-between align-items-center mt-4 ">
             <paystack buttonClass="button-class btn btn-primary ml-5" buttonText="Deposit" :amount="amount * 100"
               :email="email" :publicKey="publickey" type="submit" :reference="reference" :callback="processPayment"
               :onSuccess="onSuccessfulPayment" currency="GHS" :onCancel="onCancelledPayment"></paystack>
@@ -57,6 +57,7 @@ const config = useRuntimeConfig();
 
 const profile = await client.from('profile').select('Username, first_name, last_name, gh_card_no').eq('id', user.value.id).single()
 const publickey = config.public.PAYSTACK_PUBLIC_KEY;
+// console.log(publickey);
 
 const fullname = ref(profile.data.first_name + " " + profile.data.last_name);
 const email = ref(user.value.email);
@@ -87,11 +88,11 @@ const onSuccessfulPayment = async () => {
       console.log(error)
     }
   }
-  router.push('/transac');
-  console.log(response)
+  // router.push('/transac');
+  // console.log(response)
 };
 
-const onCancelledPayment = function (response) {
+const onCancelledPayment = async() => {
   router.push('/Payment')
   alert('Failed Transaction!');
   console.log(response)
