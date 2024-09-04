@@ -75,8 +75,3 @@ bun run preview
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
 
-home page background image :src="'https://admin.gathstudents.com' + home.data.attributes.coverImg.data.attributes.url"
-
-
-
- style="background-color: #11f9e9;"
