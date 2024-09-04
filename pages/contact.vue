@@ -15,12 +15,14 @@
                 <v-form @submit.prevent="sendMessage" class="mt-10 mb-10">
 
                     <v-label>Full Name</v-label>
-                    <v-text-field v-model="fullName" variant="outlined" placeholder="Nathan Fletcher" disabled></v-text-field>
+                    <v-text-field v-model="fullName" variant="outlined" placeholder="Nathan Fletcher"
+                        disabled></v-text-field>
                     <v-label>Subject</v-label>
                     <v-text-field v-model="Complain" variant="outlined" placeholder="Complain"></v-text-field>
 
                     <v-label>Email</v-label>
-                    <v-text-field placeholder="RichEstalla@gmail.com" v-model="email" variant="outlined" disabled></v-text-field>
+                    <v-text-field placeholder="RichEstalla@gmail.com" v-model="email" variant="outlined"
+                        disabled></v-text-field>
                     <v-label>Message</v-label>
                     <v-textarea variant="outlined" placeholder="Message" v-model="message"></v-textarea>
 
