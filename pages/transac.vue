@@ -130,7 +130,8 @@
                     <tbody>
                         <tr v-for="transaction in transactions.data" :key="transaction.id" class="text-center">
                             <td>{{ useDateFormat(transaction.created_at, 'MMMM D, YYYY') }}</td>
-                            <td>{{ transaction.amountEnt }}</td>
+                            <td v-if="transaction.amountEnt =! 0">{{ transaction.amountEnt }}</td>
+                            <td v-else>0</td>
                             <td>{{ transaction.location }}</td>
                         </tr>
                     </tbody>
