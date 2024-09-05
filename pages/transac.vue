@@ -49,7 +49,8 @@
                             <div class="con mx-auto  d-flex justify-content-center align-items-center" style="margin-top: 20px;  
                         border-width: 1px; border-style: solid; border-color: black;  
                         background-color: rgba(0, 0, 0, 0.1) !important; ">
-                                <h4 class="text-center">GHS {{ bal.data.amountEnt }}</h4>
+                                <h4 v-if="bal.data.amountEnt =! null" class="text-center">GHS {{ bal.data.amountEnt }}</h4>
+                                <h4 v-else class="text-center">GHS 0.0</h4>
                             </div>
                         </div>
 
@@ -76,7 +77,7 @@
 
                                 <v-row>
                                     <v-col cols="" sm="12" lg="6">
-                                        <h3 class="text-center">GHS {{ bal.data.amountEntered }}</h3>
+                                        <h3  class="text-center">GHS {{ bal.data.amountEntered }}</h3>
                                     </v-col>
                                     <v-col cols="" sm="12" lg="6">
                                         <h3 class="text-center">{{ useDateFormat(bal.data.created_at, 'MMMM D, YYYY') }}
@@ -130,7 +131,7 @@
                     <tbody>
                         <tr v-for="transaction in transactions.data" :key="transaction.id" class="text-center">
                             <td>{{ useDateFormat(transaction.created_at, 'MMMM D, YYYY') }}</td>
-                            <td v-if="transaction.amountEnt =! 0">{{ transaction.amountEnt }}</td>
+                            <td v-if="transaction.amountEnt =! null">{{ transaction.amountEnt }}</td>
                             <td v-else>0</td>
                             <td>{{ transaction.location }}</td>
                         </tr>
