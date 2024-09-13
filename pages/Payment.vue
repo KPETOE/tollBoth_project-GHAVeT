@@ -13,7 +13,7 @@
   <div class="mt-2">
     <div class="card mx-auto" style="max-width: 42rem;">
       <div class="card-body">
-        <v-form class="mt-10 mb-10">
+        <div class="formcontainer mt-10 mb-10">
           <v-label class="fw-bold">Full Name</v-label>
           <v-text-field variant="outlined" v-model="fullname" disabled style="width: 100%;"></v-text-field>
 
@@ -33,7 +33,7 @@
               <v-btn to="/transac" class="search font-weight-bold ml-30">Back</v-btn>
             </v-col>
           </div>
-        </v-form>
+        </div>
 
 
       </div>
