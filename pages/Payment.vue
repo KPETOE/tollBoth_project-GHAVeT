@@ -74,7 +74,7 @@ console.log(transactions.data);
 
 const onSuccessfulPayment = async () => {
   // const {data, error} = await client.from()
-  if (transactions.data == 0) {
+  if (transactions.data == 0 || transactions.data == null) {
     try {
       const { data, error } = await client.from('transactions').insert({ amountEnt: amount.value, amountEntered: amount.value }).eq('user_id', user.value.id);
     } catch (error) {
@@ -92,7 +92,7 @@ const onSuccessfulPayment = async () => {
   // console.log(response)
 };
 
-const onCancelledPayment = async() => {
+const onCancelledPayment = async () => {
   router.push('/Payment')
   alert('Failed Transaction!');
   console.log(response)
