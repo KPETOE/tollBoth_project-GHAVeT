@@ -182,7 +182,7 @@ const search = () => {
     if (tagNo.value === 'New Application') {
         filteredData.value = newAppData.value.filter(item => item.field1 === referenceNumber.value);
     } else if (tagNo.value === 'Change of Ownership') {
-        filteredData.value = changeOwnershipData.value.filter(item => item.field1 === referenceNumber.value);
+        filteredData.value = ownerShip.value.filter(item => item.field1 === referenceNumber.value);
     }
 };
 
@@ -194,7 +194,7 @@ const refresh = () => {
     if (tagNo.value === 'New Application') {
         filteredData.value = newAppData.value;
     } else if (tagNo.value === 'Change of Ownership') {
-        filteredData.value = changeOwnershipData.value;
+        filteredData.value = ownerShip.value;
     }
 };
 
