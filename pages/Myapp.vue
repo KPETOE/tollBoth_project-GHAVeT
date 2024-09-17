@@ -180,9 +180,13 @@ watch(tagNo, (newValue) => {
 
 const search = () => {
     if (tagNo.value === 'New Application') {
-        filteredData.value = newAppData.value.filter(item => item.field1 === referenceNumber.value);
+        if (newAppData.value) { // Check if newAppData is not undefined
+            filteredData.value = newAppData.value.filter(item => item.Refrence_No === referenceNumber.value); 
+        }
     } else if (tagNo.value === 'Change of Ownership') {
-        filteredData.value = ownerShip.value.filter(item => item.field1 === referenceNumber.value);
+        if (ownerShip.value) { // Check if ownerShip is not undefined
+            filteredData.value = ownerShip.value.filter(item => item.Reference_No === referenceNumber.value); 
+        }
     }
 };
 
