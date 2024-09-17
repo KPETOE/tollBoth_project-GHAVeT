@@ -179,6 +179,8 @@ const client = useSupabaseClient();
 let transactions = ref([]); // Reactive variable for transactions data
 let fromDate = ref(''); // Reactive variable for from date
 let toDate = ref('');
+const d = new Date();
+
 
 // const transactions = await client.from('transactions').select('*').eq('user_id', user.value.id);
 // console.log(transactions)
@@ -201,7 +203,7 @@ onMounted(fetchTransactions);
 
 const downloadCSVFile = () => {
     const headers = ['Bill Date', 'Bill Amount', 'Location'];
-    const rows = transactions.value.map(transactions => [useDateFormat(transactions.created_at, 'MMMM D, YYYY'), transactions.amountEnt, transactions.location])
+    const rows = transactions.value.map(transactions => [Date(transactions.created_at), transactions.amountEnt, transactions.location])
 
     let csvContent = 'data:text/csv;charset=utf-8,';
     csvContent += headers.join(',') + '\n';
@@ -213,7 +215,7 @@ const downloadCSVFile = () => {
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement('a');
     link.setAttribute('href', encodedUri);
-    link.setAttribute('download', 'transaction-history.csv');
+    link.setAttribute('download', "transaction-history"+" "+d+".csv");
     document.body.appendChild(link);
 
     link.click();
