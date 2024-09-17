@@ -196,10 +196,12 @@ const fetchTransactions = async () => {
     }
     transactions.value = data; // Update the reactive transactions variable
 };
+onMounted(fetchTransactions);
+
 
 const downloadCSVFile = () => {
     const headers = ['Bill Date', 'Bill Amount', 'Location'];
-    const rows = transactions.data.map(transactions => [useDateFormat(transactions.created_at, 'MMMM D, YYYY'), transactions.amountEnt, transactions.location])
+    const rows = transactions.value.map(transactions => [useDateFormat(transactions.created_at, 'MMMM D, YYYY'), transactions.amountEnt, transactions.location])
 
     let csvContent = 'data:text/csv;charset=utf-8,';
     csvContent += headers.join(',') + '\n';
@@ -217,7 +219,7 @@ const downloadCSVFile = () => {
     link.click();
     document.body.removeChild(link);
 };
-onMounted(fetchTransactions);
+
 
 
 const search = async () => {
