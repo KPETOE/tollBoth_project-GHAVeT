@@ -21,7 +21,8 @@
                 <v-container>
 
                     <v-container>
-                        <div class="row justify-content-left" style=" background: linear-gradient(to right, #182831, rgba(72, 113, 129, 0.813), #18252c) !important;">
+                        <div class="row justify-content-left"
+                            style=" background: linear-gradient(to right, #182831, rgba(72, 113, 129, 0.813), #18252c) !important;">
 
                             <!-- <div class="" style="text-align: center; "> -->
 
@@ -68,19 +69,21 @@
                             <v-col cols="" lg="6" sm="12">
                                 <div>
                                     <div>
-                                        <v-text-field v-model="referenceNumber" class="ref text-white" label="Enter Number"
-                                            outlined color="plain" variant="plain" style="width: 100%;"></v-text-field>
+                                        <v-text-field v-model="referenceNumber" class="ref text-white"
+                                            label="Enter Number" outlined color="plain" variant="plain"
+                                            style="width: 100%;"></v-text-field>
                                         <br>
                                     </div>
                                 </div>
                             </v-col>
                             <v-col cols="" lg="3" sm="12">
                                 <div class="d-flex justify-center  text-black" style="">
-                                    <button @click="search" class="search" style=" background: white !important;">Search</button>
+                                    <button @click="search" class="search"
+                                        style=" background: white !important;">Search</button>
                                     <br>
                                 </div>
                             </v-col>
-                           
+
                         </v-row>
 
 
@@ -91,11 +94,13 @@
 
 
 
-                    <v-container class="card-Myapp" style=" background: linear-gradient(to right, #182831, rgba(72, 113, 129, 0.813), #18252c) !important;">
+                    <v-container class="card-Myapp"
+                        style=" background: linear-gradient(to right, #182831, rgba(72, 113, 129, 0.813), #18252c) !important;">
 
                         <!-- Button for refreshing -->
                         <div class="d-flex justify-end mb-4" style="flex: 1; ">
-                            <v-btn @click="refresh" class="mr-4  search " style="background: white !important;" >Refresh</v-btn>
+                            <v-btn @click="refresh" class="mr-4  search "
+                                style="background: white !important;">Refresh</v-btn>
                             <div style="width: 3.8%;"></div>
                         </div>
 
@@ -110,7 +115,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="item in filteredData" :key="item" class="text-center">
+                                <tr v-for="item in filteredData" :key="item" ref="table" class="text-center">
                                     <!-- Bind table data dynamically based on the selected option -->
                                     <td v-for="(field, index) in itemFields" :key="index">{{ item[field] }}</td>
                                 </tr>
@@ -122,7 +127,8 @@
                             <div style="display: flex; flex-direction: column; align-items: center;">
                                 <br>
 
-                                <button class="search   text-black font-weight-bold" style="background: white !important; " @click="scrollToTop">BACK</button>
+                                <button class="search   text-black font-weight-bold"
+                                    style="background: white !important; " @click="scrollToTop">BACK</button>
                                 <br>
 
 
@@ -150,7 +156,7 @@ const client = useSupabaseClient()
 const user = useSupabaseUser()
 
 //getting data from application table specific
-const newAppData = await client.from('application').select('Refrence_No, veh_type, Status, AppointmentDate, Pickup_loc').eq('user_id', user.value.id)
+const application = await client.from('application').select('Refrence_No, veh_type, Status, AppointmentDate, Pickup_loc').eq('user_id', user.value.id)
 const ownerShip = await client.from('vehicle').select('Reference_No, vettag, Status').eq('user_id', user.value.id)
 // const changeOwnershipData = ref([
 
@@ -165,12 +171,16 @@ const filteredData = ref([]);
 const tableHeaders = ref([]);
 const itemFields = ref([]);
 
+
+const applicationReference = application.data.Refrence_No;
+// const searchQuery = ref('')
+
 watch(tagNo, (newValue) => {
     // Update table structure and data binding based on the selected option
     if (newValue === 'New Application') {
         tableHeaders.value = ['Reference  #', 'VeH Reg #', 'Status', 'Appointment Date', 'LOCATION'];
         itemFields.value = ['Refrence_No', 'veh_type', 'Status', 'AppointmentDate', 'Pickup_loc'];
-        filteredData.value = newAppData.data;
+        filteredData.value = application.data;
     } else if (newValue === 'Change of Ownership') {
         tableHeaders.value = ['Reference  #', 'VeH Reg #', 'GHAVeTTag', 'Status'];
         itemFields.value = ['Reference_No', 'VeH_Reg', 'vettag', 'Status'];
@@ -196,7 +206,7 @@ const refresh = () => {
     // Reset the text field and the filtered data back to their initial states
     referenceNumber.value = '';
     if (tagNo.value === 'New Application') {
-        filteredData.value = newAppData.value;
+        filteredData.value = application.value;
     } else if (tagNo.value === 'Change of Ownership') {
         filteredData.value = ownerShip.value;
     }
