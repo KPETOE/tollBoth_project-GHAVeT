@@ -16,34 +16,55 @@
         </v-card>
     </div>
 </template>
+
 <script setup>
 const client = useSupabaseClient();
 const user = useSupabaseUser();
 const router = useRouter();
 
 const Alert = ref(false);
-const transactions = await client.from('transactions').select('amountEnt').eq('user_id', user.value.id).order('created_at', { ascending: false }).limit(1).single();
 const booth = ref(['Tema', 'Takoradi', 'Amasaman', 'Koforidua']);
 const boothForm = ref({
     booth: ''
 });
 
+// Fetch the latest transaction for the user to get their current balance
+const transactions = await client.from('transactions')
+    .select('amountEnt')
+    .eq('user_id', user.value.id)
+    .order('created_at', { ascending: false })
+    .limit(1)
+    .single();
+
 const payToll = async () => {
-    if (transactions.data != null && transactions.data < 0) {
+    const balance = transactions.data?.amountEnt;  // Get the user's current balance
+
+    // Check if balance exists and is enough to deduct
+    if (balance !== null && balance >= 50) {
         try {
-            const deduct = parseInt(transactions.data.amountEnt) - 50;
-            console.log(deduct)
-            const { data, error } = await client.from('transactions').insert({ deduction: deduct, location: boothForm.booth, amountEnt: deduct });
-            // alert('Passed Successfully!');
-            Alert.value = true;
-            // router.push('/')
-        } catch {
-            console.log(error)
+            const deduct = balance - 50;  // Deduct 50 from the balance
+            console.log(`New balance: ${deduct}`);
+
+            // Update the transactions table with the new balance and the booth location
+            const { data, error } = await client
+                .from('transactions')
+                .insert({
+                    user_id: user.value.id,
+                    deduction: 50,  // Amount deducted
+                    location: boothForm.booth,
+                    amountEnt: deduct  // Updated balance
+                });
+
+            if (error) throw error;
+
+            Alert.value = true;  // Show success dialog
+        } catch (error) {
+            console.log("Error processing transaction: ", error);
         }
     } else {
-        alert('Please Deposite fund before passing the Toll Booth!');
-        router.push('/transac')
+        // If the user has insufficient funds
+        alert('Please deposit funds before passing the Toll Booth!');
+        router.push('/transac');  // Redirect to the transaction page to deposit
     }
-
-};  
+};
 </script>
