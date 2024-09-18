@@ -36,7 +36,7 @@ const transactions = await client.from('transactions')
     .limit(1)
     .single();
 
-const payToll = async () => {
+    const payToll = async () => {
     const balance = transactions.data?.amountEnt;  // Get the user's current balance
 
     // Check if balance exists and is enough to deduct
@@ -45,13 +45,13 @@ const payToll = async () => {
             const deduct = balance - 50;  // Deduct 50 from the balance
             console.log(`New balance: ${deduct}`);
 
-            // Update the transactions table with the new balance and the booth location
+            // Ensure the selected booth is passed correctly
             const { data, error } = await client
                 .from('transactions')
                 .insert({
-                    user_id: user.value.id,
+                    user_id: user.value.id,  // Insert user ID
                     deduction: 50,  // Amount deducted
-                    location: boothForm.booth,
+                    location: boothForm.value.booth,  // Ensure the booth value is passed here
                     amountEnt: deduct  // Updated balance
                 });
 
@@ -67,4 +67,5 @@ const payToll = async () => {
         router.push('/transac');  // Redirect to the transaction page to deposit
     }
 };
+
 </script>
