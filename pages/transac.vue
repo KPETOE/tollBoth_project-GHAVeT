@@ -92,7 +92,7 @@
 
 
 
-            <br>
+            <br>  <br> <br>
             <v-row>
                 <v-col col="auto" lg="4" sm="12">
                     <div class="d-flex justify-center">
@@ -118,7 +118,9 @@
                 </v-col>
             </v-row>
 
-            <br><br><br>
+            <br><br>
+
+            
             <v-container>
                 <v-table height="300px" dense>
                     <thead class="b">

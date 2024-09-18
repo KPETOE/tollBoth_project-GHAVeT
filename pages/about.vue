@@ -50,6 +50,11 @@
                     </v-col>
                     <v-col cols="" lg="" md="" sm="">
                         <v-img class="mt-10 mb-10" aspect-ratio="1" height="350" src="/img/ETC1.jpg"></v-img>
+                        <h5 class="text-uppercase blue-text text-center ">
+                            Akosumbo TOLL BOOTH view
+                        </h5>
+                        <v-img class="mt-10 mb-10  text-center" aspect-ratio="1" height="300"
+                            src="/img/Akosumbo.jpg"></v-img>
                     </v-col>
                 </v-row>
             </v-container>
@@ -64,7 +69,8 @@
                         <v-container>
                             <v-card class="ma-2 pa-2" style="width: 20em;">
                                 <v-container fluid>
-                                    <v-icon class="d-flex justify-center mt-5 mx-auto" style="font-size: 60px;">{{ value.icon }}</v-icon>
+                                    <v-icon class="d-flex justify-center mt-5 mx-auto" style="font-size: 60px;">{{
+                                        value.icon }}</v-icon>
                                     <v-card-item>
                                         <h4 class="text-center">{{ value.title }}</h4><br>
                                         <p class="text-justify">{{ value.description }}</p>
@@ -164,6 +170,4 @@ const values = [
 
     color: #06211d;
 }
-
-
 </style>
