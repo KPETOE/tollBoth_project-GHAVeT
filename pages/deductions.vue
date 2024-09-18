@@ -23,7 +23,9 @@ const user = useSupabaseUser();
 const router = useRouter();
 
 const Alert = ref(false);
-const booth = ref(['Tema', 'Takoradi', 'Amasaman', 'Koforidua']);
+const booth = ref(['Tema', 'Takoradi', 'Amasaman', 'Koforidua','Jomoro','Salaga','Bawjiase','Asankragwa','Ayensuano ','Elmina ','Pokuase ','Cape Coast','Bibiani ',
+'Fijai','Sefwi Wiawso','Anwiankwanta-Takoradi','Agona Swedru','Aburi-Adenta ','Sogakope-Sege','Aflao-Denu', 'Bolgatanga-Navrongo','Wa-Tumu','Techiman-Kintampo','Bole-Bamboi',
+'Accra-Winneba','Nkawkaw-Atibie','Kumasi-Barekese','Nsawam-Kumasi']);
 const boothForm = ref({
     booth: ''
 });
