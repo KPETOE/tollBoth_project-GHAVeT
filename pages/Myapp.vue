@@ -323,7 +323,7 @@ function scrollToTop() {
 .search:hover {
 
     /*background-color:  rgb(213, 244, 244);   this color may be the alternative for all background*/
-    color: white;
+    color: rgba(59, 161, 165, 0.822);
     /* Change text color to white */
     background-color: #249385;
     border: 1px solid #ededed;
