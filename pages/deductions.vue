@@ -64,9 +64,8 @@ const transactions = await client.from('transactions')
             console.log("Error processing transaction: ", error);
         }
     } else {
-        // If the user has insufficient funds
-        alert('Please deposit funds before passing the Toll Booth!');
-        router.push('/transac');  // Redirect to the transaction page to deposit
+        alert('Please Deposite fund before passing the Toll Booth!');
+        router.push('/transac')
     }
 };
 

@@ -67,7 +67,7 @@
 
                 <br> <br>
 
-                <div class=" d-flex justify-content-center align-items-center">
+                <!-- <div class=" d-flex justify-content-center align-items-center">
                     <div class="col-md-6 text-center" style="width: 35em;">
                         <label for="textBox3" class="form-label mx-auto text-uppercase text-black text-center"
                             style="font-size: 1.5rem; font-weight: bold">LAST DEPOSIT</label>
@@ -87,7 +87,7 @@
                             </v-container>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </v-col>
 
 

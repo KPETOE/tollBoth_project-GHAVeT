@@ -69,7 +69,7 @@
                             <v-col cols="" lg="6" sm="12">
                                 <div>
                                     <div>
-                                        <v-text-field v-model="referenceNumber" class="ref text-white"
+                                        <v-text-field v-model="referenceNumber" @input="search" class="ref text-white"
                                             label="Enter Number" outlined color="plain" variant="plain"
                                             style="width: 100%;"></v-text-field>
                                         <br>
@@ -78,8 +78,8 @@
                             </v-col>
                             <v-col cols="" lg="3" sm="12">
                                 <div class="d-flex justify-center  text-black" style="">
-                                    <button @click="search" class="search"
-                                        style=" background: white !important;">Search</button>
+                                    <!-- <button @click="search" class="search"
+                                        style=" background: white !important;">Search</button> -->
                                     <br>
                                 </div>
                             </v-col>
@@ -105,22 +105,24 @@
                         </div>
 
                         <!-- Table -->
-                        <v-table height="300px" dense>
-                            <thead class="b">
-                                <tr>
-                                    <!-- Dynamically generate table headers based on the selected option -->
-                                    <th v-for="(header, index) in tableHeaders" :key="index"
-                                        class="text-center with-bordr">
-                                        {{ header }}</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="item in filteredData" :key="item" ref="table" class="text-center">
-                                    <!-- Bind table data dynamically based on the selected option -->
-                                    <td v-for="(field, index) in itemFields" :key="index">{{ item[field] }}</td>
-                                </tr>
-                            </tbody>
-                        </v-table>
+                        <div v-if="filteredData.length >= 0">
+                            <v-table height="300px" dense>
+                                <thead class="b">
+                                    <tr>
+                                        <!-- Dynamically generate table headers based on the selected option -->
+                                        <th v-for="(header, index) in tableHeaders" :key="index"
+                                            class="text-center with-bordr">
+                                            {{ header }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="item in filteredData" :key="item" ref="table" class="text-center">
+                                        <!-- Bind table data dynamically based on the selected option -->
+                                        <td v-for="(field, index) in itemFields" :key="index">{{ item[field] }}</td>
+                                    </tr>
+                                </tbody>
+                            </v-table>
+                        </div>
                         <br> <br>
 
                         <div style="flex: 1;" class="d-flex flex-column align-items-end flex-grow-1">
@@ -188,14 +190,22 @@ watch(tagNo, (newValue) => {
     }
 });
 
-const search = () => {
+const search = async () => {
     if (tagNo.value === 'New Application') {
-        if (newAppData.value) { // Check if newAppData is not undefined
-            filteredData.value = newAppData.value.filter(item => item.Refrence_No === referenceNumber.value); 
+        if (referenceNumber.value.length > 2) {
+            const { data, error } = await client.from('application').select().ilike('Refrence_No', referenceNumber)
+            if (error) {
+                console.log(error)
+            } else {
+                filteredData.value = data
+            }
+        } else {
+            filteredData.value = []
         }
+
     } else if (tagNo.value === 'Change of Ownership') {
         if (ownerShip.value) { // Check if ownerShip is not undefined
-            filteredData.value = ownerShip.value.filter(item => item.Reference_No === referenceNumber.value); 
+            filteredData.value = ownerShip.value.filter(item => item.Reference_No === referenceNumber.value);
         }
     }
 };
