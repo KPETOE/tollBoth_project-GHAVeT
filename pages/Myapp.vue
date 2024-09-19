@@ -192,20 +192,27 @@ watch(tagNo, (newValue) => {
 
 const search = async () => {
     if (tagNo.value === 'New Application') {
-        if (referenceNumber.value.length > 2) {
-            const { data, error } = await client.from('application').select().ilike('Refrence_No', referenceNumber)
+        if (referenceNumber.value.length > 0) {
+            const { data, error } = await client.from('application').select('Refrence_No, veh_type, Status, AppointmentDate, Pickup_loc').ilike('Refrence_No', referenceNumber)
             if (error) {
                 console.log(error)
             } else {
-                filteredData.value = data
+                filteredData.value = application.data
             }
         } else {
             filteredData.value = []
         }
 
     } else if (tagNo.value === 'Change of Ownership') {
-        if (ownerShip.value) { // Check if ownerShip is not undefined
-            filteredData.value = ownerShip.value.filter(item => item.Reference_No === referenceNumber.value);
+        if (referenceNumber.value.length > 0) {
+            const { data, error } = await client.from('vehicle').select('Reference_No, vettag, Status').ilike('Reference_No', referenceNumber)
+            if (error) {
+                console.log(error)
+            } else {
+                filteredData.value = ownerShip.data
+            }
+        } else {
+            filteredData.value = []
         }
     }
 };
