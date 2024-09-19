@@ -204,10 +204,40 @@
                                         <v-col cols="12">
                                             <div style="background-color: azure; " class="">
 
-                                                <v-combobox clearable
-                                                    :items="['California', 'ACCRA', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
-                                                    item-text="name" v-model="applyForm.pickup_loc" outlined
-                                                    hide-details="auto" class="custom-background corners"
+                                                <v-combobox clearable :items="[
+                                                    'DVLA Head Office - Cantonments, Accra',
+                                                    'Accra Office - 37 Military Hospital Road, Accra',
+                                                    'Tema Office - Tema Community 2',
+                                                    'Weija Office - Near West Hills Mall, Weija',
+                                                    'Kaneshie Office - Kaneshie Market Complex, Accra',
+                                                    'Kumasi Office - Adum, Kumasi',
+                                                    'Ejisu Office - Ejisu, Kumasi',
+                                                    'Obuasi Office - Obuasi, Ashanti Region',
+                                                    'Mampong Office - Mampong, Ashanti Region',
+                                                    'Cape Coast Office - Cape Coast, Central Region',
+                                                    'Winneba Office - Winneba, Central Region',
+                                                    'Koforidua Office - Koforidua, Eastern Region',
+                                                    'Nsawam Office - Nsawam, Eastern Region',
+                                                    'Nkawkaw Office - Nkawkaw, Eastern Region',
+                                                    'Akim Oda Office - Akim Oda, Eastern Region',
+                                                    'Takoradi Office - Takoradi, Western Region',
+                                                    'Tarkwa Office - Tarkwa, Western Region',
+                                                    'Sefwi Wiawso Office - Sefwi Wiawso, Western Region',
+                                                    'Ho Office - Ho, Volta Region',
+                                                    'Keta Office - Keta, Volta Region',
+                                                    'Hohoe Office - Hohoe, Volta Region',
+                                                    'Tamale Office - Tamale, Northern Region',
+                                                    'Yendi Office - Yendi, Northern Region',
+                                                    'Bolgatanga Office - Bolgatanga, Upper East Region',
+                                                    'Navrongo Office - Navrongo, Upper East Region',
+                                                    'Wa Office - Wa, Upper West Region',
+                                                    'Sunyani Office - Sunyani, Brong Ahafo Region',
+                                                    'Techiman Office - Techiman, Brong Ahafo Region',
+                                                    'Berekum Office - Berekum, Brong Ahafo Region',
+                                                    'Damongo Office - Damongo, Savannah Region',
+                                                    'Nalerigu Office - Nalerigu, North East Region',
+                                                    'Bibiani Office - Bibiani, Western North Region'
+                                                ]" item-text="name" v-model="applyForm.pickup_loc" outlined hide-details="auto" class="custom-background corners"
                                                     style="box-shadow: none;   height: 4em;  " variant="plain"
                                                     placeholder="Select the Nearest DVLA Office"></v-combobox>
 
