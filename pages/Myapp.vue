@@ -153,7 +153,7 @@
 
 <script setup>
 // Sample data
-
+import { useDateFormat, useNow, useArrayFind } from '@vueuse/core'
 const client = useSupabaseClient()
 const user = useSupabaseUser()
 
@@ -193,26 +193,26 @@ watch(tagNo, (newValue) => {
 const search = async () => {
     if (tagNo.value === 'New Application') {
         if (referenceNumber.value.length > 0) {
-            const { data, error } = await client.from('application').select('Refrence_No, veh_type, Status, AppointmentDate, Pickup_loc').ilike('Refrence_No', referenceNumber)
+            const { data, error } = await client.from('application').select('Refrence_No, veh_type, Status, AppointmentDate, Pickup_loc').ilike('Refrence_No', referenceNumber.value)
             if (error) {
                 console.log(error)
             } else {
                 filteredData.value = application.data
             }
         } else {
-            filteredData.value = []
+            filteredData.value = [application.data]
         }
 
     } else if (tagNo.value === 'Change of Ownership') {
         if (referenceNumber.value.length > 0) {
-            const { data, error } = await client.from('vehicle').select('Reference_No, vettag, Status').ilike('Reference_No', referenceNumber)
+            const { data, error } = await client.from('vehicle').select('Reference_No, vettag, Status').ilike('Reference_No', referenceNumber.value)
             if (error) {
                 console.log(error)
             } else {
                 filteredData.value = ownerShip.data
             }
         } else {
-            filteredData.value = []
+            filteredData.value = [application.data]
         }
     }
 };
